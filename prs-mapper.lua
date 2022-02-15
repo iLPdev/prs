@@ -1,7 +1,8 @@
--- generic GMCP mapping script for Mudlet
--- by Blizzard. https://worldofpa.in
--- based upon an MSDP script from the Mudlet forums in the generic mapper thread
--- with pieces from the generic mapper script and the mmpkg mapper by breakone9r
+-- Procedural Realms Mapping Script for Mudlet v0.1.0
+-- by Stack (https://ilpdev.com/prs) based on generic GMCP mapping script 
+-- by Blizzard. https://worldofpa.in based upon an MSDP script from the Mudlet
+-- forums in the generic mapper thread with pieces from the generic mapper
+-- script and the mmpkg mapper by breakone9r.
 
 map = map or {}
 map.room_info = map.room_info or {}
@@ -20,7 +21,8 @@ local terrain_types = {
     -- add a new entry for each terrain type, and set the color with RGB values
     -- each id value must be unique, terrain types not listed here will use mapper default color
     -- not used if you define these in a map XML file
-    ["Inside"] = {id = 1, r = 255, g = 0, b = 0},
+    ["Grass"] = {id = 1, r = 0, g = 255, b = 0},
+    ["Tall Grass"] = {id = 2, r = 0, g = 152, b = 0},
 }
 
 -- list of possible movement directions and appropriate coordinate changes
