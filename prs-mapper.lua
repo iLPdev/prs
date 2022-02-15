@@ -260,7 +260,7 @@ function map.eventHandler(event,...)
         map.prev_info = map.room_info
         map.room_info = {
           vnum = tonumber(gmcp.room.info.num),
-          area = gmcp.room.info.area,
+          area = gmcp.room.info.zone,
           name = gmcp.room.info.name,
           terrain = gmcp.room.info.terrain,
           exits = gmcp.room.info.exits
