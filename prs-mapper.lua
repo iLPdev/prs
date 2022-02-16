@@ -1,4 +1,4 @@
--- Procedural Realms Mapping Script for Mudlet v0.1.1
+-- Procedural Realms Mapping Script for Mudlet v0.1.3
 -- by Stack (https://ilpdev.com/prs) based on generic GMCP mapping script 
 -- by Blizzard. https://worldofpa.in based upon an MSDP script from the Mudlet
 -- forums in the generic mapper thread with pieces from the generic mapper
@@ -21,8 +21,13 @@ local terrain_types = {
     -- add a new entry for each terrain type, and set the color with RGB values
     -- each id value must be unique, terrain types not listed here will use mapper default color
     -- not used if you define these in a map XML file
-    ["Grass"] = {id = 1, r = 0, g = 255, b = 0},
-    ["Tall Grass"] = {id = 2, r = 0, g = 152, b = 0},
+    ["Inside"] = {id = 1, r = 255, g = 0, b = 0},
+    ["Tall Grass"] = {id = 2, r = 0, g = 128, b = 0},
+    ["Grass"] = {id = 3, r = 0, g = 255, b = 0},
+    ["Shore"] = {id = 4, r = 128, g = 128, b = 0},
+    ["Bridge"] = {id = 5, r = 255, g = 255, b = 255},
+    ["Road"] = {id = 6, r = 0, g = 128, b = 128},
+    ["Steppe"] = {id = 7, r = 255, g = 255, b = 0},
 }
 
 -- list of possible movement directions and appropriate coordinate changes
@@ -130,9 +135,9 @@ end
 local function config()
 		
     -- setting terrain colors
-    --for k,v in pairs(terrain_types) do
-    --    setCustomEnvColor(v.id, v.r, v.g, v.b, 255)
-    --end
+    for k,v in pairs(terrain_types) do
+        setCustomEnvColor(v.id, v.r, v.g, v.b, 255)
+    -- end
     -- making mapper window
     --local info = defaults.mapper
     --Geyser.Mapper:new({name = "myMap", x = info.x, y = info.y, width = info.width, height = info.height})
