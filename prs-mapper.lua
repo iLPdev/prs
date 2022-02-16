@@ -137,7 +137,7 @@ local function config()
     -- setting terrain colors
     for k,v in pairs(terrain_types) do
         setCustomEnvColor(v.id, v.r, v.g, v.b, 255)
-    -- end
+    end
     -- making mapper window
     --local info = defaults.mapper
     --Geyser.Mapper:new({name = "myMap", x = info.x, y = info.y, width = info.width, height = info.height})
