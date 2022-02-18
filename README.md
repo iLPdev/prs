@@ -1,4 +1,4 @@
-# discMapper
+# Procedural Realms Script
 
 <!-- PROJECT BANNER 
 <div>
