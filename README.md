@@ -261,7 +261,7 @@ Thanks go to these amazing folks ([emoji key](https://allcontributors.org/docs/e
 ## License
 
 Copyleft (2022) _iLP development_. Distributed under GPL v3.0-and-later. For more
-information, see license in [`COPYING`](https://github.com/iLPdev/discMapper/blob/master/COPYING).
+information, see [`LICENSE`](https://github.com/iLPdev/prs/blob/main/LICENSE).
 
 **[^Top](#table-of-contents)**
 
