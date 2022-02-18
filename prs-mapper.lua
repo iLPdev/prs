@@ -1,4 +1,4 @@
--- Procedural Realms Mapping Script for Mudlet v0.1.3
+-- Procedural Realms Mapping Script for Mudlet v0.1.5
 -- by Stack (https://ilpdev.com/prs) based on generic GMCP mapping script 
 -- by Blizzard. https://worldofpa.in based upon an MSDP script from the Mudlet
 -- forums in the generic mapper thread with pieces from the generic mapper
@@ -13,7 +13,7 @@ map.configs.speedwalk_delay = 0
 
 local defaults = {
     -- using Geyser to handle the mapper in this, since this is a totally new script
-    mapper = {x = 0, y = 0, width = "100%", height = "100%"}
+    mapper = {x = 0, y = 0, width = "100%", height = "100%"},
 }
 
 local terrain_types = {
@@ -22,12 +22,12 @@ local terrain_types = {
     -- each id value must be unique, terrain types not listed here will use mapper default color
     -- not used if you define these in a map XML file
     ["Inside"] = {id = 1, r = 255, g = 0, b = 0},
-    ["Tall Grass"] = {id = 2, r = 0, g = 128, b = 0},
-    ["Grass"] = {id = 3, r = 0, g = 255, b = 0},
-    ["Shore"] = {id = 4, r = 128, g = 128, b = 0},
-    ["Bridge"] = {id = 5, r = 255, g = 255, b = 255},
-    ["Road"] = {id = 6, r = 0, g = 128, b = 128},
-    ["Steppe"] = {id = 7, r = 255, g = 255, b = 0},
+    ["Tall Grass"] = {id = 17, r = 0, g = 128, b = 0},
+    ["Grass"] = {id = 18, r = 0, g = 255, b = 0},
+    ["Shore"] = {id = 19, r = 128, g = 128, b = 0},
+    ["Bridge"] = {id = 20, r = 255, g = 255, b = 255},
+    ["Road"] = {id = 21, r = 0, g = 128, b = 128},
+    ["Steppe"] = {id = 22, r = 255, g = 255, b = 0},
 }
 
 -- list of possible movement directions and appropriate coordinate changes
@@ -139,8 +139,8 @@ local function config()
         setCustomEnvColor(v.id, v.r, v.g, v.b, 255)
     end
     -- making mapper window
-    --local info = defaults.mapper
-    --Geyser.Mapper:new({name = "myMap", x = info.x, y = info.y, width = info.width, height = info.height})
+    -- local info = defaults.mapper
+    -- Geyser.Mapper:new({name = "myMap", x = info.x, y = info.y, width = info.width, height = info.height})
     -- clearing existing aliases if they exist
     for k,v in pairs(map.aliases) do
         killAlias(v)
