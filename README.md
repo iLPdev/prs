@@ -79,10 +79,6 @@ As complement to a planned Mudlet UI for Discworld MUD, the aim of this project 
 
 - Automatic GMCP mapping of Procedural Realms MUD
 - (broken) Speedwalking and pathfinding - Efficiently get where you're going - and fast!
-- [GMCP Core Supports](http://discworld.starturtle.net/lpc/playing/documentation.c?path=/concepts/gmcp) for Discworld MUD's server:
-  - Precision Room Indexing using GMCP Identifier data - No more duplicate room creation!
-  - Character Tracking using GMCP Identifier data - No more misidentified player locations on map!
-  - Room Name detection using GMCP Room Name data
 - Automatic GMCP room styling based on terrain.
   - Matches colors in PR's 'map' and 'look' quickmap.
 - Automatic harvesting trigger examples.
