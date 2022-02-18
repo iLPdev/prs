@@ -162,9 +162,9 @@ To get started, connect to Discworld MUD in Mudlet and then enter `map basics` a
 
 A simple help system covering basic usage, most commands, and configuration options is available by issuing the `map help` command at the prompt.
 
-<!-- _For more examples, please refer to the [Documentation](https://example.com)_ -->
+<!-- _For more examples, please refer to the [Documentation](https://example.com)_ 
 
-**[^Top](#table-of-contents)**
+**[^Top](#table-of-contents)**-->
 
 <!-- ROADMAP -->
 ## Roadmap
