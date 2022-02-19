@@ -16,7 +16,7 @@ function MDKExample.exampleEMCO()
     consoleColor = "black",
     consoles = {
       "Gossip",
-      "Trades",
+      "Trade",
       "Local",
       "All",
       "Map",
