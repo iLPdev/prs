@@ -41,13 +41,13 @@ Project Link: [https://github.com/iLPdev/discMapper]
 - [Contributing](#contributing)
 - [License](#license)
 -->
-<!-- ABOUT THE PROJECT 
+<!-- ABOUT THE PROJECT -->
 ## Background
 
 <p align="center">
-    <a href=".github/images/screenshot_0.6.0-beta_downtown_AM.jpg" alt="" title="Downtown Ankh-Morpork"><img src=".github/images/screenshot_0.6.0-beta_downtown_AM.jpg" height="300" align="left"/></a> <a href=".github/images/screenshot_0.6.0-beta_styleRooms.jpg" alt="" title="Downtown Ankh-Morpork"><img src=".github/images/screenshot_0.6.0-beta_styleRooms.jpg" height="300" align="float"/></a>
+    <a href=".github/images/screenshot_0.6.0-beta_downtown_AM.jpg" alt="" title="Piprede Obelisk"><img src=".github/images/screenshot_0.6.0-beta_downtown_AM.jpg" height="300" align="left"/></a> <a href=".github/images/screenshot_0.6.0-beta_styleRooms.jpg" alt="" title="Downtown Ankh-Morpork"><img src=".github/images/screenshot_0.6.0-beta_styleRooms.jpg" height="300" align="float"/></a>
 </p>
-
+<!--
 ### History
 
 The discMapper project was unofficially started sometime during the early weeks of April 2020. The Coronavirus Pandemic and Stay-at-Home orders prompted [@Stack](https://github.com/iLPdev) to make an unexpected return to MUDs after more than two decades. A robust and stable LPmud derivative under continuous development since 1991, [Discworld MUD](http://discworld.starturtle.net/lpc) seemed like a promising quarantine-life distraction from our collective global trauma. Various MUD clients were tested. Among them, [Mudlet](https://www.mudlet.org) appeared the most desirable. Unfortunately, of the regular 80-100 online Discworld players, almost none appeared to be using Mudlet due to a severe lack of game-specific scripts relative to an old, alternative MUD client. A college try was made with the amazing scripts available for the alternative client, but it was too late... Mudlet's clean, modern appeal and advanced features had already won out -- if only there were Mudlet scripts for Discworld MUD.
