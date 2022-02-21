@@ -190,7 +190,7 @@ See also the [open issues](https://github.com/iLPdev/prs/issues) for a list of p
 <!-- State anyone or anything that significantly helped with the development of your project.
      State public contact hyper-links if applicable. -->
 
-- @Blizzard for his Simple GMCP Mapper script and responsiveness to all my questions.
+- @Blizzard for his [Simple GMCP Mapper](https://github.com/halimcme/worldofpain/blob/master/mapping.lua) script and responsiveness to all my questions.
 - `README.md`:
   - [Best-README-Template](https://github.com/othneildrew/Best-README-Template) for initial inspiration
   - [Standard Readme](https://github.com/RichardLitt/standard-readme) specifcation
