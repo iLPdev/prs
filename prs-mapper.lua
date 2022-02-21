@@ -1,4 +1,4 @@
--- Procedural Realms Mapping Script for Mudlet v0.1.5
+-- Procedural Realms Mapping Script for Mudlet v0.1.7
 -- by Stack (https://ilpdev.com/prs) based on generic GMCP mapping script 
 -- by Blizzard (https://worldofpa.in) based upon an MSDP script from the Mudlet
 -- forums in the generic mapper thread with pieces from Jor'Mox's generic mapper
@@ -21,7 +21,6 @@ local terrain_types = {
     -- add a new entry for each terrain type, and set the color with RGB values
     -- each id value must be unique, terrain types not listed here will use mapper default color
     -- not used if you define these in a map XML file
-    ["Inside"] = {id = 1, r = 255, g = 0, b = 0},
     ["Tall Grass"] = {id = 17, r = 0, g = 128, b = 0},
     ["Grass"] = {id = 18, r = 0, g = 255, b = 0},
     ["Shore"] = {id = 19, r = 128, g = 128, b = 0},
