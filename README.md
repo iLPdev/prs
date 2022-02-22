@@ -29,7 +29,7 @@ The Procedural Realms Script [PRS] project gives [Procedural Realms MUD](http://
 Project Link: [https://github.com/iLPdev/prs]
 
 
-TABLE OF CONTENTS 
+<!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
 - [Background](#background)
@@ -39,7 +39,6 @@ TABLE OF CONTENTS
 - [Acknowledgements](#acknowledgements)
 - [Contributing](#contributing)
 - [License](#license)
- -->
  
 <!-- ABOUT THE PROJECT -->
 ## Background
@@ -90,7 +89,7 @@ Version numbering approximates the [Semantic Versioning](http://semver.org) appr
 
 **[^Top](#table-of-contents)**
 
-GETTING STARTED 
+<!-- GETTING STARTED -->
 ## Install
 
 The [Mudlet Makers](https://github.com/Mudlet/Mudlet/graphs/contributors) could not have made it easier to install preconfigured custom aliases, triggers, scripts, keybindings, and UIs.
