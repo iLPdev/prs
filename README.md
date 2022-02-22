@@ -147,9 +147,9 @@ A simple help system covering basic usage, most commands, and configuration opti
 
 <!-- _For more examples, please refer to the [Documentation](https://example.com)_ 
 
-**[^Top](#table-of-contents)**-->
+**[^Top](#table-of-contents)**
 
-<!-- ROADMAP -->
+ROADMAP -->
 ## Roadmap
 
 The primary objective is to develop and test a minimally viable package for Mudlet that meets the requirements for includion on the list of connectable games when Mudlet starts and, in turn, to increase the playerbase of Procedural Realms.
