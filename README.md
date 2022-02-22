@@ -45,7 +45,7 @@ Project Link: [https://github.com/iLPdev/discMapper]
 ## Background
 
 <p align="center">
-    <a href="prs-screenshot-01.jpg" alt="" title="Piprede Obelisk"><img src="prs-screenshot-01.jpg" height="290" align="left"/></a> <a href="prs-screenshot-02.jpg" alt="" title="EMCO Chat"><img src="prs-screenshot-02.jpg" height="290" align="float"/></a>
+    <a href="prs-screenshot-01.jpg" alt="" title="Piprede Obelisk"><img src="prs-screenshot-01.jpg" height="280" align="left"/></a> <a href="prs-screenshot-02.jpg" alt="" title="EMCO Chat"><img src="prs-screenshot-02.jpg" height="280" align="float"/></a>
 </p>
 <!--
 ### History
