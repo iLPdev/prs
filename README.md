@@ -23,18 +23,17 @@
     <br />
 </p>
 
-<!-- LONG DESCRIPTION 
-The discMapper project gives [Discworld MUD](http://discworld.starturtle.net/lpc) players improved access to the advanced mapping features of the [Mudlet](https://www.mudlet.org) MUD client. By leveraging the specific "out of band" packets sent by Discworld MUD's server, discMapper correcly identifies rooms, stops creation of duplicate rooms, and accurately tracks your character's location on the map as you move about the disc. Additional convenience features include autosetting colors and symbols on the map based on the room type. -->
+LONG DESCRIPTION 
+The Procedural Realms Script [PRS] project gives [Procedural Realms MUD](http://textdimension.com/) players improved access to the advanced features of the [Mudlet](https://www.mudlet.org) MUD client. By leveraging the specific "out of band" packets sent by Procedural Realms' server, PRS correcly identifies rooms, stops creation of duplicate rooms, and accurately tracks your character's location on the map as you move about the realm. Additional convenience features include autosetting terrain colors, self-updating gauges for vitals, chat containers, and adjustable UI layout.
 
 Project Link: [https://github.com/iLPdev/prs]
 
 
-<!-- TABLE OF CONTENTS 
+TABLE OF CONTENTS 
 ## Table of Contents
 
 - [Background](#background)
 - [Install](#install)
-- [Usage](#usage)
 - [Roadmap](#roadmap) 
 - [Maintainer](#maintainer)
 - [Acknowledgements](#acknowledgements)
@@ -87,11 +86,11 @@ Version numbering approximates the [Semantic Versioning](http://semver.org) appr
 
 - **Project State**: Prcedural Realms Script is under active development. The application can be used, but may be unstable. We are in need of beta testing prior to moving forward with the v1.0.0 release.
 
-- **Current Release**: None yet.
+- **Current Release**: v0.3.0
 
 **[^Top](#table-of-contents)**
 
-<!-- GETTING STARTED 
+GETTING STARTED 
 ## Install
 
 The [Mudlet Makers](https://github.com/Mudlet/Mudlet/graphs/contributors) could not have made it easier to install preconfigured custom aliases, triggers, scripts, keybindings, and UIs.
@@ -101,35 +100,35 @@ The [Mudlet Makers](https://github.com/Mudlet/Mudlet/graphs/contributors) could 
 Copy/paste the following command into Mudlet's input line to install discMapper:
 
 ```lua
-lua function d(a,b)if not b:find("oci",1,true)then return end installPackage(b)os.remove(b)cecho("<lime_green>discMapper package installed!\n")end registerAnonymousEventHandler("sysDownloadDone","d")downloadFile(getMudletHomeDir().."/oci.mpackage","https://github.com/iLPdev/discMapper/releases/download/v0.5.0-beta/discMapper_v0.5.0-beta.mpackage")
+lua function d(a,b)if not b:find("oci",1,true)then return end installPackage(b)os.remove(b)cecho("<lime_green>discMapper package installed!\n")end registerAnonymousEventHandler("sysDownloadDone","d")downloadFile(getMudletHomeDir().."/oci.mpackage","https://github.com/iLPdev/prs/releases/download/v0.3.0/PRS-0.3.0.mpackage")
 ```
 
 ### Package Install Method
 
-Just like any other package as of Mudlet v4.8+, you may install discMapper by simply dragging and droppping the package file into Mudlet. discMapper will then be merged into your active Mudlet profile, and you may delete the original file.
+Just like any other package as of Mudlet v4.8+, you may install PRS by simply dragging and droppping the package file into Mudlet. discMapper will then be merged into your active Mudlet profile, and you may delete the original file.
 
-To install discMapper, just follow these steps:
+To install PRS, just follow these steps:
 
-1. Locate the [latest release](https://github.com/iLPdev/discMapper/releases/latest) of discMapper.
+1. Locate the [latest release](https://github.com/iLPdev/prs/releases/latest) of PRS.
 1. Download the .mpackage file listed under Assets.
 1. Open Mudlet on your operating system of choice.
-1. Open an existing Discworld MUD profile or create a new one.
+1. Open an existing Procedural Realms MUD profile or create a new one.
 1. Locate the saved file on your PC.
-1. Drag and drop the file into your open Discworld MUD profile.
+1. Drag and drop the file into your open Procedural Realms MUD profile.
 1. Optionally, delete the .mpackage file from your computer.
 
 ### Dependencies
 
 <a href="https://www.mudlet.org"><img src="https://www.mudlet.org/wp-content/uploads/2017/08/mudlet-wp-logo.png" alt="Mudlet" width="120" height="auto"></a>
 
-- [Game-icons.net Font](https://github.com/toddfast/game-icons-net-font) v20200315 by Todd Fast provides 3,000+ map room symbols
+- [MDK](https://github.com/demonnic/MDK) provides EMCO and SUG support.
 - [Mudlet][mudlet-url] MUD Client application must obviously be installed on your operating system (Windows, MacOS, and Linux)
 
 ### Getting the Source
 
-The discMapper project is [hosted on GitHub](https://github.com/iLPdev/discMapper). All versions of the repository are available as [releases](https://github.com/iLPdev/discMapper/releases).
+The PRS project is [hosted on GitHub](https://github.com/iLPdev/prs). All versions of the repository are available as [releases](https://github.com/iLPdev/prs/releases).
 
-You can also clone the entire project directly with this command: `git clone git@github.com:iLPdev/discMapper.git`
+You can also clone the entire project directly with this command: `git clone git@github.com:iLPdev/prs.git`
 
 **[^Top](#table-of-contents)**
 -->
