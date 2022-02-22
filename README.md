@@ -60,11 +60,11 @@ As complement to a planned Mudlet UI for Discworld MUD, the aim of this project 
 ### Features
 
 - Automatic GMCP mapping of Procedural Realms MUD
-- Speedwalking and pathfinding - Efficiently get where you're going - and fast!
 - Automatic GMCP room styling based on terrain.
   - Matches colors in PR's 'map' and 'look' quickmap.
-- Automatic harvesting trigger examples.
+- OOC chat boxes -- no more scroll and hunt to follow conversations.
 - Graphical bar gauges for charcater vitals, including Hit Points, Energy, and Stamina.
+- Speedwalking and pathfinding - Efficiently get where you're going - and fast!
 
 ### Built With
 
