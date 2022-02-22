@@ -12,7 +12,7 @@
 -->
 
 <!-- PROJECT BADGES -->
-[![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/iLPdev/discMapper?include_prereleases&sort=semver&style=flat-square)](https://github.com/iLPdev/discMapper/releases/latest) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END --> [![Issues][issues-shield]][issues-url]
+[![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/iLPdev/prs?include_prereleases&sort=semver&style=flat-square)](https://github.com/iLPdev/prs/releases/latest) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END --> [![Issues][issues-shield]][issues-url]
 [![GPL License][license-shield]][license-url]
 [![standard-readme compliant][standard-readme-shield]][standard-readme-url]
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/Mudlet/Mudlet?style=flat-square&label=client&sort=semver)](https://github.com/Mudlet/Mudlet/releases/latest)
@@ -29,18 +29,19 @@ The discMapper project gives [Discworld MUD](http://discworld.starturtle.net/lpc
 Project Link: [https://github.com/iLPdev/prs]
 
 
--- TABLE OF CONTENTS 
+<!-- TABLE OF CONTENTS 
 ## Table of Contents
 
 - [Background](#background)
-<!-- - [Install](#install)
-- [Usage](#usage) -->
+- [Install](#install)
+- [Usage](#usage)
 - [Roadmap](#roadmap) 
 - [Maintainer](#maintainer)
 - [Acknowledgements](#acknowledgements)
 - [Contributing](#contributing)
 - [License](#license)
-
+ -->
+ 
 <!-- ABOUT THE PROJECT -->
 ## Background
 
