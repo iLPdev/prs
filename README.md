@@ -24,57 +24,39 @@
 </p>
 
 <!-- LONG DESCRIPTION 
-The discMapper project gives [Discworld MUD](http://discworld.starturtle.net/lpc) players improved access to the advanced mapping features of the [Mudlet](https://www.mudlet.org) MUD client. By leveraging the specific "out of band" packets sent by Discworld MUD's server, discMapper correcly identifies rooms, stops creation of duplicate rooms, and accurately tracks your character's location on the map as you move about the disc. Additional convenience features include autosetting colors and symbols on the map based on the room type.-->
+The discMapper project gives [Discworld MUD](http://discworld.starturtle.net/lpc) players improved access to the advanced mapping features of the [Mudlet](https://www.mudlet.org) MUD client. By leveraging the specific "out of band" packets sent by Discworld MUD's server, discMapper correcly identifies rooms, stops creation of duplicate rooms, and accurately tracks your character's location on the map as you move about the disc. Additional convenience features include autosetting colors and symbols on the map based on the room type. -->
 
 Project Link: [https://github.com/iLPdev/prs]
 
 
-<!-- TABLE OF CONTENTS 
+-- TABLE OF CONTENTS 
 ## Table of Contents
 
 - [Background](#background)
-- [Install](#install)
-- [Usage](#usage)
-- [Roadmap](#roadmap)
+<!-- - [Install](#install)
+- [Usage](#usage) -->
+- [Roadmap](#roadmap) 
 - [Maintainer](#maintainer)
 - [Acknowledgements](#acknowledgements)
 - [Contributing](#contributing)
 - [License](#license)
--->
+
 <!-- ABOUT THE PROJECT -->
 ## Background
 
 <p align="center">
     <a href="prs-screenshot-01.jpg" alt="" title="Piprede Obelisk"><img src="prs-screenshot-01.jpg" height="260" align="left"/></a> <a href="prs-screenshot-02.jpg" alt="" title="EMCO Chat"><img src="prs-screenshot-02.jpg" height="260" align="float"/></a>
 </p>
-<!--
+
 ### History
-
-The discMapper project was unofficially started sometime during the early weeks of April 2020. The Coronavirus Pandemic and Stay-at-Home orders prompted [@Stack](https://github.com/iLPdev) to make an unexpected return to MUDs after more than two decades. A robust and stable LPmud derivative under continuous development since 1991, [Discworld MUD](http://discworld.starturtle.net/lpc) seemed like a promising quarantine-life distraction from our collective global trauma. Various MUD clients were tested. Among them, [Mudlet](https://www.mudlet.org) appeared the most desirable. Unfortunately, of the regular 80-100 online Discworld players, almost none appeared to be using Mudlet due to a severe lack of game-specific scripts relative to an old, alternative MUD client. A college try was made with the amazing scripts available for the alternative client, but it was too late... Mudlet's clean, modern appeal and advanced features had already won out -- if only there were Mudlet scripts for Discworld MUD.
-
-Inspired and seeking assistance in learning, the [Mudlet Discord chat server](https://discord.gg/S9zVg7H) was found to be a friendly, engaging community of creative and dedicatedly caring coders. After several weeks of struggling to achieve reliable mapping with text-based detection routines, a basic GMCP room detection approach was developed as possible solution. Considerable progress was made in learning and incoporating game-specific GMCP support into an existing [generic mapping script](https://github.com/Mudlet/Mudlet/blob/development/src/mudlet-lua/lua/generic-mapper/generic_mapper.xml).
-
-On May 24, 2020, [@vadi2](https://github.com/vadi2) was gracious enough to volunteer three hours helping @Stack live on a public audio chat. After initial assessment of the unique challenges of developing a custon mapping script for Discworld MUD, we spent a brief period exploring extension of the [IRE mapping script](https://github.com/IRE-Mudlet-Mapping/ire-mapping-script), but affirmed the lack of GMCP exit data supplied by [FluffOS](<(https://github.com/fluffos/fluffos)>) was too great an obstacle. A return was made to the hybrid approach of adding GMCP room detection/indexing to the text-based exit detection of the generic mapping script included with Mudlet. At the end of three hours, we had achieved basic functionality with only a couple minor issues.
-
-Unfortunately, it was soon realized that cleanly installing this initial version of the discMapper to a new Mudlet profile with no prior mapping settings caused the script to break entirely. Many confused hours were spent chasing quasi-solutions and residue problems until it became painfully clear that a more rigorously tracked and structured approach would be required: Enter this project's GitHub repository.
-
-Having a wealth of various IT-related and HTML/CSS development experience but virtually no experience in modern software development, frustration has (mostly) been overcome by an eagerness to learn and true enjoyment of the process -- especially the Mudlet community (see [Acknowledgments](#acknowledgements)).
-
-The repo started with a [README-first approach](https://tom.preston-werner.com/2010/08/23/readme-driven-development.html) to conceptualize how best to go about this project. discMapper was open-sourced upon conception.
 
 #### Milestones
 
-- v0.1.0-alpha - Initial
-- v0.1.2-alpha - Core mapping features with GMCP support
-- v0.2.1-beta - Help system and configuration functional
-- v0.3.0-beta - Automated updates implemented
-- v0.4.0-beta - Room Styling implemented
-- v0.5.0-beta - Clean install process and initial default colors
+- v0.2.1 - Fixed speedwalk
 
 ### Vision
 
 As complement to a planned Mudlet UI for Discworld MUD, the aim of this project is to provide existing and potential players with a newbie-friendly (accessible) and reliable means to map and navigate the Discworld MUD in an elegeant, modern MUD client. In line with that aim, the goal of this project is to release a Mudlet package with all the requisite aliases, triggers, and scripts. Ultimately, my hope is that discMapper might become a part of a larger Mudlet package for Discworld MUD, including guild-specific UI feature setss.
--->
 
 ### Features
 
