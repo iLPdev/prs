@@ -131,25 +131,8 @@ The PRS project is [hosted on GitHub](https://github.com/iLPdev/prs). All versio
 You can also clone the entire project directly with this command: `git clone git@github.com:iLPdev/prs.git`
 
 **[^Top](#table-of-contents)**
--->
-<!-- USAGE EXAMPLES 
-## Usage
 
-<!-- Code block illustrating common usage.
-     If CLI compatible, code block indicating common usage.
-     Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-     Cover basic choices that may affect usage: for instance, if JavaScript, cover promises/callbacks, ES6 here.
-     If relevant, point to a runnable file for the usage code. 
-
-To get started, connect to Discworld MUD in Mudlet and then enter `map basics` at the prompt.
-
-A simple help system covering basic usage, most commands, and configuration options is available by issuing the `map help` command at the prompt.
-
-<!-- _For more examples, please refer to the [Documentation](https://example.com)_ 
-
-**[^Top](#table-of-contents)**
-
-ROADMAP -->
+<!-- ROADMAP -->
 ## Roadmap
 
 The primary objective is to develop and test a minimally viable package for Mudlet that meets the requirements for includion on the list of connectable games when Mudlet starts and, in turn, to increase the playerbase of Procedural Realms.
