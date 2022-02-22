@@ -75,6 +75,7 @@ The repo started with a [README-first approach](https://tom.preston-werner.com/2
 
 As complement to a planned Mudlet UI for Discworld MUD, the aim of this project is to provide existing and potential players with a newbie-friendly (accessible) and reliable means to map and navigate the Discworld MUD in an elegeant, modern MUD client. In line with that aim, the goal of this project is to release a Mudlet package with all the requisite aliases, triggers, and scripts. Ultimately, my hope is that discMapper might become a part of a larger Mudlet package for Discworld MUD, including guild-specific UI feature setss.
 -->
+
 ### Features
 
 - Automatic GMCP mapping of Procedural Realms MUD
