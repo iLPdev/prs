@@ -51,6 +51,7 @@ Project Link: [https://github.com/iLPdev/prs]
 
 #### Milestones
 
+- v0.5.0 - Begin package installation devlopment
 - v0.1.2 - Fixed exitstub tracking
 - v0.2.1 - Fixed speedwalk
 
@@ -63,7 +64,7 @@ As complement to a planned Mudlet UI for Discworld MUD, the aim of this project 
 - Automatic GMCP mapping of Procedural Realms MUD
 - Automatic GMCP room styling based on terrain.
   - Matches colors in PR's 'map' and 'look' quickmap.
-- OOC chat boxes -- no more scroll and hunt to follow conversations.
+- Tabbed Chat -- No conversations lost in scroll!
 - Graphical bar gauges for charcater vitals, including Hit Points, Energy, and Stamina.
 - Speedwalking and pathfinding - Efficiently get where you're going - and fast!
 
@@ -72,6 +73,7 @@ As complement to a planned Mudlet UI for Discworld MUD, the aim of this project 
 - [Lua](https://www.lua.org) is the programming language
 - [Edbee Library](https://github.com/edbee/edbee-lib) provides the text editor component for Mudlet
 - [Mudlet](https://github.com/Mudlet/Mudlet) is a cross-platform, open source, and super fast MUD client
+- [MDK](https://github.com/demonnic/MDK) is a collection of Lua 'classes' and modules by @demonnic
 - [Git](https://git-scm.com) is the version-control system for tracking changes and project management
 - [ImgBot](https://github.com/dabutvin/Imgbot) provides GitHub-integrated image optimization
 
@@ -156,6 +158,7 @@ See also the [open issues](https://github.com/iLPdev/prs/issues) for a list of p
 <!-- State anyone or anything that significantly helped with the development of your project.
      State public contact hyper-links if applicable. -->
 
+- [@demonnic](https://github.com/demonnic) for his seemingly indefatigable patience and help.
 - [@halimcme](https://github.com/halimcme) (Blizzard) for his [Simple GMCP Mapper](https://github.com/halimcme/worldofpain/blob/master/mapping.lua) script and responsiveness to all my questions.
 - `README.md`:
   - [Best-README-Template](https://github.com/othneildrew/Best-README-Template) for initial inspiration
