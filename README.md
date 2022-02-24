@@ -51,6 +51,7 @@ Project Link: [https://github.com/iLPdev/prs]
 
 #### Milestones
 
+- v0.1.2 - Fixed exitstub tracking
 - v0.2.1 - Fixed speedwalk
 
 <!-- ### Vision
