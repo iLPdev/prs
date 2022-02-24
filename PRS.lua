@@ -1,0 +1,2 @@
+PRSchat.tabs()
+PRSstats.stats()
