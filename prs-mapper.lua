@@ -1,4 +1,4 @@
--- Procedural Realms Mapping Script for Mudlet v0.3.0
+-- Procedural Realms Mapping Script for Mudlet v0.3.1
 -- by Stack (https://ilpdev.com/prs) based on generic GMCP mapping script 
 -- by Blizzard (https://worldofpa.in) based upon an MSDP script from the Mudlet
 -- forums in the generic mapper thread with pieces from Jor'Mox's generic mapper
@@ -28,7 +28,7 @@ local terrain_types = {
     ["Road"] = {id = 21, r = 0, g = 128, b = 128},
     ["Steppe"] = {id = 22, r = 255, g = 255, b = 0},
     ["Scrublands"] = {id = 19, r = 128, g = 128, b = 0},
-    ["Wasteland"] = {id = 19, r = 128, g = 0, b = 0},
+    ["Wasteland"] = {id = 20, r = 128, g = 0, b = 0},
 }
 
 -- list of possible movement directions and appropriate coordinate changes
