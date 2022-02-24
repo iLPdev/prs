@@ -1,6 +1,6 @@
+local SUG = require("MDK.sug")
 PRSstats = PRSstats or {}
 function PRSstats.stats()
-  local SUG = require("MDK.sug")
   PRSstats.UW = Geyser.UserWindow:new({name = "Stats", titleText ="Vitals", x = "75%", y = "100", docked = true})
   
   -- the following will watch "gmcp.Char.Vitals.hp" and "gmcp.Char.Vitals.maxhp"
