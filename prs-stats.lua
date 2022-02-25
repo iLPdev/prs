@@ -1,6 +1,6 @@
-local SUG = require("MDK.sug")
 PRSstats = PRSstats or {}
 function PRSstats.stats()
+  local SUG = require("PRS.sug")
   PRSstats.UW = Geyser.UserWindow:new({name = "Stats", titleText ="Vitals", x = "75%", y = "100", docked = true})
   
   -- the following will watch "gmcp.Char.Vitals.hp" and "gmcp.Char.Vitals.maxhp"
@@ -8,9 +8,9 @@ function PRSstats.stats()
   HPbar = SUG:new({
     name = "HP",
     height = 50,
-    width = "97%", -- everything up to here is standard Geyser.Gauge
+    width = "95%", -- everything up to here is standard Geyser.Gauge
     updateTime = 250, -- this timer will update every 250ms, or 4 times a second
-    textTemplate = "HP: |c/|m (|p%)", -- gauge will show "HP: 500/1000 (50%)" as the text if you had 500 current and 1000 max hp
+    textTemplate = "&nbsp;HP: |c / |m  (|p%)", -- gauge will show "HP: 500/1000 (50%)" as the text if you had 500 current and 1000 max hp
     currentVariable = "gmcp.Char.Vitals.hp", --if gmcp.Char.Vitals.hp is nil or unreachable, it will use the defaultCurrent of 50
     maxVariable = "gmcp.Char.Vitals.maxhp",  --if gmcp.Char.Vitals.maxhp is nil or unreachable, it will use the defaultMax of 100
   }, PRSstats.UW)
@@ -32,9 +32,9 @@ function PRSstats.stats()
     name = "EN",
     y = 70,
     height = 50,
-    width = "97%", 
+    width = "95%", 
     updateTime = 250, 
-    textTemplate = "EN: |c/|m (|p%)",
+    textTemplate = "&nbsp;EN: |c / |m  (|p%)",
     currentVariable = "gmcp.Char.Vitals.en",
     maxVariable = "gmcp.Char.Vitals.maxen",
   }, PRSstats.UW)
@@ -56,9 +56,9 @@ function PRSstats.stats()
     name = "ST",
     y = 130,
     height = 50,
-    width = "97%", 
+    width = "95%", 
     updateTime = 250, 
-    textTemplate = "ST: |c/|m (|p%)",
+    textTemplate = "&nbsp;ST: |c / |m  (|p%)",
     currentVariable = "gmcp.Char.Vitals.st",
     maxVariable = "gmcp.Char.Vitals.maxst",
   }, PRSstats.UW)
@@ -73,5 +73,29 @@ function PRSstats.stats()
       border-color: black;
       border-style: solid;
       border-radius: 7;
-      padding: 3px;]])  
+      padding: 3px;]])
+  XPbar = SUG:new({
+    name = "XP",
+    y = "190",
+    height = 50,
+    width = "95%",
+    updateTime = 250, 
+    textTemplate = "&nbsp;XP: |c / |m",
+    currentVariable = "gmcp.Char.Vitals.xp",
+    maxVariable = "gmcp.Char.Vitals.nl",
+  }, PRSstats.UW)
+    XPbar.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #3399ff, stop: 0.1 #0080ff, stop: 0.49 #0000ff, stop: 0.5 #0000cc, stop: 1 #0000ff);
+      border-top: 1px black solid;
+      border-left: 1px black solid;
+      border-bottom: 1px black solid;
+      border-radius: 7;
+      padding: 3px;
+    ]])
+    XPbar.back:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #0066cc, stop: 0.1 #004c99, stop: 0.49 #000099, stop: 0.5 #000066, stop: 1 #000099);
+      border-width: 1px;
+      border-color: black;
+      border-style: solid;
+      border-radius: 7;
+      padding: 3px;
+    ]])  
 end
