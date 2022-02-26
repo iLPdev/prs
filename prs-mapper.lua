@@ -270,7 +270,7 @@ function doSpeedWalk()
     if #speedWalkPath ~= 0 then
         map.speedwalk(nil, speedWalkPath, speedWalkDir)
     else
-        map.echo("No path to chosen room found.",false,true)
+        echo("No path to chosen room found.",false,true)
     end
 end
 
