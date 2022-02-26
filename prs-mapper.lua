@@ -1,4 +1,4 @@
--- Procedural Realms Mapping Script for Mudlet v0.5.0
+-- Procedural Realms Mapping Script for Mudlet v0.6.0
 -- by Stack (https://ilpdev.com/prs) based on generic GMCP mapping script 
 -- by Blizzard (https://worldofpa.in) based upon an MSDP script from the Mudlet
 -- forums in the generic mapper thread with pieces from Jor'Mox's generic mapper
