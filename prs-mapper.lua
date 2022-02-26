@@ -30,7 +30,8 @@ local terrain_types = {
     ["Scrublands"] = {id = 23, r = 128, g = 128, b = 0},
     ["Wasteland"] = {id = 24, r = 128, g = 0, b = 0},
     ["Fence"] = {id = 25, r = 255, g = 255, b = 255},
-    ["River"] = {id = 26, r = 0, g = 0, b = 255},   
+    ["River"] = {id = 26, r = 0, g = 0, b = 255},
+    ["Lake"] = {id = 27, r = 0, g = 0, b = 255},  
 }
 
 -- list of possible movement directions and appropriate coordinate changes
