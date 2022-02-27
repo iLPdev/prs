@@ -1,5 +1,6 @@
 PRSstats = PRSstats or {}
 function PRSstats.stats()
+  local level = tonumber(gmcp.Char.Vitals.level)
   local SUG = require("PRS.sug")
   PRSstats.UW = Geyser.UserWindow:new({name = "Stats", titleText ="Vitals", x = "75%", y = "100", docked = true})
   
@@ -10,7 +11,7 @@ function PRSstats.stats()
     height = 50,
     width = "95%", -- everything up to here is standard Geyser.Gauge
     updateTime = 250, -- this timer will update every 250ms, or 4 times a second
-    textTemplate = "&nbsp;HP: |c / |m  (|p%)", -- gauge will show "HP: 500/1000 (50%)" as the text if you had 500 current and 1000 max hp
+    textTemplate = "&nbsp;&nbsp;HP: |c / |m  (|p%)", -- gauge will show "HP: 500/1000 (50%)" as the text if you had 500 current and 1000 max hp
     currentVariable = "gmcp.Char.Vitals.hp", --if gmcp.Char.Vitals.hp is nil or unreachable, it will use the defaultCurrent of 50
     maxVariable = "gmcp.Char.Vitals.maxhp",  --if gmcp.Char.Vitals.maxhp is nil or unreachable, it will use the defaultMax of 100
   }, PRSstats.UW)
@@ -28,13 +29,16 @@ function PRSstats.stats()
       border-radius: 7;
       padding: 3px;
     ]])
+    HPbar.text:setStyleSheet([[
+      font-weight: bold;
+    ]])
   ENbar = SUG:new({
     name = "EN",
     y = 70,
     height = 50,
     width = "95%", 
     updateTime = 250, 
-    textTemplate = "&nbsp;EN: |c / |m  (|p%)",
+    textTemplate = "&nbsp;&nbsp;EN: |c / |m  (|p%)",
     currentVariable = "gmcp.Char.Vitals.en",
     maxVariable = "gmcp.Char.Vitals.maxen",
   }, PRSstats.UW)
@@ -52,13 +56,16 @@ function PRSstats.stats()
       border-radius: 7;
       padding: 3px;
     ]])
+    ENbar.text:setStyleSheet([[
+      font-weight: bold;
+    ]])
   STbar = SUG:new({
     name = "ST",
     y = 130,
     height = 50,
     width = "95%", 
     updateTime = 250, 
-    textTemplate = "&nbsp;ST: |c / |m  (|p%)",
+    textTemplate = "&nbsp;&nbsp;ST: |c / |m  (|p%)",
     currentVariable = "gmcp.Char.Vitals.st",
     maxVariable = "gmcp.Char.Vitals.maxst",
   }, PRSstats.UW)
@@ -74,13 +81,16 @@ function PRSstats.stats()
       border-style: solid;
       border-radius: 7;
       padding: 3px;]])
+    STbar.text:setStyleSheet([[
+      font-weight: bold;
+    ]])
   XPbar = SUG:new({
     name = "XP",
     y = "190",
     height = 50,
     width = "95%",
     updateTime = 250, 
-    textTemplate = "&nbsp;XP: |c / |m",
+    textTemplate = "&nbsp;&nbsp;Level "..level.." XP: |c / |m",
     currentVariable = "gmcp.Char.Vitals.xp",
     maxVariable = "gmcp.Char.Vitals.nl",
   }, PRSstats.UW)
@@ -98,4 +108,7 @@ function PRSstats.stats()
       border-radius: 7;
       padding: 3px;
     ]])  
+    XPbar.text:setStyleSheet([[
+      font-weight: bold;
+    ]])
 end
