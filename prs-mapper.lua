@@ -1,4 +1,4 @@
--- Procedural Realms Mapping Script for Mudlet v0.7.0
+-- Procedural Realms Mapping Script for Mudlet v0.8.1
 -- by Stack (https://ilpdev.com/prs) based on generic GMCP mapping script 
 -- by Blizzard (https://worldofpa.in) based upon an MSDP script from the Mudlet
 -- forums in the generic mapper thread with pieces from Jor'Mox's generic mapper
@@ -34,6 +34,7 @@ local terrain_types = {
     ["Lake"] = {id = 27, r = 0, g = 0, b = 255},
     ["Fishing Pier"] = {id = 28, r = 0, g = 0, b = 255},
     ["Farmland"] = {id = 29, r = 255, g = 255, b = 0},
+    ["Deep Water"] = {id = 30, r = 0, g = 0, b = 128},
 }
 
 -- list of possible movement directions and appropriate coordinate changes

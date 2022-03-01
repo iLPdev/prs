@@ -1,6 +1,6 @@
 PRSstats = PRSstats or {}
 function PRSstats.stats()
-  local level = tonumber(gmcp.Char.Vitals.level)
+  -- local level = tonumber(gmcp.Char.Vitals.level)
   local SUG = require("PRS.sug")
   PRSstats.UW = Geyser.UserWindow:new({name = "Stats", titleText ="Vitals", x = "75%", y = "100", docked = true})
   
@@ -90,7 +90,8 @@ function PRSstats.stats()
     height = 50,
     width = "95%",
     updateTime = 250, 
-    textTemplate = "&nbsp;&nbsp;Level "..level.." XP: |c / |m",
+--    textTemplate = "&nbsp;&nbsp;Level "..level.." XP: |c / |m",
+    textTemplate = "&nbsp;XP: |c / |m",
     currentVariable = "gmcp.Char.Vitals.xp",
     maxVariable = "gmcp.Char.Vitals.nl",
   }, PRSstats.UW)
