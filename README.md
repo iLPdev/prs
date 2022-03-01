@@ -65,7 +65,7 @@ As complement to a planned Mudlet UI for Discworld MUD, the aim of this project 
 - Automatic GMCP room styling based on terrain.
   - Matches colors in PR's 'map' and 'look' quickmap.
 - Tabbed Chat -- Adjustable, dockable, resizable, and no conversations lost in scroll!
-- Self-updating bar gauges for charcater vitals, including Hit Points, Energy, and Stamina.
+- Self-updating gauges for charcater vitals, including Hit Points, Energy, Stamina, and eXperience Points.
 - Speedwalking and pathfinding - Efficiently get where you're going - and fast!
 
 ### Built With
