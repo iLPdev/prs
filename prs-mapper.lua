@@ -35,6 +35,7 @@ local terrain_types = {
     ["Fishing Pier"] = {id = 28, r = 0, g = 0, b = 255},
     ["Farmland"] = {id = 29, r = 255, g = 255, b = 0},
     ["Deep Water"] = {id = 30, r = 0, g = 0, b = 128},
+    ["Gate"] = {id = 31, r = 255, g = 255, b = 0},
 }
 
 -- list of possible movement directions and appropriate coordinate changes
