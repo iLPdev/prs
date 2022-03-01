@@ -1,4 +1,4 @@
--- Procedural Realms Mapping Script for Mudlet v0.8.1
+-- Procedural Realms Mapping Script for Mudlet v0.8.2
 -- by Stack (https://ilpdev.com/prs) based on generic GMCP mapping script 
 -- by Blizzard (https://worldofpa.in) based upon an MSDP script from the Mudlet
 -- forums in the generic mapper thread with pieces from Jor'Mox's generic mapper
@@ -226,7 +226,7 @@ function map.speedwalk(roomID, walkPath, walkDirs)
     walkPath = speedWalkPath
     walkDirs = speedWalkDir
     if #speedWalkPath == 0 then
-        map.echo("No path to chosen room found.",false,true)
+        echo("No path to chosen room found.",false,true)
         return
     end
     table.insert(walkPath, 1, map.room_info.vnum)
