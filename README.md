@@ -98,13 +98,14 @@ Version numbering approximates the [Semantic Versioning](http://semver.org) appr
 
 The [Mudlet Makers](https://github.com/Mudlet/Mudlet/graphs/contributors) could not have made it easier to install preconfigured custom aliases, triggers, scripts, keybindings, and UIs.
 
-### One-Click Install Method
+<!-- ### One-Click Install Method
 
 Copy/paste the following command into Mudlet's input line to install discMapper:
 
 ```lua
-lua function d(a,b)if not b:find("oci",1,true)then return end installPackage(b)os.remove(b)cecho("<lime_green>discMapper package installed!\n")end registerAnonymousEventHandler("sysDownloadDone","d")downloadFile(getMudletHomeDir().."/oci.mpackage","https://github.com/iLPdev/prs/releases/download/v0.3.0/PRS-0.3.0.mpackage")
+lua function d(a,b)if not b:find("oci",1,true)then return end installPackage(b)os.remove(b)cecho("<lime_green>PRS package installed!\n")end registerAnonymousEventHandler("sysDownloadDone","d")downloadFile(getMudletHomeDir().."/oci.mpackage","https://github.com/iLPdev/prs/releases/download/v0.7.1/PRS.mpackage")
 ```
+-->
 
 ### Package Install Method
 
