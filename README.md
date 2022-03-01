@@ -26,7 +26,8 @@
 <!-- LONG DESCRIPTION --> 
 The Procedural Realms Script [PRS] project gives [Procedural Realms MUD](http://textdimension.com/) players improved access to the advanced features of the [Mudlet](https://www.mudlet.org) MUD client. By leveraging the specific "out of band" packets sent by Procedural Realms' server, PRS correcly identifies rooms, stops creation of duplicate rooms, and accurately tracks your character's location on the map as you move about the realm. Additional convenience features include autosetting terrain colors, self-updating gauges for vitals, chat containers, and adjustable UI layout.
 
-Project Link: [https://github.com/iLPdev/prs]
+Project Link: [https://github.com/iLPdev/prs]<br />
+Mudlet Forum Topic: [https://forums.mudlet.org/viewtopic.php?f=6&t=23126]
 
 
 <!-- TABLE OF CONTENTS -->
@@ -65,7 +66,7 @@ As complement to a planned Mudlet UI for Discworld MUD, the aim of this project 
 - Automatic GMCP room styling based on terrain.
   - Matches colors in PR's 'map' and 'look' quickmap.
 - Tabbed Chat -- Adjustable, dockable, resizable, and no conversations lost in scroll!
-- Self-updating bar gauges for charcater vitals, including Hit Points, Energy, and Stamina.
+- Self-updating gauges for charcater vitals, including Hit Points, Energy, Stamina, and eXperience Points.
 - Speedwalking and pathfinding - Efficiently get where you're going - and fast!
 
 ### Built With
@@ -97,13 +98,14 @@ Version numbering approximates the [Semantic Versioning](http://semver.org) appr
 
 The [Mudlet Makers](https://github.com/Mudlet/Mudlet/graphs/contributors) could not have made it easier to install preconfigured custom aliases, triggers, scripts, keybindings, and UIs.
 
-### One-Click Install Method
+<!-- ### One-Click Install Method
 
 Copy/paste the following command into Mudlet's input line to install discMapper:
 
 ```lua
-lua function d(a,b)if not b:find("oci",1,true)then return end installPackage(b)os.remove(b)cecho("<lime_green>discMapper package installed!\n")end registerAnonymousEventHandler("sysDownloadDone","d")downloadFile(getMudletHomeDir().."/oci.mpackage","https://github.com/iLPdev/prs/releases/download/v0.3.0/PRS-0.3.0.mpackage")
+lua function d(a,b)if not b:find("oci",1,true)then return end installPackage(b)os.remove(b)cecho("<lime_green>PRS package installed!\n")end registerAnonymousEventHandler("sysDownloadDone","d")downloadFile(getMudletHomeDir().."/oci.mpackage","https://github.com/iLPdev/prs/releases/download/v0.7.1/PRS.mpackage")
 ```
+-->
 
 ### Package Install Method
 
