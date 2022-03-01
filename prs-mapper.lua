@@ -1,4 +1,4 @@
--- Procedural Realms Mapping Script for Mudlet v0.8.1
+-- Procedural Realms Mapping Script for Mudlet v0.9.0
 -- by Stack (https://ilpdev.com/prs) based on generic GMCP mapping script 
 -- by Blizzard (https://worldofpa.in) based upon an MSDP script from the Mudlet
 -- forums in the generic mapper thread with pieces from Jor'Mox's generic mapper
@@ -35,6 +35,7 @@ local terrain_types = {
     ["Fishing Pier"] = {id = 28, r = 0, g = 0, b = 255},
     ["Farmland"] = {id = 29, r = 255, g = 255, b = 0},
     ["Deep Water"] = {id = 30, r = 0, g = 0, b = 128},
+    ["Gate"] = {id = 31, r = 255, g = 255, b = 0},
 }
 
 -- list of possible movement directions and appropriate coordinate changes
@@ -226,7 +227,7 @@ function map.speedwalk(roomID, walkPath, walkDirs)
     walkPath = speedWalkPath
     walkDirs = speedWalkDir
     if #speedWalkPath == 0 then
-        map.echo("No path to chosen room found.",false,true)
+        echo("No path to chosen room found.",false,true)
         return
     end
     table.insert(walkPath, 1, map.room_info.vnum)
