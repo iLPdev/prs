@@ -120,7 +120,7 @@ function PRSstats.stats()
   CPbar = SUG:new({
     name="CP",
     y="250",
-    height=50,
+    height=25,
     width="95%", 
     updateTime = 250, 
     textTemplate = "&nbsp;&nbsp;Combo: |c / |m  (|p%)",
@@ -141,6 +141,34 @@ function PRSstats.stats()
         border-radius: 7;
         padding: 3px;]])
     CPbar.text:setStyleSheet([[
+      font-weight: bold;
+    ]])  
+
+  -- Rage Points Gauge
+  RPbar = SUG:new({
+    name="RP",
+    y="280",
+    height=25,
+    width="95%", 
+    updateTime = 250, 
+    textTemplate = "&nbsp;&nbsp;Rage: |c / |m  (|p%)",
+    currentVariable = "gmcp.Char.Vitals.rage",
+    maxrage = 100,
+    maxVariable = "maxrage",
+  }, PRSstats.UW)
+    RPbar.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #f04141, stop: 0.1 #ef2929, stop: 0.49 #cc0000, stop: 0.5 #a40000, stop: 1 #cc0000);
+        border-top: 1px black solid;
+        border-left: 1px black solid;
+        border-bottom: 1px black solid;
+        border-radius: 7;
+        padding: 3px;]])
+    RPbar.back:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #bd3333, stop: 0.1 #bd2020, stop: 0.49 #990000, stop: 0.5 #700000, stop: 1 #990000);
+        border-width: 1px;
+        border-color: black;
+        border-style: solid;
+        border-radius: 7;
+        padding: 3px;]])
+    RPbar.text:setStyleSheet([[
       font-weight: bold;
     ]])  
 end
