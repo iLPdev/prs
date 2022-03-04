@@ -9,7 +9,7 @@ function PRSstats.stats()
     height = 50,
     width = "95%",
     updateTime = 250, 
-    textTemplate = "&nbsp;XP: |c / |m",
+    textTemplate = "&nbsp;&nbsp;XP: |c / |m",
     currentVariable = "gmcp.Char.Vitals.xp",
     maxVariable = "gmcp.Char.Vitals.nl",
   }, PRSstats.UW)
