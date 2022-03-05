@@ -2,34 +2,6 @@ PRSstats = PRSstats or {}
 function PRSstats.stats()
   local SUG = require("PRS.sug")
   PRSstats.UW = Geyser.UserWindow:new({name = "Stats", titleText ="Vitals", x = "75%", y = "100", docked = true})
-  
-  -- Experience Points Gauge
-  XPbar = SUG:new({
-    name = "XP",
-    height = 50,
-    width = "95%",
-    updateTime = 250, 
-    textTemplate = "&nbsp;&nbsp;XP: |c / |m",
-    currentVariable = "gmcp.Char.Vitals.xp",
-    maxVariable = "gmcp.Char.Vitals.nl",
-  }, PRSstats.UW)
-    XPbar.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #3399ff, stop: 0.1 #0080ff, stop: 0.49 #0000ff, stop: 0.5 #0000cc, stop: 1 #0000ff);
-      border-top: 1px black solid;
-      border-left: 1px black solid;
-      border-bottom: 1px black solid;
-      border-radius: 7;
-      padding: 3px;
-    ]])
-    XPbar.back:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #0066cc, stop: 0.1 #004c99, stop: 0.49 #000099, stop: 0.5 #000066, stop: 1 #000099);
-      border-width: 1px;
-      border-color: black;
-      border-style: solid;
-      border-radius: 7;
-      padding: 3px;
-    ]])  
-    XPbar.text:setStyleSheet([[
-      font-weight: bold;
-    ]])
 
   -- Hit Points Gauge
   HPbar = SUG:new({
@@ -169,6 +141,34 @@ function PRSstats.stats()
         border-radius: 7;
         padding: 3px;]])
     RPbar.text:setStyleSheet([[
+      font-weight: bold;
+    ]])
+    
+  -- Experience Points Gauge
+  XPbar = SUG:new({
+    name = "XP",
+    height = 50,
+    width = "95%",
+    updateTime = 250, 
+    textTemplate = "&nbsp;&nbsp;XP: |c / |m",
+    currentVariable = "gmcp.Char.Vitals.xp",
+    maxVariable = "gmcp.Char.Vitals.nl",
+  }, PRSstats.UW)
+    XPbar.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #3399ff, stop: 0.1 #0080ff, stop: 0.49 #0000ff, stop: 0.5 #0000cc, stop: 1 #0000ff);
+      border-top: 1px black solid;
+      border-left: 1px black solid;
+      border-bottom: 1px black solid;
+      border-radius: 7;
+      padding: 3px;
+    ]])
+    XPbar.back:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #0066cc, stop: 0.1 #004c99, stop: 0.49 #000099, stop: 0.5 #000066, stop: 1 #000099);
+      border-width: 1px;
+      border-color: black;
+      border-style: solid;
+      border-radius: 7;
+      padding: 3px;
+    ]])  
+    XPbar.text:setStyleSheet([[
       font-weight: bold;
     ]])  
 end
