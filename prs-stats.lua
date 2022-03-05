@@ -2,34 +2,6 @@ PRSstats = PRSstats or {}
 function PRSstats.stats()
   local SUG = require("PRS.sug")
   PRSstats.UW = Geyser.UserWindow:new({name = "Stats", titleText ="Vitals", x = "75%", y = "100", docked = true})
-  
-  -- Experience Points Gauge
-  XPbar = SUG:new({
-    name = "XP",
-    height = 50,
-    width = "95%",
-    updateTime = 250, 
-    textTemplate = "&nbsp;&nbsp;XP: |c / |m",
-    currentVariable = "gmcp.Char.Vitals.xp",
-    maxVariable = "gmcp.Char.Vitals.nl",
-  }, PRSstats.UW)
-    XPbar.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #3399ff, stop: 0.1 #0080ff, stop: 0.49 #0000ff, stop: 0.5 #0000cc, stop: 1 #0000ff);
-      border-top: 1px black solid;
-      border-left: 1px black solid;
-      border-bottom: 1px black solid;
-      border-radius: 7;
-      padding: 3px;
-    ]])
-    XPbar.back:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #0066cc, stop: 0.1 #004c99, stop: 0.49 #000099, stop: 0.5 #000066, stop: 1 #000099);
-      border-width: 1px;
-      border-color: black;
-      border-style: solid;
-      border-radius: 7;
-      padding: 3px;
-    ]])  
-    XPbar.text:setStyleSheet([[
-      font-weight: bold;
-    ]])
 
   -- Hit Points Gauge
   HPbar = SUG:new({
@@ -115,6 +87,34 @@ function PRSstats.stats()
     STbar.text:setStyleSheet([[
       font-weight: bold;
     ]])
+
+    -- Rage Points Gauge
+  RPbar = SUG:new({
+    name="RP",
+    y="280",
+    height=25,
+    width="95%", 
+    updateTime = 250, 
+    textTemplate = "&nbsp;&nbsp;Rage: |c",
+    currentVariable = "gmcp.Char.Vitals.rage",
+    maxrage = 100,
+    maxVariable = "maxrage",
+  }, PRSstats.UW)
+    RPbar.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #f04141, stop: 0.1 #ef2929, stop: 0.49 #cc0000, stop: 0.5 #a40000, stop: 1 #cc0000);
+        border-top: 1px black solid;
+        border-left: 1px black solid;
+        border-bottom: 1px black solid;
+        border-radius: 7;
+        padding: 3px;]])
+    RPbar.back:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #bd3333, stop: 0.1 #bd2020, stop: 0.49 #990000, stop: 0.5 #700000, stop: 1 #990000);
+        border-width: 1px;
+        border-color: black;
+        border-style: solid;
+        border-radius: 7;
+        padding: 3px;]])
+    RPbar.text:setStyleSheet([[
+      font-weight: bold;
+    ]])
     
   -- Combo Points Gauge
   CPbar = SUG:new({
@@ -123,7 +123,7 @@ function PRSstats.stats()
     height=25,
     width="95%", 
     updateTime = 250, 
-    textTemplate = "&nbsp;&nbsp;Combo: |c / |m  (|p%)",
+    textTemplate = "&nbsp;&nbsp;Combo: |c",
     currentVariable = "gmcp.Char.Vitals.combo",
     maxcombo = 100,
     maxVariable = "maxcombo",
@@ -143,32 +143,32 @@ function PRSstats.stats()
     CPbar.text:setStyleSheet([[
       font-weight: bold;
     ]])  
-
-  -- Rage Points Gauge
-  RPbar = SUG:new({
-    name="RP",
-    y="280",
-    height=25,
-    width="95%", 
+    
+  -- Experience Points Gauge
+  XPbar = SUG:new({
+    name = "XP",
+    height = 50,
+    width = "95%",
     updateTime = 250, 
-    textTemplate = "&nbsp;&nbsp;Rage: |c / |m  (|p%)",
-    currentVariable = "gmcp.Char.Vitals.rage",
-    maxrage = 100,
-    maxVariable = "maxrage",
+    textTemplate = "&nbsp;&nbsp;XP: |c / |m",
+    currentVariable = "gmcp.Char.Vitals.xp",
+    maxVariable = "gmcp.Char.Vitals.nl",
   }, PRSstats.UW)
-    RPbar.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #f04141, stop: 0.1 #ef2929, stop: 0.49 #cc0000, stop: 0.5 #a40000, stop: 1 #cc0000);
-        border-top: 1px black solid;
-        border-left: 1px black solid;
-        border-bottom: 1px black solid;
-        border-radius: 7;
-        padding: 3px;]])
-    RPbar.back:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #bd3333, stop: 0.1 #bd2020, stop: 0.49 #990000, stop: 0.5 #700000, stop: 1 #990000);
-        border-width: 1px;
-        border-color: black;
-        border-style: solid;
-        border-radius: 7;
-        padding: 3px;]])
-    RPbar.text:setStyleSheet([[
+    XPbar.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #3399ff, stop: 0.1 #0080ff, stop: 0.49 #0000ff, stop: 0.5 #0000cc, stop: 1 #0000ff);
+      border-top: 1px black solid;
+      border-left: 1px black solid;
+      border-bottom: 1px black solid;
+      border-radius: 7;
+      padding: 3px;
+    ]])
+    XPbar.back:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #0066cc, stop: 0.1 #004c99, stop: 0.49 #000099, stop: 0.5 #000066, stop: 1 #000099);
+      border-width: 1px;
+      border-color: black;
+      border-style: solid;
+      border-radius: 7;
+      padding: 3px;
+    ]])  
+    XPbar.text:setStyleSheet([[
       font-weight: bold;
     ]])  
 end
