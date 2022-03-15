@@ -6,7 +6,6 @@ function PRSstats.stats()
   -- Hit Points Gauge
   HPbar = SUG:new({
     name = "HP",
-    y = "70",
     height = 50,
     width = "95%", -- everything up to here is standard Geyser.Gauge
     updateTime = 250, -- this timer will update every 250ms, or 4 times a second
@@ -35,7 +34,7 @@ function PRSstats.stats()
   -- Energy Points Gauge
   ENbar = SUG:new({
     name = "EN",
-    y = 130,
+    y = 70,
     height = 50,
     width = "95%", 
     updateTime = 250, 
@@ -64,7 +63,7 @@ function PRSstats.stats()
   -- Stamina Points Gauge
   STbar = SUG:new({
     name = "ST",
-    y = 190,
+    y = 130,
     height = 50,
     width = "95%", 
     updateTime = 250, 
@@ -90,10 +89,10 @@ function PRSstats.stats()
 
     -- Rage Points Gauge
   RPbar = SUG:new({
-    name="RP",
-    y="280",
-    height=25,
-    width="95%", 
+    name ="RP",
+    y = 190,
+    height = 25,
+    width = "95%", 
     updateTime = 250, 
     textTemplate = "&nbsp;&nbsp;Rage: |c",
     currentVariable = "gmcp.Char.Vitals.rage",
@@ -118,10 +117,10 @@ function PRSstats.stats()
     
   -- Combo Points Gauge
   CPbar = SUG:new({
-    name="CP",
-    y="250",
-    height=25,
-    width="95%", 
+    name = "CP",
+    y = 225,
+    height = 25,
+    width = "95%", 
     updateTime = 250, 
     textTemplate = "&nbsp;&nbsp;Combo: |c",
     currentVariable = "gmcp.Char.Vitals.combo",
@@ -147,6 +146,7 @@ function PRSstats.stats()
   -- Experience Points Gauge
   XPbar = SUG:new({
     name = "XP",
+    y = 260,
     height = 50,
     width = "95%",
     updateTime = 250, 
