@@ -1,6 +1,6 @@
-local EMCO = require("MDK.emco")
 PRSchat = PRSchat or {}
 function PRSchat.tabs()
+  local EMCO = require("PRS.emco")
   PRSchat.UW = Geyser.UserWindow:new({name = "Chat", titleText ="Procedural Realms", docked = true})
     stylesheet = [[background-color: rgb(80,80,80,255); border-width: 1px; border-style: solid; border-color: black; border-radius: 0px;]]
     istylesheet = [[background-color: rgb(60,60,60,255); border-width: 1px; border-style: solid; border-color: black; border-radius: 0px;]]
@@ -19,6 +19,7 @@ function PRSchat.tabs()
       "Newbie",
       "Trade",
       "Local",
+      "Tell",
       "All",
       "Map",
     },
@@ -29,4 +30,3 @@ function PRSchat.tabs()
     preserveBackground = true,
   }, PRSchat.UW)
 end
-
