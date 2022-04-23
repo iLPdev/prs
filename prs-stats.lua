@@ -86,11 +86,40 @@ function PRSstats.stats()
     STbar.text:setStyleSheet([[
       font-weight: bold;
     ]])
+    
+    -- Food Points Gauge
+  HPbar = SUG:new({
+    name = "FP",
+    y = 190,
+    height = 25,
+    width = "95%",
+    updateTime = 250,
+    textTemplate = "&nbsp;&nbsp;Food: |c / |m  (|p%)",
+    currentVariable = "gmcp.Char.Vitals.food",
+    maxVariable = "gmcp.Char.Vitals.maxfood",
+  }, PRSstats.UW)
+    HPbar.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #98f041, stop: 0.1 #8cf029, stop: 0.49 #66cc00, stop: 0.5 #52a300, stop: 1 #66cc00);
+      border-top: 1px black solid;
+      border-left: 1px black solid;
+      border-bottom: 1px black solid;
+      border-radius: 7;
+      padding: 3px;
+    ]])
+    HPbar.back:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #78bd33, stop: 0.1 #6ebd20, stop: 0.49 #4c9900, stop: 0.5 #387000, stop: 1 #4c9900);
+      border-width: 1px;
+      border-color: black;
+      border-style: solid;
+      border-radius: 7;
+      padding: 3px;
+    ]])
+    HPbar.text:setStyleSheet([[
+      font-weight: bold;
+    ]])
 
     -- Rage Points Gauge
   RPbar = SUG:new({
     name ="RP",
-    y = 190,
+    y = 225,
     height = 25,
     width = "95%", 
     updateTime = 250, 
@@ -118,7 +147,7 @@ function PRSstats.stats()
   -- Combo Points Gauge
   CPbar = SUG:new({
     name = "CP",
-    y = 225,
+    y = 260,
     height = 25,
     width = "95%", 
     updateTime = 250, 
@@ -146,7 +175,7 @@ function PRSstats.stats()
   -- Experience Points Gauge
   XPbar = SUG:new({
     name = "XP",
-    y = 260,
+    y = 295,
     height = 50,
     width = "95%",
     updateTime = 250, 
