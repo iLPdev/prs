@@ -1,7 +1,7 @@
 PRSstats = PRSstats or {}
 function PRSstats.stats()
   local SUG = require("PRS.sug")
-  PRSstats.UW = Geyser.UserWindow:new({name = "Stats", titleText ="Vitals", x = "75%", y = "100", docked = true})
+  PRSstats.UW = Geyser.UserWindow:new({name = "Stats", titleText ="Vitals", x = "75%", y = "50%", height="50%", docked = true})
 
   -- Hit Points Gauge
   HPbar = SUG:new({
