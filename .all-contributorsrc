@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "dinchak",
+      "name": "Tom Dinchak",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1166681?v=4",
+      "profile": "https://soundcloud.com/phortran",
+      "contributions": [
+        "code",
+        "ideas"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "prs",
+  "projectOwner": "iLPdev",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
