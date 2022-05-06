@@ -36,6 +36,8 @@ local terrain_types = {
     ["Farmland"] = {id = 29, r = 255, g = 255, b = 0},
     ["Deep Water"] = {id = 30, r = 0, g = 0, b = 128},
     ["Gate"] = {id = 31, r = 255, g = 255, b = 0},
+    ["Nexus"] = {id = 32, r = 128, g = 128, b = 128},
+    ["Wall"] = {id = 33, r = 64, g = 64, b = 64},
 }
 
 -- list of possible movement directions and appropriate coordinate changes
@@ -72,40 +74,14 @@ end
 
 local function make_room()
     local info = map.room_info
-    local coords = {0,0,0}
+    local coords = {info.x,-info.y,0}
     addRoom(info.vnum)
-	  setRoomName(info.vnum, info.name)
+    setRoomName(info.vnum, info.name)
     local areas = getAreaTable()
     local areaID = areas[info.area]
     if not areaID then
         areaID = addAreaName(info.area)
-    else
-        coords = {getRoomCoordinates(map.prev_info.vnum)}
-        local shift = {0,0,0}
-        for k,v in pairs(info.exits) do
-            if v == map.prev_info.vnum and move_vectors[k] then
-                shift = move_vectors[k]
-                break
-            end
-        end
-        for n = 1,3 do
-            coords[n] = coords[n] - shift[n]
-        end
-        -- map stretching
-        local overlap = getRoomsByPosition(areaID,coords[1],coords[2],coords[3])
-        if not table.is_empty(overlap) then
-            local rooms = getAreaRooms(areaID)
-            local rcoords
-            for _,id in ipairs(rooms) do
-                rcoords = {getRoomCoordinates(id)}
-                for n = 1,3 do
-                    if shift[n] ~= 0 and (rcoords[n] - coords[n]) * shift[n] <= 0 then
-                        rcoords[n] = rcoords[n] - shift[n]
-                    end
-                end
-                setRoomCoordinates(id,rcoords[1],rcoords[2],rcoords[3])
-            end
-        end
+        setGridMode(areaID, true)
     end
     setRoomArea(info.vnum, areaID)
     setRoomCoordinates(info.vnum, coords[1], coords[2], coords[3])
@@ -287,6 +263,8 @@ function map.eventHandler(event,...)
         map.room_info = {
           vnum = tonumber(gmcp.room.info.num),
           area = gmcp.room.info.zone,
+          x = tonumber(gmcp.room.info.x),
+          y = tonumber(gmcp.room.info.y),
           name = gmcp.room.info.name,
           terrain = gmcp.room.info.terrain,
           exits = gmcp.room.info.exits
