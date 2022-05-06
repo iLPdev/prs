@@ -3,7 +3,7 @@
 <!-- PROJECT BANNER -->
 <div>
     <br />
-    <p align="center">
+    <p align="left">
         <a href=".github/images/procrealms-mudlet-alt-4x.png">
           <img src=".github/images/procrealms-mudlet-alt-4x.png" alt="Procedural Realms Logo" width="auto" height="auto">
         </a>
