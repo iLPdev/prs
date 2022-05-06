@@ -30,7 +30,7 @@ function PRSstats.stats()
     HPbar.text:setStyleSheet([[
       font-weight: bold;
     ]])
-    
+
   -- Energy Points Gauge
   ENbar = SUG:new({
     name = "EN",
@@ -59,7 +59,7 @@ function PRSstats.stats()
     ENbar.text:setStyleSheet([[
       font-weight: bold;
     ]])
-    
+
   -- Stamina Points Gauge
   STbar = SUG:new({
     name = "ST",
@@ -86,7 +86,7 @@ function PRSstats.stats()
     STbar.text:setStyleSheet([[
       font-weight: bold;
     ]])
-    
+
     -- Food Points Gauge
   HPbar = SUG:new({
     name = "FP",
@@ -125,8 +125,7 @@ function PRSstats.stats()
     updateTime = 250, 
     textTemplate = "&nbsp;&nbsp;Rage: |c",
     currentVariable = "gmcp.Char.Vitals.rage",
-    maxrage = 100,
-    maxVariable = "maxrage",
+    maxVariable = "gmcp.Char.Vitals.maxrage",
   }, PRSstats.UW)
     RPbar.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #f04141, stop: 0.1 #ef2929, stop: 0.49 #cc0000, stop: 0.5 #a40000, stop: 1 #cc0000);
         border-top: 1px black solid;
@@ -143,7 +142,7 @@ function PRSstats.stats()
     RPbar.text:setStyleSheet([[
       font-weight: bold;
     ]])
-    
+
   -- Combo Points Gauge
   CPbar = SUG:new({
     name = "CP",
@@ -153,8 +152,7 @@ function PRSstats.stats()
     updateTime = 250, 
     textTemplate = "&nbsp;&nbsp;Combo: |c",
     currentVariable = "gmcp.Char.Vitals.combo",
-    maxcombo = 100,
-    maxVariable = "maxcombo",
+    maxVariable = "gmcp.Char.Vitals.maxcombo",
   }, PRSstats.UW)
     CPbar.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #f04141, stop: 0.1 #ef2929, stop: 0.49 #cc0000, stop: 0.5 #a40000, stop: 1 #cc0000);
         border-top: 1px black solid;
