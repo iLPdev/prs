@@ -1,15 +1,15 @@
 # Procedural Realms Script
 
-<!-- PROJECT BANNER 
+<!-- PROJECT BANNER -->
 <div>
     <br />
-    <p align="center">
-        <a href=".github/images/discMapper_logo.png">
-          <img src=".github/images/discMapper_logo.png" alt="discMapper Logo" width="auto" height="auto">
+    <p align="left">
+        <a href=".github/images/procrealms-mudlet-alt-4x.png">
+          <img src=".github/images/procrealms-mudlet-alt-4x.png" alt="Procedural Realms Logo" width="auto" height="auto">
         </a>
     </p>  
 </div>
--->
+
 
 <!-- PROJECT BADGES -->
 [![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/iLPdev/prs?include_prereleases&sort=semver&style=flat-square)](https://github.com/iLPdev/prs/releases/latest) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section --> [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-) <!-- ALL-CONTRIBUTORS-BADGE:END --> [![Issues][issues-shield]][issues-url] [![GPL License][license-shield]][license-url] [![standard-readme compliant][standard-readme-shield]][standard-readme-url]
