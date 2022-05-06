@@ -52,7 +52,8 @@ Mudlet Forum Topic: [https://forums.mudlet.org/viewtopic.php?f=6&t=23126]
 
 #### Milestones
 
-- v0.5.0 - Begin package installation devlopment
+- v0.12.0 - Mini-map Congruence Achieved
+- v0.5.0 - Begin package installation development
 - v0.1.2 - Fixed exitstub tracking
 - v0.2.1 - Fixed speedwalk
 
@@ -87,9 +88,9 @@ Version numbering approximates the [Semantic Versioning](http://semver.org) appr
 
 [![Status Ventis][status-ventis]][andivionian-status-classifier] ![Travis (.com) branch](https://img.shields.io/travis/com/iLPdev/discMapper/develop?style=flat)
 
-- **Project State**: Prcedural Realms Script is under active development. The application can be used, but may be unstable. We are in need of beta testing prior to moving forward with the v1.0.0 release.
+- **Project State**: Procedural Realms Script is under active development. The application can be used, but may be unstable. We are in need of beta testing prior to moving forward with the v1.0.0 release.
 
-- **Current Release**: v0.11.0
+- **Current Release**: v0.12.0
 
 **[^Top](#table-of-contents)**
 
