@@ -15,7 +15,7 @@ function PRSchat.tabs()
     gap = 2,
     consoleColor = "black",
     consoles = {
-      "Gossip",
+      "Chat",
       "Newbie",
       "Trade",
       "Local",
