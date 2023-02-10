@@ -280,7 +280,7 @@ function map.speedwalk(roomID, walkPath, walkDirs)
       echo("Error: could not identify the current area.\n")
       return
     end
-    local current_room_id = get_room_id_by_coordinates(map.current_room.area, map.current_room.coords.x, -map.current_room.coords.y, map.current_room.coords.z)
+    local current_room_id = get_room_id_by_coordinates(map.current_room.area, map.current_room.coords.x, map.current_room.coords.y, map.current_room.coords.z)
     if current_room_id == nil then
       echo("Error: could not find the current room in the map.\n")
       return
