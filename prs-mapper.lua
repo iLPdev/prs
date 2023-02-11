@@ -354,7 +354,7 @@ function map.eventHandler(event,...)
           y = tonumber(gmcp.room.info.y),
           name = gmcp.room.info.name,
           terrain = gmcp.room.info.terrain,
-          exits = gmcp.room.info.exits
+          exits = table.deepcopy(gmcp.room.info.exits)
         }
         for k,v in pairs(map.room_info.exits) do
             map.room_info.exits[k] = tonumber(v)
