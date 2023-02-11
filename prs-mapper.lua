@@ -9,13 +9,6 @@ mudlet = mudlet or {}; mudlet.mapper_script = true
 map = map or {}
 map.room_info = map.room_info or {}
 map.prev_info = map.prev_info or {}
-map.current_room = map.current_room or {}
-map.current_room.id = map.current_room.id or nil
-map.current_room.area = map.current_room.area or nil
-map.current_room.coords = map.current_room.coords or {}
-map.current_room.coords.x = map.current_room.coords.x or nil
-map.current_room.coords.y = map.current_room.coords.y or nil
-map.current_room.coords.z = map.current_room.coords.z or 0
 map.aliases = map.aliases or {}
 map.events = map.events or {}
 map.configs = map.configs or {}
@@ -94,17 +87,6 @@ local reverse_dir = {
 local short = {}
 for k,v in pairs(exitmap) do
     short[v] = k
-end
-
-function display_area(area_id)
-  local area = getAreaRooms(area_id)
-  if area then
-    echo("Area #"..area_id.." has "..table.getn(area).." rooms:\n")
-    for i=0,table.size(area) do
-      local r_x, r_y, r_z = getRoomCoordinates(area[i])
-      echo("\t"..i..": id:"..area[i].." x:"..r_x.." y:"..r_y.." z:"..r_z.."\n")
-    end
-  end
 end
 
 local function get_room_id_by_coordinates(area_name, x, y, z)
@@ -275,12 +257,12 @@ end
 function map.speedwalk(roomID, walkPath, walkDirs)
     roomID = roomID or speedWalkPath[#speedWalkPath]
     local areas = getAreaTable()
-    local area_id = areas[map.current_room.area]
+    local area_id = areas[gmcp.Char.room.area]
     if area_id == nil then
       echo("Error: could not identify the current area.\n")
       return
     end
-    local current_room_id = get_room_id_by_coordinates(map.current_room.area, map.current_room.coords.x, map.current_room.coords.y, map.current_room.coords.z)
+    local current_room_id = get_room_id_by_coordinates(gmcp.Char.room.area, gmcp.Char.room.x, -gmcp.Char.room.y, 0)
     if current_room_id == nil then
       echo("Error: could not find the current room in the map.\n")
       return
@@ -371,6 +353,7 @@ function map.eventHandler(event,...)
         config()
     end
 end
+
 if map.events.room_info_id then killAnonymousEventHandler(map.events.room_info_id) end -- clean up any already registered handlers for this function
 map.events.room_info_id = registerAnonymousEventHandler("gmcp.room.info","map.eventHandler")
 if map.events.shift_room_id then killAnonymousEventHandler(map.events.shift_room_id) end -- clean up any already registered handlers for this function
@@ -378,28 +361,12 @@ map.events.shift_room_id = registerAnonymousEventHandler("shiftRoom","map.eventH
 if map.events.connect_id then killAnonymousEventHandler(map.events.connect_id) end -- clean up any already registered handlers for this function
 map.events.connect_id = registerAnonymousEventHandler("sysConnectionEvent", "map.eventHandler")
 if map.events.centering_id then killAnonymousEventHandler(map.events.centering_id) end -- clean up any already registered handlers for this function
-map.events.centering_id = registerAnonymousEventHandler("gmcp.Char.State", function(event, args)
-  if gmcp.Char.State.update == nil then return end
-  if gmcp.Char.State.update.room == nil then return end
+map.events.centering_id = registerAnonymousEventHandler("gmcp.Char.room", function(event, args)
   
-  if gmcp.Char.State.update.room.area then
-    if gmcp.Char.State.update.room.area == "Battlefield" then return end
-    map.current_room.area = gmcp.Char.State.update.room.area
-  end
+  if gmcp.Char.room.area == "Battlefield" then return end
   
-  if gmcp.Char.State.update.room.x then
-    map.current_room.coords.x = gmcp.Char.State.update.room.x
-  end
-  
-  if gmcp.Char.State.update.room.y then
-    map.current_room.coords.y = -gmcp.Char.State.update.room.y
-  end
-  
-  if gmcp.Char.State.update.room.id == nil then return end
-  
-  local room_id = get_room_id_by_coordinates(map.current_room.area, map.current_room.coords.x, map.current_room.coords.y, 0)
+  local room_id = get_room_id_by_coordinates(gmcp.Char.room.area, gmcp.Char.room.x, -gmcp.Char.room.y, 0)
   if room_id ~= nil then
     centerview(room_id)
-    map.current_room.id = room_id
   end
 end)

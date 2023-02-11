@@ -1,4 +1,9 @@
 PRSstats = PRSstats or {}
+PRSstats.events = PRSstats.events or {}
+PRSstats.xp = PRSstats.xp or {}
+PRSstats.xp.current = PRSstats.xp.current or 50
+PRSstats.xp.tnl = PRSstats.xp.tnl or 100
+
 function PRSstats.stats()
   local SUG = require("PRS.sug")
   PRSstats.UW = Geyser.UserWindow:new({name = "Stats", titleText ="Vitals", x = "75%", y = "50%", height="50%", docked = true})
@@ -6,12 +11,12 @@ function PRSstats.stats()
   -- Hit Points Gauge
   HPbar = SUG:new({
     name = "HP",
-    height = 50,
+    height = 25,
     width = "95%", -- everything up to here is standard Geyser.Gauge
     updateTime = 250, -- this timer will update every 250ms, or 4 times a second
     textTemplate = "&nbsp;&nbsp;HP: |c / |m  (|p%)", -- gauge will show "HP: 500/1000 (50%)" as the text if you had 500 current and 1000 max hp
-    currentVariable = "gmcp.Char.Vitals.hp", --if gmcp.Char.Vitals.hp is nil or unreachable, it will use the defaultCurrent of 50
-    maxVariable = "gmcp.Char.Vitals.maxhp",  --if gmcp.Char.Vitals.maxhp is nil or unreachable, it will use the defaultMax of 100
+    currentVariable = "gmcp.Char.player.hp", --if gmcp.Char.Vitals.hp is nil or unreachable, it will use the defaultCurrent of 50
+    maxVariable = "gmcp.Char.player.maxHp",  --if gmcp.Char.Vitals.maxhp is nil or unreachable, it will use the defaultMax of 100
   }, PRSstats.UW)
     HPbar.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #98f041, stop: 0.1 #8cf029, stop: 0.49 #66cc00, stop: 0.5 #52a300, stop: 1 #66cc00);
       border-top: 1px black solid;
@@ -34,13 +39,13 @@ function PRSstats.stats()
   -- Energy Points Gauge
   ENbar = SUG:new({
     name = "EN",
-    y = 70,
-    height = 50,
+    y = 45,
+    height = 25,
     width = "95%", 
     updateTime = 250, 
     textTemplate = "&nbsp;&nbsp;EN: |c / |m  (|p%)",
-    currentVariable = "gmcp.Char.Vitals.en",
-    maxVariable = "gmcp.Char.Vitals.maxen",
+    currentVariable = "gmcp.Char.player.energy",
+    maxVariable = "gmcp.Char.player.maxEnergy",
   }, PRSstats.UW)
     ENbar.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #eeeeee, stop: 0.49 #cccccc, stop: 0.5 #aaaaaa, stop: 1 #cccccc);
       border-top: 1px black solid;
@@ -63,13 +68,13 @@ function PRSstats.stats()
   -- Stamina Points Gauge
   STbar = SUG:new({
     name = "ST",
-    y = 130,
-    height = 50,
+    y = 80,
+    height = 25,
     width = "95%", 
     updateTime = 250, 
     textTemplate = "&nbsp;&nbsp;ST: |c / |m  (|p%)",
-    currentVariable = "gmcp.Char.Vitals.st",
-    maxVariable = "gmcp.Char.Vitals.maxst",
+    currentVariable = "gmcp.Char.players.stamina",
+    maxVariable = "gmcp.Char.players.maxStamina",
   }, PRSstats.UW)
     STbar.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffff50, stop: 0.1 #ffe200, stop: 0.49 #c1c100, stop: 0.5 #a4a40c, stop: 1 #c1c100);
       border-top: 1px black solid;
@@ -90,13 +95,13 @@ function PRSstats.stats()
     -- Food Points Gauge
   HPbar = SUG:new({
     name = "FP",
-    y = 190,
+    y = 115,
     height = 25,
     width = "95%",
     updateTime = 250,
     textTemplate = "&nbsp;&nbsp;Food: |c / |m  (|p%)",
-    currentVariable = "gmcp.Char.Vitals.food",
-    maxVariable = "gmcp.Char.Vitals.maxfood",
+    currentVariable = "gmcp.Char.player.food",
+    maxVariable = "gmcp.Char.player.maxFood",
   }, PRSstats.UW)
     HPbar.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #98f041, stop: 0.1 #8cf029, stop: 0.49 #66cc00, stop: 0.5 #52a300, stop: 1 #66cc00);
       border-top: 1px black solid;
@@ -119,13 +124,13 @@ function PRSstats.stats()
     -- Rage Points Gauge
   RPbar = SUG:new({
     name ="RP",
-    y = 225,
+    y = 150,
     height = 25,
     width = "95%", 
     updateTime = 250, 
     textTemplate = "&nbsp;&nbsp;Rage: |c",
-    currentVariable = "gmcp.Char.Vitals.rage",
-    maxVariable = "gmcp.Char.Vitals.maxrage",
+    currentVariable = "gmcp.Char.player.rage",
+    maxVariable = "gmcp.Char.player.maxRage",
   }, PRSstats.UW)
     RPbar.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #f04141, stop: 0.1 #ef2929, stop: 0.49 #cc0000, stop: 0.5 #a40000, stop: 1 #cc0000);
         border-top: 1px black solid;
@@ -146,13 +151,13 @@ function PRSstats.stats()
   -- Combo Points Gauge
   CPbar = SUG:new({
     name = "CP",
-    y = 260,
+    y = 185,
     height = 25,
     width = "95%", 
     updateTime = 250, 
     textTemplate = "&nbsp;&nbsp;Combo: |c",
-    currentVariable = "gmcp.Char.Vitals.combo",
-    maxVariable = "gmcp.Char.Vitals.maxcombo",
+    currentVariable = "gmcp.Char.player.combo",
+    maxVariable = "gmcp.Char.player.maxCombo",
   }, PRSstats.UW)
     CPbar.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #f04141, stop: 0.1 #ef2929, stop: 0.49 #cc0000, stop: 0.5 #a40000, stop: 1 #cc0000);
         border-top: 1px black solid;
@@ -173,13 +178,13 @@ function PRSstats.stats()
   -- Experience Points Gauge
   XPbar = SUG:new({
     name = "XP",
-    y = 295,
-    height = 50,
+    y = 220,
+    height = 25,
     width = "95%",
     updateTime = 250, 
-    textTemplate = "&nbsp;&nbsp;XP: |c / |m",
-    currentVariable = "gmcp.Char.Vitals.xp",
-    maxVariable = "gmcp.Char.Vitals.nl",
+    textTemplate = "&nbsp;&nbsp;XP: |c / |m   (|p%)",
+    currentVariable = "PRSstats.xp.current",
+    maxVariable = "PRSstats.xp.max"
   }, PRSstats.UW)
     XPbar.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #3399ff, stop: 0.1 #0080ff, stop: 0.49 #0000ff, stop: 0.5 #0000cc, stop: 1 #0000ff);
       border-top: 1px black solid;
@@ -199,3 +204,19 @@ function PRSstats.stats()
       font-weight: bold;
     ]])  
 end
+
+if PRSstats.events.xp_id then killAnonymousEventHandler(PRSstats.events.xp_id) end
+PRSstats.events.xp_id = registerAnonymousEventHandler("gmcp.Char.player.xp", function()
+  PRSstats.xp.current = gmcp.Char.player.xp - gmcp.Char.player.xpForCurrentLevel
+end)
+
+if PRSstats.events.xpForCurrentLevel_id then killAnonymousEventHandler(PRSstats.events.xpForCurrentLevel_id) end
+PRSstats.events.xpForCurrentLevel_id = registerAnonymousEventHandler("gmcp.Char.player.xpForCurrentLevel", function()
+  PRSstats.xp.current = gmcp.Char.player.xp - gmcp.Char.player.xpForCurrentLevel
+  PRSstats.xp.max = gmcp.Char.player.xpForNextLevel - gmcp.Char.player.xpForCurrentLevel
+end)
+
+if PRSstats.events.xpForNextLevel_id then killAnonymousEventHandler(PRSstats.events.xpForNextLevel_id) end
+PRSstats.events.xpForNextLevel_id = registerAnonymousEventHandler("gmcp.Char.player.xpForNextLevel", function()
+  PRSstats.xp.max = gmcp.Char.player.xpForNextLevel - gmcp.Char.player.xpForCurrentLevel
+end)
