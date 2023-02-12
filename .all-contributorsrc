@@ -1,0 +1,42 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "dinchak",
+      "name": "Tom Dinchak",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1166681?v=4",
+      "profile": "https://soundcloud.com/phortran",
+      "contributions": [
+        "code",
+        "ideas"
+      ]
+    },
+    {
+      "login": "iLPdev",
+      "name": "iLPdev",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1428343?v=4",
+      "profile": "https://github.com/iLPdev",
+      "contributions": [
+        "code",
+        "doc",
+        "design",
+        "ideas",
+        "maintenance",
+        "projectManagement",
+        "review",
+        "test",
+        "infra"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "prs",
+  "projectOwner": "iLPdev",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
