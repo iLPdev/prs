@@ -73,8 +73,8 @@ function PRSstats.stats()
     width = "95%", 
     updateTime = 250, 
     textTemplate = "&nbsp;&nbsp;ST: |c / |m  (|p%)",
-    currentVariable = "gmcp.Char.players.stamina",
-    maxVariable = "gmcp.Char.players.maxStamina",
+    currentVariable = "gmcp.Char.player.stamina",
+    maxVariable = "gmcp.Char.player.maxStamina",
   }, PRSstats.UW)
     STbar.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffff50, stop: 0.1 #ffe200, stop: 0.49 #c1c100, stop: 0.5 #a4a40c, stop: 1 #c1c100);
       border-top: 1px black solid;
