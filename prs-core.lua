@@ -78,6 +78,9 @@ local function get_dropped_and_added_affects(old_affects, new_affects)
 end
   
 function core.on_gmcp_char(event, args)
+    if not gmcp.Char.State then return end
+    if not gmcp.Char.State.update then return end
+    
     local diff_table = gmcp.Char.State.update
     
     local dropped = {}
@@ -102,6 +105,9 @@ function core.on_gmcp_char(event, args)
 end
   
 function core.on_gmcp_char_state(event, args)
+    if not gmcp.Char.State then return end
+    if not gmcp.Char.State.update then return end
+    
     local diff_table = gmcp.Char.State.update
     
     local dropped = {}
