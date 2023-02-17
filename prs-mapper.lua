@@ -4,12 +4,16 @@
 -- forums in the generic mapper thread with pieces from Jor'Mox's generic mapper
 -- script and the mmpkg mapper by breakone9r.
 
+mudlet = mudlet or {}; mudlet.mapper_script = true
+
 map = map or {}
 map.room_info = map.room_info or {}
 map.prev_info = map.prev_info or {}
 map.aliases = map.aliases or {}
+map.events = map.events or {}
 map.configs = map.configs or {}
-map.configs.speedwalk_delay = 0
+map.configs.speedwalk_delay = .2
+
 
 local defaults = {
     -- using Geyser to handle the mapper in this, since this is a totally new script
@@ -67,66 +71,119 @@ local stubmap = {
     [17] = "eastup", [18] = "westdown", [19] = "westup",    [20] = "eastdown",
 }
 
+local reverse_dir = {
+  n = "s",
+  e = "w",
+  s = "n",
+  w = "e",
+  ne = "sw",
+  nw = "se",
+  se = "nw",
+  sw = "ne",
+  d = "u",
+  u = "d"
+}
+
 local short = {}
 for k,v in pairs(exitmap) do
     short[v] = k
 end
 
+local function get_room_id_by_coordinates(area_name, x, y, z)
+  local result = getRoomIDbyHash(area_name..":"..x..","..y..","..z)
+  if result == -1 then
+    return nil
+  else
+    return result
+  end
+end
+
 local function make_room()
-    local info = map.room_info
-    local coords = {info.x,-info.y,0}
-    addRoom(info.vnum)
-    setRoomName(info.vnum, info.name)
-    local areas = getAreaTable()
-    local areaID = areas[info.area]
-    if not areaID then
-        areaID = addAreaName(info.area)
-        setGridMode(areaID, true)
+  local info = map.room_info
+  local coords = {info.x,-info.y,0}
+  local room_id = createRoomID()
+  if not addRoom(room_id) then
+    echo("Error: call to addRoom failed.\n")
+  end
+  
+  setRoomIDbyHash(room_id, info.area..":"..coords[1]..","..coords[2]..","..coords[3])
+  
+  setRoomName(room_id, info.name)
+  
+  local areas = getAreaTable()
+  
+  local area_id
+  if areas[info.area] == nil then
+    local areaID, err = addAreaName(info.area)
+    if areaID == nil or areaID < 1 or err then
+      echo("Error: new area name could not be added - error is: ".. err.."\n")
+      return
+    else
+      setGridMode(areaID, true)
+      area_id = areaID
     end
-    setRoomArea(info.vnum, areaID)
-    setRoomCoordinates(info.vnum, coords[1], coords[2], coords[3])
-    if terrain_types[info.terrain] then
-        setRoomEnv(info.vnum, terrain_types[info.terrain].id)
+  else
+    area_id = areas[info.area]
+  end
+  
+  if not area_id == getRoomArea(room_id) then
+    echo("Error: room area was not set successfully.\n")
+  end
+  setRoomArea(room_id, area_id)
+  setRoomCoordinates(room_id, coords[1], coords[2], coords[3])
+  if terrain_types[info.terrain] then
+    setRoomEnv(room_id, terrain_types[info.terrain].id)
+  end
+  
+  for dir, _ in pairs(info.exits) do
+    setExitStub(room_id, dir, true)
+
+    local exit_coords_delta = move_vectors[dir]
+    local exit_room_id = get_room_id_by_coordinates(info.area, coords[1] + exit_coords_delta[1], coords[2] + exit_coords_delta[2], coords[3] + exit_coords_delta[3])
+    if exit_room_id ~= nill then
+      connectExitStub(room_id, dir)
     end
-    for dir, id in pairs(info.exits) do
-        -- need to see how special exits are represented to handle those properly here
-        if getRoomName(id) then
-            setExit(info.vnum, id, dir)
-        else
-            setExitStub(info.vnum, dir, true)
-        end
-    end
+  end
 end
 
 local function shift_room(dir)
-    local ID = map.room_info.vnum
-    local x,y,z = getRoomCoordinates(ID)
-    local x1,y1,z1 = table.unpack(move_vectors[dir])
-    x = x + x1
-    y = y + y1
-    z = z + z1
-    setRoomCoordinates(ID,x,y,z)
-    updateMap()
+  local ID = get_room_id_by_coordinates(map.room_info.area, map.room_info.x, -map.room_info.y, 0)
+  local x,y,z = getRoomCoordinates(ID)
+  local x1,y1,z1 = table.unpack(move_vectors[dir])
+  x = x + x1
+  y = y + y1
+  z = z + z1
+  setRoomCoordinates(ID,x,y,z)
+  updateMap()
 end
 
 local function handle_move()
-    local info = map.room_info
-    if not getRoomName(info.vnum) then
-        make_room()
-    else
-        local stubs = getExitStubs1(info.vnum)
-		if stubs then
-          for _, n in ipairs(stubs) do
-              local dir = stubmap[n]
-              local id = info.exits[dir]
-              -- need to see how special exits are represented to handle those properly here
-              if id and getRoomName(id) then
-                  setExit(info.vnum, id, dir)
-              end
-          end
-		end
+  local info = map.room_info
+  local room_id = get_room_id_by_coordinates(info.area, info.x, -info.y, 0)
+  
+  if not room_id then
+    make_room()
+  else
+    local stubs = getExitStubs1(room_id)
+    if stubs == nil then return end
+    
+    local areas = getAreaTable()
+    local area_id = areas[info.area]
+    if area_id == nil then
+      echo("Error: found an existant room with an unmapped area id.\n")
+      return
     end
-    centerview(map.room_info.vnum)
+    
+    local coords = {info.x,-info.y,0}
+    
+    for _, v in pairs(stubs) do
+      local exit_coords_delta = move_vectors[stubmap[v]]
+      local exit_room_id = get_room_id_by_coordinates(info.area, coords[1] + exit_coords_delta[1], coords[2] + exit_coords_delta[2], coords[3] + exit_coords_delta[3])
+      if exit_room_id ~= nill then
+        connectExitStub(room_id, dir)
+      end
+    end
+  end
 end
 
 local function config()
@@ -145,7 +202,7 @@ local function config()
     map.aliases = {}
     -- making an alias to let the user shift a room around via command line
     table.insert(map.aliases,tempAlias([[^shift (\w+)$]],[[raiseEvent("shiftRoom",matches[2])]]))
-	table.insert(map.aliases,tempAlias([[^make_room$]],[[make_room()]]))
+	  table.insert(map.aliases,tempAlias([[^make_room$]],[[make_room()]]))
 end
 
 local function check_doors(roomID,exits)
@@ -199,14 +256,26 @@ end
 
 function map.speedwalk(roomID, walkPath, walkDirs)
     roomID = roomID or speedWalkPath[#speedWalkPath]
-    getPath(map.room_info.vnum, roomID)
+    local areas = getAreaTable()
+    local area_id = areas[gmcp.Char.room.area]
+    if area_id == nil then
+      echo("Error: could not identify the current area.\n")
+      return
+    end
+    local current_room_id = get_room_id_by_coordinates(gmcp.Char.room.area, gmcp.Char.room.x, -gmcp.Char.room.y, 0)
+    if current_room_id == nil then
+      echo("Error: could not find the current room in the map.\n")
+      return
+    end
+
+    getPath(current_room_id, roomID)
     walkPath = speedWalkPath
     walkDirs = speedWalkDir
     if #speedWalkPath == 0 then
         echo("No path to chosen room found.",false,true)
         return
     end
-    table.insert(walkPath, 1, map.room_info.vnum)
+    table.insert(walkPath, 1, current_room_id)
     -- go through dirs to find doors that need opened, etc
     -- add in necessary extra commands to walkDirs table
     local k = 1
@@ -261,13 +330,13 @@ function map.eventHandler(event,...)
     if event == "gmcp.room.info" then
         map.prev_info = map.room_info
         map.room_info = {
-          vnum = tonumber(gmcp.room.info.num),
+          vnum = gmcp.room.info.num,
           area = gmcp.room.info.zone,
           x = tonumber(gmcp.room.info.x),
           y = tonumber(gmcp.room.info.y),
           name = gmcp.room.info.name,
           terrain = gmcp.room.info.terrain,
-          exits = gmcp.room.info.exits
+          exits = table.deepcopy(gmcp.room.info.exits)
         }
         for k,v in pairs(map.room_info.exits) do
             map.room_info.exits[k] = tonumber(v)
@@ -285,6 +354,19 @@ function map.eventHandler(event,...)
     end
 end
 
-registerAnonymousEventHandler("gmcp.room.info","map.eventHandler")
-registerAnonymousEventHandler("shiftRoom","map.eventHandler")
-registerAnonymousEventHandler("sysConnectionEvent", "map.eventHandler")
+if map.events.room_info_id then killAnonymousEventHandler(map.events.room_info_id) end -- clean up any already registered handlers for this function
+map.events.room_info_id = registerAnonymousEventHandler("gmcp.room.info","map.eventHandler")
+if map.events.shift_room_id then killAnonymousEventHandler(map.events.shift_room_id) end -- clean up any already registered handlers for this function
+map.events.shift_room_id = registerAnonymousEventHandler("shiftRoom","map.eventHandler")
+if map.events.connect_id then killAnonymousEventHandler(map.events.connect_id) end -- clean up any already registered handlers for this function
+map.events.connect_id = registerAnonymousEventHandler("sysConnectionEvent", "map.eventHandler")
+if map.events.centering_id then killAnonymousEventHandler(map.events.centering_id) end -- clean up any already registered handlers for this function
+map.events.centering_id = registerAnonymousEventHandler("gmcp.Char.room", function(event, args)
+  
+  if gmcp.Char.room.area == "Battlefield" then return end
+  
+  local room_id = get_room_id_by_coordinates(gmcp.Char.room.area, gmcp.Char.room.x, -gmcp.Char.room.y, 0)
+  if room_id ~= nil then
+    centerview(room_id)
+  end
+end)
