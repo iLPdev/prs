@@ -24,7 +24,7 @@
 </p>
 
 <!-- LONG DESCRIPTION --> 
-The Procedural Realms Script [PRS] project gives [Procedural Realms MUD](http://textdimension.com/) players improved access to the advanced features of the [Mudlet](https://www.mudlet.org) MUD client. By leveraging the specific "out of band" packets sent by Procedural Realms' server, PRS correcly identifies rooms, stops creation of duplicate rooms, and accurately tracks your character's location on the map as you move about the realm. Additional convenience features include autosetting terrain colors, self-updating gauges for vitals, chat containers, and adjustable UI layout.
+The Procedural Realms Script [PRS] project gives [Procedural Realms MUD](http://textdimension.com/) players improved access to the advanced features of the [Mudlet](https://www.mudlet.org) MUD client. By leveraging the specific "out of band" packets sent by Procedural Realms' server, PRS uses Mudlet's mapper to identifies rooms/exits, prevent creation of duplicate rooms/areas, manage instanced areas, and accurately track your character's location on the map as you move about the realm. Additional convenience features include speedwalking/pathfinding, autosetting map terrain colors, self-updating gauges for vitals, communication containers, and a user-adjustable UI layout.
 
 Project Link: [https://github.com/iLPdev/prs]<br />
 Mudlet Forum Topic: [https://forums.mudlet.org/viewtopic.php?f=6&t=23126]
@@ -44,7 +44,7 @@ Mudlet Forum Topic: [https://forums.mudlet.org/viewtopic.php?f=6&t=23126]
 <!-- ABOUT THE PROJECT -->
 ## Background
 
-<p align="center">
+<p> <!-- align="center">
     <a href="prs-screenshot-01.jpg" alt="" title="Piprede Obelisk"><img src="prs-screenshot-01.jpg" height="200" align="left"/></a> 
     <!--<a href="prs-screenshot-02.jpg" alt="" title="EMCO Chat"><img src="prs-screenshot-02.jpg" height="200" align="float"/></a> -->
 </p>
@@ -53,10 +53,10 @@ Mudlet Forum Topic: [https://forums.mudlet.org/viewtopic.php?f=6&t=23126]
 
 #### Milestones
 
-- v0.12.0 - Mini-map Congruence Achieved
-- v0.5.0 - Begin package installation development
-- v0.1.2 - Fixed exitstub tracking
-- v0.2.1 - Fixed speedwalk
+- v1.1.0 - Management of Instanced Areas
+- v1.0.0 - Dynamic Event-based Mapping Infrastructure
+- v0.12.0 - Mini-Map Congruence
+- v0.5.0 - Drag-and-Drop Package Installation
 
 <!-- ### Vision
 
@@ -64,11 +64,10 @@ As complement to a planned Mudlet UI for Discworld MUD, the aim of this project 
 
 ### Features
 
-- Automatic GMCP mapping of Procedural Realms MUD
-- Automatic GMCP room styling based on terrain.
-  - Matches colors in PR's 'map' and 'look' quickmap.
-- Tabbed Chat -- Adjustable, dockable, resizable, and no conversations lost in scroll!
-- Self-updating gauges for charcater vitals, including Hit Points, Energy, Stamina, and eXperience Points.
+- Automatic GMCP mapping of Procedural Realms MUD, including instanced areas/zones.
+- Automatic GMCP room styling based on terrain to matches colors in PR's 'map' and 'look' quickmap.
+- Tabbed Communications Channels -- Adjustable, dockable, resizable, and no conversations lost in scroll!
+- Self-updating gauges for character vitals, including Hit Points, Energy, Stamina, and eXperience Points.
 - Speedwalking and pathfinding - Efficiently get where you're going - and fast!
 
 ### Built With
@@ -89,9 +88,9 @@ Version numbering approximates the [Semantic Versioning](http://semver.org) appr
 
 [![Status Ventis][status-ventis]][andivionian-status-classifier] ![Travis (.com) branch](https://img.shields.io/travis/com/iLPdev/discMapper/develop?style=flat)
 
-- **Project State**: Procedural Realms Script is under active development. The application can be used, but may be unstable. We are in need of beta testing prior to moving forward with the v1.0.0 release.
+- **Project State**: Procedural Realms Script is under active development. The application can be used, but may be unstable. We are in need of continued testing prior to moving forward with each new release.
 
-- **Current Release**: v0.12.0
+- **Current Release**: v1.1.0
 
 **[^Top](#table-of-contents)**
 
@@ -162,7 +161,9 @@ See also the [open issues](https://github.com/iLPdev/prs/issues) for a list of p
 <!-- State anyone or anything that significantly helped with the development of your project.
      State public contact hyper-links if applicable. -->
 
-- [@demonnic](https://github.com/demonnic) for his seemingly indefatigable patience and help.
+- [@eterchun](https://github.com/eterchun) (Dalem) for re-energizing the project and evolving the codebase, especially after the major multiprocessor game server updates made doing so feel insurmountable.
+- [@dinchak](https://github.com/dinchak] (PR Adminstrator) for mapper logic and server-side assistance, as well as developing, managing, and freely offering Procedural Realms to the world.
+- [@demonnic](https://github.com/demonnic) for his seemingly indefatigable patience and help over the years.
 - [@halimcme](https://github.com/halimcme) (Blizzard) for his [Simple GMCP Mapper](https://github.com/halimcme/worldofpain/blob/master/mapping.lua) script and responsiveness to all my questions.
 - `README.md`:
   - [Best-README-Template](https://github.com/othneildrew/Best-README-Template) for initial inspiration
@@ -237,7 +238,7 @@ Thanks go to these amazing folks ([emoji key](https://allcontributors.org/docs/e
 <!-- LICENSE -- Must be last section. -->
 ## License
 
-Copyleft (2022) _iLP development_. Distributed under GPL v3.0-and-later. For more
+Copyleft (2023) _iLP development_. Distributed under GPL v3.0-and-later. For more
 information, see [`LICENSE`](https://github.com/iLPdev/prs/blob/main/LICENSE).
 
 **[^Top](#table-of-contents)**
