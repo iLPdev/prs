@@ -44,7 +44,7 @@ Mudlet Forum Topic: [https://forums.mudlet.org/viewtopic.php?f=6&t=23126]
 <!-- ABOUT THE PROJECT -->
 ## Background
 
-<p> <!-- align="center">
+<p> <!-- align="center"> -->
     <a href="prs-screenshot-01.jpg" alt="" title="Piprede Obelisk"><img src="prs-screenshot-01.jpg" height="200" align="left"/></a> 
     <!--<a href="prs-screenshot-02.jpg" alt="" title="EMCO Chat"><img src="prs-screenshot-02.jpg" height="200" align="float"/></a> -->
 </p>
