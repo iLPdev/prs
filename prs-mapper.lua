@@ -328,6 +328,7 @@ end
 
 function map.eventHandler(event,...)
     if event == "gmcp.room.info" then
+	if gmcp.room.info.zone == "Battlefield" then return end
         map.prev_info = map.room_info
         map.room_info = {
           vnum = gmcp.room.info.num,
@@ -340,6 +341,11 @@ function map.eventHandler(event,...)
         }
         for k,v in pairs(map.room_info.exits) do
             map.room_info.exits[k] = tonumber(v)
+        end
+        if map.prev_info.area and (map.prev_info.area ~= map.room_info.area) then
+          if gmcp.room.info.instanced then
+            deleteArea(gmcp.room.info.zone)
+          end
         end
         handle_move()
     elseif event == "shiftRoom" then
