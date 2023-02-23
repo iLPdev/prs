@@ -162,7 +162,7 @@ See also the [open issues](https://github.com/iLPdev/prs/issues) for a list of p
      State public contact hyper-links if applicable. -->
 
 - [@eterchun](https://github.com/eterchun) (Dalem) for re-energizing the project and evolving the codebase, especially after the major multiprocessor game server updates made doing so feel insurmountable.
-- [@dinchak](https://github.com/dinchak] (PR Adminstrator) for mapper logic and server-side assistance, as well as developing, managing, and freely offering Procedural Realms to the world.
+- [@dinchak](https://github.com/dinchak) (PR Adminstrator) for mapper logic and server-side assistance, as well as developing, managing, and freely offering Procedural Realms to the world.
 - [@demonnic](https://github.com/demonnic) for his seemingly indefatigable patience and help over the years.
 - [@halimcme](https://github.com/halimcme) (Blizzard) for his [Simple GMCP Mapper](https://github.com/halimcme/worldofpain/blob/master/mapping.lua) script and responsiveness to all my questions.
 - `README.md`:
