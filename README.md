@@ -211,7 +211,7 @@ This project follows the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.
 
 The expectation is that our community group acts according to these guidelines, and that participants hold each other to these high standards. If you have any questions or are worried that the code isn't being followed, please contact the [maintainer](#maintainer) of this repository.
 
-## Contributors
+### Contributors
 
 Thanks go to these amazing folks ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
