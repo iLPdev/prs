@@ -42,6 +42,17 @@ local terrain_types = {
     ["Gate"] = {id = 31, r = 255, g = 255, b = 0},
     ["Nexus"] = {id = 32, r = 128, g = 128, b = 128},
     ["Wall"] = {id = 33, r = 64, g = 64, b = 64},
+    ["Armor Shop"] = {id = 33, r = 255, g = 255, b = 255},
+    ["Alchemist"] = {id = 34, r = 255, g = 0, b = 255},
+    ["Farming Store"] = {id = 35, r = 0, g = 128, b = 0},
+    ["Farmland"] = {id = 36, r = 128, g = 128, b = 0},
+    ["Abandoned Mine"] = {id = 37, r = 255, g = 0, b = 0},
+    ["Shrine"] = {id = 38, r = 255, g = 255, b = 255},
+    ["Grocery Store"] = {id = 39, r = 128, g = 128, b = 0},
+    ["Building"] = {id = 40, r = 255, g = 255, b = 0},
+    ["Tool Shop"] = {id = 41, r = 128, g = 128, b = 0},
+    ["Restaurant"] = {id = 42, r = 0, g = 255, b = 0},
+    ["Clothing Shop"] = {id = 43, r = 0, g = 128, b = 128},
 }
 
 -- list of possible movement directions and appropriate coordinate changes
