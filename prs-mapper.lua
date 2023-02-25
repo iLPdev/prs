@@ -70,7 +70,15 @@ local terrain_types = {
     ["Great Plains Portal"] = {id = 59, r = 255, g = 0, b = 255},
     ["Hidden Grove Portal"] = {id = 60, r = 255, g = 0, b = 255},
     ["Endless Sands Portal"] = {id = 61, r = 255, g = 0, b = 255},
-    ["Frozen Peaks Portal"] = {id = 62, r = 255, g = 0, b = 255},  
+    ["Frozen Peaks Portal"] = {id = 62, r = 255, g = 0, b = 255},
+    ["Dark Woods"] = {id = 63, r = 128, g = 128, b = 128},
+    ["Thick Woods"] = {id = 64, r = 0, g = 128, b = 0},
+    ["Obelisk"] = {id = 65, r = 128, g = 0, b = 128},
+    ["Spider Cave"] = {id = 66, r = 0, g = 128, b = 0},
+    ["Tempest Hideout"] = {id = 67, r = 128, g = 128, b = 128},    
+    ["Temple"] = {id = 68, r = 0, g = 255, b = 255},
+    ["Sparse Woods"] = {id = 69, r = 0, g = 255, b = 0},
+    ["Statue Shrine"] = {id = 70, r = 255, g = 255, b = 0},  
 }
 
 -- list of possible movement directions and appropriate coordinate changes
