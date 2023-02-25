@@ -85,7 +85,12 @@ local terrain_types = {
   ["Legion Fortress"] = {id = 74, r = 255, g = 0, b = 0},
   ["Plateau"] = {id = 75, r = 255, g = 0, b = 0},
   ["Canyon"] = {id = 76, r = 128, g = 0, b = 128},
-  ["Oasis"] = {id = 77, r = 0, g = 155, b = 0},                       
+  ["Oasis"] = {id = 77, r = 0, g = 155, b = 0},
+  ["Summit"] = {id = 78, r = 255, g = 255, b = 255},
+  ["Ravine"] = {id = 79, r = 128, g = 128, b = 128},
+  ["Mountains"] = {id = 80, r = 0, g = 255, b = 255},
+  ["Foothills"] = {id = 81, r = 128, g = 128, b = 0},
+  ["Valley"] = {id = 82, r = 0, g = 128, b = 0},                        
 }
 
 -- list of possible movement directions and appropriate coordinate changes
