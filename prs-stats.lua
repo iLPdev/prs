@@ -176,7 +176,7 @@ local function add_gauges()
     ]])  
     
   -- Experience Points Gauge
-  if gmcp.Char.player.xp < gmcp.Char.player.xpForCurrentLevel then
+  if xpForNextLevel then
     XPbar = SUG:new({
       name = "XP",
       y = 220,
