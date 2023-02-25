@@ -176,33 +176,35 @@ local function add_gauges()
     ]])  
     
   -- Experience Points Gauge
-  XPbar = SUG:new({
-    name = "XP",
-    y = 220,
-    height = 25,
-    width = "95%",
-    updateTime = 250, 
-    textTemplate = "XP: |c / |m   (|p%)",
-    currentVariable = "PRSstats.xp.current",
-    maxVariable = "PRSstats.xp.tnl"
-  }, PRSstats.UW)
-    XPbar.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #3399ff, stop: 0.1 #0080ff, stop: 0.49 #0000ff, stop: 0.5 #0000cc, stop: 1 #0000ff);
-      border-top: 1px black solid;
-      border-left: 1px black solid;
-      border-bottom: 1px black solid;
-      border-radius: 7;
-      padding: 3px;
-    ]])
-    XPbar.back:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #0066cc, stop: 0.1 #004c99, stop: 0.49 #000099, stop: 0.5 #000066, stop: 1 #000099);
-      border-width: 1px;
-      border-color: black;
-      border-style: solid;
-      border-radius: 7;
-      padding: 3px;
-    ]])
-    XPbar.text:setStyleSheet([[
-      font-weight: bold;
-    ]])
+  if gmcp.Char.player.xp < gmcp.Char.player.xpForCurrentLevel then
+    XPbar = SUG:new({
+      name = "XP",
+      y = 220,
+      height = 25,
+      width = "95%",
+      updateTime = 250, 
+      textTemplate = "XP: |c / |m   (|p%)",
+      currentVariable = "PRSstats.xp.current",
+      maxVariable = "PRSstats.xp.tnl"
+    }, PRSstats.UW)
+      XPbar.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #3399ff, stop: 0.1 #0080ff, stop: 0.49 #0000ff, stop: 0.5 #0000cc, stop: 1 #0000ff);
+        border-top: 1px black solid;
+        border-left: 1px black solid;
+        border-bottom: 1px black solid;
+        border-radius: 7;
+        padding: 3px;
+      ]])
+      XPbar.back:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #0066cc, stop: 0.1 #004c99, stop: 0.49 #000099, stop: 0.5 #000066, stop: 1 #000099);
+        border-width: 1px;
+        border-color: black;
+        border-style: solid;
+        border-radius: 7;
+        padding: 3px;
+      ]])
+      XPbar.text:setStyleSheet([[
+        font-weight: bold;
+      ]])
+    end
 end
 
 function PRSstats.stats()
