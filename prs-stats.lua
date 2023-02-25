@@ -13,7 +13,8 @@ local function add_gauges()
     name = "HP",
     height = 25,
     width = "95%", -- everything up to here is standard Geyser.Gauge
-    updateTime = 250, -- this timer will update every 250ms, or 4 times a second
+    updateTime = 0,
+    updateEvent = "gmcp.Char.player", 
     textTemplate = "HP: |c / |m  (|p%)", -- gauge will show "HP: 500/1000 (50%)" as the text if you had 500 current and 1000 max hp
     currentVariable = "gmcp.Char.player.hp", --if gmcp.Char.Vitals.hp is nil or unreachable, it will use the defaultCurrent of 50
     maxVariable = "gmcp.Char.player.maxHp",  --if gmcp.Char.Vitals.maxhp is nil or unreachable, it will use the defaultMax of 100
@@ -34,6 +35,7 @@ local function add_gauges()
     ]])
     HPbar.text:setStyleSheet([[
       font-weight: bold;
+      padding-left: 5px;
     ]])
 
   -- Energy Points Gauge
@@ -42,7 +44,8 @@ local function add_gauges()
     y = 45,
     height = 25,
     width = "95%", 
-    updateTime = 250, 
+    updateTime = 0,
+    updateEvent = "gmcp.Char.player",
     textTemplate = "EN: |c / |m  (|p%)",
     currentVariable = "gmcp.Char.player.energy",
     maxVariable = "gmcp.Char.player.maxEnergy",
@@ -63,6 +66,7 @@ local function add_gauges()
     ]])
     ENbar.text:setStyleSheet([[
       font-weight: bold;
+      padding-left: 5px;
     ]])
 
   -- Stamina Points Gauge
@@ -71,7 +75,8 @@ local function add_gauges()
     y = 80,
     height = 25,
     width = "95%", 
-    updateTime = 250, 
+    updateTime = 0,
+    updateEvent = "gmcp.Char.player", 
     textTemplate = "ST: |c / |m  (|p%)",
     currentVariable = "gmcp.Char.player.stamina",
     maxVariable = "gmcp.Char.player.maxStamina",
@@ -90,6 +95,7 @@ local function add_gauges()
       padding: 3px;]])
     STbar.text:setStyleSheet([[
       font-weight: bold;
+      padding-left: 5px;
     ]])
 
     -- Food Points Gauge
@@ -98,7 +104,8 @@ local function add_gauges()
     y = 115,
     height = 25,
     width = "95%",
-    updateTime = 250,
+    updateTime = 0,
+    updateEvent = "gmcp.Char.player", 
     textTemplate = "Food: |c / |m  (|p%)",
     currentVariable = "gmcp.Char.player.food",
     maxVariable = "gmcp.Char.player.maxFood",
@@ -119,6 +126,7 @@ local function add_gauges()
     ]])
     HPbar.text:setStyleSheet([[
       font-weight: bold;
+      padding-left: 5px;
     ]])
 
     -- Rage Points Gauge
@@ -127,7 +135,8 @@ local function add_gauges()
     y = 150,
     height = 25,
     width = "95%", 
-    updateTime = 250, 
+    updateTime = 0,
+    updateEvent = "gmcp.Char.player", 
     textTemplate = "Rage: |c",
     currentVariable = "gmcp.Char.player.rage",
     maxVariable = "gmcp.Char.player.maxRage",
@@ -146,6 +155,7 @@ local function add_gauges()
         padding: 3px;]])
     RPbar.text:setStyleSheet([[
       font-weight: bold;
+      padding-left: 5px;
     ]])
 
   -- Combo Points Gauge
@@ -154,7 +164,8 @@ local function add_gauges()
     y = 185,
     height = 25,
     width = "95%", 
-    updateTime = 250, 
+    updateTime = 0,
+    updateEvent = "gmcp.Char.player", 
     textTemplate = "Combo: |c",
     currentVariable = "gmcp.Char.player.combo",
     maxVariable = "gmcp.Char.player.maxCombo",
@@ -173,16 +184,18 @@ local function add_gauges()
         padding: 3px;]])
     CPbar.text:setStyleSheet([[
       font-weight: bold;
+      padding-left: 5px;
     ]])  
-    
+  
   -- Experience Points Gauge
-  if xpForNextLevel then
+  if gmcp.Char.player.xpForNextLevel then
     XPbar = SUG:new({
       name = "XP",
       y = 220,
       height = 25,
       width = "95%",
-      updateTime = 250, 
+      updateTime = 0,
+      updateEvent = "gmcp.Char.player", 
       textTemplate = "XP: |c / |m   (|p%)",
       currentVariable = "PRSstats.xp.current",
       maxVariable = "PRSstats.xp.tnl"
@@ -203,14 +216,30 @@ local function add_gauges()
       ]])
       XPbar.text:setStyleSheet([[
         font-weight: bold;
+        padding-left: 5px;
       ]])
-    end
+      if PRSstats.events.xp_id then killAnonymousEventHandler(PRSstats.events.xp_id) end
+      PRSstats.events.xp_id = registerAnonymousEventHandler("gmcp.Char.player.xp", function()
+        PRSstats.xp.current = gmcp.Char.player.xp - gmcp.Char.player.xpForCurrentLevel
+      end)
+      
+      if PRSstats.events.xpForCurrentLevel_id then killAnonymousEventHandler(PRSstats.events.xpForCurrentLevel_id) end
+      PRSstats.events.xpForCurrentLevel_id = registerAnonymousEventHandler("gmcp.Char.player.xpForCurrentLevel", function()
+        PRSstats.xp.current = gmcp.Char.player.xp - gmcp.Char.player.xpForCurrentLevel
+        PRSstats.xp.tnl = gmcp.Char.player.xpForNextLevel - gmcp.Char.player.xpForCurrentLevel
+      end)
+      
+      if PRSstats.events.xpForNextLevel_id then killAnonymousEventHandler(PRSstats.events.xpForNextLevel_id) end
+      PRSstats.events.xpForNextLevel_id = registerAnonymousEventHandler("gmcp.Char.player.xpForNextLevel", function()
+        PRSstats.xp.tnl = gmcp.Char.player.xpForNextLevel - gmcp.Char.player.xpForCurrentLevel
+      end)
+  end
 end
 
 function PRSstats.stats()
   PRSstats.UW = Geyser.UserWindow:new({name = "Stats", titleText ="Vitals", x = "75%", y = "75%", height="25%", width="25%", docked = true, restoreLayout = true})
   
-  if gmcp and gmcp.Char and gmcp.Char.Vitals then
+  if gmcp and gmcp.Char and gmcp.Char.player then
     PRSstats.UW:setTitle("Vitals - "..gmcp.Char.player.name)
     add_gauges()
   else
@@ -220,19 +249,3 @@ function PRSstats.stats()
     end, true)
   end
 end
-
-if PRSstats.events.xp_id then killAnonymousEventHandler(PRSstats.events.xp_id) end
-PRSstats.events.xp_id = registerAnonymousEventHandler("gmcp.Char.player.xp", function()
-  PRSstats.xp.current = gmcp.Char.player.xp - gmcp.Char.player.xpForCurrentLevel
-end)
-
-if PRSstats.events.xpForCurrentLevel_id then killAnonymousEventHandler(PRSstats.events.xpForCurrentLevel_id) end
-PRSstats.events.xpForCurrentLevel_id = registerAnonymousEventHandler("gmcp.Char.player.xpForCurrentLevel", function()
-  PRSstats.xp.current = gmcp.Char.player.xp - gmcp.Char.player.xpForCurrentLevel
-  PRSstats.xp.tnl = gmcp.Char.player.xpForNextLevel - gmcp.Char.player.xpForCurrentLevel
-end)
-
-if PRSstats.events.xpForNextLevel_id then killAnonymousEventHandler(PRSstats.events.xpForNextLevel_id) end
-PRSstats.events.xpForNextLevel_id = registerAnonymousEventHandler("gmcp.Char.player.xpForNextLevel", function()
-  PRSstats.xp.tnl = gmcp.Char.player.xpForNextLevel - gmcp.Char.player.xpForCurrentLevel
-end)
