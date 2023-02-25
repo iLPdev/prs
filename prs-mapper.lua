@@ -54,6 +54,7 @@ local terrain_types = {
     ["Restaurant"] = {id = 43, r = 0, g = 255, b = 0},
     ["Clothing Shop"] = {id = 44, r = 0, g = 128, b = 128},
     ["Books Shop"] = {id = 45, r = 255, g = 255, b = 0},
+    ["Book Shop"] = {id = 48, r = 255, g = 255, b = 0},
     ["Leatherworker's Shop"] = {id = 46, r = 0, g = 255, b = 255},
     ["Weapon Shop"] = {id = 47, r = 255, g = 0, b = 0},
 }
