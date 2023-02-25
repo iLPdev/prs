@@ -7,5 +7,8 @@ if table.contains(getPackages(),"generic_mapper") then
 end
 
 -- Open the windows
-PRSchat.tabs()
-PRSstats.stats()
+registerAnonymousEventHandler("gmcp.Char.player", function()
+  PRSchat.tabs()
+  PRSstats.stats()
+end, true)
+
