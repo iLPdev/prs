@@ -57,6 +57,20 @@ local terrain_types = {
     ["Book Shop"] = {id = 48, r = 255, g = 255, b = 0},
     ["Leatherworker's Shop"] = {id = 46, r = 0, g = 255, b = 255},
     ["Weapon Shop"] = {id = 47, r = 255, g = 0, b = 0},
+    ["Altar"] = {id = 49, r = 255, g = 255, b = 255},
+    ["Portal Shop"] = {id = 50, r = 128, g = 0, b = 128},
+    ["Auction House"] = {id = 51, r = 128, g = 0, b = 128},
+    ["Underworld Shop"] = {id = 52, r = 192, g = 192, b = 192},
+    ["Hall of Scenarios"] = {id = 53, r = 255, g = 0, b = 0},
+    ["Employment Office"] = {id = 54, r = 255, g = 255, b = 0},
+    ["Hall of Lessions"] = {id = 55, r = 255, g = 0, b = 255},
+    ["Bounty Board"] = {id = 56, r = 0, g = 255, b = 0},
+    ["Vending Machine"] = {id = 57, r = 255, g = 0, b = 255},
+    ["Tavern Stairs"] = {id = 58, r = 255, g = 255, b = 255},
+    ["Great Plains Portal"] = {id = 59, r = 255, g = 0, b = 255},
+    ["Hidden Grove Portal"] = {id = 60, r = 255, g = 0, b = 255},
+    ["Endless Sands Portal"] = {id = 61, r = 255, g = 0, b = 255},
+    ["Frozen Peaks Portal"] = {id = 62, r = 255, g = 0, b = 255}, 
 }
 
 -- list of possible movement directions and appropriate coordinate changes
