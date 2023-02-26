@@ -94,7 +94,8 @@ local terrain_types = {
   ["Bait and Tackle"] = {id = 83, r = 255, g = 255, b = 255},
   ["Riscacles Settlement"] = {id = 84, r = 128, g = 0, b = 128},
   ["Temple Entrance"] = {id = 85, r = 128, g = 0, b = 128},
-  ["Frozen River"] = {id = 86, r = 0, g = 255, b = 255},                           
+  ["Frozen River"] = {id = 86, r = 0, g = 255, b = 255},
+  ["Clearing"] = {id = 87, r = 0, g = 128, b = 0},                             
 }
 
 -- list of possible movement directions and appropriate coordinate changes
