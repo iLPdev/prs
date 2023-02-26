@@ -89,7 +89,7 @@ local terrain_types = {
   ["Summit"] = {id = 78, r = 255, g = 255, b = 255},
   ["Ravine"] = {id = 79, r = 128, g = 128, b = 128},
   ["Mountains"] = {id = 80, r = 0, g = 255, b = 255},
-  ["Foothills"] = {id = 81, r = 128, g = 128, b = 0},
+  ["Foothills"] = {id = 81, r = 255, g = 255, b = 0},
   ["Valley"] = {id = 82, r = 0, g = 128, b = 0},
   ["Bait and Tackle"] = {id = 83, r = 255, g = 255, b = 255},
   ["Riscacles Settlement"] = {id = 84, r = 128, g = 0, b = 128},
