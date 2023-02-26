@@ -1,9 +1,5 @@
 PRSstats = PRSstats or {}
 PRSstats.events = PRSstats.events or {}
-PRSstats.xp = PRSstats.xp or {}
-PRSstats.xp.current = PRSstats.xp.current or 50
-PRSstats.xp.tnl = PRSstats.xp.tnl or 100
-
 
 local SUG = require("PRS.sug")
 
@@ -189,6 +185,11 @@ local function add_gauges()
   
   -- Experience Points Gauge
   if gmcp.Char.player.xpForNextLevel then
+      
+    PRSstats.xp = PRSstats.xp or {}
+    PRSstats.xp.current = gmcp.Char.player.xp - gmcp.Char.player.xpForCurrentLevel
+    PRSstats.xp.tnl = gmcp.Char.player.xpForNextLevel - gmcp.Char.player.xpForCurrentLevel
+      
     XPbar = SUG:new({
       name = "XP",
       y = 220,
@@ -218,21 +219,27 @@ local function add_gauges()
         font-weight: bold;
         padding-left: 5px;
       ]])
+      
+      echo("reaching first handler registration\n")
       if PRSstats.events.xp_id then killAnonymousEventHandler(PRSstats.events.xp_id) end
       PRSstats.events.xp_id = registerAnonymousEventHandler("gmcp.Char.player.xp", function()
         PRSstats.xp.current = gmcp.Char.player.xp - gmcp.Char.player.xpForCurrentLevel
       end)
       
+      echo("reaching second handler registration\n")
       if PRSstats.events.xpForCurrentLevel_id then killAnonymousEventHandler(PRSstats.events.xpForCurrentLevel_id) end
       PRSstats.events.xpForCurrentLevel_id = registerAnonymousEventHandler("gmcp.Char.player.xpForCurrentLevel", function()
         PRSstats.xp.current = gmcp.Char.player.xp - gmcp.Char.player.xpForCurrentLevel
         PRSstats.xp.tnl = gmcp.Char.player.xpForNextLevel - gmcp.Char.player.xpForCurrentLevel
       end)
       
+      echo("reaching third handler registration\n")
       if PRSstats.events.xpForNextLevel_id then killAnonymousEventHandler(PRSstats.events.xpForNextLevel_id) end
       PRSstats.events.xpForNextLevel_id = registerAnonymousEventHandler("gmcp.Char.player.xpForNextLevel", function()
         PRSstats.xp.tnl = gmcp.Char.player.xpForNextLevel - gmcp.Char.player.xpForCurrentLevel
       end)
+      
+      echo("done with registration\n")
   end
 end
 
