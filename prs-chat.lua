@@ -9,6 +9,7 @@ function PRSchat.tabs()
     title_text = "Procedural Realms - "..gmcp.Char.player.name
   else
     title_text = "Procedural Realms"
+    registerAnonymousEventHandler("gmcp.Char.player.name", function() PRSchat.UW:setTitle("Procedural Realms - "..gmcp.Char.player.name) end, true)
   end
   
   PRSchat.UW = Geyser.UserWindow:new({name = "Chat", titleText = title_text, y="50%", docked = true, width="25%", height="75%"})
