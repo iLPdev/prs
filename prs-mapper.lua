@@ -76,7 +76,7 @@ local terrain_types = {
   ["Obelisk"] = {id = 65, r = 128, g = 0, b = 128},
   ["Spider Cave"] = {id = 66, r = 0, g = 128, b = 0},
   ["Tempest Hideout"] = {id = 67, r = 128, g = 128, b = 128},    
-  ["Temple"] = {id = 68, r = 0, g = 255, b = 255},
+  ["Temple"] = {id = 68, r = 128, g = 128, b = 128},
   ["Sparse Woods"] = {id = 69, r = 0, g = 255, b = 0},
   ["Statue Shrine"] = {id = 70, r = 255, g = 255, b = 0},
   ["Desert"] = {id = 71, r = 255, g = 255, b = 0},
@@ -92,7 +92,9 @@ local terrain_types = {
   ["Foothills"] = {id = 81, r = 128, g = 128, b = 0},
   ["Valley"] = {id = 82, r = 0, g = 128, b = 0},
   ["Bait and Tackle"] = {id = 83, r = 255, g = 255, b = 255},
-  ["Riscacles Settlement"] = {id = 84, r = 128, g = 0, b = 128},                        
+  ["Riscacles Settlement"] = {id = 84, r = 128, g = 0, b = 128},
+  ["Temple Entrance"] = {id = 85, r = 128, g = 0, b = 128},
+  ["Frozen River"] = {id = 86, r = 0, g = 255, b = 255},                           
 }
 
 -- list of possible movement directions and appropriate coordinate changes
