@@ -95,7 +95,8 @@ local terrain_types = {
   ["Riscacles Settlement"] = {id = 84, r = 128, g = 0, b = 128},
   ["Temple Entrance"] = {id = 85, r = 128, g = 0, b = 128},
   ["Frozen River"] = {id = 86, r = 0, g = 255, b = 255},
-  ["Clearing"] = {id = 87, r = 0, g = 128, b = 0},                             
+  ["Clearing"] = {id = 87, r = 0, g = 128, b = 0},
+  ["Frozen Peak"] = {id = 88, r = 0, g = 0, b = 255},                             
 }
 
 -- list of possible movement directions and appropriate coordinate changes
