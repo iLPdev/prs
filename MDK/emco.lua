@@ -38,7 +38,10 @@ local EMCO = Geyser.Container:new({
   wrapAt = 300,
   autoWrap = true,
   logExclusions = {},
+  logFormat = "h",
   gags = {},
+  notifyTabs = {},
+  notifyWithFocus = false,
 })
 
 -- patch Geyser.MiniConsole if it does not have its own display method defined
@@ -337,6 +340,16 @@ end
 --     <td class="tg-even">A table of Lua patterns you wish to gag from being added to the EMCO. Useful for removing mob says and such example: {[[^A green leprechaun says, ".*"$]], "^Bob The Dark Lord of the Keep mutters darkly to himself.$"} see <a href="http://lua-users.org/wiki/PatternsTutorial">this tutorial</a> on Lua patterns for more information.</td>
 --     <td class="tg-even">{}</td>
 --   </tr>
+--   <tr>
+--     <td class="tg-odd">notifyTabs</td>
+--     <td class="tg-odd">Tables containing the names of all tabs you want to send notifications. IE {"Says", "Tells", "Org"}</td>
+--     <td class="tg-odd">{}</td>
+--   </tr>
+--   <tr>
+--     <td class="tg-even">notifyWithFocus</td>
+--     <td class="tg-even">If true, EMCO will send notifications even if Mudlet has focus. If false, it will only send them when Mudlet does NOT have focus.</td>
+--     <td class="tg-even">false</td>
+--   </tr>
 -- </tbody>
 -- </table>
 -- @tparam GeyserObject container The container to use as the parent for the EMCO
@@ -441,11 +454,16 @@ function EMCO:new(cons, container)
   for _,pattern in ipairs(cons.gags or {}) do
     me:addGag(pattern)
   end
+  for _,tname in ipairs(cons.notifyTabs or {}) do
+    me:addNotifyTab(tname)
+  end
+  if me:fuzzyBoolean(cons.notifyWithFocus) then
+    self:enableNotifyWithFocus()
+  end
   me:reset()
   if me.allTab then
     me:setAllTabName(me.allTabName or me.consoles[1])
   end
-  table.insert(EMCOHelper.items, me)
   return me
 end
 
@@ -595,6 +613,13 @@ function EMCO:removeTab(tabName)
   if not table.contains(self.consoles, tabName) then
     self.ae(funcName, "tabName must be a tab which exists in this EMCO. valid options are: " .. table.concat(self.consoles, ","))
   end
+  if self.currentTab == tabName then
+    if self.allTab and self.allTabName then
+      self:switchTab(self.allTabName)
+    else
+      self:switchTab(self.consoles[1])
+    end
+  end
   table.remove(self.consoles, table.index_of(self.consoles, tabName))
   local window = self.mc[tabName]
   local tab = self.tabs[tabName]
@@ -633,10 +658,10 @@ end
 -- @param tabName string the name of the tab to show
 function EMCO:switchTab(tabName)
   local oldTab = self.currentTab
+  self.currentTab = tabName
   if oldTab ~= tabName and oldTab ~= "" then
     self.mc[oldTab]:hide()
-    self.tabs[oldTab]:setStyleSheet(self.inactiveTabCSS)
-    self.tabs[oldTab]:setColor(self.inactiveTabBGColor)
+    self:adjustTabBackground(oldTab)
     self.tabs[oldTab]:echo(oldTab, self.inactiveTabFGColor)
     if self.blink then
       if self.allTab and tabName == self.allTabName then
@@ -646,17 +671,29 @@ function EMCO:switchTab(tabName)
       end
     end
   end
-  self.tabs[tabName]:setStyleSheet(self.activeTabCSS)
-  self.tabs[tabName]:setColor(self.activeTabBGColor)
+  self:adjustTabBackground(tabName)
   self.tabs[tabName]:echo(tabName, self.activeTabFGColor)
-  if oldTab and self.mc[oldTab] then
-    self.mc[oldTab]:hide()
-  end
+  -- if oldTab and self.mc[oldTab] then
+  --   self.mc[oldTab]:hide()
+  -- end
   self.mc[tabName]:show()
-  self.currentTab = tabName
   if oldTab ~= tabName then
     raiseEvent("EMCO tab change", self.name, oldTab, tabName)
   end
+end
+
+--- Cycles between the tabs in order
+-- @tparam boolean reverse Defaults to false. When true, moves backward through the tab list rather than forward.
+function EMCO:cycleTab(reverse)
+  -- add the property to demonnic.chat
+  local consoles = self.consoles
+  local cycleIndex = table.index_of(consoles, self.currentTab)
+
+  local maxIndex = #consoles
+  cycleIndex = reverse and cycleIndex - 1 or cycleIndex + 1
+  if cycleIndex > maxIndex then cycleIndex = 1 end
+  if cycleIndex < 1 then cycleIndex = maxIndex end
+  self:switchTab(consoles[cycleIndex])
 end
 
 function EMCO:createComponentsForTab(tabName)
@@ -670,13 +707,9 @@ function EMCO:createComponentsForTab(tabName)
   tab:setItalics(self.tabItalics)
   tab:setBold(self.tabBold)
   tab:setUnderline(self.tabUnderline)
-  -- use the inactive CSS. It's "" if unset, which is ugly, but
-  tab:setStyleSheet(self.inactiveTabCSS)
-  -- set the BGColor if set. if the CSS is set it overrides the setColor, but if it's "" then the setColor actually covers that.
-  -- and we set a default for the inactiveBGColor
-  tab:setColor(self.inactiveTabBGColor)
-  tab:setClickCallback("EMCOHelper.switchTab", nil, string.format("%s+%s", self.name, tabName))
+  tab:setClickCallback(self.switchTab, self, tabName)
   self.tabs[tabName] = tab
+  self:adjustTabBackground(tabName)
   local window
   local windowConstraints = {
     x = self.leftMargin,
@@ -687,6 +720,7 @@ function EMCO:createComponentsForTab(tabName)
     commandLine = self.commandLine,
     path = self:processTemplate(self.path, tabName),
     fileName = self:processTemplate(self.fileName, tabName),
+    logFormat = self.logFormat
   }
   if table.contains(self.logExclusions, tabName) then
     windowConstraints.log = false
@@ -720,7 +754,7 @@ function EMCO:createComponentsForTab(tabName)
   end
   self.mc[tabName] = window
   if not mapTab then
-    self:setCmdAction(tabName)
+    self:setCmdAction(tabName, nil)
   end
   window:hide()
   self:processImage(tabName)
@@ -826,8 +860,10 @@ end
 -- @param str the string to replace tokens in
 -- @param tabName optional, if included will be used for |N in the templated string.
 function EMCO:processTemplate(str, tabName)
-  str = str:gsub("|E", self.name)
-  str = str:gsub("|N", tabName or "")
+  local safeName = self.name:gsub("[<>:'\"?*]", "_")
+  local safeTabName = tabName and tabName:gsub("[<>:'\"?*]", "_") or ""
+  str = str:gsub("|E", safeName)
+  str = str:gsub("|N", safeTabName)
   return str
 end
 
@@ -1190,7 +1226,7 @@ function EMCO:setAllTabName(allTabName)
     self.ae(funcName, "allTabName expected as string, got" .. allTabNameType)
   end
   if not table.contains(self.consoles, allTabName) then
-    self.ae(funcName, "allTabName must be the name of one of the console tabs. Valid options are: " .. table.concat(self.containers, ","))
+    self.ae(funcName, "allTabName must be the name of one of the console tabs. Valid options are: " .. table.concat(self.consoles, ","))
   end
   self.allTabName = allTabName
 end
@@ -1348,16 +1384,30 @@ function EMCO:adjustTabNames()
   end
 end
 
+function EMCO:adjustTabBackground(console)
+  local tab = self.tabs[console]
+  local activeTabCSS = self.activeTabCSS
+  local inactiveTabCSS = self.inactiveTabCSS
+  local activeTabBGColor = self.activeTabBGColor
+  local inactiveTabBGColor = self.inactiveTabBGColor
+  if console == self.currentTab then
+    if activeTabCSS and activeTabCSS ~= "" then
+      tab:setStyleSheet(activeTabCSS)
+    elseif activeTabBGColor then
+      tab:setColor(activeTabBGColor)
+    end
+  else
+    if inactiveTabCSS and inactiveTabCSS ~= "" then
+      tab:setStyleSheet(inactiveTabCSS)
+    elseif inactiveTabBGColor then
+      tab:setColor(inactiveTabBGColor)
+    end
+  end
+end
+
 function EMCO:adjustTabBackgrounds()
   for _, console in ipairs(self.consoles) do
-    local tab = self.tabs[console]
-    if console == self.currentTab then
-      tab:setStyleSheet(self.activeTabCSS)
-      tab:setColor(self.activeBGColor)
-    else
-      tab:setStyleSheet(self.inactiveTabCSS)
-      tab:setColor(self.inactiveBGColor)
-    end
+    self:adjustTabBackground(console)
   end
 end
 
@@ -1563,8 +1613,36 @@ function EMCO:checkEchoArgs(funcName, tabName, message, excludeAll)
   end
 end
 
+--- Adds a tab to the list of tabs to send OS toast/popup notifications for
+--@tparam string tabName the name of a tab to enable notifications for
+--@return true if it was added, false if it was already included, nil if the tab does not exist.
+function EMCO:addNotifyTab(tabName)
+  if not table.contains(self.consoles, tabName) then
+    return nil, "Tab does not exist"
+  end
+  if self.notifyTabs[tabName] then
+    return false
+  end
+  self.notifyTabs[tabName] = true
+  return true
+end
+
+--- Removes a tab from the list of tabs to send OS toast/popup notifications for
+--@tparam string tabName the name of a tab to disable notifications for
+--@return true if it was removed, false if it wasn't enabled to begin with, nil if the tab does not exist.
+function EMCO:removeNotifyTab(tabName)
+  if not table.contains(self.consoles, tabName) then
+    return nil, "Tab does not exist"
+  end
+  if not self.notifyTabs[tabName] then
+    return false
+  end
+  self.notifyTabs[tabName] = nil
+  return true
+end
+
 --- Adds a pattern to the gag list for the EMCO
---@tparam pattern string a Lua pattern to gag. http://lua-users.org/wiki/PatternsTutorial
+--@tparam string pattern a Lua pattern to gag. http://lua-users.org/wiki/PatternsTutorial
 --@return true if it was added, false if it was already included.
 function EMCO:addGag(pattern)
   if self.gags[pattern] then
@@ -1575,7 +1653,7 @@ function EMCO:addGag(pattern)
 end
 
 --- Removes a pattern from the gag list for the EMCO
---@tparam pattern string a Lua pattern to no longer gag. http://lua-users.org/wiki/PatternsTutorial
+--@tparam string pattern a Lua pattern to no longer gag. http://lua-users.org/wiki/PatternsTutorial
 --@return true if it was removed, false if it was not there to remove.
 function EMCO:removeGag(pattern)
   if self.gags[pattern] then
@@ -1586,7 +1664,7 @@ function EMCO:removeGag(pattern)
 end
 
 --- Checks if a string matches any of the EMCO's gag patterns
---@tparam str string The text you're testing against the gag patterns
+--@tparam string str The text you're testing against the gag patterns
 --@return false if it does not match any gag patterns. true and the matching pattern if it does match.
 function EMCO:matchesGag(str)
   for pattern,_ in pairs(self.gags) do
@@ -1595,6 +1673,36 @@ function EMCO:matchesGag(str)
     end
   end
   return false
+end
+
+--- Enables sending OS notifications even if Mudlet has focus
+function EMCO:enableNotifyWithFocus()
+  self.notifyWithFocus = true
+end
+
+--- Disables sending OS notifications if Mudlet has focus
+function EMCO:disableNotifyWithFocus()
+  self.notifyWithFocus = false
+end
+
+function EMCO:strip(message, xtype)
+  local strippers = {
+    a = function(msg) return msg end,
+    echo = function(msg) return msg end,
+    cecho = cecho2string,
+    decho = decho2string,
+    hecho = hecho2string,
+  }
+  local result = strippers[xtype](message)
+  return result
+end
+
+function EMCO:sendNotification(tabName, msg)
+  if self.notifyWithFocus or not hasFocus() then
+    if self.notifyTabs[tabName] then
+      showNotification(f'{self.name}:{tabName}', msg)
+    end
+  end
 end
 
 function EMCO:xEcho(tabName, message, xtype, excludeAll)
@@ -1659,6 +1767,8 @@ function EMCO:xEcho(tabName, message, xtype, excludeAll)
   end
   if xtype == "a" then
     console:appendBuffer()
+    local txt = self:strip(getCurrentLine(), xtype)
+    self:sendNotification(tabName, txt)
     if allTab then
       allTab:appendBuffer()
     end
@@ -1672,6 +1782,7 @@ function EMCO:xEcho(tabName, message, xtype, excludeAll)
     end
   else
     console[xtype](console, message)
+    self:sendNotification(tabName, self:strip(message, xtype))
     if allTab then
       allTab[xtype](allTab, message)
     end
@@ -1972,20 +2083,6 @@ function EMCO:adjustScrollbars()
   end
 end
 
-EMCOHelper = EMCOHelper or {}
-EMCOHelper.items = EMCOHelper.items or {}
-function EMCOHelper:switchTab(designator)
-  local args = string.split(designator, "+")
-  local emcoName = args[1]
-  local tabName = args[2]
-  for _, emco in ipairs(EMCOHelper.items) do
-    if emco.name == emcoName then
-      emco:switchTab(tabName)
-      return
-    end
-  end
-end
-
 --- Save an EMCO's configuration for reloading later. Filename is based on the EMCO's name property.
 function EMCO:save()
   local configtable = {
@@ -1999,6 +2096,7 @@ function EMCO:save()
     preserveBackground = self.preserveBackground,
     gag = self.gag,
     timestampFormat = self.timestampFormat,
+    timestampFGColor = self.timestampFGColor,
     timestampBGColor = self.timestampBGColor,
     allTab = self.allTab,
     allTabName = self.allTabName,
@@ -2042,9 +2140,11 @@ function EMCO:save()
     deleteLines = self.deleteLines,
     logExclusions = self.logExclusions,
     gags = self.gags,
+    notifyTabs = self.notifyTabs,
+    notifyWithFocus = self.notifyWithFocus,
   }
   local dirname = getMudletHomeDir() .. "/EMCO/"
-  local filename = dirname .. self.name .. ".lua"
+  local filename = dirname .. self.name:gsub("[<>:'\"/\\|?*]", "_") .. ".lua"
   if not (io.exists(dirname)) then
     lfs.mkdir(dirname)
   end
@@ -2060,7 +2160,9 @@ function EMCO:load()
     table.load(filename, configTable)
   else
     debugc(string.format("Attempted to load config for EMCO named %s but the file could not be found. Filename: %s", self.name, filename))
+    return
   end
+
   self.timestamp = configTable.timestamp
   self.blankLine = configTable.blankLine
   self.scrollbars = configTable.scrollbars
@@ -2071,6 +2173,7 @@ function EMCO:load()
   self.preserveBackground = configTable.preserveBackground
   self.gag = configTable.gag
   self.timestampFormat = configTable.timestampFormat
+  self.timestampFGColor = configTable.timestampFGColor
   self.timestampBGColor = configTable.timestampBGColor
   self.allTab = configTable.allTab
   self.allTabName = configTable.allTabName
@@ -2106,6 +2209,8 @@ function EMCO:load()
   self.deleteLines = configTable.deleteLines
   self.logExclusions = configTable.logExclusions
   self.gags = configTable.gags
+  self.notifyTabs = configTable.notifyTabs
+  self.notifyWithFocus = configTable.notifyWithFocus
   self:move(configTable.x, configTable.y)
   self:resize(configTable.width, configTable.height)
   self:reset()

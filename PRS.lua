@@ -8,4 +8,7 @@ end
 
 -- Open the windows
 PRSchat.tabs()
-PRSstats.stats()
+registerAnonymousEventHandler("gmcp.Char.player", function()
+  PRSstats.stats()
+end, true)
+

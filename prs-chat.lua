@@ -1,11 +1,20 @@
 PRSchat = PRSchat or {}
 PRSchat.triggers = PRSchat.triggers or {}
 
+local EMCO = require("PRS.emco")
+  
 function PRSchat.tabs()
-  local EMCO = require("PRS.emco")
-  PRSchat.UW = Geyser.UserWindow:new({name = "Chat", titleText ="Procedural Realms", y="50%", docked = true})
-    stylesheet = [[background-color: rgb(80,80,80,255); border-width: 1px; border-style: solid; border-color: black; border-radius: 0px;]]
-    istylesheet = [[background-color: rgb(60,60,60,255); border-width: 1px; border-style: solid; border-color: black; border-radius: 0px;]]
+  local title_text
+  if gmcp and gmcp.Char and gmcp.Char.player then
+    title_text = "Procedural Realms - "..gmcp.Char.player.name
+  else
+    title_text = "Procedural Realms"
+    registerAnonymousEventHandler("gmcp.Char.player.name", function() PRSchat.UW:setTitle("Procedural Realms - "..gmcp.Char.player.name) end, true)
+  end
+  
+  PRSchat.UW = Geyser.UserWindow:new({name = "Chat", titleText = title_text, y="50%", docked = true, width="25%", height="75%"})
+  local stylesheet = [[background-color: rgb(80,80,80,255); border-width: 1px; border-style: solid; border-color: black; border-radius: 0px;]]
+  local istylesheet = [[background-color: rgb(60,60,60,255); border-width: 1px; border-style: solid; border-color: black; border-radius: 0px;]]
   PRSchat.EMCO = EMCO:new({
     name = "PRSchatTabs",
     x = "0",
@@ -31,6 +40,36 @@ function PRSchat.tabs()
     inactiveTabCSS = istylesheet,
     preserveBackground = true,
   }, PRSchat.UW)
+  PRSchat.EMCO:load()
+  PRSchat.EMCO:setCmdAction("Chat", function(str)
+    send("chat "..str)
+  end)
+  PRSchat.EMCO.mc["Chat"]:enableCommandLine()
+  PRSchat.EMCO:setCmdAction("Newbie", function(str)
+    send("newbie "..str)
+  end)
+  PRSchat.EMCO.mc["Newbie"]:enableCommandLine()
+  PRSchat.EMCO:setCmdAction("Trade", function(str)
+    send("trade "..str)
+  end)
+  PRSchat.EMCO.mc["Trade"]:enableCommandLine()
+  PRSchat.EMCO:setCmdAction("Local", function(str)
+    send("say "..str)
+  end)
+  PRSchat.EMCO.mc["Local"]:enableCommandLine()
+  local tell_rex = rex.new("^@(?<to>\\w+) (?<msg>.+)$")
+  PRSchat.EMCO:setCmdAction("Tell", function(str)
+    local _, _, matches = tell_rex:tfind(str)
+    if matches then
+      send(f"tell {matches.to} {matches.msg}")
+    else
+      send("reply "..str)
+    end
+  end)
+  PRSchat.EMCO.mc["Tell"]:enableCommandLine()
+  registerAnonymousEventHandler("sysExitEvent", function()
+    PRSchat.EMCO:save()
+  end)
 end
 
 
@@ -38,6 +77,7 @@ function PRSchat.stop()
   for k, v in pairs(PRSchat.triggers) do
     killTrigger(v)
   end
+  PRSchat.triggers = {}
   
   return true
 end
