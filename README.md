@@ -45,7 +45,9 @@ Mudlet Forum Topic: [https://forums.mudlet.org/viewtopic.php?f=6&t=23126]
 ## Background
 
 <p> <!-- align="center"> -->
-    <a href="prs-screenshot-01.jpg" alt="" title="Piprede Obelisk"><img src="prs-screenshot-01.jpg" height="200" align="left"/></a> 
+    <img src="prs-screenshot-01.jpg" height="200" align="left"/> 
+    <img src="https://user-images.githubusercontent.com/1428343/221492841-9d546a73-914b-4ce5-ad3f-fb651ca2664e.jpg" height="200" align="float"/> 
+    <img src="https://user-images.githubusercontent.com/1428343/221493247-00fb5edf-ea14-438f-a27f-ad89af31be85.jpg" height="200" align="float"/>
     <!--<a href="prs-screenshot-02.jpg" alt="" title="EMCO Chat"><img src="prs-screenshot-02.jpg" height="200" align="float"/></a> -->
 </p>
 
@@ -53,6 +55,7 @@ Mudlet Forum Topic: [https://forums.mudlet.org/viewtopic.php?f=6&t=23126]
 
 #### Milestones
 
+- v1.2.0 - EMCO Command Line Interface
 - v1.1.0 - Management of Instanced Areas
 - v1.0.0 - Dynamic Event-based Mapping Infrastructure
 - v0.12.0 - Mini-Map Congruence
@@ -66,8 +69,8 @@ As complement to a planned Mudlet UI for Discworld MUD, the aim of this project 
 
 - Automatic GMCP mapping of Procedural Realms MUD, including instanced areas/zones.
 - Automatic GMCP room styling based on terrain to matches colors in PR's 'map' and 'look' quickmap.
-- Tabbed Communications Channels -- Adjustable, dockable, resizable, and no conversations lost in scroll!
-- Self-updating gauges for character vitals, including Hit Points, Energy, Stamina, and eXperience Points.
+- Tabbed Communications Channels with CLI -- Adjustable, dockable, resizable, and no conversations lost in scroll!
+- Self-updating gauges for character vitals, including Hit Points, Energy, Stamina, Rage, Combo, and eXperience Points.
 - Speedwalking and pathfinding - Efficiently get where you're going - and fast!
 
 ### Built With
@@ -90,7 +93,7 @@ Version numbering approximates the [Semantic Versioning](http://semver.org) appr
 
 - **Project State**: Procedural Realms Script is under active development. The application can be used, but may be unstable. We are in need of continued testing prior to moving forward with each new release.
 
-- **Current Release**: v1.1.0
+- **Current Release**: v1.2.0
 
 **[^Top](#table-of-contents)**
 
