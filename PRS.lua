@@ -12,3 +12,5 @@ registerAnonymousEventHandler("gmcp.Char.player", function()
   PRSstats.stats()
 end, true)
 
+-- Announce PR on Discord
+setDiscordGame("Procedural Realms")
