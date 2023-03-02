@@ -98,7 +98,8 @@ local terrain_types = {
   ["Clearing"] = {id = 87, r = 0, g = 128, b = 0},
   ["Frozen Peak"] = {id = 88, r = 0, g = 0, b = 255},
   ["Obsidian Floor"] = {id = 89, r = 192, g = 192, b = 192},
-  ["Obelisk Exit"] = {id = 90, r = 128, g = 0, b = 128},                            
+  ["Obelisk Exit"] = {id = 90, r = 128, g = 0, b = 128},
+  ["Permafrost"] = {id = 91, r = 0, g = 255, b = 255},                             
 }
 
 -- list of possible movement directions and appropriate coordinate changes
