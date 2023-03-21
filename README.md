@@ -35,6 +35,7 @@ Mudlet Forum Topic: [https://forums.mudlet.org/viewtopic.php?f=6&t=23126]
 
 - [Background](#background)
 - [Install](#install)
+- [Usage](#usage)
 - [Roadmap](#roadmap) 
 - [Maintainer](#maintainer)
 - [Acknowledgements](#acknowledgements)
@@ -61,16 +62,12 @@ Mudlet Forum Topic: [https://forums.mudlet.org/viewtopic.php?f=6&t=23126]
 - v0.12.0 - Mini-Map Congruence
 - v0.5.0 - Drag-and-Drop Package Installation
 
-<!-- ### Vision
-
-As complement to a planned Mudlet UI for Discworld MUD, the aim of this project is to provide existing and potential players with a newbie-friendly (accessible) and reliable means to map and navigate the Discworld MUD in an elegeant, modern MUD client. In line with that aim, the goal of this project is to release a Mudlet package with all the requisite aliases, triggers, and scripts. Ultimately, my hope is that discMapper might become a part of a larger Mudlet package for Discworld MUD, including guild-specific UI feature setss. -->
-
 ### Features
 
 - Automatic GMCP mapping of Procedural Realms MUD, including instanced areas/zones.
 - Automatic GMCP room styling based on terrain to matches colors in PR's 'map' and 'look' quickmap.
 - Tabbed Communications Channels with CLI -- Adjustable, dockable, resizable, and no conversations lost in scroll!
-- Self-updating gauges for character vitals, including Hit Points, Energy, Stamina, Rage, Combo, and eXperience Points.
+- Self-Updating Gauges for character vitals, including Hit Points, Energy, Stamina, Rage, Combo, and eXperience Points.
 - Speedwalking and pathfinding - Efficiently get where you're going - and fast!
 
 ### Built With
