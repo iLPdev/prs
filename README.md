@@ -104,7 +104,7 @@ The [Mudlet Makers](https://github.com/Mudlet/Mudlet/graphs/contributors) could 
 
 <!-- ### One-Click Install Method
 
-Copy/paste the following command into Mudlet's input line to install discMapper:
+Copy/paste the following command into Mudlet's input line to install PRS:
 
 ```lua
 lua function d(a,b)if not b:find("oci",1,true)then return end installPackage(b)os.remove(b)cecho("<lime_green>PRS package installed!\n")end registerAnonymousEventHandler("sysDownloadDone","d")downloadFile(getMudletHomeDir().."/oci.mpackage","https://github.com/iLPdev/prs/releases/download/v0.7.1/PRS.mpackage")
@@ -125,18 +125,39 @@ To install PRS, just follow these steps:
 1. Drag and drop the file into your open Procedural Realms MUD profile.
 1. Optionally, delete the .mpackage file from your computer.
 
+### Initial Setup
+
+Upon initial install, you will typically need to connect to the game server and resize the UI windows both horizontally and vertically to reveal their contents fully. See **[UI Configuration](#user-interface-configuration)** below.
+
 ### Dependencies
 
 <a href="https://www.mudlet.org"><img src="https://www.mudlet.org/wp-content/uploads/2017/08/mudlet-wp-logo.png" alt="Mudlet" width="120" height="auto"></a>
 
-- [MDK](https://github.com/demonnic/MDK) provides EMCO and SUG support.
 - [Mudlet][mudlet-url] MUD Client application must obviously be installed on your operating system (Windows, MacOS, and Linux)
+- [MDK](https://github.com/demonnic/MDK) provides EMCO and SUG support. The required code is already included in the PRS release package, requiring no additional download/install by the user.
 
 ### Getting the Source
 
 The PRS project is [hosted on GitHub](https://github.com/iLPdev/prs). All versions of the repository are available as [releases](https://github.com/iLPdev/prs/releases).
 
 You can also clone the entire project directly with this command: `git clone git@github.com:iLPdev/prs.git`
+
+**[^Top](#table-of-contents)**
+
+<!-- USAGE -->
+## Usage
+
+### User Interface Configuration
+
+There are two fully configurable UI elements that are currently included in PRS by default: the EMCO (Communications Tabs and Map) and the Vitals (character Stat guages) windows. The UI windows are docked on the right of mudlet's main display upon connection to the game server. The windows may be resized by dragging their borders, moved by click/dragging their window title/headings, as well as undocked or closed by clicking on their respective upper-right pop-out or close icons.
+
+On initial usage, you will typically need to resize the windows both horizontally and vertically to reveal their contents fully. Note that the window configurations are preserved but not restored until connection to the game server has been established.      
+
+### Command Line Interface
+
+- A command line interface exists at the bottom of the `Chat`, `Newbie`, `Trade`, and `Local` tabs within the EMCO window. To communicate through any of these channels, simply click on the empty bottom line of the tab and input your text to be sent through the corresponding communication channel.
+
+- **@tell** - You may communicate privately with another player via the game's `tell` command from within any of the EMCO communication tabs' CLI via `@<player name> <message>`. For example, entering `@stack blah foo` into a tab's CLI will issue `tell stack blah foo` to the game server.   
 
 **[^Top](#table-of-contents)**
 
