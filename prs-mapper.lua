@@ -200,7 +200,7 @@ local function make_room()
     local exit_coords_delta = move_vectors[dir]
     local exit_room_id = get_room_id_by_coordinates(info.area, coords[1] + exit_coords_delta[1], coords[2] + exit_coords_delta[2], coords[3] + exit_coords_delta[3])
     if exit_room_id ~= nill then
-      connectExitStub(room_id, dir)
+      connectExitStub(room_id, exit_room_id, dir)
     end
   end
 end
@@ -239,7 +239,7 @@ local function handle_move()
       local exit_coords_delta = move_vectors[stubmap[v]]
       local exit_room_id = get_room_id_by_coordinates(info.area, coords[1] + exit_coords_delta[1], coords[2] + exit_coords_delta[2], coords[3] + exit_coords_delta[3])
       if exit_room_id ~= nill then
-        connectExitStub(room_id, v)
+        connectExitStub(room_id, exit_room_id, v)
       end
     end
   end
