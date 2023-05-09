@@ -46,7 +46,7 @@ Mudlet Forum Topic: [https://forums.mudlet.org/viewtopic.php?f=6&t=23126]
 ## Background
 
 <p> <!-- align="center"> -->
-    <img src="prs-screenshot-01.jpg" height="200" align="left"/> 
+    <img src="prs-screenshot-01.png" height="200" align="left"/> 
     <img src="https://user-images.githubusercontent.com/1428343/221492841-9d546a73-914b-4ce5-ad3f-fb651ca2664e.jpg" height="200" align="float"/> 
     <img src="https://user-images.githubusercontent.com/1428343/221493247-00fb5edf-ea14-438f-a27f-ad89af31be85.jpg" height="200" align="float"/>
     <!--<a href="prs-screenshot-02.jpg" alt="" title="EMCO Chat"><img src="prs-screenshot-02.jpg" height="200" align="float"/></a> -->
