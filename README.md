@@ -124,7 +124,7 @@ To install PRS, just follow these steps:
 
 ### Initial Setup
 
-Upon initial install, you will typically need to connect to the game server and resize the UI windows both horizontally and vertically to reveal their contents fully. See **[UI Configuration](#user-interface-configuration)** below.
+Upon initial install, you will typically need to connect to the game server, enable GMCP options, and resize the UI windows both horizontally and vertically to reveal their contents fully. See **[UI Configuration](#user-interface-configuration)** below.
 
 ### Dependencies
 
