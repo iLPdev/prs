@@ -96,7 +96,11 @@ local terrain_types = {
   ["Temple Entrance"] = {id = 85, r = 128, g = 0, b = 128},
   ["Frozen River"] = {id = 86, r = 0, g = 255, b = 255},
   ["Clearing"] = {id = 87, r = 0, g = 128, b = 0},
-  ["Frozen Peak"] = {id = 88, r = 0, g = 0, b = 255},                             
+  ["Frozen Peak"] = {id = 88, r = 0, g = 0, b = 255},
+  ["Obsidian Floor"] = {id = 89, r = 192, g = 192, b = 192},
+  ["Obelisk Exit"] = {id = 90, r = 128, g = 0, b = 128},
+  ["Permafrost"] = {id = 91, r = 0, g = 255, b = 255},
+  ["Gold Mine Tailings"] = {id = 92, r = 255, g = 255, b = 255},                            
 }
 
 -- list of possible movement directions and appropriate coordinate changes
@@ -196,7 +200,7 @@ local function make_room()
     local exit_coords_delta = move_vectors[dir]
     local exit_room_id = get_room_id_by_coordinates(info.area, coords[1] + exit_coords_delta[1], coords[2] + exit_coords_delta[2], coords[3] + exit_coords_delta[3])
     if exit_room_id ~= nill then
-      connectExitStub(room_id, dir)
+      connectExitStub(room_id, exit_room_id, dir)
     end
   end
 end
@@ -235,7 +239,7 @@ local function handle_move()
       local exit_coords_delta = move_vectors[stubmap[v]]
       local exit_room_id = get_room_id_by_coordinates(info.area, coords[1] + exit_coords_delta[1], coords[2] + exit_coords_delta[2], coords[3] + exit_coords_delta[3])
       if exit_room_id ~= nill then
-        connectExitStub(room_id, v)
+        connectExitStub(room_id, exit_room_id, v)
       end
     end
   end
