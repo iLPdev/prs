@@ -90,7 +90,7 @@ Version numbering approximates the [Semantic Versioning](http://semver.org) appr
 
 - **Project State**: Procedural Realms Script is under active development. The application can be used, but may be unstable. We are in need of continued testing prior to moving forward with each new release.
 
-- **Current Release**: v1.2.0
+- **Current Release**: v1.3.0
 
 **[^Top](#table-of-contents)**
 
