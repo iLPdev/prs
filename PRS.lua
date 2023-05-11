@@ -1,4 +1,5 @@
 -- Procedural Realms Script (PRS) by Stack
+
 local version = "1.4.0"
 
 -- check if the generic_mapper package is installed and, if so, uninstall it

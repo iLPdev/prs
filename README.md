@@ -46,7 +46,7 @@ Mudlet Forum Topic: [https://forums.mudlet.org/viewtopic.php?f=6&t=23126]
 ## Background
 
 <p> <!-- align="center"> -->
-    <img src="prs-screenshot-01.jpg" height="200" align="left"/> 
+    <img src="prs-screenshot-01.png" height="200" align="left"/> 
     <img src="https://user-images.githubusercontent.com/1428343/221492841-9d546a73-914b-4ce5-ad3f-fb651ca2664e.jpg" height="200" align="float"/> 
     <img src="https://user-images.githubusercontent.com/1428343/221493247-00fb5edf-ea14-438f-a27f-ad89af31be85.jpg" height="200" align="float"/>
     <!--<a href="prs-screenshot-02.jpg" alt="" title="EMCO Chat"><img src="prs-screenshot-02.jpg" height="200" align="float"/></a> -->
@@ -90,7 +90,7 @@ Version numbering approximates the [Semantic Versioning](http://semver.org) appr
 
 - **Project State**: Procedural Realms Script is under active development. The application can be used, but may be unstable. We are in need of continued testing prior to moving forward with each new release.
 
-- **Current Release**: v1.2.0
+- **Current Release**: v1.3.0
 
 **[^Top](#table-of-contents)**
 
@@ -124,7 +124,7 @@ To install PRS, just follow these steps:
 
 ### Initial Setup
 
-Upon initial install, you will typically need to connect to the game server and resize the UI windows both horizontally and vertically to reveal their contents fully. See **[UI Configuration](#user-interface-configuration)** below.
+Upon initial install, you will typically need to connect to the game server, enable GMCP options, and resize the UI windows both horizontally and vertically to reveal their contents fully. See **[UI Configuration](#user-interface-configuration)** below.
 
 ### Dependencies
 
@@ -148,7 +148,8 @@ You can also clone the entire project directly with this command: `git clone git
 
 There are two fully configurable UI elements that are currently included in PRS by default: the EMCO (Communications Tabs and Map) and the Vitals (character Stat guages) windows. The UI windows are docked on the right of mudlet's main display upon connection to the game server. The windows may be resized by dragging their borders, moved by click/dragging their window title/headings, as well as undocked or closed by clicking on their respective upper-right pop-out or close icons.
 
-On initial usage, you will typically need to resize the windows both horizontally and vertically to reveal their contents fully. Note that the window configurations are preserved but not restored until connection to the game server has been established.      
+1. **Enable GMCP**: You must enable GMCP options on the game server. To determine if GMCP in enabled on the server, log into the game and issue the following command: `config gmcp`. Displayed under the "Terminal" column are the "gmcp" and "gmcpseenrooms" options. If they are not corrently set to "on", you may enable them by issuing the `gmcp` and `gmcpseenroom` commands. 
+3. **Resize Windows**: On initial usage, you will typically need to resize the windows both horizontally and vertically to reveal their contents fully. Note that the window configurations are preserved but not restored until connection to the game server has been established. You can optionally drag, re-arrange, pop out, and otherwise move the windows to your liking,
 
 ### Command Line Interface
 
