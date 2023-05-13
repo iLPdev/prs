@@ -233,7 +233,9 @@ local function add_gauges()
       
       if PRSstats.events.xpForNextLevel_id then killAnonymousEventHandler(PRSstats.events.xpForNextLevel_id) end
       PRSstats.events.xpForNextLevel_id = registerAnonymousEventHandler("gmcp.Char.player.xpForNextLevel", function()
-        PRSstats.xp.tnl = gmcp.Char.player.xpForNextLevel - gmcp.Char.player.xpForCurrentLevel
+        if gmcp.Char.player.xpForNextLevel then
+          PRSstats.xp.tnl = gmcp.Char.player.xpForNextLevel - gmcp.Char.player.xpForCurrentLevel
+        end
       end)
   end
 end
@@ -246,8 +248,10 @@ function PRSstats.stats()
     add_gauges()
   else
     local initialize_ev_handler = registerAnonymousEventHandler("gmcp.Char.player", function()
-      PRSstats.UW:setTitle("Vitals - "..gmcp.Char.player.name)
-      add_gauges()
+      if gmcp and gmcp.Char and gmcp.Char.player and gmcp.Char.player.name then
+        PRSstats.UW:setTitle("Vitals - "..gmcp.Char.player.name)
+        add_gauges()
+      end
     end, true)
   end
 end
