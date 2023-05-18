@@ -244,12 +244,12 @@ function PRSstats.stats()
   PRSstats.UW = Geyser.UserWindow:new({name = "Stats", titleText ="Vitals", x = "75%", y = "75%", height="25%", width="25%", docked = true, restoreLayout = true})
   
   if gmcp and gmcp.Char and gmcp.Char.player then
-    PRSstats.UW:setTitle("Vitals - "..gmcp.Char.player.name)
+    PRSstats.UW:setTitle("Vitals - "..gmcp.Char.player.name.." (Level "..gmcp.Char.player.level..")")
     add_gauges()
   else
     local initialize_ev_handler = registerAnonymousEventHandler("gmcp.Char.player", function()
       if gmcp and gmcp.Char and gmcp.Char.player and gmcp.Char.player.name then
-        PRSstats.UW:setTitle("Vitals - "..gmcp.Char.player.name)
+        PRSstats.UW:setTitle("Vitals - "..gmcp.Char.player.name.."  (Level "..gmcp.Char.player.level..")")
         add_gauges()
       end
     end, true)
