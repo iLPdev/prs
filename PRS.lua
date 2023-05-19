@@ -13,5 +13,13 @@ registerAnonymousEventHandler("gmcp.Char.player", function()
   PRSstats.stats()
 end, true)
 
--- Announce PR on Discord
+-- set Discord button to PR invite
+setDiscordGameUrl("https://discord.gg/rRFEjc6vV9", "Procedural Realms")
+
+-- Discord Rich Text Integration
+setDiscordApplicationID("947477099596378142")
 setDiscordGame("Procedural Realms")
+local currentarea = getRoomArea(getPlayerRoom())
+local areaname = getAreaTableSwap()[currentarea]
+setDiscordDetail(areaname)
+setDiscordElapsedStartTime(os.time(os.date("*t")))
