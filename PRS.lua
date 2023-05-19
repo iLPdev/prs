@@ -13,5 +13,5 @@ registerAnonymousEventHandler("gmcp.Char.player", function()
   PRSstats.stats()
 end, true)
 
--- Announce PR on Discord
-setDiscordGame("Procedural Realms")
+-- set Discord button to PR invite
+setDiscordGameUrl("https://discord.gg/rRFEjc6vV9", "Procedural Realms")
