@@ -1,4 +1,4 @@
--- Procedural Realms Script (PRS) by Stack
+-- Procedural Realms Script (PRS) by Stack and Dalem
 
 local version = "1.5.0"
 
