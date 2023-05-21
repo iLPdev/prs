@@ -19,7 +19,7 @@
 
 <!-- SHORT DESCRIPTION -->
 <p align="center">
-    Mudlet script for Procedural Realms MUD
+    Mudlet UI for Procedural Realms MUD
     <br />
 </p>
 
@@ -56,6 +56,7 @@ Mudlet Forum Topic: [https://forums.mudlet.org/viewtopic.php?f=6&t=23126]
 
 #### Milestones
 
+- v1.5.0 - Auto-Install, Auto-Update, and Discord Rich Presence Integration
 - v1.2.0 - EMCO Command Line Interface
 - v1.1.0 - Management of Instanced Areas
 - v1.0.0 - Dynamic Event-based Mapping Infrastructure
@@ -69,6 +70,7 @@ Mudlet Forum Topic: [https://forums.mudlet.org/viewtopic.php?f=6&t=23126]
 - Tabbed Communications Channels with CLI -- Adjustable, dockable, resizable, and no conversations lost in scroll!
 - Self-Updating Gauges for character vitals, including Hit Points, Energy, Stamina, Rage, Combo, and eXperience Points.
 - Speedwalking and pathfinding - Efficiently get where you're going - and fast!
+- Discord Rich Presence integration
 
 ### Built With
 
@@ -90,7 +92,7 @@ Version numbering approximates the [Semantic Versioning](http://semver.org) appr
 
 - **Project State**: Procedural Realms Script is under active development. The application can be used, but may be unstable. We are in need of continued testing prior to moving forward with each new release.
 
-- **Current Release**: v1.4.1
+- **Current Release**: v1.5.0
 
 **[^Top](#table-of-contents)**
 
@@ -99,32 +101,27 @@ Version numbering approximates the [Semantic Versioning](http://semver.org) appr
 
 The [Mudlet Makers](https://github.com/Mudlet/Mudlet/graphs/contributors) could not have made it easier to install preconfigured custom aliases, triggers, scripts, keybindings, and UIs.
 
-<!-- ### One-Click Install Method
+### Automatic Install Method
 
-Copy/paste the following command into Mudlet's input line to install PRS:
+Procedural Realms MUD will automatically detect that you've connected to the server via Mudlet and prompt you to install or update to the latest version of PRS by issuing the `mudlet install` command. You may then close and restart Mudlet to initialize the latest version of PRS. See the in-game `mudlet help` command for details. 
 
-```lua
-lua function d(a,b)if not b:find("oci",1,true)then return end installPackage(b)os.remove(b)cecho("<lime_green>PRS package installed!\n")end registerAnonymousEventHandler("sysDownloadDone","d")downloadFile(getMudletHomeDir().."/oci.mpackage","https://github.com/iLPdev/prs/releases/download/v0.7.1/PRS.mpackage")
-```
--->
+### Manual Install Method
 
-### Package Install Method
+Just like any other package as of Mudlet v4.8+, you may install PRS by simply dragging and droppping the package file into Mudlet. PRS will then be merged into your active Mudlet profile, and you may delete the original file.
 
-Just like any other package as of Mudlet v4.8+, you may install PRS by simply dragging and droppping the package file into Mudlet. discMapper will then be merged into your active Mudlet profile, and you may delete the original file.
-
-To install PRS, just follow these steps:
+To manually install PRS, just follow these steps:
 
 1. Locate the [latest release](https://github.com/iLPdev/prs/releases/latest) of PRS.
 1. Download the .mpackage file listed under Assets.
 1. Open Mudlet on your operating system of choice.
 1. Open an existing Procedural Realms MUD profile or create a new one.
 1. Locate the saved file on your PC.
-1. Drag and drop the file into your open Procedural Realms MUD profile.
+1. Drag and drop the file into the main display of your open Procedural Realms profile.
 1. Optionally, delete the .mpackage file from your computer.
 
 ### Initial Setup
 
-Upon initial install, you will typically need to connect to the game server, enable GMCP options, and resize the UI windows both horizontally and vertically to reveal their contents fully. See **[UI Configuration](#user-interface-configuration)** below.
+Upon initial install and/or update, you may need to close and re-open your Procedural Realms profile in Mudlet. You will then typically need to connect to the game server, and resize the UI windows both horizontally and vertically to reveal their contents fully. See **[UI Configuration](#user-interface-configuration)** below.
 
 ### Dependencies
 
@@ -148,8 +145,9 @@ You can also clone the entire project directly with this command: `git clone git
 
 There are two fully configurable UI elements that are currently included in PRS by default: the EMCO (Communications Tabs and Map) and the Vitals (character Stat guages) windows. The UI windows are docked on the right of mudlet's main display upon connection to the game server. The windows may be resized by dragging their borders, moved by click/dragging their window title/headings, as well as undocked or closed by clicking on their respective upper-right pop-out or close icons.
 
-1. **Enable GMCP**: You must enable GMCP options on the game server. To determine if GMCP in enabled on the server, log into the game and issue the following command: `config gmcp`. Displayed under the "Terminal" column are the "gmcp" and "gmcpseenrooms" options. If they are not currently set to "on", you may enable them by issuing the `gmcp` and `gmcpseenroom` commands. 
-3. **Resize Windows**: On initial usage, you will typically need to resize the windows both horizontally and vertically to reveal their contents fully. Note that the window configurations are preserved but not restored until connection to the game server has been established. You can optionally drag, re-arrange, pop out, and otherwise move the windows to your liking,
+<!-- 1. **Enable GMCP**: You must enable GMCP options on the game server. To determine if GMCP in enabled on the server, log into the game and issue the following command: `config gmcp`. Displayed under the "Terminal" column are the "gmcp" and "gmcpseenrooms" options. If they are not currently set to "on", you may enable them by issuing the `gmcp` and `gmcpseenroom` commands. --> 
+1. **Resize Windows**: On initial usage, you will typically need to resize the windows both horizontally and vertically to reveal their contents fully. Note that the window configurations are preserved but not restored until connection to the game server has been established. 
+2. **Layout Preferences: You can optionally drag, re-arrange, pop out, and otherwise move the two PRS windows to your liking.
 
 ### Command Line Interface
 
