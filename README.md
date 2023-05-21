@@ -19,7 +19,7 @@
 
 <!-- SHORT DESCRIPTION -->
 <p align="center">
-    Mudlet UI for Procedural Realms MUD
+    Mudlet script for Procedural Realms MUD
     <br />
 </p>
 
