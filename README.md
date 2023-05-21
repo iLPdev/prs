@@ -171,7 +171,7 @@ See also the [open issues](https://github.com/iLPdev/prs/issues) for a list of p
 <!-- MAINTAINER(S) -->
 ## Maintainer
 
-[@Stack](https://github.com/iLPdev) - Stop by and say hello on the [Mudlet Discord Server](https://discordapp.com/invite/kuYvMQ9)!
+[@Stack](https://github.com/iLPdev) - Stop by and say hello on the [Procedural Realms Discord Server]([https://discordapp.com/invite/kuYvMQ9](https://discord.gg/rRFEjc6vV9))!
 
 **[^Top](#table-of-contents)**
 
