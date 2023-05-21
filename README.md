@@ -148,7 +148,7 @@ You can also clone the entire project directly with this command: `git clone git
 
 There are two fully configurable UI elements that are currently included in PRS by default: the EMCO (Communications Tabs and Map) and the Vitals (character Stat guages) windows. The UI windows are docked on the right of mudlet's main display upon connection to the game server. The windows may be resized by dragging their borders, moved by click/dragging their window title/headings, as well as undocked or closed by clicking on their respective upper-right pop-out or close icons.
 
-1. **Enable GMCP**: You must enable GMCP options on the game server. To determine if GMCP in enabled on the server, log into the game and issue the following command: `config gmcp`. Displayed under the "Terminal" column are the "gmcp" and "gmcpseenrooms" options. If they are not corrently set to "on", you may enable them by issuing the `gmcp` and `gmcpseenroom` commands. 
+1. **Enable GMCP**: You must enable GMCP options on the game server. To determine if GMCP in enabled on the server, log into the game and issue the following command: `config gmcp`. Displayed under the "Terminal" column are the "gmcp" and "gmcpseenrooms" options. If they are not currently set to "on", you may enable them by issuing the `gmcp` and `gmcpseenroom` commands. 
 3. **Resize Windows**: On initial usage, you will typically need to resize the windows both horizontally and vertically to reveal their contents fully. Note that the window configurations are preserved but not restored until connection to the game server has been established. You can optionally drag, re-arrange, pop out, and otherwise move the windows to your liking,
 
 ### Command Line Interface
