@@ -3,7 +3,7 @@ PRSchat.triggers = PRSchat.triggers or {}
 
 local EMCO = require("PRS.emco")
   
-function PRSchat.tabs()
+function PRSchat.tabs()  
   local title_text
   if gmcp and gmcp.Char and gmcp.Char.player then
     title_text = "Procedural Realms - "..gmcp.Char.player.name
@@ -12,7 +12,7 @@ function PRSchat.tabs()
     registerAnonymousEventHandler("gmcp.Char.player.name", function() PRSchat.UW:setTitle("Procedural Realms - "..gmcp.Char.player.name) end, true)
   end
   
-  PRSchat.UW = Geyser.UserWindow:new({name = "Chat", titleText = title_text, y="50%", docked = true, width="25%", height="75%"})
+  PRSchat.UW = Geyser.UserWindow:new({name = "Chat", titleText = title_text, y = "50%", docked = true, width = "25%", height = "75%",})
   local stylesheet = [[background-color: rgb(80,80,80,255); border-width: 1px; border-style: solid; border-color: black; border-radius: 0px;]]
   local istylesheet = [[background-color: rgb(60,60,60,255); border-width: 1px; border-style: solid; border-color: black; border-radius: 0px;]]
   PRSchat.EMCO = EMCO:new({
@@ -36,6 +36,9 @@ function PRSchat.tabs()
     },
     mapTabName = "Map",
     mapTab = true,
+    tabBold = true,
+    activeTabFGColor = "white", 
+    inactiveTabFGColor = "gray",
     activeTabCSS = stylesheet,
     inactiveTabCSS = istylesheet,
     preserveBackground = true,
@@ -186,5 +189,5 @@ function PRSchat.initialize()
     end)
   end
 end
-
 PRSchat.initialize()
+
