@@ -24,6 +24,7 @@ function PRSchat.tabs()
     allTab = true,
     allTabName = "All",
     gap = 2,
+    leftMargin = 2,
     consoleColor = "black",
     consoles = {
       "Chat",
@@ -42,6 +43,10 @@ function PRSchat.tabs()
     activeTabCSS = stylesheet,
     inactiveTabCSS = istylesheet,
     preserveBackground = true,
+    timestamp = true,
+    customTimestampColor = true,
+    timestampFGColor = "dim_gray",
+    timestampBGColor = "black",
   }, PRSchat.UW)
   PRSchat.EMCO:load()
   PRSchat.EMCO:setCmdAction("Chat", function(str)
