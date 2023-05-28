@@ -1,16 +1,15 @@
 -- Procedural Realms Script (PRS) by Stack and Dalem
-
 local version = "1.5.1"
 
 -- check if the generic_mapper package is installed and, if so, uninstall it
-if table.contains(getPackages(),"generic_mapper") then
-  uninstallPackage("generic_mapper")
+if table.contains(getPackages(), "generic_mapper") then
+    uninstallPackage("generic_mapper")
 end
 
 -- Open the windows
 PRSchat.tabs()
 registerAnonymousEventHandler("gmcp.Char.player", function()
-  PRSstats.stats()
+    PRSstats.stats()
 end, true)
 
 -- set Discord button to PR invite
