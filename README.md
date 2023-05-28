@@ -155,7 +155,7 @@ There are two fully configurable UI elements that are currently included in PRS 
 <!-- 1. **Enable GMCP**: You must enable GMCP options on the game server. To determine if GMCP in enabled on the server, log into the game and issue the following command: `config gmcp`. Displayed under the "Terminal" column are the "gmcp" and "gmcpseenrooms" options. If they are not currently set to "on", you may enable them by issuing the `gmcp` and `gmcpseenroom` commands. -->
 
 1. **Resize Windows**: On initial usage, you will typically need to resize the windows both horizontally and vertically to reveal their contents fully. Note that the window configurations are preserved but not restored until connection to the game server has been established.
-2. \*\*Layout Preferences: You can optionally drag, re-arrange, pop out, and otherwise move the two PRS windows to your liking.
+2. **Layout Preferences:** You can optionally drag, re-arrange, pop out, and otherwise move the two PRS windows to your liking.
 
 ### Command Line Interface
 
