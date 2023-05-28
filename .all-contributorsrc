@@ -43,6 +43,15 @@
         "bug",
         "code"
       ]
+    },
+    {
+      "login": "H4RV3Y2805",
+      "name": "Len Harvey",
+      "avatar_url": "https://avatars.githubusercontent.com/u/8833420?v=4",
+      "profile": "https://github.com/H4RV3Y2805",
+      "contributions": [
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -51,5 +60,6 @@
   "repoType": "github",
   "repoHost": "https://github.com",
   "skipCi": true,
-  "commitConvention": "angular"
+  "commitConvention": "angular",
+  "commitType": "docs"
 }
