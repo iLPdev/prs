@@ -71,6 +71,7 @@ Mudlet Forum Topic: [https://forums.mudlet.org/viewtopic.php?f=6&t=23126]
 - Self-Updating Gauges for character vitals, including Hit Points, Energy, Stamina, Rage, Combo, and eXperience Points.
 - Speedwalking and pathfinding - Efficiently get where you're going - and fast!
 - Discord Rich Presence integration
+- Clickable URLs
 
 ### Built With
 
@@ -92,7 +93,7 @@ Version numbering approximates the [Semantic Versioning](http://semver.org) appr
 
 - **Project State**: Procedural Realms Script is under active development. The application can be used, but may be unstable. We are in need of continued testing prior to moving forward with each new release.
 
-- **Current Release**: v1.5.0
+- **Current Release**: v1.6.0
 
 **[^Top](#table-of-contents)**
 
