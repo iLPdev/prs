@@ -45,7 +45,7 @@ local terrain_types = {
   ["Armor Shop"] = {id = 34, r = 255, g = 255, b = 255},
   ["Alchemist"] = {id = 35, r = 255, g = 0, b = 255},
   ["Farming Store"] = {id = 36, r = 0, g = 128, b = 0},
-  ["Farmland"] = {id = 37, r = 128, g = 128, b = 0},
+--  ["Farmland"] = {id = 37, r = 128, g = 128, b = 0}, -- duplicate key id reserved for later use
   ["Abandoned Mine"] = {id = 38, r = 255, g = 0, b = 0},
   ["Shrine"] = {id = 39, r = 255, g = 255, b = 255},
   ["Grocery Store"] = {id = 40, r = 128, g = 128, b = 0},
@@ -87,7 +87,7 @@ local terrain_types = {
   ["Canyon"] = {id = 76, r = 128, g = 0, b = 128},
   ["Oasis"] = {id = 77, r = 0, g = 155, b = 0},
   ["Summit"] = {id = 78, r = 255, g = 255, b = 255},
-  ["Ravine"] = {id = 79, r = 128, g = 128, b = 128},
+ --  ["Ravine"] = {id = 79, r = 128, g = 128, b = 128}, -- duplicate key id reserved for later use
   ["Mountains"] = {id = 80, r = 0, g = 255, b = 255},
   ["Foothills"] = {id = 81, r = 255, g = 255, b = 0},
   ["Valley"] = {id = 82, r = 0, g = 128, b = 0},
