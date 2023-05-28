@@ -4,8 +4,8 @@
 <div>
     <br />
     <p align="left">
-        <a href=".github/images/procrealms-mudlet-alt-4x.png">
-          <img src=".github/images/procrealms-mudlet-alt-4x.png" alt="Procedural Realms Logo" width="auto" height="auto">
+        <a href=".github/images/prs-logo.png">
+          <img src=".github/images/prs-logo.png" alt="Procedural Realms Logo" width="auto" height="auto">
         </a>
     </p>  
 </div>
