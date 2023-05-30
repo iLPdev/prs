@@ -57,6 +57,7 @@ Mudlet Forum Topic: [https://forums.mudlet.org/viewtopic.php?f=6&t=23126]
 
 #### Milestones
 
+- v1.6.0 - Clickable URLs, EMCO Timestamps, and Revisionator Patching
 - v1.5.0 - Auto-Install, Auto-Update, and Discord Rich Presence Integration
 - v1.2.0 - EMCO Command Line Interface
 - v1.1.0 - Management of Instanced Areas
@@ -132,7 +133,7 @@ Upon initial install and/or update, you may need to close and re-open your Proce
 <a href="https://www.mudlet.org"><img src="https://www.mudlet.org/wp-content/uploads/2017/08/mudlet-wp-logo.png" alt="Mudlet" width="120" height="auto"></a>
 
 - [Mudlet][mudlet-url] MUD Client application must obviously be installed on your operating system (Windows, MacOS, and Linux)
-- [MDK](https://github.com/demonnic/MDK) provides EMCO and SUG support. The required code is already included in the PRS release package, requiring no additional download/install by the user.
+- [MDK](https://github.com/demonnic/MDK) provides EMCO, Revisionator, and SUG support. The required code is already included in the PRS release package, requiring no additional download/install by the user.
 
 ### Getting the Source
 
