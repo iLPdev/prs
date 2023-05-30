@@ -60,6 +60,7 @@ function PRSchat.tabs()
     })
 
     emcoRev:addPatch(function()
+        --- patch for v1.6.0
         PRSchatTabs.leftMargin = 2
         PRSchatTabs.tabBold = true
         PRSchatTabs:setActiveTabFGColor("white")
