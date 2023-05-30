@@ -61,29 +61,29 @@ function PRSchat.tabs()
 
     emcoRev:addPatch(function()
         --- patch for v1.6.0
-        PRSchatTabs.leftMargin = 2
-        PRSchatTabs.tabBold = true
-        PRSchatTabs:setActiveTabFGColor("white")
-        PRSchatTabs:setinactiveTabFGColor("gray")
-        PRSchatTabs:enableTimeStamp()
-        PRSchatTabs:enableCustomTimestampColor()
-        PRSchatTabs:setTimestampFGColor("dim_gray")
-        PRSchatTabs:setTimestampBGColor("black")
+        PRSchat.EMCO.leftMargin = 2
+        PRSchat.EMCO.tabBold = true
+        PRSchat.EMCO:setActiveTabFGColor("white")
+        PRSchat.EMCO:setinactiveTabFGColor("gray")
+        PRSchat.EMCO:enableTimeStamp()
+        PRSchat.EMCO:enableCustomTimestampColor()
+        PRSchat.EMCO:setTimestampFGColor("dim_gray")
+        PRSchat.EMCO:setTimestampBGColor("black")
     end)
 
     local function saver(eventName, packageName)
         if eventName == "sysExitEvent" or packageName == "PRS" then
-            PRSchatTabs:save()
+            PRSchat.EMCO:save()
         end
     end
 
     local function loader(eventName, packageName)
         if eventName == "sysLoadEvent" or packageName == "PRS" then
-            PRSchatTabs:load()
+            PRSchat.EMCO:load()
             -- new stuff below here
             local changed = emcoRev:migrate()
             if changed then -- save the emco changes back to its own save file
-                PRSchatTabs:save()
+                PRSchat.EMCO:save()
             end
         end
     end
