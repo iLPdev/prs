@@ -2,6 +2,7 @@ PRSchat = PRSchat or {}
 PRSchat.triggers = PRSchat.triggers or {}
 
 local EMCO = require("PRS.emco")
+local rev = require("PRS.revisionator")
 
 function PRSchat.tabs()
     local title_text
@@ -22,10 +23,12 @@ function PRSchat.tabs()
         width = "25%",
         height = "75%"
     })
+
     local stylesheet =
         [[background-color: rgb(80,80,80,255); border-width: 1px; border-style: solid; border-color: black; border-radius: 0px;]]
     local istylesheet =
         [[background-color: rgb(60,60,60,255); border-width: 1px; border-style: solid; border-color: black; border-radius: 0px;]]
+
     PRSchat.EMCO = EMCO:new({
         name = "PRSchatTabs",
         x = "0",
@@ -51,7 +54,39 @@ function PRSchat.tabs()
         timestampFGColor = "dim_gray",
         timestampBGColor = "black"
     }, PRSchat.UW)
-    PRSchat.EMCO:load()
+
+    local emcoRev = rev:new({
+        name = "prsRevisionator"
+    })
+
+    emcoRev:addPatch(function()
+        PRSchatTabs.leftMargin = 2
+        PRSchatTabs.tabBold = true
+        PRSchatTabs:setActiveTabFGColor("white")
+        PRSchatTabs:setinactiveTabFGColor("gray")
+        PRSchatTabs:enableTimeStamp()
+        PRSchatTabs:enableCustomTimestampColor()
+        PRSchatTabs:setTimestampFGColor("dim_gray")
+        PRSchatTabs:setTimestampBGColor("black")
+    end)
+
+    local function saver(eventName, packageName)
+        if eventName == "sysExitEvent" or packageName == "PRS" then
+            PRSchatTabs:save()
+        end
+    end
+
+    local function loader(eventName, packageName)
+        if eventName == "sysLoadEvent" or packageName == "PRS" then
+            PRSchatTabs:load()
+            -- new stuff below here
+            local changed = emcoRev:migrate()
+            if changed then -- save the emco changes back to its own save file
+                PRSchatTabs:save()
+            end
+        end
+    end
+
     PRSchat.EMCO:setCmdAction("Chat", function(str)
         send("chat " .. str)
     end)
@@ -78,9 +113,11 @@ function PRSchat.tabs()
         end
     end)
     PRSchat.EMCO.mc["Tell"]:enableCommandLine()
-    registerAnonymousEventHandler("sysExitEvent", function()
-        PRSchat.EMCO:save()
-    end)
+
+    registerNamedEventHandler("PRS", "load", "sysLoadEvent", loader)
+    registerNamedEventHandler("PRS", "install", "sysInstall", loader)
+    registerNamedEventHandler("PRS", "exit", "sysExitEvent", saver)
+    registerNamedEventHandler("PRS", "uninstall", "sysUninstall", saver)
 end
 
 function PRSchat.stop()
@@ -198,4 +235,3 @@ function PRSchat.initialize()
     end
 end
 PRSchat.initialize()
-
