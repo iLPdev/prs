@@ -1,5 +1,5 @@
 -- Procedural Realms Script (PRS) by Stack and Dalem
-local version = "1.6.0"
+local version = "1.7.0"
 
 -- check if the generic_mapper package is installed and, if so, uninstall it
 if table.contains(getPackages(), "generic_mapper") then
