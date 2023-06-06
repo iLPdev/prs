@@ -111,7 +111,7 @@ GUI.tabwindow1 = GUI.tabwindow1 or Adjustable.TabWindow:new({
     inactiveTabFGColor = "#242428",
     color1 = "rgb(24,24,28)",
     color2 = "rgb(16,16,20)",
-    tabs = {"Effects", "Tab2", "Tab3", "Tab4", "Tab5"}
+    tabs = {"Effects", "Inventory", "Equipment", "Tab4", "Tab5"}
 }, GUI.left_top)
 
 GUI.tabwindow2 = GUI.tabwindow2 or Adjustable.TabWindow:new({
@@ -124,7 +124,7 @@ GUI.tabwindow2 = GUI.tabwindow2 or Adjustable.TabWindow:new({
     inactiveTabFGColor = "#242428",
     color1 = "rgb(24,24,28)",
     color2 = "rgb(16,16,20)",
-    tabs = {"Combat", "Tab7", "Tab8", "Tab9", "Tab10"}
+    tabs = {"Combat", "Quests", "Tab8", "Tab9", "Tab10"}
 }, GUI.left_bottom)
 
 GUI.tabwindow3 = GUI.tabwindow3 or Adjustable.TabWindow:new({
@@ -137,7 +137,7 @@ GUI.tabwindow3 = GUI.tabwindow3 or Adjustable.TabWindow:new({
     inactiveTabFGColor = "#242428",
     color1 = "rgb(24,24,28)",
     color2 = "rgb(16,16,20)",
-    tabs = {"Vitals", "Skills", "Tab13", "Tab14", "Tab15"}
+    tabs = {"Vitals", "Skills", "Statistics", "Tab14", "Tab15"}
 }, GUI.right_top)
 
 GUI.tabwindow4 = GUI.tabwindow4 or Adjustable.TabWindow:new({
