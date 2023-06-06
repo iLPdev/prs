@@ -14,7 +14,7 @@ local function add_gauges()
         textTemplate = "HP: |c / |m  (|p%)", -- gauge will show "HP: 500/1000 (50%)" as the text if you had 500 current and 1000 max hp
         currentVariable = "gmcp.Char.player.hp", -- if gmcp.Char.Vitals.hp is nil or unreachable, it will use the defaultCurrent of 50
         maxVariable = "gmcp.Char.player.maxHp" -- if gmcp.Char.Vitals.maxhp is nil or unreachable, it will use the defaultMax of 100
-    }, PRSstats.UW)
+    }, GUI.tabwindow3.Vitalscenter)
     HPbar.front:setStyleSheet(
         [[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #98f041, stop: 0.1 #8cf029, stop: 0.49 #66cc00, stop: 0.5 #52a300, stop: 1 #66cc00);
       border-top: 1px black solid;
@@ -47,7 +47,7 @@ local function add_gauges()
         textTemplate = "EN: |c / |m  (|p%)",
         currentVariable = "gmcp.Char.player.energy",
         maxVariable = "gmcp.Char.player.maxEnergy"
-    }, PRSstats.UW)
+    }, GUI.tabwindow3.Vitalscenter)
     ENbar.front:setStyleSheet(
         [[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #eeeeee, stop: 0.49 #cccccc, stop: 0.5 #aaaaaa, stop: 1 #cccccc);
       border-top: 1px black solid;
@@ -80,7 +80,7 @@ local function add_gauges()
         textTemplate = "ST: |c / |m  (|p%)",
         currentVariable = "gmcp.Char.player.stamina",
         maxVariable = "gmcp.Char.player.maxStamina"
-    }, PRSstats.UW)
+    }, GUI.tabwindow3.Vitalscenter)
     STbar.front:setStyleSheet(
         [[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffff50, stop: 0.1 #ffe200, stop: 0.49 #c1c100, stop: 0.5 #a4a40c, stop: 1 #c1c100);
       border-top: 1px black solid;
@@ -111,7 +111,7 @@ local function add_gauges()
         textTemplate = "Food: |c / |m  (|p%)",
         currentVariable = "gmcp.Char.player.food",
         maxVariable = "gmcp.Char.player.maxFood"
-    }, PRSstats.UW)
+    }, GUI.tabwindow3.Vitalscenter)
     HPbar.front:setStyleSheet(
         [[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #98f041, stop: 0.1 #8cf029, stop: 0.49 #66cc00, stop: 0.5 #52a300, stop: 1 #66cc00);
       border-top: 1px black solid;
@@ -144,7 +144,7 @@ local function add_gauges()
         textTemplate = "Rage: |c",
         currentVariable = "gmcp.Char.player.rage",
         maxVariable = "gmcp.Char.player.maxRage"
-    }, PRSstats.UW)
+    }, GUI.tabwindow2.Combatcenter)
     RPbar.front:setStyleSheet(
         [[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #f04141, stop: 0.1 #ef2929, stop: 0.49 #cc0000, stop: 0.5 #a40000, stop: 1 #cc0000);
         border-top: 1px black solid;
@@ -175,7 +175,7 @@ local function add_gauges()
         textTemplate = "Combo: |c",
         currentVariable = "gmcp.Char.player.combo",
         maxVariable = "gmcp.Char.player.maxCombo"
-    }, PRSstats.UW)
+    }, GUI.tabwindow2.Combatcenter)
     CPbar.front:setStyleSheet(
         [[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #f04141, stop: 0.1 #ef2929, stop: 0.49 #cc0000, stop: 0.5 #a40000, stop: 1 #cc0000);
         border-top: 1px black solid;
@@ -212,7 +212,7 @@ local function add_gauges()
             textTemplate = "XP: |c / |m   (|p%)",
             currentVariable = "PRSstats.xp.current",
             maxVariable = "PRSstats.xp.tnl"
-        }, PRSstats.UW)
+        }, GUI.tabwindow3.Vitalscenter)
         XPbar.front:setStyleSheet(
             [[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #3399ff, stop: 0.1 #0080ff, stop: 0.49 #0000ff, stop: 0.5 #0000cc, stop: 1 #0000ff);
         border-top: 1px black solid;
@@ -262,20 +262,10 @@ local function add_gauges()
 end
 
 function PRSstats.stats()
-    PRSstats.UW = Geyser.UserWindow:new({
-        name = "Stats",
-        titleText = "Vitals",
-        x = "75%",
-        y = "75%",
-        height = "25%",
-        width = "25%",
-        docked = true,
-        restoreLayout = true
-    })
 
     if gmcp and gmcp.Char and gmcp.Char.player then
         PRSstats.UW:setTitle("Vitals - " .. gmcp.Char.player.name .. " (Level " .. gmcp.Char.player.level .. ")")
-        add_gauges()
+add_gauges()
     else
         local initialize_ev_handler = registerAnonymousEventHandler("gmcp.Char.player", function()
             if gmcp and gmcp.Char and gmcp.Char.player and gmcp.Char.player.name then
