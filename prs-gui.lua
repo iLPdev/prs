@@ -72,9 +72,6 @@ GUI.left_bottom = Adjustable.Container:new({
 Adjustable.Container:doAll(function(self)
     self:addConnectMenu()
 end)
-Adjustable.Container:doAll(function(s)
-    tabwindow:addTabifyMenu(s)
-end)
 
 GUI.top:attachToBorder("top")
 GUI.bottom:attachToBorder("bottom")
