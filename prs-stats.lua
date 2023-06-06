@@ -261,18 +261,4 @@ local function add_gauges()
     end
 end
 
-function PRSstats.stats()
-
-    if gmcp and gmcp.Char and gmcp.Char.player then
-        PRSstats.UW:setTitle("Vitals - " .. gmcp.Char.player.name .. " (Level " .. gmcp.Char.player.level .. ")")
 add_gauges()
-    else
-        local initialize_ev_handler = registerAnonymousEventHandler("gmcp.Char.player", function()
-            if gmcp and gmcp.Char and gmcp.Char.player and gmcp.Char.player.name then
-                PRSstats.UW:setTitle("Vitals - " .. gmcp.Char.player.name .. "  (Level " .. gmcp.Char.player.level ..
-                                         ")")
-                add_gauges()
-            end
-        end, true)
-    end
-end
