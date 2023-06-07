@@ -41,6 +41,7 @@ function PRSchat.tabs()
         leftMargin = 2,
         consoleColor = "black",
         consoles = {"Chat", "Newbie", "Trade", "Local", "Tell", "All"},
+        mapTab = false,
         activeTabFGColor = "white",
         inactiveTabFGColor = "gray",
         activeTabCSS = stylesheet,
