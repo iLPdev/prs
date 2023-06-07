@@ -21,6 +21,7 @@ local function add_gauges()
       border-left: 1px black solid;
       border-bottom: 1px black solid;
       border-radius: 10;
+      margin-right: 5px;
       padding: 3px;
     ]])
     HPbar.back:setStyleSheet(
@@ -29,6 +30,7 @@ local function add_gauges()
       border-color: black;
       border-style: solid;
       border-radius: 10;
+      margin-right: 5px;
       padding: 3px;
     ]])
     HPbar.text:setStyleSheet([[
@@ -54,6 +56,7 @@ local function add_gauges()
       border-left: 1px black solid;
       border-bottom: 1px black solid;
       border-radius: 10;
+      margin-right: 5px;
       padding: 3px;
     ]])
     ENbar.back:setStyleSheet(
@@ -62,6 +65,7 @@ local function add_gauges()
       border-color: black;
       border-style: solid;
       border-radius: 10;
+      margin-right: 5px;
       padding: 3px;
     ]])
     ENbar.text:setStyleSheet([[
@@ -87,6 +91,7 @@ local function add_gauges()
       border-left: 1px black solid;
       border-bottom: 1px black solid;
       border-radius: 10;
+      margin-right: 5px;
       padding: 3px;]])
     STbar.back:setStyleSheet(
         [[background-color: #303030;
@@ -94,6 +99,7 @@ local function add_gauges()
       border-color: black;
       border-style: solid;
       border-radius: 10;
+      margin-right: 5px;
       padding: 3px;]])
     STbar.text:setStyleSheet([[
       font-weight: bold;
@@ -118,6 +124,7 @@ local function add_gauges()
       border-left: 1px black solid;
       border-bottom: 1px black solid;
       border-radius: 10;
+      margin-right: 5px;
       padding: 3px;
     ]])
     HPbar.back:setStyleSheet(
@@ -126,6 +133,7 @@ local function add_gauges()
       border-color: black;
       border-style: solid;
       border-radius: 10;
+      margin-right: 5px;
       padding: 3px;
     ]])
     HPbar.text:setStyleSheet([[
@@ -151,6 +159,7 @@ local function add_gauges()
         border-left: 1px black solid;
         border-bottom: 1px black solid;
         border-radius: 10;
+        margin-right: 5px;
         padding: 3px;]])
     RPbar.back:setStyleSheet(
         [[background-color: #303030;
@@ -158,6 +167,7 @@ local function add_gauges()
         border-color: black;
         border-style: solid;
         border-radius: 10;
+        margin-right: 5px;
         padding: 3px;]])
     RPbar.text:setStyleSheet([[
       font-weight: bold;
@@ -182,6 +192,7 @@ local function add_gauges()
         border-left: 1px black solid;
         border-bottom: 1px black solid;
         border-radius: 10;
+        margin-right: 5px;
         padding: 3px;]])
     CPbar.back:setStyleSheet(
         [[background-color: #303030;
@@ -189,6 +200,7 @@ local function add_gauges()
         border-color: black;
         border-style: solid;
         border-radius: 10;
+        margin-right: 5px;
         padding: 3px;]])
     CPbar.text:setStyleSheet([[
       font-weight: bold;
