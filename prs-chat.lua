@@ -19,7 +19,7 @@ function PRSchat.tabs()
         name = "Chat",
         titleText = title_text,
         y = "50%",
-        docked = true,
+        --docked = true,
         width = "25%",
         height = "75%"
     })
@@ -40,10 +40,7 @@ function PRSchat.tabs()
         gap = 2,
         leftMargin = 2,
         consoleColor = "black",
-        consoles = {"Chat", "Newbie", "Trade", "Local", "Tell", "All", "Map"},
-        mapTabName = "Map",
-        mapTab = true,
-        tabBold = true,
+        consoles = {"Chat", "Newbie", "Trade", "Local", "Tell", "All"},
         activeTabFGColor = "white",
         inactiveTabFGColor = "gray",
         activeTabCSS = stylesheet,
