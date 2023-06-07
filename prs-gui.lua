@@ -25,7 +25,7 @@ local function add_gauges()
     ]])
     HPbar.back:setStyleSheet(
         [[background-color: #303030;
-      border-width: 1px;
+      border-width: 0px;
       border-color: black;
       border-style: solid;
       border-radius: 10;
@@ -58,7 +58,7 @@ local function add_gauges()
     ]])
     ENbar.back:setStyleSheet(
         [[background-color: #303030;
-      border-width: 1px;
+      border-width: 0px;
       border-color: black;
       border-style: solid;
       border-radius: 10;
@@ -90,7 +90,7 @@ local function add_gauges()
       padding: 3px;]])
     STbar.back:setStyleSheet(
         [[background-color: #303030;
-      border-width: 1px;
+      border-width: 0px;
       border-color: black;
       border-style: solid;
       border-radius: 10;
@@ -122,7 +122,7 @@ local function add_gauges()
     ]])
     HPbar.back:setStyleSheet(
         [[background-color: #303030;
-      border-width: 1px;
+      border-width: 0px;
       border-color: black;
       border-style: solid;
       border-radius: 10;
@@ -154,7 +154,7 @@ local function add_gauges()
         padding: 3px;]])
     RPbar.back:setStyleSheet(
         [[background-color: #303030;
-        border-width: 1px;
+        border-width: 0px;
         border-color: black;
         border-style: solid;
         border-radius: 10;
@@ -185,7 +185,7 @@ local function add_gauges()
         padding: 3px;]])
     CPbar.back:setStyleSheet(
         [[background-color: #303030;
-        border-width: 1px;
+        border-width: 0px;
         border-color: black;
         border-style: solid;
         border-radius: 10;
@@ -223,7 +223,7 @@ local function add_gauges()
       ]])
         XPbar.back:setStyleSheet(
             [[background-color: #303030;
-        border-width: 1px;
+        border-width: 0px;
         border-color: black;
         border-style: solid;
         border-radius: 10;
