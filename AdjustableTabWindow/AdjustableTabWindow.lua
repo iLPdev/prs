@@ -1215,10 +1215,11 @@ function Adjustable.TabWindow:load(slot, dir)
         end
     end
 end
-
+string.format("%s/PRS/settings/", getMudletHomeDir())
 -- EMCO by demonnic https://github.com/demonnic/EMCO
 function Adjustable.TabWindow:transferEMCO(emco)
-    local EMCO = EMCO or require("MDK-1.EMCO")
+    local EMCO = EMCO or require("PRS.emco")
+    echo("EMCO Loaded")
     emco:hide()
     local emco_tabs = emco.tabs
     local emco_tabwindows = emco.consoles
@@ -1402,7 +1403,7 @@ function Adjustable.TabWindow:new(cons, container)
     setmetatable(me, self)
     self.__index = self
     me.type = "adjustabletabwindow"
-    me.defaultDir = me.defaultDir or getMudletHomeDir() .. "/AdjustableTabWindow/"
+    me.defaultDir = me.defaultDir or getMudletHomeDir() .. "/PRS/"
     me.tabs = me.tabs or {}
     me.tabTxtColor = me.tabTxtColor or "white"
     me.tabPadding = me.tabPadding or 12
