@@ -79,3 +79,96 @@ GUI.left_top:attachToBorder("left")
 GUI.left_bottom:attachToBorder("left")
 GUI.right_top:attachToBorder("right")
 GUI.right_bottom:attachToBorder("right")
+
+GUI.top:connectToBorder("left")
+GUI.top:connectToBorder("right")
+GUI.bottom:connectToBorder("left")
+GUI.bottom:connectToBorder("right")
+GUI.left_top:connectToBorder("left")
+GUI.left_bottom:connectToBorder("left")
+GUI.right_top:connectToBorder("right")
+GUI.right_bottom:connectToBorder("right")
+
+GUI.top:changeMenuStyle("dark")
+GUI.bottom:changeMenuStyle("dark")
+GUI.right_top:changeMenuStyle("dark")
+GUI.right_bottom:changeMenuStyle("dark")
+GUI.left_top:changeMenuStyle("dark")
+GUI.left_bottom:changeMenuStyle("dark")
+
+GUI.top:newCustomItem("PRS Version", function(self)
+    send("chat I'm running PRS v1.7.0 on Mudlet")
+    self:flash()
+end)
+
+GUI.tabwindow1 = GUI.tabwindow1 or Adjustable.TabWindow:new({
+    name = "tabwindow1",
+    x = 0,
+    y = 0,
+    width = "100%",
+    height = "100%",
+    tabBarHeight = "10%",
+    activeTabFGColor = "#DDDDDD",
+    inactiveTabFGColor = "#555555",
+    color1 = "rgb(24,24,28)",
+    color2 = "rgb(16,16,20)",
+    tabs = {"Effects", "Inventory", "Equipment"}
+}, GUI.left_top)
+
+GUI.tabwindow2 = GUI.tabwindow2 or Adjustable.TabWindow:new({
+    name = "tabwindow2",
+    x = 0,
+    y = 0,
+    width = "100%",
+    height = "100%",
+    tabBarHeight = "10%",
+    activeTabFGColor = "#DDDDDD",
+    inactiveTabFGColor = "#555555",
+    color1 = "rgb(24,24,28)",
+    color2 = "rgb(16,16,20)",
+    tabs = {"Combat", "Quests"}
+}, GUI.left_bottom)
+
+GUI.tabwindow3 = GUI.tabwindow3 or Adjustable.TabWindow:new({
+    name = "tabwindow3",
+    x = 0,
+    y = 0,
+    width = "100%",
+    height = "100%",
+    tabBarHeight = "10%",
+    activeTabFGColor = "#DDDDDD",
+    inactiveTabFGColor = "#555555",
+    color1 = "rgb(24,24,28)",
+    color2 = "rgb(16,16,20)",
+    tabs = {"Vitals", "Skills", "Statistics"}
+}, GUI.right_top)
+
+GUI.tabwindow4 = GUI.tabwindow4 or Adjustable.TabWindow:new({
+    name = "tabwindow4",
+    x = 0,
+    y = 0,
+    width = "100%",
+    height = "100%",
+    tabBarHeight = "10%",
+    activeTabFGColor = "#DDDDDD",
+    inactiveTabFGColor = "#555555",
+    color1 = "rgb(24,24,28)",
+    color2 = "rgb(16,16,20)",
+    tabs = {"Map"}
+}, GUI.right_bottom)
+
+GUI.mapper = GUI.mapper or Geyser.Mapper:new({
+    x = 0,
+    y = 0,
+    width = "100%",
+    height = "100%",
+    name = "mapper"
+}, GUI.tabwindow4.Mapcenter)
+
+GUI.tabwindow1:load(1, string.format("%s/PRS/settings/", getMudletHomeDir()))
+
+function SaveTabsOnExit()
+    GUI.tabwindow1:save(1, string.format("%s/PRS/settings/", getMudletHomeDir()))
+end
+
+registerAnonymousEventHandler("sysExitEvent", SaveTabsOnExit)
