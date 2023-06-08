@@ -7,9 +7,6 @@ if table.contains(getPackages(),"generic_mapper") then
   uninstallPackage("generic_mapper")
 end
 
--- Open the windows
-PRSchat.tabs()
-
 -- set Discord button to PR invite
 setDiscordGameUrl("https://discord.gg/rRFEjc6vV9", "Procedural Realms")
 
