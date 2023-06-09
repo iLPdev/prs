@@ -1,7 +1,21 @@
 -- Procedural Realms Script (PRS) Graphical User Interface (GUI) by Stack
 GUI = GUI or {}
 
-require "PRS.AdjustableTabWindow"
+-- Skin Mudlet Toolbar
+setAppStyleSheet([[
+QToolBar {
+  background-color: rgb(24,24,28);
+}
+
+QToolBar QToolButton:!hover {
+  color: white;
+}
+QToolBar QToolButton:hover {
+  color: black;
+}
+]])
+
+require "PRS.AdjustableTabWindow" -- PR-specific version of edru's code
 
 GUI.top = Adjustable.Container:new({
     name = "top",
@@ -165,7 +179,7 @@ GUI.mapper = GUI.mapper or Geyser.Mapper:new({
     name = "mapper"
 }, GUI.tabwindow4.Mapcenter)
 
-GUI.tabwindow1:load(1, string.format("%s/PRS/settings/", getMudletHomeDir()))
+GUI.tabwindow1:load(1, string.format("%s/PRS/settings/", getMudletHomeDir())) -- Save All Tabs
 
 function SaveTabsOnExit()
     GUI.tabwindow1:save(1, string.format("%s/PRS/settings/", getMudletHomeDir()))
