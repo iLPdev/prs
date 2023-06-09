@@ -103,7 +103,7 @@ local function add_gauges()
     ]])
 
     -- Food Points Gauge
-    HPbar = SUG:new({
+    FPbar = SUG:new({
         name = "FP",
         y = 115,
         height = 25,
@@ -114,7 +114,7 @@ local function add_gauges()
         currentVariable = "gmcp.Char.player.food",
         maxVariable = "gmcp.Char.player.maxFood"
     }, GUI.tabwindow3.Vitalscenter)
-    HPbar.front:setStyleSheet([[background-color: #63e2b7;
+    FPbar.front:setStyleSheet([[background-color: #63e2b7;
       border-top: 1px black solid;
       border-left: 1px black solid;
       border-bottom: 1px black solid;
@@ -122,7 +122,7 @@ local function add_gauges()
       margin-right: 5px;
       padding: 3px;
     ]])
-    HPbar.back:setStyleSheet([[background-color: #303030;
+    FPbar.back:setStyleSheet([[background-color: #303030;
       border-width: 0px;
       border-color: black;
       border-style: solid;
@@ -130,7 +130,7 @@ local function add_gauges()
       margin-right: 5px;
       padding: 3px;
     ]])
-    HPbar.text:setStyleSheet([[
+    FPbar.text:setStyleSheet([[
       font-weight: bold;
       padding-left: 5px;
     ]])
