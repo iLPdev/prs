@@ -1,3 +1,4 @@
+-- Procedural Realms Script (PRS) Stats Gauges by Stack & Dalem
 PRSstats = PRSstats or {}
 PRSstats.events = PRSstats.events or {}
 
