@@ -18,16 +18,16 @@ PRSchat.EMCO = EMCO:new({
     topMargin = 10,
     rightMargin = 10,
     bottomMargin = 10,
-    --consoleContainerCSS = {"background: transparent;"}
+    consoleColor = "#101014",
     consoles = {"Chat", "Newbie", "Trade", "Local", "Tell", "All"},
     mapTab = false,
     activeTabCSS = stylesheet,
     inactiveTabCSS = istylesheet,
-    preserveBackground = true,
+    preserveBackground = false,
     timestamp = true,
     customTimestampColor = true,
     timestampFGColor = "dim_gray",
-    timestampBGColor = "black"
+    timestampBGColor = "#101014"
 }, tabwindow4)
 
 GUI.tabwindow4:transferEMCO(PRSchat.EMCO)
@@ -116,7 +116,7 @@ function PRSchat.initialize()
                     if isPrompt() then
                         local concat_lines = table.concat(chat_lines)
                         local result = concat_lines:sub(1, -2) .. "\n"
-
+                      
                         PRSchat.EMCO:decho("Chat", result, false)
                         killTrigger(PRSchat.triggers.chat_line_id)
                         PRSchat.triggers.chat_line_id = nil
