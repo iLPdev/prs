@@ -1,3 +1,4 @@
+-- Procedural Realms Script (PRS) Comms by Stack & Dalem
 PRSchat = PRSchat or {}
 PRSchat.triggers = PRSchat.triggers or {}
 
