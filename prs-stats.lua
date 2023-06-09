@@ -15,20 +15,20 @@ local function add_gauges()
         currentVariable = "gmcp.Char.player.hp", -- if gmcp.Char.Vitals.hp is nil or unreachable, it will use the defaultCurrent of 50
         maxVariable = "gmcp.Char.player.maxHp" -- if gmcp.Char.Vitals.maxhp is nil or unreachable, it will use the defaultMax of 100
     }, GUI.tabwindow3.Vitalscenter)
-    HPbar.front:setStyleSheet(
-        [[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #98f041, stop: 0.1 #8cf029, stop: 0.49 #66cc00, stop: 0.5 #52a300, stop: 1 #66cc00);
+    HPbar.front:setStyleSheet([[background-color: #63e2b7;
       border-top: 1px black solid;
       border-left: 1px black solid;
       border-bottom: 1px black solid;
-      border-radius: 7;
+      border-radius: 10;
+      margin-right: 5px;
       padding: 3px;
     ]])
-    HPbar.back:setStyleSheet(
-        [[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #78bd33, stop: 0.1 #6ebd20, stop: 0.49 #4c9900, stop: 0.5 #387000, stop: 1 #4c9900);
-      border-width: 1px;
+    HPbar.back:setStyleSheet([[background-color: #303030;
+      border-width: 0px;
       border-color: black;
       border-style: solid;
-      border-radius: 7;
+      border-radius: 10;
+      margin-right: 5px;
       padding: 3px;
     ]])
     HPbar.text:setStyleSheet([[
@@ -48,20 +48,20 @@ local function add_gauges()
         currentVariable = "gmcp.Char.player.energy",
         maxVariable = "gmcp.Char.player.maxEnergy"
     }, GUI.tabwindow3.Vitalscenter)
-    ENbar.front:setStyleSheet(
-        [[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 0.1 #eeeeee, stop: 0.49 #cccccc, stop: 0.5 #aaaaaa, stop: 1 #cccccc);
+    ENbar.front:setStyleSheet([[background-color: #cccccc;
       border-top: 1px black solid;
       border-left: 1px black solid;
       border-bottom: 1px black solid;
-      border-radius: 7;
+      border-radius: 10;
+      margin-right: 5px;
       padding: 3px;
     ]])
-    ENbar.back:setStyleSheet(
-        [[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #dddddd, stop: 0.1 #cccccc, stop: 0.49 #aaaaaa, stop: 0.5 #888888, stop: 1 #aaaaaa);
-      border-width: 1px;
+    ENbar.back:setStyleSheet([[background-color: #303030;
+      border-width: 0px;
       border-color: black;
       border-style: solid;
-      border-radius: 7;
+      border-radius: 10;
+      margin-right: 5px;
       padding: 3px;
     ]])
     ENbar.text:setStyleSheet([[
@@ -81,19 +81,19 @@ local function add_gauges()
         currentVariable = "gmcp.Char.player.stamina",
         maxVariable = "gmcp.Char.player.maxStamina"
     }, GUI.tabwindow3.Vitalscenter)
-    STbar.front:setStyleSheet(
-        [[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffff50, stop: 0.1 #ffe200, stop: 0.49 #c1c100, stop: 0.5 #a4a40c, stop: 1 #c1c100);
+    STbar.front:setStyleSheet([[background-color: #f2c97d;
       border-top: 1px black solid;
       border-left: 1px black solid;
       border-bottom: 1px black solid;
-      border-radius: 7;
+      border-radius: 10;
+      margin-right: 5px;
       padding: 3px;]])
-    STbar.back:setStyleSheet(
-        [[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #dddd20, stop: 0.1 #ddc200, stop: 0.49 #a1a100, stop: 0.5 #94840c, stop: 1 #a1a100);
-      border-width: 1px;
+    STbar.back:setStyleSheet([[background-color: #303030;
+      border-width: 0px;
       border-color: black;
       border-style: solid;
-      border-radius: 7;
+      border-radius: 10;
+      margin-right: 5px;
       padding: 3px;]])
     STbar.text:setStyleSheet([[
       font-weight: bold;
@@ -112,20 +112,20 @@ local function add_gauges()
         currentVariable = "gmcp.Char.player.food",
         maxVariable = "gmcp.Char.player.maxFood"
     }, GUI.tabwindow3.Vitalscenter)
-    HPbar.front:setStyleSheet(
-        [[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #98f041, stop: 0.1 #8cf029, stop: 0.49 #66cc00, stop: 0.5 #52a300, stop: 1 #66cc00);
+    HPbar.front:setStyleSheet([[background-color: #63e2b7;
       border-top: 1px black solid;
       border-left: 1px black solid;
       border-bottom: 1px black solid;
-      border-radius: 7;
+      border-radius: 10;
+      margin-right: 5px;
       padding: 3px;
     ]])
-    HPbar.back:setStyleSheet(
-        [[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #78bd33, stop: 0.1 #6ebd20, stop: 0.49 #4c9900, stop: 0.5 #387000, stop: 1 #4c9900);
-      border-width: 1px;
+    HPbar.back:setStyleSheet([[background-color: #303030;
+      border-width: 0px;
       border-color: black;
       border-style: solid;
-      border-radius: 7;
+      border-radius: 10;
+      margin-right: 5px;
       padding: 3px;
     ]])
     HPbar.text:setStyleSheet([[
@@ -145,19 +145,19 @@ local function add_gauges()
         currentVariable = "gmcp.Char.player.rage",
         maxVariable = "gmcp.Char.player.maxRage"
     }, GUI.tabwindow2.Combatcenter)
-    RPbar.front:setStyleSheet(
-        [[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #f04141, stop: 0.1 #ef2929, stop: 0.49 #cc0000, stop: 0.5 #a40000, stop: 1 #cc0000);
+    RPbar.front:setStyleSheet([[background-color: #cc0000;
         border-top: 1px black solid;
         border-left: 1px black solid;
         border-bottom: 1px black solid;
-        border-radius: 7;
+        border-radius: 10;
+        margin-right: 5px;
         padding: 3px;]])
-    RPbar.back:setStyleSheet(
-        [[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #bd3333, stop: 0.1 #bd2020, stop: 0.49 #990000, stop: 0.5 #700000, stop: 1 #990000);
-        border-width: 1px;
+    RPbar.back:setStyleSheet([[background-color: #303030;
+        border-width: 0px;
         border-color: black;
         border-style: solid;
-        border-radius: 7;
+        border-radius: 10;
+        margin-right: 5px;
         padding: 3px;]])
     RPbar.text:setStyleSheet([[
       font-weight: bold;
@@ -176,19 +176,19 @@ local function add_gauges()
         currentVariable = "gmcp.Char.player.combo",
         maxVariable = "gmcp.Char.player.maxCombo"
     }, GUI.tabwindow2.Combatcenter)
-    CPbar.front:setStyleSheet(
-        [[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #f04141, stop: 0.1 #ef2929, stop: 0.49 #cc0000, stop: 0.5 #a40000, stop: 1 #cc0000);
+    CPbar.front:setStyleSheet([[background-color: #cc0000;
         border-top: 1px black solid;
         border-left: 1px black solid;
         border-bottom: 1px black solid;
-        border-radius: 7;
+        border-radius: 10;
+        margin-right: 5px;
         padding: 3px;]])
-    CPbar.back:setStyleSheet(
-        [[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #bd3333, stop: 0.1 #bd2020, stop: 0.49 #990000, stop: 0.5 #700000, stop: 1 #990000);
-        border-width: 1px;
+    CPbar.back:setStyleSheet([[background-color: #303030;
+        border-width: 0px;
         border-color: black;
         border-style: solid;
-        border-radius: 7;
+        border-radius: 10;
+        margin-right: 5px;
         padding: 3px;]])
     CPbar.text:setStyleSheet([[
       font-weight: bold;
@@ -196,6 +196,10 @@ local function add_gauges()
     ]])
 
     -- Experience Points Gauge
+    PRSstats.xp = PRSstats.xp or {}
+    PRSstats.xp.current = gmcp.Char.player.xp - gmcp.Char.player.xpForCurrentLevel
+    PRSstats.xp.tnl = gmcp.Char.player.xpForNextLevel - gmcp.Char.player.xpForCurrentLevel
+
     if gmcp.Char.player.xpForNextLevel then
 
         PRSstats.xp = PRSstats.xp or {}
@@ -204,7 +208,7 @@ local function add_gauges()
 
         XPbar = SUG:new({
             name = "XP",
-            y = 220,
+            y = 150,
             height = 25,
             width = "95%",
             updateTime = 0,
@@ -213,20 +217,20 @@ local function add_gauges()
             currentVariable = "PRSstats.xp.current",
             maxVariable = "PRSstats.xp.tnl"
         }, GUI.tabwindow3.Vitalscenter)
-        XPbar.front:setStyleSheet(
-            [[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #3399ff, stop: 0.1 #0080ff, stop: 0.49 #0000ff, stop: 0.5 #0000cc, stop: 1 #0000ff);
+        XPbar.front:setStyleSheet([[background-color: #70c0e8;
         border-top: 1px black solid;
         border-left: 1px black solid;
         border-bottom: 1px black solid;
-        border-radius: 7;
+        border-radius: 10;
+        margin-right: 5px;
         padding: 3px;
       ]])
-        XPbar.back:setStyleSheet(
-            [[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #0066cc, stop: 0.1 #004c99, stop: 0.49 #000099, stop: 0.5 #000066, stop: 1 #000099);
-        border-width: 1px;
+        XPbar.back:setStyleSheet([[background-color: #303030;
+        border-width: 0px;
         border-color: black;
         border-style: solid;
-        border-radius: 7;
+        border-radius: 10;
+        margin-right: 5px;
         padding: 3px;
       ]])
         XPbar.text:setStyleSheet([[
