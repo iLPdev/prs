@@ -1,4 +1,5 @@
--- Procedural Realms Script (PRS) Graphical User Interface (GUI) by Stack
+-- Procedural Realms Script (PRS) Graphical User Interface (GUI) for Mudlet
+-- by Stack (https://ilpdev.com/prs)
 GUI = GUI or {}
 
 -- Skin Mudlet Toolbar

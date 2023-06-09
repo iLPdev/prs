@@ -1,4 +1,5 @@
--- Procedural Realms Script (PRS) by Stack and Dalem
+-- Procedural Realms Script (PRS) for Mudlet
+-- by Stack (https://ilpdev.com/prs) & Dalem
 
 local version = "1.7.0"
 

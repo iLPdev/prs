@@ -1,5 +1,5 @@
--- Procedural Realms Mapping Script
--- by Stack (https://ilpdev.com/prs) based on generic GMCP mapping script 
+-- Procedural Realms Script (PRS) for Mudlet
+-- by Stack (https://ilpdev.com/prs) and Dalem based on generic GMCP mapping script 
 -- by Blizzard (https://worldofpa.in) based upon an MSDP script from the Mudlet
 -- forums in the generic mapper thread with pieces from Jor'Mox's generic mapper
 -- script and the mmpkg mapper by breakone9r.

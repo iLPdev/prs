@@ -1,4 +1,5 @@
--- Procedural Realms Script (PRS) Comms by Stack & Dalem
+-- Procedural Realms Script (PRS) Communications for Mudlet
+-- by Stack (https://ilpdev.com/prs) & Dalem
 PRSchat = PRSchat or {}
 PRSchat.triggers = PRSchat.triggers or {}
 
