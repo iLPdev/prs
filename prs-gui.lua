@@ -172,11 +172,11 @@ GUI.tabwindow4 = GUI.tabwindow4 or Adjustable.TabWindow:new({
 }, GUI.right_bottom)
 
 GUI.mapper = GUI.mapper or Geyser.Mapper:new({
-    x = 0,
-    y = 0,
-    width = "100%",
-    height = "100%",
-    name = "mapper"
+    name = "mapper",
+    x = 5,
+    y = 5,
+    width = "96%",
+    height = "97%",
 }, GUI.tabwindow3.Mapcenter)
 
 GUI.tabwindow1:load(1, string.format("%s/PRS/settings/", getMudletHomeDir())) -- Save All Tabs
