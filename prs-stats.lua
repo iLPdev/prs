@@ -138,7 +138,6 @@ local function add_gauges()
     -- Rage Points Gauge
     RPbar = SUG:new({
         name = "RP",
-        y = 150,
         height = 25,
         width = "95%",
         updateTime = 0,
@@ -169,7 +168,7 @@ local function add_gauges()
     -- Combo Points Gauge
     CPbar = SUG:new({
         name = "CP",
-        y = 185,
+        y = 45,
         height = 25,
         width = "95%",
         updateTime = 0,
