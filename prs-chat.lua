@@ -161,7 +161,7 @@ function PRSchat.initialize()
                         local concat_lines = table.concat(chat_lines)
                         local result = concat_lines:sub(1, -2) .. "\n"
 
-                        PRSchat.EMCO:decho("Trade", rresult:gsub(":0,0,0>", ":16,16,20>"), false)
+                        PRSchat.EMCO:decho("Trade", result:gsub(":0,0,0>", ":16,16,20>"), false)
                         killTrigger(PRSchat.triggers.trade_line_id)
                         PRSchat.triggers.trade_line_id = nil
                     else
@@ -204,7 +204,7 @@ function PRSchat.initialize()
                             local concat_lines = table.concat(chat_lines)
                             local result = concat_lines:sub(1, -2) .. "\n"
 
-                            PRSchat.EMCO:decho("Tell", rresult:gsub(":0,0,0>", ":16,16,20>"), false)
+                            PRSchat.EMCO:decho("Tell", result:gsub(":0,0,0>", ":16,16,20>"), false)
                             killTrigger(PRSchat.triggers.tell_line_id)
                             PRSchat.triggers.tell_line_id = nil
                         end
