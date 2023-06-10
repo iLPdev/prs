@@ -146,7 +146,7 @@ local function add_gauges()
         currentVariable = "gmcp.Char.player.rage",
         maxVariable = "gmcp.Char.player.maxRage"
     }, GUI.tabwindow2.Combatcenter)
-    RPbar.front:setStyleSheet([[background-color: #cc0000;
+    RPbar.front:setStyleSheet([[background-color: #e74856;
         border-top: 1px black solid;
         border-left: 1px black solid;
         border-bottom: 1px black solid;
@@ -177,7 +177,7 @@ local function add_gauges()
         currentVariable = "gmcp.Char.player.combo",
         maxVariable = "gmcp.Char.player.maxCombo"
     }, GUI.tabwindow2.Combatcenter)
-    CPbar.front:setStyleSheet([[background-color: #cc0000;
+    CPbar.front:setStyleSheet([[background-color: #e74856;
         border-top: 1px black solid;
         border-left: 1px black solid;
         border-bottom: 1px black solid;
