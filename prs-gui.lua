@@ -127,7 +127,7 @@ GUI.tabwindow1 = GUI.tabwindow1 or Adjustable.TabWindow:new({
     inactiveTabFGColor = "#555555",
     color1 = "rgb(24,24,28)",
     color2 = "rgb(16,16,20)",
-    tabs = {"Effects", "Inventory", "Equipment"}
+    tabs = {"Vitals", "Effects", "Skills"}
 }, GUI.left_top)
 
 GUI.tabwindow2 = GUI.tabwindow2 or Adjustable.TabWindow:new({
@@ -155,7 +155,7 @@ GUI.tabwindow3 = GUI.tabwindow3 or Adjustable.TabWindow:new({
     inactiveTabFGColor = "#555555",
     color1 = "rgb(24,24,28)",
     color2 = "rgb(16,16,20)",
-    tabs = {"Vitals", "Skills", "Statistics"}
+    tabs = {"Map", "Inventory", "Equipment", "Statistics"}
 }, GUI.right_top)
 
 GUI.tabwindow4 = GUI.tabwindow4 or Adjustable.TabWindow:new({
@@ -169,7 +169,6 @@ GUI.tabwindow4 = GUI.tabwindow4 or Adjustable.TabWindow:new({
     inactiveTabFGColor = "#555555",
     color1 = "rgb(24,24,28)",
     color2 = "rgb(16,16,20)",
-    tabs = {"Map"}
 }, GUI.right_bottom)
 
 GUI.mapper = GUI.mapper or Geyser.Mapper:new({
@@ -178,7 +177,7 @@ GUI.mapper = GUI.mapper or Geyser.Mapper:new({
     width = "100%",
     height = "100%",
     name = "mapper"
-}, GUI.tabwindow4.Mapcenter)
+}, GUI.tabwindow3.Mapcenter)
 
 GUI.tabwindow1:load(1, string.format("%s/PRS/settings/", getMudletHomeDir())) -- Save All Tabs
 

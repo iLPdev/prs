@@ -16,7 +16,7 @@ local function add_gauges()
         textTemplate = "HP: |c / |m  (|p%)", -- gauge will show "HP: 500/1000 (50%)" as the text if you had 500 current and 1000 max hp
         currentVariable = "gmcp.Char.player.hp", -- if gmcp.Char.Vitals.hp is nil or unreachable, it will use the defaultCurrent of 50
         maxVariable = "gmcp.Char.player.maxHp" -- if gmcp.Char.Vitals.maxhp is nil or unreachable, it will use the defaultMax of 100
-    }, GUI.tabwindow3.Vitalscenter)
+    }, GUI.tabwindow1.Vitalscenter)
     HPbar.front:setStyleSheet([[background-color: #63e2b7;
       border-top: 1px black solid;
       border-left: 1px black solid;
@@ -49,7 +49,7 @@ local function add_gauges()
         textTemplate = "EN: |c / |m  (|p%)",
         currentVariable = "gmcp.Char.player.energy",
         maxVariable = "gmcp.Char.player.maxEnergy"
-    }, GUI.tabwindow3.Vitalscenter)
+    }, GUI.tabwindow1.Vitalscenter)
     ENbar.front:setStyleSheet([[background-color: #cccccc;
       border-top: 1px black solid;
       border-left: 1px black solid;
@@ -82,7 +82,7 @@ local function add_gauges()
         textTemplate = "ST: |c / |m  (|p%)",
         currentVariable = "gmcp.Char.player.stamina",
         maxVariable = "gmcp.Char.player.maxStamina"
-    }, GUI.tabwindow3.Vitalscenter)
+    }, GUI.tabwindow1.Vitalscenter)
     STbar.front:setStyleSheet([[background-color: #f2c97d;
       border-top: 1px black solid;
       border-left: 1px black solid;
@@ -113,7 +113,7 @@ local function add_gauges()
         textTemplate = "Food: |c / |m  (|p%)",
         currentVariable = "gmcp.Char.player.food",
         maxVariable = "gmcp.Char.player.maxFood"
-    }, GUI.tabwindow3.Vitalscenter)
+    }, GUI.tabwindow1.Vitalscenter)
     FPbar.front:setStyleSheet([[background-color: #63e2b7;
       border-top: 1px black solid;
       border-left: 1px black solid;
