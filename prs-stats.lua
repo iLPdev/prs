@@ -37,6 +37,7 @@ local function add_gauges()
     -- Hit Points Gauge
     HPbar = SUG:new({
         name = "HP",
+        y = 45,
         height = 25,
         width = "95%", -- everything up to here is standard Geyser.Gauge
         updateTime = 0,
@@ -69,7 +70,7 @@ local function add_gauges()
     -- Energy Points Gauge
     ENbar = SUG:new({
         name = "EN",
-        y = 45,
+        y = 80,
         height = 25,
         width = "95%",
         updateTime = 0,
@@ -102,7 +103,7 @@ local function add_gauges()
     -- Stamina Points Gauge
     STbar = SUG:new({
         name = "ST",
-        y = 80,
+        y = 115,
         height = 25,
         width = "95%",
         updateTime = 0,
@@ -133,7 +134,7 @@ local function add_gauges()
     -- Food Points Gauge
     FPbar = SUG:new({
         name = "FP",
-        y = 115,
+        y = 150,
         height = 25,
         width = "95%",
         updateTime = 0,
