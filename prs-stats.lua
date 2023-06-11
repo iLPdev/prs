@@ -5,7 +5,35 @@ PRSstats.events = PRSstats.events or {}
 
 local SUG = require("PRS.sug")
 
+local function vitalsHeader()
+    local header = Geyser.HBox:new({
+        name = "header",
+        height = 25,
+        width = "93%"
+    }, GUI.tabwindow1.Vitalscenter)
+    local name = Geyser.Label:new({
+        name = "name"
+    }, header)
+    name:setFontSize(12)
+    name:setColor(0, 0, 0, 0)
+    name:echo("" .. gmcp.Char.player.name .. "", "#f9f1a5", "l")
+    local class = Geyser.Label:new({
+        name = "class"
+    }, header)
+    class:setFontSize(12)
+    class:setColor(0, 0, 0, 0)
+    class:echo("" .. gmcp.Char.player.class .. "", "#b4009e", "c")
+    local level = Geyser.Label:new({
+        name = "level"
+    }, header)
+    -- level:adjustSize()
+    level:setFontSize(12)
+    level:setColor(0, 0, 0, 0)
+    level:echo("Level " .. gmcp.Char.player.level .. "", "#ababab", "r")
+end
+
 local function add_gauges()
+    vitalsHeader()
     -- Hit Points Gauge
     HPbar = SUG:new({
         name = "HP",
