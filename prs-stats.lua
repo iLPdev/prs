@@ -226,10 +226,6 @@ local function add_gauges()
     ]])
 
     -- Experience Points Gauge
-    PRSstats.xp = PRSstats.xp or {}
-    PRSstats.xp.current = gmcp.Char.player.xp - gmcp.Char.player.xpForCurrentLevel
-    PRSstats.xp.tnl = gmcp.Char.player.xpForNextLevel - gmcp.Char.player.xpForCurrentLevel
-
     if gmcp.Char.player.xpForNextLevel then
 
         PRSstats.xp = PRSstats.xp or {}
