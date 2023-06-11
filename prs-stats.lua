@@ -298,7 +298,7 @@ end
 function PRSstats.stats()
     vitalsHeader()
     if gmcp and gmcp.Char and gmcp.Char.player then
-add_gauges()
+        add_gauges()
     else
         local initialize_ev_handler = registerAnonymousEventHandler("gmcp.Char.player", function()
             if gmcp and gmcp.Char and gmcp.Char.player and gmcp.Char.player.name then
