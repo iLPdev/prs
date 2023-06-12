@@ -169,6 +169,7 @@ GUI.tabwindow4 = GUI.tabwindow4 or Adjustable.TabWindow:new({
     inactiveTabFGColor = "#555555",
     color1 = "rgb(24,24,28)",
     color2 = "rgb(16,16,20)",
+    tabs = {"ASCII"}
 }, GUI.right_bottom)
 
 GUI.mapper = GUI.mapper or Geyser.Mapper:new({
