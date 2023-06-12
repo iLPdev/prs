@@ -37,7 +37,7 @@ local function add_gauges()
     -- Hit Points Gauge
     HPbar = SUG:new({
         name = "HP",
-        y = 45,
+        y = 80,
         height = 25,
         width = "95%", -- everything up to here is standard Geyser.Gauge
         updateTime = 0,
@@ -70,7 +70,7 @@ local function add_gauges()
     -- Energy Points Gauge
     ENbar = SUG:new({
         name = "EN",
-        y = 80,
+        y = 115,
         height = 25,
         width = "95%",
         updateTime = 0,
@@ -103,7 +103,7 @@ local function add_gauges()
     -- Stamina Points Gauge
     STbar = SUG:new({
         name = "ST",
-        y = 115,
+        y = 150,
         height = 25,
         width = "95%",
         updateTime = 0,
@@ -134,7 +134,7 @@ local function add_gauges()
     -- Food Points Gauge
     FPbar = SUG:new({
         name = "FP",
-        y = 150,
+        y = 185,
         height = 25,
         width = "95%",
         updateTime = 0,
@@ -228,22 +228,23 @@ local function add_gauges()
     -- Experience Points Gauge
     XPbar = SUG:new({
         name = "XP",
-        y = 35,
+        y = 45,
         height = 25,
         width = "95%",
         updateTime = 0,
         updateEvent = "gmcp.Char.player",
-        textTemplate = "XP: |c / |m   (|p%)",
-        currentVariable = "PRSstats.xp.current",
-        maxVariable = "PRSstats.xp.tnl"
+        textTemplate = "Hero"
     }, GUI.tabwindow1.Vitalscenter)
-    XPbar.front:setStyleSheet([[background-color: #70c0e8;
+    XPbar.front:setStyleSheet([[background-color: #303030;
         border-top: 1px black solid;
         border-left: 1px black solid;
         border-bottom: 1px black solid;
         border-radius: 10;
         margin-right: 5px;
         padding: 3px;
+        textTemplate = "Hero",
+        currentVariable = "PRSstats.xp.current",
+        maxVariable = "PRSstats.xp.current"
       ]])
     XPbar.back:setStyleSheet([[background-color: #303030;
         border-width: 0px;
@@ -266,7 +267,7 @@ local function add_gauges()
 
         XPbar = SUG:new({
             name = "XP",
-            y = 35,
+            y = 45,
             height = 25,
             width = "95%",
             updateTime = 0,
