@@ -226,6 +226,38 @@ local function add_gauges()
     ]])
 
     -- Experience Points Gauge
+    XPbar = SUG:new({
+        name = "XP",
+        y = 35,
+        height = 25,
+        width = "95%",
+        updateTime = 0,
+        updateEvent = "gmcp.Char.player",
+        textTemplate = "XP: |c / |m   (|p%)",
+        currentVariable = "PRSstats.xp.current",
+        maxVariable = "PRSstats.xp.tnl"
+    }, GUI.tabwindow1.Vitalscenter)
+    XPbar.front:setStyleSheet([[background-color: #70c0e8;
+        border-top: 1px black solid;
+        border-left: 1px black solid;
+        border-bottom: 1px black solid;
+        border-radius: 10;
+        margin-right: 5px;
+        padding: 3px;
+      ]])
+    XPbar.back:setStyleSheet([[background-color: #303030;
+        border-width: 0px;
+        border-color: black;
+        border-style: solid;
+        border-radius: 10;
+        margin-right: 5px;
+        padding: 3px;
+      ]])
+    XPbar.text:setStyleSheet([[
+        font-weight: bold;
+        padding-left: 5px;
+      ]])
+
     if gmcp.Char.player.xpForNextLevel then
 
         PRSstats.xp = PRSstats.xp or {}
@@ -234,7 +266,7 @@ local function add_gauges()
 
         XPbar = SUG:new({
             name = "XP",
-            y = 150,
+            y = 35,
             height = 25,
             width = "95%",
             updateTime = 0,
@@ -242,7 +274,7 @@ local function add_gauges()
             textTemplate = "XP: |c / |m   (|p%)",
             currentVariable = "PRSstats.xp.current",
             maxVariable = "PRSstats.xp.tnl"
-        }, GUI.tabwindow3.Vitalscenter)
+        }, GUI.tabwindow1.Vitalscenter)
         XPbar.front:setStyleSheet([[background-color: #70c0e8;
         border-top: 1px black solid;
         border-left: 1px black solid;
