@@ -1219,7 +1219,7 @@ string.format("%s/PRS/settings/", getMudletHomeDir())
 -- EMCO by demonnic https://github.com/demonnic/EMCO
 function Adjustable.TabWindow:transferEMCO(emco)
     local EMCO = EMCO or require("PRS.emco")
-    echo("EMCO Loaded")
+    -- echo("EMCO Loaded") hide debug tracer
     emco:hide()
     local emco_tabs = emco.tabs
     local emco_tabwindows = emco.consoles
