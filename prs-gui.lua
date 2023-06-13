@@ -177,13 +177,12 @@ GUI.mapper = GUI.mapper or Geyser.Mapper:new({
     x = 5,
     y = 5,
     width = "96%",
-    height = "97%",
+    height = "97%"
 }, GUI.tabwindow3.Mapcenter)
 
-GUI.tabwindow1:load(1, string.format("%s/PRS/settings/", getMudletHomeDir())) -- Save All Tabs
+GUI.tabwindow1:load(1, string.format("%s/PRS/settings/", getMudletHomeDir())) -- Load all tabs
 
 function SaveTabsOnExit()
-    GUI.tabwindow1:save(1, string.format("%s/PRS/settings/", getMudletHomeDir()))
+    GUI.tabwindow1:save(1, string.format("%s/PRS/settings/", getMudletHomeDir())) -- Save all tabs on exit
 end
-
 registerAnonymousEventHandler("sysExitEvent", SaveTabsOnExit)
