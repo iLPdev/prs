@@ -22,18 +22,14 @@ GUI.top = Adjustable.Container:new({
     name = "top",
     y = "0%",
     height = "10%",
-    adjLabelstyle = "border: 5px solid rgb(16,16,20,50);",
-    titleTxtColor = "#161620",
-    buttonstyle = "rectangular",
+    adjLabelstyle = "border: 1px solid green;",
     defaultDir = string.format("%s/PRS/settings/", getMudletHomeDir())
 })
 GUI.bottom = Adjustable.Container:new({
     name = "bottom",
     height = "10%",
     y = "-10%",
-    adjLabelstyle = "border: 5px solid rgb(16,16,20,50);",
-    titleTxtColor = "#161620",
-    buttonstyle = "rectangular",
+    adjLabelstyle = "border: 1px solid green;",
     defaultDir = string.format("%s/PRS/settings/", getMudletHomeDir())
 })
 GUI.right_top = Adjustable.Container:new({
@@ -42,9 +38,7 @@ GUI.right_top = Adjustable.Container:new({
     y = "0%",
     height = "50%",
     width = "20%",
-    adjLabelstyle = "border: 5px solid rgb(16,16,20,50);",
-    titleTxtColor = "#161620",
-    buttonstyle = "rectangular",
+    adjLabelstyle = "border: 1px solid green;",
     defaultDir = string.format("%s/PRS/settings/", getMudletHomeDir())
 })
 
@@ -54,9 +48,7 @@ GUI.right_bottom = Adjustable.Container:new({
     y = "50%",
     height = "50%",
     width = "20%",
-    adjLabelstyle = "border: 5px solid rgb(16,16,20,50);",
-    titleTxtColor = "#161620",
-    buttonstyle = "rectangular",
+    adjLabelstyle = "border: 1px solid green;",
     defaultDir = string.format("%s/PRS/settings/", getMudletHomeDir())
 })
 
@@ -66,9 +58,7 @@ GUI.left_top = Adjustable.Container:new({
     y = "0%",
     height = "50%",
     width = "20%",
-    adjLabelstyle = "border: 5px solid rgb(16,16,20,50);",
-    titleTxtColor = "#161620",
-    buttonstyle = "rectangular",
+    adjLabelstyle = "border: 1px solid green;",
     defaultDir = string.format("%s/PRS/settings/", getMudletHomeDir())
 })
 
@@ -78,9 +68,7 @@ GUI.left_bottom = Adjustable.Container:new({
     y = "50%",
     height = "50%",
     width = "20%",
-    adjLabelstyle = "border: 5px solid rgb(16,16,20,50);",
-    titleTxtColor = "#161620",
-    buttonstyle = "rectangular",
+    adjLabelstyle = "border: 1px solid green;",
     defaultDir = string.format("%s/PRS/settings/", getMudletHomeDir())
 })
 
