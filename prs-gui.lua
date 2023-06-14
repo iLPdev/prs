@@ -21,7 +21,7 @@ require "PRS.AdjustableTabWindow" -- PR-specific version of edru's code
 GUI.top = Adjustable.Container:new({
     name = "top",
     y = "0%",
-    height = "20%",
+    height = "10%",
     adjLabelstyle = "border: 5px solid rgb(16,16,20,50);",
     titleTxtColor = "#161620",
     buttonstyle = "rectangular",
@@ -171,6 +171,82 @@ GUI.tabwindow4 = GUI.tabwindow4 or Adjustable.TabWindow:new({
     color2 = "rgb(16,16,20)",
     tabs = {"ASCII"}
 }, GUI.right_bottom)
+
+GUI.buttons = Geyser.HBox:new({
+    name = "buttons",
+    height = "25",
+    width = "98%"
+}, GUI.top)
+local buttonstyle = Geyser.StyleSheet:new([[
+    background-color: rgb(24,24,28);
+    border: 1px solid black;
+    border-radius: 3px;
+]])
+local button1 = Geyser.Label:new({
+    name = "button1",
+    stylesheet = buttonstyle:getCSS(),
+    message = [[<center>1</center>]]
+}, GUI.buttons)
+local button2 = Geyser.Label:new({
+    name = "button2",
+    stylesheet = buttonstyle:getCSS(),
+    message = [[<center>2</center>]]
+}, GUI.buttons)
+local button3 = Geyser.Label:new({
+    name = "button3",
+    stylesheet = buttonstyle:getCSS(),
+    message = [[<center>3</center>]]
+}, GUI.buttons)
+local button4 = Geyser.Label:new({
+    name = "button4",
+    stylesheet = buttonstyle:getCSS(),
+    message = [[<center>4</center>]]
+}, GUI.buttons)
+local button5 = Geyser.Label:new({
+    name = "button5",
+    stylesheet = buttonstyle:getCSS(),
+    message = [[<center>5</center>]]
+}, GUI.buttons)
+local button6 = Geyser.Label:new({
+    name = "button6",
+    stylesheet = buttonstyle:getCSS(),
+    message = [[<center>6</center>]]
+}, GUI.buttons)
+local button7 = Geyser.Label:new({
+    name = "button7",
+    stylesheet = buttonstyle:getCSS(),
+    message = [[<center>7</center>]]
+}, GUI.buttons)
+local button8 = Geyser.Label:new({
+    name = "button8",
+    stylesheet = buttonstyle:getCSS(),
+    message = [[<center>8</center>]]
+}, GUI.buttons)
+local button9 = Geyser.Label:new({
+    name = "button9",
+    stylesheet = buttonstyle:getCSS(),
+    message = [[<center>9</center>]]
+}, GUI.buttons)
+local button10 = Geyser.Label:new({
+    name = "button0",
+    stylesheet = buttonstyle:getCSS(),
+    message = [[<center>0</center>]]
+}, GUI.buttons)
+local button11 = Geyser.Label:new({
+    name = "button11",
+    stylesheet = buttonstyle:getCSS(),
+    message = [[<center>-</center>]]
+}, GUI.buttons)
+local button12 = Geyser.Label:new({
+    name = "button12",
+    stylesheet = buttonstyle:getCSS(),
+    message = [[<center>=</center>]]
+}, GUI.buttons)
+local button13 = Geyser.Label:new({
+    name = "vote",
+    stylesheet = buttonstyle:getCSS(),
+    message = [[<center>Vote!</center>]]
+}, GUI.buttons)
 
 GUI.mapper = GUI.mapper or Geyser.Mapper:new({
     name = "mapper",
