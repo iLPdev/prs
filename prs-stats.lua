@@ -63,7 +63,6 @@ local function add_gauges()
       padding: 3px;
     ]])
     HPbar.text:setStyleSheet([[
-      font-weight: bold;
       padding-left: 5px;
     ]])
 
@@ -96,7 +95,6 @@ local function add_gauges()
       padding: 3px;
     ]])
     ENbar.text:setStyleSheet([[
-      font-weight: bold;
       padding-left: 5px;
     ]])
 
@@ -127,7 +125,6 @@ local function add_gauges()
       margin-right: 5px;
       padding: 3px;]])
     STbar.text:setStyleSheet([[
-      font-weight: bold;
       padding-left: 5px;
     ]])
 
@@ -160,7 +157,6 @@ local function add_gauges()
       padding: 3px;
     ]])
     FPbar.text:setStyleSheet([[
-      font-weight: bold;
       padding-left: 5px;
     ]])
 
@@ -190,7 +186,6 @@ local function add_gauges()
         margin-right: 5px;
         padding: 3px;]])
     RPbar.text:setStyleSheet([[
-      font-weight: bold;
       padding-left: 5px;
     ]])
 
@@ -221,7 +216,6 @@ local function add_gauges()
         margin-right: 5px;
         padding: 3px;]])
     CPbar.text:setStyleSheet([[
-      font-weight: bold;
       padding-left: 5px;
     ]])
 
@@ -235,7 +229,7 @@ local function add_gauges()
         updateEvent = "gmcp.Char.player",
         textTemplate = "Hero"
     }, GUI.tabwindow1.Vitalscenter)
-    XPbar.front:setStyleSheet([[background-color: #303030;
+    XPbar.front:setStyleSheet([[background-color: #70c0e8;
         border-top: 1px black solid;
         border-left: 1px black solid;
         border-bottom: 1px black solid;
@@ -246,7 +240,7 @@ local function add_gauges()
         currentVariable = "PRSstats.xp.current",
         maxVariable = "PRSstats.xp.current"
       ]])
-    XPbar.back:setStyleSheet([[background-color: #303030;
+    XPbar.back:setStyleSheet([[background-color: #70c0e8;
         border-width: 0px;
         border-color: black;
         border-style: solid;
@@ -255,7 +249,6 @@ local function add_gauges()
         padding: 3px;
       ]])
     XPbar.text:setStyleSheet([[
-        font-weight: bold;
         padding-left: 5px;
       ]])
 
@@ -293,7 +286,6 @@ local function add_gauges()
         padding: 3px;
       ]])
         XPbar.text:setStyleSheet([[
-        font-weight: bold;
         padding-left: 5px;
       ]])
 
