@@ -261,7 +261,7 @@ local button10 = Geyser.Label:new({
 }, GUI.buttons)
 button10:setClickCallback("slot10")
 function slot10()
-    send("10")
+    send("0")
 end
 local button11 = Geyser.Label:new({
     name = "button11",
@@ -270,7 +270,7 @@ local button11 = Geyser.Label:new({
 }, GUI.buttons)
 button11:setClickCallback("slot11")
 function slot11()
-    send("11")
+    send("-")
 end
 local button12 = Geyser.Label:new({
     name = "button12",
@@ -279,7 +279,7 @@ local button12 = Geyser.Label:new({
 }, GUI.buttons)
 button12:setClickCallback("slot12")
 function slot12()
-    send("12")
+    send("=")
 end
 local button13 = Geyser.Label:new({
     name = "vote",
