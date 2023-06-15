@@ -2,7 +2,7 @@
 -- by Stack (https://ilpdev.com/prs)
 GUI = GUI or {}
 
--- Skin Mudlet Toolbar
+-------[ Skin Mudlet Toolbar ]-----------------------------
 setAppStyleSheet([[
 QToolBar {
   background-color: rgb(24,24,28);
@@ -18,6 +18,7 @@ QToolBar QToolButton:hover {
 
 require "PRS.AdjustableTabWindow" -- PR-specific version of edru's code
 
+-------[ Spawn the Adjustable Containers ]-----------------------------
 GUI.top = Adjustable.Container:new({
     name = "top",
     y = "0%",
@@ -72,10 +73,11 @@ GUI.left_bottom = Adjustable.Container:new({
     defaultDir = string.format("%s/PRS/settings/", getMudletHomeDir())
 })
 
-Adjustable.Container:doAll(function(self)
+Adjustable.Container:doAll(function(self) -- add connect menu to all adjustable containers 
     self:addConnectMenu()
 end)
 
+-------[ Attach and Connect Borders of Adjustable Containers ]-----------------
 GUI.top:attachToBorder("top")
 GUI.bottom:attachToBorder("bottom")
 GUI.left_top:attachToBorder("left")
@@ -104,6 +106,7 @@ GUI.top:newCustomItem("PRS Version", function(self)
     self:flash()
 end)
 
+-------[ Add TabWindows to Adjustable Containers ]-----------------------------
 GUI.tabwindow1 = GUI.tabwindow1 or Adjustable.TabWindow:new({
     name = "tabwindow1",
     x = 0,
@@ -174,115 +177,116 @@ local button1 = Geyser.Label:new({
     name = "button1",
     stylesheet = buttonstyle:getCSS(),
     message = [[<center>1</center>]]
-    }, GUI.buttons)
-    button1:setClickCallback("slot1")
-    function slot1()
+}, GUI.buttons)
+button1:setClickCallback("slot1")
+function slot1()
     send("1")
-    end
+end
 local button2 = Geyser.Label:new({
     name = "button2",
     stylesheet = buttonstyle:getCSS(),
     message = [[<center>2</center>]]
-    }, GUI.buttons)
-    button2:setClickCallback("slot2")
-    function slot2()
+}, GUI.buttons)
+button2:setClickCallback("slot2")
+function slot2()
     send("2")
-    end
+end
 local button3 = Geyser.Label:new({
     name = "button3",
     stylesheet = buttonstyle:getCSS(),
     message = [[<center>3</center>]]
-    }, GUI.buttons)
-    button3:setClickCallback("slot3")
-    function slot3()
+}, GUI.buttons)
+button3:setClickCallback("slot3")
+function slot3()
     send("3")
-    end
+end
 local button4 = Geyser.Label:new({
     name = "button4",
     stylesheet = buttonstyle:getCSS(),
     message = [[<center>4</center>]]
-    }, GUI.buttons)
-    button4:setClickCallback("slot4")
-    function slot4()
+}, GUI.buttons)
+button4:setClickCallback("slot4")
+function slot4()
     send("4")
-    end
+end
 local button5 = Geyser.Label:new({
     name = "button5",
     stylesheet = buttonstyle:getCSS(),
     message = [[<center>5</center>]]
-    }, GUI.buttons)
-    button5:setClickCallback("slot5")
-    function slot5()
+}, GUI.buttons)
+button5:setClickCallback("slot5")
+function slot5()
     send("5")
-    end
+end
 local button6 = Geyser.Label:new({
     name = "button6",
     stylesheet = buttonstyle:getCSS(),
     message = [[<center>6</center>]]
-    }, GUI.buttons)
-    button6:setClickCallback("slot6")
-    function slot6()
+}, GUI.buttons)
+button6:setClickCallback("slot6")
+function slot6()
     send("6")
-    end
+end
 local button7 = Geyser.Label:new({
     name = "button7",
     stylesheet = buttonstyle:getCSS(),
     message = [[<center>7</center>]]
-    }, GUI.buttons)
-    button7:setClickCallback("slot7")
-    function slot7()
+}, GUI.buttons)
+button7:setClickCallback("slot7")
+function slot7()
     send("7")
-    end
+end
 local button8 = Geyser.Label:new({
     name = "button8",
     stylesheet = buttonstyle:getCSS(),
     message = [[<center>8</center>]]
-    }, GUI.buttons)
-    button8:setClickCallback("slot8")
-    function slot8()
+}, GUI.buttons)
+button8:setClickCallback("slot8")
+function slot8()
     send("8")
-    end
+end
 local button9 = Geyser.Label:new({
     name = "button9",
     stylesheet = buttonstyle:getCSS(),
     message = [[<center>9</center>]]
-    }, GUI.buttons)
-    button9:setClickCallback("slot9")
-    function slot9()
+}, GUI.buttons)
+button9:setClickCallback("slot9")
+function slot9()
     send("9")
-    end
+end
 local button10 = Geyser.Label:new({
     name = "button0",
     stylesheet = buttonstyle:getCSS(),
     message = [[<center>0</center>]]
-    }, GUI.buttons)
-    button10:setClickCallback("slot10")
-    function slot10()
+}, GUI.buttons)
+button10:setClickCallback("slot10")
+function slot10()
     send("10")
-    end
+end
 local button11 = Geyser.Label:new({
     name = "button11",
     stylesheet = buttonstyle:getCSS(),
     message = [[<center>-</center>]]
-    }, GUI.buttons)
-    button11:setClickCallback("slot11")
-    function slot11()
+}, GUI.buttons)
+button11:setClickCallback("slot11")
+function slot11()
     send("11")
-    end
+end
 local button12 = Geyser.Label:new({
     name = "button12",
     stylesheet = buttonstyle:getCSS(),
     message = [[<center>=</center>]]
-    }, GUI.buttons)
-    button12:setClickCallback("slot12")
-    function slot12()
+}, GUI.buttons)
+button12:setClickCallback("slot12")
+function slot12()
     send("12")
-    end
+end
 local button13 = Geyser.Label:new({
     name = "vote",
     stylesheet = buttonstyle:getCSS(),
     message = [[<center>Vote!</center>]]
-    }, GUI.buttons)
+}, GUI.buttons)
+
 
 GUI.mapper = GUI.mapper or Geyser.Mapper:new({
     name = "mapper",
@@ -292,6 +296,7 @@ GUI.mapper = GUI.mapper or Geyser.Mapper:new({
     height = "97%"
 }, GUI.tabwindow3.Mapcenter)
 
+-------[ Save/Load User Tab Prefs ]-----------------------------
 GUI.tabwindow1:load(1, string.format("%s/PRS/settings/", getMudletHomeDir())) -- Load all tabs
 
 function SaveTabsOnExit()
