@@ -286,7 +286,10 @@ local button13 = Geyser.Label:new({
     stylesheet = buttonstyle:getCSS(),
     message = [[<center>Vote!</center>]]
 }, GUI.buttons)
-
+button13:setClickCallback("vote")
+function vote()
+    openUrl("https://www.mudverse.com/vote/531")
+end
 
 GUI.mapper = GUI.mapper or Geyser.Mapper:new({
     name = "mapper",
