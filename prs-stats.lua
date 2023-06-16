@@ -23,6 +23,14 @@ local function vitalsHeader()
     class:setFontSize(12)
     class:setColor(0, 0, 0, 0)
     class:echo("" .. gmcp.Char.player.class .. "", "#b4009e", "c")
+    if PRSstats.events.classChange_id then
+        killAnonymousEventHandler(PRSstats.events.classChange_id)
+    end
+    PRSstats.events.classChange_id = registerAnonymousEventHandler("gmcp.Char.player.class", function()
+        if gmcp.Char.player.class then
+            class:echo("" .. gmcp.Char.player.class .. "", "#b4009e", "c")
+        end
+    end)
     local level = Geyser.Label:new({
         name = "level"
     }, header)
@@ -39,7 +47,6 @@ local function vitalsHeader()
         end
     end)
 end
-
 
 local function add_gauges()
     vitalsHeader()
