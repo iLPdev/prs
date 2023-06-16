@@ -26,7 +26,6 @@ local function vitalsHeader()
     local level = Geyser.Label:new({
         name = "level"
     }, header)
-    -- level:adjustSize()
     level:setFontSize(12)
     level:setColor(0, 0, 0, 0)
     level:echo("Level " .. gmcp.Char.player.level .. "", "#ababab", "r")
