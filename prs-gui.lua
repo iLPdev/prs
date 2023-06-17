@@ -291,6 +291,7 @@ function vote()
     openUrl("https://www.mudverse.com/vote/531")
 end
 
+-------[ Spawn Mudlet Mapper ]---------------------------------
 GUI.mapper = GUI.mapper or Geyser.Mapper:new({
     name = "mapper",
     x = 5,
