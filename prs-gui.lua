@@ -101,11 +101,6 @@ GUI.right_bottom:changeMenuStyle("dark")
 GUI.left_top:changeMenuStyle("dark")
 GUI.left_bottom:changeMenuStyle("dark")
 
-GUI.top:newCustomItem("PRS Version", function(self)
-    send("chat I'm running PRS v1.7.0 on Mudlet")
-    self:flash()
-end)
-
 -------[ Add TabWindows to Adjustable Containers ]-----------------------------
 GUI.tabwindow1 = GUI.tabwindow1 or Adjustable.TabWindow:new({
     name = "tabwindow1",
@@ -118,7 +113,7 @@ GUI.tabwindow1 = GUI.tabwindow1 or Adjustable.TabWindow:new({
     inactiveTabFGColor = "#555555",
     color1 = "rgb(24,24,28)",
     color2 = "rgb(16,16,20)",
-    tabs = {"Vitals", "Effects", "Skills"}
+    tabs = {"Vitals"}
 }, GUI.left_top)
 
 GUI.tabwindow2 = GUI.tabwindow2 or Adjustable.TabWindow:new({
@@ -132,7 +127,7 @@ GUI.tabwindow2 = GUI.tabwindow2 or Adjustable.TabWindow:new({
     inactiveTabFGColor = "#555555",
     color1 = "rgb(24,24,28)",
     color2 = "rgb(16,16,20)",
-    tabs = {"Combat", "Quests"}
+    tabs = {"Combat"}
 }, GUI.left_bottom)
 
 GUI.tabwindow3 = GUI.tabwindow3 or Adjustable.TabWindow:new({
@@ -146,7 +141,7 @@ GUI.tabwindow3 = GUI.tabwindow3 or Adjustable.TabWindow:new({
     inactiveTabFGColor = "#555555",
     color1 = "rgb(24,24,28)",
     color2 = "rgb(16,16,20)",
-    tabs = {"Map", "Inventory", "Equipment", "Statistics"}
+    tabs = {"Map"}
 }, GUI.right_top)
 
 GUI.tabwindow4 = GUI.tabwindow4 or Adjustable.TabWindow:new({
@@ -160,7 +155,7 @@ GUI.tabwindow4 = GUI.tabwindow4 or Adjustable.TabWindow:new({
     inactiveTabFGColor = "#555555",
     color1 = "rgb(24,24,28)",
     color2 = "rgb(16,16,20)",
-    tabs = {"ASCII"}
+    tabs = {}
 }, GUI.right_bottom)
 
 -------[ Buttons ]-------------------------------------------------------------
