@@ -168,125 +168,277 @@ GUI.buttons = Geyser.HBox:new({
     height = "25",
     width = "98%"
 }, GUI.top)
+
 local buttonstyle = Geyser.StyleSheet:new([[
+    QLabel { 
+    background-color: rgb(16,16,20);
+    border: 1px solid black;
+    border-radius: 3px;
+    }
+    QLabel::hover {
     background-color: rgb(24,24,28);
     border: 1px solid black;
     border-radius: 3px;
+    } 
 ]])
+
 local button1 = Geyser.Label:new({
     name = "button1",
-    stylesheet = buttonstyle:getCSS(),
     message = [[<center>1</center>]]
 }, GUI.buttons)
 button1:setClickCallback("slot1")
+button1:setStyleSheet([[
+    QLabel { 
+        background-color: rgb(16,16,20);
+        border: 1px solid black;
+        border-radius: 3px;
+        }
+    QLabel::hover {
+        background-color: rgb(24,24,28);
+        border: 1px solid black;
+        border-radius: 3px;
+        } 
+]])
 function slot1()
     send("1")
 end
 local button2 = Geyser.Label:new({
     name = "button2",
-    stylesheet = buttonstyle:getCSS(),
     message = [[<center>2</center>]]
 }, GUI.buttons)
 button2:setClickCallback("slot2")
+button2:setStyleSheet([[
+    QLabel { 
+        background-color: rgb(16,16,20);
+        border: 1px solid black;
+        border-radius: 3px;
+        }
+    QLabel::hover {
+        background-color: rgb(24,24,28);
+        border: 1px solid black;
+        border-radius: 3px;
+        } 
+]])
 function slot2()
     send("2")
 end
 local button3 = Geyser.Label:new({
     name = "button3",
-    stylesheet = buttonstyle:getCSS(),
     message = [[<center>3</center>]]
 }, GUI.buttons)
 button3:setClickCallback("slot3")
+button3:setStyleSheet([[
+    QLabel { 
+        background-color: rgb(16,16,20);
+        border: 1px solid black;
+        border-radius: 3px;
+        }
+    QLabel::hover {
+        background-color: rgb(24,24,28);
+        border: 1px solid black;
+        border-radius: 3px;
+        } 
+]])
 function slot3()
     send("3")
 end
 local button4 = Geyser.Label:new({
     name = "button4",
-    stylesheet = buttonstyle:getCSS(),
     message = [[<center>4</center>]]
 }, GUI.buttons)
 button4:setClickCallback("slot4")
+button4:setStyleSheet([[
+    QLabel { 
+        background-color: rgb(16,16,20);
+        border: 1px solid black;
+        border-radius: 3px;
+        }
+    QLabel::hover {
+        background-color: rgb(24,24,28);
+        border: 1px solid black;
+        border-radius: 3px;
+        } 
+]])
 function slot4()
     send("4")
 end
 local button5 = Geyser.Label:new({
     name = "button5",
-    stylesheet = buttonstyle:getCSS(),
     message = [[<center>5</center>]]
 }, GUI.buttons)
 button5:setClickCallback("slot5")
+button5:setStyleSheet([[
+    QLabel { 
+        background-color: rgb(16,16,20);
+        border: 1px solid black;
+        border-radius: 3px;
+        }
+    QLabel::hover {
+        background-color: rgb(24,24,28);
+        border: 1px solid black;
+        border-radius: 3px;
+        } 
+]])
 function slot5()
     send("5")
 end
 local button6 = Geyser.Label:new({
     name = "button6",
-    stylesheet = buttonstyle:getCSS(),
     message = [[<center>6</center>]]
 }, GUI.buttons)
 button6:setClickCallback("slot6")
+button6:setStyleSheet([[
+    QLabel { 
+        background-color: rgb(16,16,20);
+        border: 1px solid black;
+        border-radius: 3px;
+        }
+    QLabel::hover {
+        background-color: rgb(24,24,28);
+        border: 1px solid black;
+        border-radius: 3px;
+        } 
+]])
 function slot6()
     send("6")
 end
 local button7 = Geyser.Label:new({
     name = "button7",
-    stylesheet = buttonstyle:getCSS(),
     message = [[<center>7</center>]]
 }, GUI.buttons)
 button7:setClickCallback("slot7")
+button7:setStyleSheet([[
+    QLabel { 
+        background-color: rgb(16,16,20);
+        border: 1px solid black;
+        border-radius: 3px;
+        }
+    QLabel::hover {
+        background-color: rgb(24,24,28);
+        border: 1px solid black;
+        border-radius: 3px;
+        } 
+]])
 function slot7()
     send("7")
 end
 local button8 = Geyser.Label:new({
     name = "button8",
-    stylesheet = buttonstyle:getCSS(),
     message = [[<center>8</center>]]
 }, GUI.buttons)
 button8:setClickCallback("slot8")
+button8:setStyleSheet([[
+    QLabel { 
+        background-color: rgb(16,16,20);
+        border: 1px solid black;
+        border-radius: 3px;
+        }
+    QLabel::hover {
+        background-color: rgb(24,24,28);
+        border: 1px solid black;
+        border-radius: 3px;
+        } 
+]])
 function slot8()
     send("8")
 end
 local button9 = Geyser.Label:new({
     name = "button9",
-    stylesheet = buttonstyle:getCSS(),
     message = [[<center>9</center>]]
 }, GUI.buttons)
 button9:setClickCallback("slot9")
+button9:setStyleSheet([[
+    QLabel { 
+        background-color: rgb(16,16,20);
+        border: 1px solid black;
+        border-radius: 3px;
+        }
+    QLabel::hover {
+        background-color: rgb(24,24,28);
+        border: 1px solid black;
+        border-radius: 3px;
+        } 
+]])
 function slot9()
     send("9")
 end
 local button10 = Geyser.Label:new({
-    name = "button0",
-    stylesheet = buttonstyle:getCSS(),
+    name = "button10",
     message = [[<center>0</center>]]
 }, GUI.buttons)
 button10:setClickCallback("slot10")
+button10:setStyleSheet([[
+    QLabel { 
+        background-color: rgb(16,16,20);
+        border: 1px solid black;
+        border-radius: 3px;
+        }
+    QLabel::hover {
+        background-color: rgb(24,24,28);
+        border: 1px solid black;
+        border-radius: 3px;
+        } 
+]])
 function slot10()
     send("0")
 end
 local button11 = Geyser.Label:new({
     name = "button11",
-    stylesheet = buttonstyle:getCSS(),
     message = [[<center>-</center>]]
 }, GUI.buttons)
 button11:setClickCallback("slot11")
+button11:setStyleSheet([[
+    QLabel { 
+        background-color: rgb(16,16,20);
+        border: 1px solid black;
+        border-radius: 3px;
+        }
+    QLabel::hover {
+        background-color: rgb(24,24,28);
+        border: 1px solid black;
+        border-radius: 3px;
+        } 
+]])
 function slot11()
     send("-")
 end
 local button12 = Geyser.Label:new({
     name = "button12",
-    stylesheet = buttonstyle:getCSS(),
     message = [[<center>=</center>]]
 }, GUI.buttons)
 button12:setClickCallback("slot12")
+button12:setStyleSheet([[
+    QLabel { 
+        background-color: rgb(16,16,20);
+        border: 1px solid black;
+        border-radius: 3px;
+        }
+    QLabel::hover {
+        background-color: rgb(24,24,28);
+        border: 1px solid black;
+        border-radius: 3px;
+        } 
+]])
 function slot12()
     send("=")
 end
 local button13 = Geyser.Label:new({
     name = "vote",
-    stylesheet = buttonstyle:getCSS(),
     message = [[<center>Vote!</center>]]
 }, GUI.buttons)
 button13:setClickCallback("vote")
+button13:setStyleSheet([[
+    QLabel { 
+        background-color: rgb(16,16,20);
+        border: 1px solid black;
+        border-radius: 3px;
+        }
+    QLabel::hover {
+        background-color: rgb(24,24,28);
+        border: 1px solid black;
+        border-radius: 3px;
+        } 
+]])
 function vote()
     openUrl("https://www.mudverse.com/vote/531")
 end
