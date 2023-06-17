@@ -163,6 +163,7 @@ GUI.tabwindow4 = GUI.tabwindow4 or Adjustable.TabWindow:new({
     tabs = {"ASCII"}
 }, GUI.right_bottom)
 
+-------[ Buttons ]-------------------------------------------------------------
 GUI.buttons = Geyser.HBox:new({
     name = "buttons",
     height = "25",
