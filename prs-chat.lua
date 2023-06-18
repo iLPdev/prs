@@ -14,7 +14,7 @@ PRSchat.EMCO = EMCO:new({
     height = "100%",
     allTab = true,
     allTabName = "All",
-    consoleContainerColor = "blue",
+    consoleContainerColor = "transparent",
     gap = 2,
     leftMargin = 10,
     topMargin = 10,
@@ -40,14 +40,22 @@ local emcoRev = rev:new({
 
 emcoRev:addPatch(function()
     --- patch for v1.6.0
-    PRSchat.EMCO.leftMargin = 2
     PRSchat.EMCO.tabBold = true
     PRSchat.EMCO:setActiveTabFGColor("white")
     PRSchat.EMCO:setinactiveTabFGColor("gray")
     PRSchat.EMCO:enableTimeStamp()
     PRSchat.EMCO:enableCustomTimestampColor()
     PRSchat.EMCO:setTimestampFGColor("dim_gray")
-    PRSchat.EMCO:setTimestampBGColor("black")
+    --- patch for 1.7.0
+    PRSchat.EMCO.leftMargin = 10
+    PRSchat.EMCO.topMargin = 10
+    PRSchat.EMCO.rightMargin = 10
+    PRSchat.EMCO.bottomMargin = 10
+    PRSchat.EMCO:disableMapTab()
+    PRSchat.EMCO:disablePreserveBackground()
+    PRSchat.EMCO:setConsoleContainerColor("transparent")
+    PRSchat.EMCO.setconsoleColor("#101014")
+    PRSchat.EMCO:setTimestampBGColor("#101014")
 end)
 
 local function saver(eventName, packageName)
