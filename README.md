@@ -18,7 +18,7 @@
 
 <!-- SHORT DESCRIPTION -->
 <p align="center">
-    Mudlet script for Procedural Realms MUD
+    Procedural Realms Script for Mudlet
     <br />
 </p>
 
