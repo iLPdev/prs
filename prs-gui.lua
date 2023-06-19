@@ -170,6 +170,7 @@ local button1 = Geyser.Label:new({
     message = [[<center>1</center>]]
 }, GUI.buttons)
 button1:setClickCallback("slot1")
+button1:setToolTip("F1", "10")
 button1:setStyleSheet([[
     QLabel { 
     background-color: rgb(16,16,20);
@@ -191,6 +192,7 @@ local button2 = Geyser.Label:new({
     message = [[<center>2</center>]]
 }, GUI.buttons)
 button2:setClickCallback("slot2")
+button2:setToolTip("F2", "10")
 button2:setStyleSheet([[
     QLabel { 
     background-color: rgb(16,16,20);
@@ -212,6 +214,7 @@ local button3 = Geyser.Label:new({
     message = [[<center>3</center>]]
 }, GUI.buttons)
 button3:setClickCallback("slot3")
+button3:setToolTip("F3", "10")
 button3:setStyleSheet([[
     QLabel { 
     background-color: rgb(16,16,20);
@@ -233,6 +236,7 @@ local button4 = Geyser.Label:new({
     message = [[<center>4</center>]]
 }, GUI.buttons)
 button4:setClickCallback("slot4")
+button4:setToolTip("F4", "10")
 button4:setStyleSheet([[
     QLabel { 
     background-color: rgb(16,16,20);
@@ -254,6 +258,7 @@ local button5 = Geyser.Label:new({
     message = [[<center>5</center>]]
 }, GUI.buttons)
 button5:setClickCallback("slot5")
+button5:setToolTip("F5", "10")
 button5:setStyleSheet([[
     QLabel { 
     background-color: rgb(16,16,20);
@@ -275,6 +280,7 @@ local button6 = Geyser.Label:new({
     message = [[<center>6</center>]]
 }, GUI.buttons)
 button6:setClickCallback("slot6")
+button6:setToolTip("F6", "10")
 button6:setStyleSheet([[
     QLabel { 
     background-color: rgb(16,16,20);
@@ -296,6 +302,7 @@ local button7 = Geyser.Label:new({
     message = [[<center>7</center>]]
 }, GUI.buttons)
 button7:setClickCallback("slot7")
+button7:setToolTip("F7", "10")
 button7:setStyleSheet([[
     QLabel { 
     background-color: rgb(16,16,20);
@@ -317,6 +324,7 @@ local button8 = Geyser.Label:new({
     message = [[<center>8</center>]]
 }, GUI.buttons)
 button8:setClickCallback("slot8")
+button8:setToolTip("F8", "10")
 button8:setStyleSheet([[
     QLabel { 
     background-color: rgb(16,16,20);
@@ -338,6 +346,7 @@ local button9 = Geyser.Label:new({
     message = [[<center>9</center>]]
 }, GUI.buttons)
 button9:setClickCallback("slot9")
+button9:setToolTip("F9", "10")
 button9:setStyleSheet([[
     QLabel { 
     background-color: rgb(16,16,20);
@@ -359,6 +368,7 @@ local button10 = Geyser.Label:new({
     message = [[<center>0</center>]]
 }, GUI.buttons)
 button10:setClickCallback("slot10")
+button10:setToolTip("F10", "10")
 button10:setStyleSheet([[
     QLabel { 
     background-color: rgb(16,16,20);
@@ -380,6 +390,7 @@ local button11 = Geyser.Label:new({
     message = [[<center>-</center>]]
 }, GUI.buttons)
 button11:setClickCallback("slot11")
+button11:setToolTip("F11", "10")
 button11:setStyleSheet([[
     QLabel { 
     background-color: rgb(16,16,20);
@@ -401,6 +412,7 @@ local button12 = Geyser.Label:new({
     message = [[<center>=</center>]]
 }, GUI.buttons)
 button12:setClickCallback("slot12")
+button12:setToolTip("F12", "10")
 button12:setStyleSheet([[
     QLabel { 
     background-color: rgb(16,16,20);
@@ -422,6 +434,7 @@ local button13 = Geyser.Label:new({
     message = [[<center>Vote!</center>]]
 }, GUI.buttons)
 button13:setClickCallback("vote")
+button13:setToolTip("Vote for PR daily!", "10")
 button13:setStyleSheet([[
     QLabel { 
     background-color: rgb(16,16,20);
