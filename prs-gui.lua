@@ -165,19 +165,6 @@ GUI.buttons = Geyser.HBox:new({
     width = "98%"
 }, GUI.top)
 
-local buttonstyle = Geyser.StyleSheet:new([[
-    QLabel { 
-    background-color: rgb(16,16,20);
-    border: 1px solid black;
-    border-radius: 3px;
-    }
-    QLabel::hover {
-    background-color: rgb(24,24,28);
-    border: 1px solid black;
-    border-radius: 3px;
-    } 
-]])
-
 local button1 = Geyser.Label:new({
     name = "button1",
     message = [[<center>1</center>]]
