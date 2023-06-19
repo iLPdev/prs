@@ -24,7 +24,7 @@
 
 <!-- LONG DESCRIPTION -->
 
-The Procedural Realms Script [PRS] project gives [Procedural Realms MUD](http://textdimension.com/) players improved access to the advanced features of the [Mudlet](https://www.mudlet.org) MUD client. By leveraging the specific "out of band" packets sent by Procedural Realms' server, PRS uses Mudlet's mapper to identifies rooms/exits, prevent creation of duplicate rooms/areas, manage instanced areas, and accurately track your character's location on the map as you move about the realm. Additional convenience features include speedwalking/pathfinding, autosetting map terrain colors, self-updating gauges for vitals, communication containers, and a user-adjustable UI layout.
+The Procedural Realms Script [PRS] project gives [Procedural Realms MUD](http://textdimension.com/) players improved access to the advanced features of the [Mudlet](https://www.mudlet.org) MUD client. By leveraging the specific "out of band" packets sent by Procedural Realms' server, PRS uses Mudlet's mapper to identify rooms/exits, prevent creation of duplicate rooms/areas, manage instanced areas, and accurately track your character's location on the map as you move about the realm. Additional convenience features include speedwalking/pathfinding, autosetting map terrain colors, self-updating gauges for vitals, communication containers, and a user-adjustable UI layout.
 
 Project Link: [https://github.com/iLPdev/prs]<br />
 Mudlet Forum Topic: [https://forums.mudlet.org/viewtopic.php?f=6&t=23126]
