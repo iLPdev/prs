@@ -18,13 +18,13 @@
 
 <!-- SHORT DESCRIPTION -->
 <p align="center">
-    Mudlet script for Procedural Realms MUD
+    Procedural Realms Script for Mudlet
     <br />
 </p>
 
 <!-- LONG DESCRIPTION -->
 
-The Procedural Realms Script [PRS] project gives [Procedural Realms MUD](http://textdimension.com/) players improved access to the advanced features of the [Mudlet](https://www.mudlet.org) MUD client. By leveraging the specific "out of band" packets sent by Procedural Realms' server, PRS uses Mudlet's mapper to identifies rooms/exits, prevent creation of duplicate rooms/areas, manage instanced areas, and accurately track your character's location on the map as you move about the realm. Additional convenience features include speedwalking/pathfinding, autosetting map terrain colors, self-updating gauges for vitals, communication containers, and a user-adjustable UI layout.
+The Procedural Realms Script [PRS] project gives [Procedural Realms MUD](http://textdimension.com/) players improved access to the advanced features of the [Mudlet](https://www.mudlet.org) MUD client. By leveraging the specific "out of band" packets sent by Procedural Realms' server, PRS uses Mudlet's mapper to identify rooms/exits, prevent creation of duplicate rooms/areas, manage instanced areas, and accurately track your character's location on the map as you move about the realm. Additional convenience features include speedwalking/pathfinding, autosetting map terrain colors, self-updating gauges for vitals, communication containers, and a user-adjustable UI layout.
 
 Project Link: [https://github.com/iLPdev/prs]<br />
 Mudlet Forum Topic: [https://forums.mudlet.org/viewtopic.php?f=6&t=23126]
@@ -57,6 +57,7 @@ Mudlet Forum Topic: [https://forums.mudlet.org/viewtopic.php?f=6&t=23126]
 
 #### Milestones
 
+- v1.7.0 - GUI Overhall: Adjustable Tabs and Containers Introduced
 - v1.6.0 - Clickable URLs, EMCO Timestamps, and Revisionator Patching
 - v1.5.0 - Auto-Install, Auto-Update, and Discord Rich Presence Integration
 - v1.2.0 - EMCO Command Line Interface
@@ -72,7 +73,8 @@ Mudlet Forum Topic: [https://forums.mudlet.org/viewtopic.php?f=6&t=23126]
 - Tabbed Communications Channels with CLI -- Adjustable, dockable, resizable, and no conversations lost in scroll!
 - Self-Updating Gauges for character vitals, including Hit Points, Energy, Stamina, Rage, Combo, and eXperience Points.
 - Speedwalking and pathfinding - Efficiently get where you're going - and fast!
-- Discord Rich Presence integration
+- Slot Command Buttons & Keys - Carry out custom actions with the click of a button!
+- Discord Rich Presence Integration
 - Clickable URLs
 
 ### Built With
@@ -96,7 +98,7 @@ Version numbering approximates the [Semantic Versioning](http://semver.org) appr
 
 - **Project State**: Procedural Realms Script is under active development. The application can be used, but may be unstable. We are in need of continued testing prior to moving forward with each new release.
 
-- **Current Release**: v1.6.0
+- **Current Release**: v1.7.0
 
 **[^Top](#table-of-contents)**
 
@@ -132,8 +134,11 @@ Upon initial install and/or update, you may need to close and re-open your Proce
 
 <a href="https://www.mudlet.org"><img src="https://www.mudlet.org/wp-content/uploads/2017/08/mudlet-wp-logo.png" alt="Mudlet" width="120" height="auto"></a>
 
+Aside from Mudlet, all the required dependencies are included in the PRS release package, requiring no additional download/install by the user.
+
+- A modified [AdjustableTabWindows](https://github.com/Edru2/AdjustableTabWindow) is included for GUI management. 
 - [Mudlet][mudlet-url] MUD Client application must obviously be installed on your operating system (Windows, MacOS, and Linux)
-- [MDK](https://github.com/demonnic/MDK) provides EMCO, Revisionator, and SUG support. The required code is already included in the PRS release package, requiring no additional download/install by the user.
+- Included [MDK](https://github.com/demonnic/MDK) modules provide EMCO, Revisionator, and SUG support. 
 
 ### Getting the Source
 
