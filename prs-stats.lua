@@ -92,10 +92,11 @@ local function statsTab()
     end
     PRSstats.events._strengthChange_id = registerAnonymousEventHandler("gmcp.Char.player._strength", function()
         if gmcp.Char.player._strength then
-          _strength:echo("|" .. gmcp.Char.player._strength, "#c50f1f", "l")
+            _strength:echo("|" .. gmcp.Char.player._strength, "#c50f1f", "l")
         end
     end)
     -- Agility
+end
 
 local function add_gauges()
     -- Hit Points Gauge
