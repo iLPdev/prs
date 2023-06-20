@@ -48,6 +48,55 @@ local function vitalsHeader()
     end)
 end
 
+local function statsTab()
+    local abilitiesHeader = Geyser.Label:new({
+        name = "abilitiesHeader"
+    }, GUI.tabwindow1.Statscenter)
+    abilitiesHeader:setFontSize(12)
+    abilitiesHeader:setColor(0, 0, 0, 0)
+    abilitiesHeader:echo("Abilities", "#f2f2f2", "c")
+    local abilities = Geyser.HBox:new({
+        name = "abilities",
+        height = "33%",
+        width = "93%"
+    }, GUI.tabwindow1.Statscenter)
+    -- Strength
+    local strengthTitle = Geyser.Label:new({
+        name = "strengthTitle"
+    }, abilities)
+    strengthTitle:setFontSize(12)
+    strengthTitle:setColor(0, 0, 0, 0)
+    strengthTitle:echo("Strength" .. gmcp.Char.player.strength .. ":", "#aaaaaa", "r")
+    local strength = Geyser.Label:new({
+        name = "strength"
+    }, abilities)
+    strength:setFontSize(12)
+    strength:setColor(0, 0, 0, 0)
+    strength:echo(gmcp.Char.player.strength, "#e74856", "r")
+    if PRSstats.events.strengthChange_id then
+        killAnonymousEventHandler(PRSstats.events.strengthChange_id)
+    end
+    PRSstats.events.strengthChange_id = registerAnonymousEventHandler("gmcp.Char.player.strength", function()
+        if gmcp.Char.player.strength then
+            strength:echo(gmcp.Char.player.strength, "#e74856", "r")
+        end
+    end)
+    local _strength = Geyser.Label:new({
+        name = "_strength"
+    }, abilities)
+    _strength:setFontSize(12)
+    _strength:setColor(0, 0, 0, 0)
+    _strength:echo("|" .. gmcp.Char.player._strength, "#c50f1f", "l")
+    if PRSstats.events._strengthChange_id then
+        killAnonymousEventHandler(PRSstats.events._strengthChange_id)
+    end
+    PRSstats.events._strengthChange_id = registerAnonymousEventHandler("gmcp.Char.player._strength", function()
+        if gmcp.Char.player._strength then
+          _strength:echo("|" .. gmcp.Char.player._strength, "#c50f1f", "l")
+        end
+    end)
+    -- Agility
+
 local function add_gauges()
     -- Hit Points Gauge
     HPbar = SUG:new({
