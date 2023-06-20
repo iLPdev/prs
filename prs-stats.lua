@@ -49,7 +49,6 @@ local function vitalsHeader()
 end
 
 local function add_gauges()
-    vitalsHeader()
     -- Hit Points Gauge
     HPbar = SUG:new({
         name = "HP",
