@@ -51,7 +51,7 @@ end
 local function statsTab()
     local statsVBox = Geyser.VBox:new({
         name = "statsVBox",
-        height = "93%",
+        height = "95%",
         width = "93%"
     }, GUI.tabwindow1.Statscenter)
     local abilitiesTitle = Geyser.Label:new({
@@ -254,7 +254,6 @@ local function statsTab()
                 damage:echo(string.format("%0.1f", gmcp.Char.player.dpr) .. " dpr", "#c50f1f", "l")
             end
         end)
-
         -- Armor
         local armorHBox = Geyser.HBox:new({
             name = "armorHBox",
