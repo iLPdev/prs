@@ -129,7 +129,7 @@ To manually install PRS, just follow these steps:
 
 ### Initial Setup
 
-Upon initial install and/or update, you may need to close and re-open your Procedural Realms profile in Mudlet. You will then typically need to connect to the game server, and resize the UI windows both horizontally and vertically to reveal their contents fully. See **[UI Configuration](#user-interface-configuration)** below.
+Upon initial install and/or update, you may need to close and re-open your Procedural Realms profile and/or Mudlet. You will then typically need to connect to the game server, and configure the User Interface. See **[UI Configuration](#user-interface-configuration)** below.
 
 ### Dependencies
 
