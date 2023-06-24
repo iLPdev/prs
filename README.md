@@ -83,6 +83,7 @@ Mudlet Forum Topic: [https://forums.mudlet.org/viewtopic.php?f=6&t=23126]
 - [Edbee Library](https://github.com/edbee/edbee-lib) provides the text editor component for Mudlet
 - [Mudlet](https://github.com/Mudlet/Mudlet) is a cross-platform, open source, and super fast MUD client
 - [MDK](https://github.com/demonnic/MDK) is a collection of Lua 'classes' and modules by @demonnic
+- [AdjustableTabWindow](https://github.com/Edru2/AdjustableTabWindow) by @edru2 provides drag and drop tab support.
 - [Git](https://git-scm.com) is the version-control system for tracking changes and project management
 - [ImgBot](https://github.com/dabutvin/Imgbot) provides GitHub-integrated image optimization
 
