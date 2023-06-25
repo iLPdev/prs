@@ -28,6 +28,7 @@ local function vitalsHeader()
     end
     PRSstats.events.classChange_id = registerAnonymousEventHandler("gmcp.Char.player.class", function()
         if gmcp.Char.player.class then
+            level:setColor(0, 0, 0, 0)
             class:echo("" .. gmcp.Char.player.class .. "", "#b4009e", "c")
         end
     end)
@@ -55,7 +56,8 @@ local function statsTab()
         width = "93%"
     }, GUI.tabwindow1.Statscenter)
     local abilitiesTitle = Geyser.Label:new({
-        name = "abilitiesTitle"
+        name = "abilitiesTitle",
+        height = 30
     }, statsVBox)
     abilitiesTitle:setColor(0, 0, 0, 0)
     abilitiesTitle:setFontSize(12)
@@ -218,7 +220,8 @@ local function statsTab()
         end)
     
     local combatTitle = Geyser.Label:new({
-        name = "combatTitle"
+        name = "combatTitle",
+        height = 30
     }, statsVBox)
     combatTitle:setColor(0, 0, 0, 0)
     combatTitle:setFontSize(12)
@@ -442,7 +445,8 @@ local function statsTab()
             end
         end)
     local resistancesTitle = Geyser.Label:new({
-        name = "resistancesTitle"
+        name = "resistancesTitle",
+        height = 30
     }, statsVBox)
     resistancesTitle:setColor(0, 0, 0, 0)
     resistancesTitle:setFontSize(12)
