@@ -57,7 +57,7 @@ The Procedural Realms Script [PRS] project gives [Procedural Realms MUD](http://
 
 #### Milestones
 
-- v1.7.0 - GUI Overhall: Adjustable Tabs and Containers Introduced
+- v1.7.0 - GUI (Adjustable Containers & Tabbed Windows) and Stats Tab
 - v1.6.0 - Clickable URLs, EMCO Timestamps, and Revisionator Patching
 - v1.5.0 - Auto-Install, Auto-Update, and Discord Rich Presence Integration
 - v1.2.0 - EMCO Command Line Interface
@@ -68,9 +68,10 @@ The Procedural Realms Script [PRS] project gives [Procedural Realms MUD](http://
 
 ### Features
 
+- GUI with adjustable, dockable, and resizable tabbed windows. 
 - Automatic GMCP mapping of Procedural Realms MUD, including instanced areas/zones.
 - Automatic GMCP room styling based on terrain to matches colors in PR's 'map' and 'look' quickmap.
-- Tabbed Communications Channels with CLI -- Adjustable, dockable, resizable, and no conversations lost in scroll!
+- Tabbed Communications Channels with CLI -- No conversations lost in scroll!
 - Self-Updating Gauges for character vitals, including Hit Points, Energy, Stamina, Rage, Combo, and eXperience Points.
 - Speedwalking and pathfinding - Efficiently get where you're going - and fast!
 - Slot Command Buttons & Keys - Carry out custom actions with the click of a button!
