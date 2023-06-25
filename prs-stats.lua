@@ -37,7 +37,6 @@ local function vitalsHeader()
     level:setFontSize(12)
     level:setColor(0, 0, 0, 0)
     level:echo("Level " .. gmcp.Char.player.level, "#ababab", "r")
-
     if PRSstats.events.levelChange_id then
         killAnonymousEventHandler(PRSstats.events.levelChange_id)
     end
