@@ -24,10 +24,10 @@
 
 <!-- LONG DESCRIPTION -->
 
-The Procedural Realms Script [PRS] project gives [Procedural Realms MUD](http://textdimension.com/) players improved access to the advanced features of the [Mudlet](https://www.mudlet.org) MUD client. By leveraging the specific "out of band" packets sent by Procedural Realms' server, PRS uses Mudlet's mapper to identify rooms/exits, prevent creation of duplicate rooms/areas, manage instanced areas, and accurately track your character's location on the map as you move about the realm. Additional convenience features include speedwalking/pathfinding, autosetting map terrain colors, self-updating gauges for vitals, communication containers, and a user-adjustable UI layout.
+The Procedural Realms Script [PRS] project gives [Procedural Realms MUD](http://textdimension.com/) players improved access to the advanced features of the [Mudlet](https://www.mudlet.org) MUD client. By leveraging the specific "out of band" packets sent by Procedural Realms' server, PRS uses Mudlet's mapper to identify rooms/exits, prevent creation of duplicate rooms/areas, manage instanced areas, and accurately track your character's location on the map as you move about the realm. Additional convenience features include speedwalking/pathfinding, autosetting map terrain colors, self-updating gauges for vitals and combat, communication containers, quick slot buttons/keybindings, and a user-adjustable UI layout.
 
-Project Link: [https://github.com/iLPdev/prs]<br />
-Mudlet Forum Topic: [https://forums.mudlet.org/viewtopic.php?f=6&t=23126]
+**Project Link**: [https://github.com/iLPdev/prs]<br />
+**Mudlet Forum Topic**: [https://forums.mudlet.org/viewtopic.php?f=6&t=23126]
 
 <!-- TABLE OF CONTENTS -->
 
@@ -83,6 +83,7 @@ Mudlet Forum Topic: [https://forums.mudlet.org/viewtopic.php?f=6&t=23126]
 - [Edbee Library](https://github.com/edbee/edbee-lib) provides the text editor component for Mudlet
 - [Mudlet](https://github.com/Mudlet/Mudlet) is a cross-platform, open source, and super fast MUD client
 - [MDK](https://github.com/demonnic/MDK) is a collection of Lua 'classes' and modules by @demonnic
+- [AdjustableTabWindow](https://github.com/Edru2/AdjustableTabWindow) by @edru2 provides drag and drop tab support.
 - [Git](https://git-scm.com) is the version-control system for tracking changes and project management
 - [ImgBot](https://github.com/dabutvin/Imgbot) provides GitHub-integrated image optimization
 
@@ -128,7 +129,7 @@ To manually install PRS, just follow these steps:
 
 ### Initial Setup
 
-Upon initial install and/or update, you may need to close and re-open your Procedural Realms profile in Mudlet. You will then typically need to connect to the game server, and resize the UI windows both horizontally and vertically to reveal their contents fully. See **[UI Configuration](#user-interface-configuration)** below.
+Upon initial install and/or update, you may need to close and re-open your Procedural Realms profile and/or Mudlet. You will then typically need to connect to the game server, and configure the User Interface. See **[UI Configuration](#user-interface-configuration)** below.
 
 ### Dependencies
 
@@ -154,12 +155,16 @@ You can also clone the entire project directly with this command: `git clone git
 
 ### User Interface Configuration
 
-There are two fully configurable UI elements that are currently included in PRS by default: the EMCO (Communications Tabs and Map) and the Vitals (character Stat guages) windows. The UI windows are docked on the right of mudlet's main display upon connection to the game server. The windows may be resized by dragging their borders, moved by click/dragging their window title/headings, as well as undocked or closed by clicking on their respective upper-right pop-out or close icons.
+Upon initial intallation of PRS, there are six fully configurable *adustable container* 'windows' included by default: Four containers -- two attached to either side of the main display -- include various *adjustable tab windows*. The default tabs include the EMCO (communications tabs), Mudlet Mapper, Vitals (self-updating character status gauges), Statistics summarizing the in-game `score` command data, and a Combat tab with dynamic Combo and Rage gauges during battle. The remaining two windows are attached to the top and bottom of the main display. The default top window contains 12 buttons. Each button corresponds to the 12 in-game *quick slots*, and is bound to the `F1` through `F12` reflecting slots `1` through `0`, `-`, and `=`. See the in-game `help slot` command for details on quick slots.  
 
 <!-- 1. **Enable GMCP**: You must enable GMCP options on the game server. To determine if GMCP in enabled on the server, log into the game and issue the following command: `config gmcp`. Displayed under the "Terminal" column are the "gmcp" and "gmcpseenrooms" options. If they are not currently set to "on", you may enable them by issuing the `gmcp` and `gmcpseenroom` commands. -->
 
-1. **Resize Windows**: On initial usage, you will typically need to resize the windows both horizontally and vertically to reveal their contents fully. Note that the window configurations are preserved but not restored until connection to the game server has been established.
-2. **Layout Preferences:** You can optionally drag, re-arrange, pop out, and otherwise move the two PRS windows to your liking.
+1. **Arrange Windows & Tabs**: On initial usage, all five PRS windows are in their unlocked state as indicated by their bright green borders and titles. The adjustable container and their tabs may be resized by dragging their borders, moved by click/dragging their window title/headings, as well as minimized or closed by clicking on their respective upper-right minimize/restore or close icons.* You may optionally drag, re-arrange, pop out, and otherwise move all PRS tabs and windows to your liking. The author has provided a brief video demonstration of the adjustable tab windows' functionality within adjustable containers below.<br />
+<br /><a href="https://www.youtube.com/embed/2ttFWZUggEc" title="Adjustable Tab Windows Video"><img src="http://img.youtube.com/vi/2ttFWZUggEc/mqdefault.jpg" alt="Adjustable Tab Windows Video" width="560" height="315" /></a>
+<br /><br />
+**_*Note_**: There is presently no quick way to reopen a window once closed. Rather, you may restore the initial default windows and layout settings by closing Mudlet, navigating to the Mudlet profile's directory on your computer, and then recursively deleting the `/PRS/settings` directory and the `TabWindowTabs.lua` file in the root `/PRS/` directory.
+
+2. **Lock Windows**: Once you have arranged the layout to your liking, you may *lock* each window in place using the menu displayed by right-clicking on the bright green container title area, and selecting `lock` or `lock style` --> `standard`. The window/tab layout configurations are preserved when the Mudlet profile is closed.
 
 ### Command Line Interface
 
