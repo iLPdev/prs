@@ -155,7 +155,9 @@ You can also clone the entire project directly with this command: `git clone git
 
 ### User Interface Configuration
 
-There are two fully configurable UI elements that are currently included in PRS by default: the EMCO (Communications Tabs and Map) and the Vitals (character Stat guages) windows. The UI windows are docked on the right of mudlet's main display upon connection to the game server. The windows may be resized by dragging their borders, moved by click/dragging their window title/headings, as well as undocked or closed by clicking on their respective upper-right pop-out or close icons.
+Upon initial intallation of PRS, there are five fully configurable adustable container 'windows' included by default: Four containers, two attached to either side of the main display, include various 'adjustable tab windows.' The default tabs include the EMCO (communications tabs), Mudlet Mapper, Vitals (self-updating character status gauges), Statistics summarizing the in-game `score` command data, and a Combat tab with dynamic Combo and Rage gauges during battle. 
+
+~~The UI windows are docked on the right of mudlet's main display upon connection to the game server. The windows may be resized by dragging their borders, moved by click/dragging their window title/headings, as well as undocked or closed by clicking on their respective upper-right pop-out or close icons.~~
 
 <!-- 1. **Enable GMCP**: You must enable GMCP options on the game server. To determine if GMCP in enabled on the server, log into the game and issue the following command: `config gmcp`. Displayed under the "Terminal" column are the "gmcp" and "gmcpseenrooms" options. If they are not currently set to "on", you may enable them by issuing the `gmcp` and `gmcpseenroom` commands. -->
 
