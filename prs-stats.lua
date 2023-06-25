@@ -16,19 +16,19 @@ local function vitalsHeader()
     }, header)
     name:setFontSize(12)
     name:setColor(0, 0, 0, 0)
-    name:echo("" .. gmcp.Char.player.name .. "", "#f9f1a5", "l")
+    name:echo(gmcp.Char.player.name, "#f9f1a5", "l")
     local class = Geyser.Label:new({
         name = "class"
     }, header)
     class:setFontSize(12)
     class:setColor(0, 0, 0, 0)
-    class:echo("" .. gmcp.Char.player.class .. "", "#b4009e", "c")
+    class:echo(gmcp.Char.player.class, "#b4009e", "c")
     if PRSstats.events.classChange_id then
         killAnonymousEventHandler(PRSstats.events.classChange_id)
     end
     PRSstats.events.classChange_id = registerAnonymousEventHandler("gmcp.Char.player.class", function()
         if gmcp.Char.player.class then
-            class:echo("" .. gmcp.Char.player.class .. "", "#b4009e", "c")
+            class:echo(gmcp.Char.player.class, "#b4009e", "c")
         end
     end)
     local level = Geyser.Label:new({
@@ -36,14 +36,14 @@ local function vitalsHeader()
     }, header)
     level:setFontSize(12)
     level:setColor(0, 0, 0, 0)
-    level:echo("Level " .. gmcp.Char.player.level .. "", "#ababab", "r")
+    level:echo("Level " .. gmcp.Char.player.level, "#ababab", "r")
 
     if PRSstats.events.levelChange_id then
         killAnonymousEventHandler(PRSstats.events.levelChange_id)
     end
     PRSstats.events.levelChange_id = registerAnonymousEventHandler("gmcp.Char.player.level", function()
         if gmcp.Char.player.level then
-            level:echo("Level " .. gmcp.Char.player.level .. "", "#ababab", "r")
+            level:echo("Level " .. gmcp.Char.player.level, "#ababab", "r")
         end
     end)
 end
