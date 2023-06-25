@@ -13,7 +13,9 @@
 <!-- PROJECT BADGES -->
 
 [![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/iLPdev/prs?include_prereleases&sort=semver&style=flat-square)](https://github.com/iLPdev/prs/releases/latest) [![Issues][issues-shield]][issues-url] ![Downloads][downloads-shield] [![GPL License][license-shield]][license-url] [![standard-readme compliant][standard-readme-shield]][standard-readme-url]
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/Mudlet/Mudlet?style=flat-square&label=client&sort=semver)](https://github.com/Mudlet/Mudlet/releases/latest) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section --><!-- ALL-CONTRIBUTORS-BADGE:END -->
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/Mudlet/Mudlet?style=flat-square&label=client&sort=semver)](https://github.com/Mudlet/Mudlet/releases/latest) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)<!-- ALL-CONTRIBUTORS-BADGE:END --> 
 
 <!-- SHORT DESCRIPTION -->
@@ -256,6 +258,7 @@ Thanks go to these amazing folks ([emoji key](https://allcontributors.org/docs/e
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/iLPdev"><img src="https://avatars.githubusercontent.com/u/1428343?v=4?s=100" width="100px;" alt="iLPdev"/><br /><sub><b>iLPdev</b></sub></a><br /><a href="https://github.com/iLPdev/prs/commits?author=iLPdev" title="Code">💻</a> <a href="https://github.com/iLPdev/prs/commits?author=iLPdev" title="Documentation">📖</a> <a href="#design-iLPdev" title="Design">🎨</a> <a href="#ideas-iLPdev" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-iLPdev" title="Maintenance">🚧</a> <a href="#projectManagement-iLPdev" title="Project Management">📆</a> <a href="https://github.com/iLPdev/prs/pulls?q=is%3Apr+reviewed-by%3AiLPdev" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/iLPdev/prs/commits?author=iLPdev" title="Tests">⚠️</a> <a href="#infra-iLPdev" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/eterchun"><img src="https://avatars.githubusercontent.com/u/471484?v=4?s=100" width="100px;" alt="eterchun"/><br /><sub><b>eterchun</b></sub></a><br /><a href="#userTesting-eterchun" title="User Testing">📓</a> <a href="https://github.com/iLPdev/prs/commits?author=eterchun" title="Tests">⚠️</a> <a href="https://github.com/iLPdev/prs/issues?q=author%3Aeterchun" title="Bug reports">🐛</a> <a href="https://github.com/iLPdev/prs/commits?author=eterchun" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/H4RV3Y2805"><img src="https://avatars.githubusercontent.com/u/8833420?v=4?s=100" width="100px;" alt="Len Harvey"/><br /><sub><b>Len Harvey</b></sub></a><br /><a href="#design-H4RV3Y2805" title="Design">🎨</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/sorenmarkert"><img src="https://avatars.githubusercontent.com/u/46371470?v=4?s=100" width="100px;" alt="Søren Markert"/><br /><sub><b>Søren Markert</b></sub></a><br /><a href="#userTesting-sorenmarkert" title="User Testing">📓</a> <a href="https://github.com/iLPdev/prs/commits?author=sorenmarkert" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>

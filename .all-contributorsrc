@@ -52,6 +52,16 @@
       "contributions": [
         "design"
       ]
+    },
+    {
+      "login": "sorenmarkert",
+      "name": "Søren Markert",
+      "avatar_url": "https://avatars.githubusercontent.com/u/46371470?v=4",
+      "profile": "https://github.com/sorenmarkert",
+      "contributions": [
+        "userTesting",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
