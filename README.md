@@ -155,15 +155,16 @@ You can also clone the entire project directly with this command: `git clone git
 
 ### User Interface Configuration
 
-Upon initial intallation of PRS, there are five fully configurable adustable container 'windows' included by default: Four containers, two attached to either side of the main display, include various 'adjustable tab windows.' The default tabs include the EMCO (communications tabs), Mudlet Mapper, Vitals (self-updating character status gauges), Statistics summarizing the in-game `score` command data, and a Combat tab with dynamic Combo and Rage gauges during battle. 
-
-~~The UI windows are docked on the right of mudlet's main display upon connection to the game server. The windows may be resized by dragging their borders, moved by click/dragging their window title/headings, as well as undocked or closed by clicking on their respective upper-right pop-out or close icons.~~
+Upon initial intallation of PRS, there are five fully configurable *adustable container* 'windows' included by default: Four containers -- two attached to either side of the main display -- include various *adjustable tab windows*. The default tabs include the EMCO (communications tabs), Mudlet Mapper, Vitals (self-updating character status gauges), Statistics summarizing the in-game `score` command data, and a Combat tab with dynamic Combo and Rage gauges during battle. The remaining container is attached to the top of the main display and contains 12 buttons. Each button corresponds to the 12 in-game *quick slots*, and is bound to the `F1` through `F12` reflecting slots `1` through `0`, `-`, and `=`. See the in-game `help slot` command for details on quick slots.  
 
 <!-- 1. **Enable GMCP**: You must enable GMCP options on the game server. To determine if GMCP in enabled on the server, log into the game and issue the following command: `config gmcp`. Displayed under the "Terminal" column are the "gmcp" and "gmcpseenrooms" options. If they are not currently set to "on", you may enable them by issuing the `gmcp` and `gmcpseenroom` commands. -->
 
-1. **Arrange Windows & Tabs**: On initial usage, all PRS windows are in their unlocked state. You can optionally drag, re-arrange, pop out, and otherwise move all PRS tabs and windows to your liking. The author has provided a brief video demonstration of the adjustable tab windows' functionality within adjustable containers below.
-   <a href="https://www.youtube.com/embed/2ttFWZUggEc" title="Adjustable Tab Windows Video"><img src="http://img.youtube.com/vi/2ttFWZUggEc/mqdefault.jpg" alt="Adjustable Tab Windows Video" width="560" height="315" /></a>
-3. **Lock Windows**: Once you have arranged the layout to your liking, you may lock each window using the right-click menu options. Note that the window/tab layout configurations are preserved when the Mudlet profile is closed.
+1. **Arrange Windows & Tabs**: On initial usage, all five PRS windows are in their unlocked state as indicated by their bright green borders and titles. The adjustable container and their tabs may be resized by dragging their borders, moved by click/dragging their window title/headings, as well as minimized or closed by clicking on their respective upper-right minimize/restore or close icons.* You may optionally drag, re-arrange, pop out, and otherwise move all PRS tabs and windows to your liking. The author has provided a brief video demonstration of the adjustable tab windows' functionality within adjustable containers below.<br />
+<br /><a href="https://www.youtube.com/embed/2ttFWZUggEc" title="Adjustable Tab Windows Video"><img src="http://img.youtube.com/vi/2ttFWZUggEc/mqdefault.jpg" alt="Adjustable Tab Windows Video" width="560" height="315" /></a>
+<br /><br />
+**_*Note_**: There is presently no quick way to reopen a window once closed. Rather, you may restore the initial default windows and layout settings by closing Mudlet, navigating to the Mudlet profile's directory on your computer, and then recursively deleting the `/PRS/settings` directory and the `TabWindowTabs.lua` file in the root `/PRS/` directory.
+
+2. **Lock Windows**: Once you have arranged the layout to your liking, you may *lock* each window in place using the menu displayed by right-clicking on the bright green container title area, and selecting `lock` or `lock style` --> `standard`. The window/tab layout configurations are preserved when the Mudlet profile is closed.
 
 ### Command Line Interface
 
