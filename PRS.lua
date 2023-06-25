@@ -1,13 +1,13 @@
--- Procedural Realms Script (PRS) by Stack and Dalem
-local version = "1.6.0"
+-- Procedural Realms Script (PRS) for Mudlet
+-- by Stack (https://ilpdev.com/prs) & Dalem
+
+local version = "1.7.0"
 
 -- check if the generic_mapper package is installed and, if so, uninstall it
-if table.contains(getPackages(), "generic_mapper") then
-    uninstallPackage("generic_mapper")
+if table.contains(getPackages(),"generic_mapper") then
+  uninstallPackage("generic_mapper")
 end
 
--- Open the windows
-PRSchat.tabs()
 registerAnonymousEventHandler("gmcp.Char.player", function()
     PRSstats.stats()
 end, true)

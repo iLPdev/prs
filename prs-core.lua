@@ -1,3 +1,6 @@
+-- Procedural Realms Script (PRS) GMCP Events Core for Mudlet
+-- by Dalem
+-- https://ilpdev.com/prs
 core = core or {}
 core.events = core.events or {}
 
