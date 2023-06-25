@@ -159,8 +159,9 @@ There are two fully configurable UI elements that are currently included in PRS 
 
 <!-- 1. **Enable GMCP**: You must enable GMCP options on the game server. To determine if GMCP in enabled on the server, log into the game and issue the following command: `config gmcp`. Displayed under the "Terminal" column are the "gmcp" and "gmcpseenrooms" options. If they are not currently set to "on", you may enable them by issuing the `gmcp` and `gmcpseenroom` commands. -->
 
-1. **Arrange Windows & Tabs**: On initial usage, all PRS windows are in their unlocked state. You can optionally drag, re-arrange, pop out, and otherwise move all PRS tabs and windows to your liking. <iframe width="560" height="315" src="https://www.youtube.com/embed/2ttFWZUggEc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-2. **Lock Windows**: Once you have arranged the layout to your liking, you may lock each window using the right-click menu options. Note that the window/tab layout configurations are preserved when the Mudlet profile is closed.
+1. **Arrange Windows & Tabs**: On initial usage, all PRS windows are in their unlocked state. You can optionally drag, re-arrange, pop out, and otherwise move all PRS tabs and windows to your liking. The author has provided a brief video demonstration of the adjustable tab windows' functionality within adjustable containers below.
+   <a href="https://www.youtube.com/embed/2ttFWZUggEc" title="Adjustable Tab Windows Video"><img src="http://img.youtube.com/vi/2ttFWZUggEc/mqdefault.jpg" alt="Adjustable Tab Windows Video" width="560" height="315" /></a>
+3. **Lock Windows**: Once you have arranged the layout to your liking, you may lock each window using the right-click menu options. Note that the window/tab layout configurations are preserved when the Mudlet profile is closed.
 
 ### Command Line Interface
 
