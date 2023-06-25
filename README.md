@@ -47,10 +47,9 @@ The Procedural Realms Script [PRS] project gives [Procedural Realms MUD](http://
 ## Background
 
 <p> <!-- align="center"> -->
-    <img src="prs-screenshot-01.png" height="200" align="left"/> 
-    <img src="https://user-images.githubusercontent.com/1428343/221492841-9d546a73-914b-4ce5-ad3f-fb651ca2664e.jpg" height="200" align="float"/> 
-    <img src="https://user-images.githubusercontent.com/1428343/221493247-00fb5edf-ea14-438f-a27f-ad89af31be85.jpg" height="200" align="float"/>
-    <img src="prs-screenshot-02.png" height="200" align="float"/></a>
+    <img src=".github/images/prs-screenshot-01.png" height="200" align="left"/> 
+    <img src=".github/images/prs-screenshot-tab-stats.png" height="200" align="float"/>
+    <img src=".github/images/prs-screenshot-tell.png" height="200" align="float"/>
 </p>
 
 ### History
