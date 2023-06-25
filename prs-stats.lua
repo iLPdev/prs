@@ -28,7 +28,6 @@ local function vitalsHeader()
     end
     PRSstats.events.classChange_id = registerAnonymousEventHandler("gmcp.Char.player.class", function()
         if gmcp.Char.player.class then
-            level:setColor(0, 0, 0, 0)
             class:echo("" .. gmcp.Char.player.class .. "", "#b4009e", "c")
         end
     end)
