@@ -240,13 +240,13 @@ local function statsTab()
         }, damageHBox)
         damage:setColor(0, 0, 0, 0)
         damage:setFontSize(9)
-        damage:echo(gmcp.Char.player.damLow .. "-" ..gmcp.Char.player.damHigh, "#e74856", "c")
+        damage:echo(string.format("%0.0f", gmcp.Char.player.damLow) .. "-" .. string.format("%0.0f", gmcp.Char.player.damHigh), "#e74856", "c")
         if PRSstats.events.damLowChange_id then
             killAnonymousEventHandler(PRSstats.events.damLowChange_id)
         end
         PRSstats.events.damLowChange_id = registerAnonymousEventHandler("gmcp.Char.player.damLow", function()
             if gmcp.Char.player.damLow then
-                damage:echo(gmcp.Char.player.damLow .. "-" .. gmcp.Char.player.damHigh, "#e74856", "c")
+                damage:echo(string.format("%0.0f", gmcp.Char.player.damLow) .. "-" .. string.format("%0.0f", gmcp.Char.player.damHigh), "#e74856", "c")
             end
         end)
         if PRSstats.events.damHighChange_id then
@@ -254,7 +254,7 @@ local function statsTab()
         end
         PRSstats.events.damHighChange_id = registerAnonymousEventHandler("gmcp.Char.player.damHigh", function()
             if gmcp.Char.player.damHigh then
-                damage:echo(gmcp.Char.player.damLow .. "-" .. gmcp.Char.player.damHigh, "#e74856", "c")
+                damage:echo(string.format("%0.0f", gmcp.Char.player.damLow) .. "-" .. string.format("%0.0f", gmcp.Char.player.damHigh), "#e74856", "c")
             end
         end)
         local dpr = Geyser.Label:new({
