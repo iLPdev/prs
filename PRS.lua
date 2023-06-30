@@ -4,7 +4,7 @@
 local version = "1.7.1"
 
 -- check if the generic_mapper package is installed and, if so, uninstall it
-if table.contains(getPackages(),"generic_mapper") then
+if table.contains(getPackages(), "generic_mapper") then
   uninstallPackage("generic_mapper")
 end
 
