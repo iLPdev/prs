@@ -252,7 +252,7 @@ local function statsTab()
         end
         PRSstats.events.dprChange_id = registerAnonymousEventHandler("gmcp.Char.player.dpr", function()
             if gmcp.Char.player.dpr then
-                damage:echo(string.format("%0.1f", gmcp.Char.player.dpr) .. " dpr", "#c50f1f", "l")
+                dpr:echo(string.format("%0.1f", gmcp.Char.player.dpr) .. " dpr", "#c50f1f", "l")
             end
         end)
         -- Armor
