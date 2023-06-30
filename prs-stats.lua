@@ -240,7 +240,23 @@ local function statsTab()
         }, damageHBox)
         damage:setColor(0, 0, 0, 0)
         damage:setFontSize(9)
-        damage:echo("-", "#e74856", "c")
+        damage:echo(string.format("%0.0f", gmcp.Char.player.damLow) .. "-" .. string.format("%0.0f", gmcp.Char.player.damHigh), "#e74856", "c")
+        if PRSstats.events.damLowChange_id then
+            killAnonymousEventHandler(PRSstats.events.damLowChange_id)
+        end
+        PRSstats.events.damLowChange_id = registerAnonymousEventHandler("gmcp.Char.player.damLow", function()
+            if gmcp.Char.player.damLow then
+                damage:echo(string.format("%0.0f", gmcp.Char.player.damLow) .. "-" .. string.format("%0.0f", gmcp.Char.player.damHigh), "#e74856", "c")
+            end
+        end)
+        if PRSstats.events.damHighChange_id then
+            killAnonymousEventHandler(PRSstats.events.damHighChange_id)
+        end
+        PRSstats.events.damHighChange_id = registerAnonymousEventHandler("gmcp.Char.player.damHigh", function()
+            if gmcp.Char.player.damHigh then
+                damage:echo(string.format("%0.0f", gmcp.Char.player.damLow) .. "-" .. string.format("%0.0f", gmcp.Char.player.damHigh), "#e74856", "c")
+            end
+        end)
         local dpr = Geyser.Label:new({
             name = "dpr"
         }, damageHBox)
@@ -252,7 +268,7 @@ local function statsTab()
         end
         PRSstats.events.dprChange_id = registerAnonymousEventHandler("gmcp.Char.player.dpr", function()
             if gmcp.Char.player.dpr then
-                damage:echo(string.format("%0.1f", gmcp.Char.player.dpr) .. " dpr", "#c50f1f", "l")
+                dpr:echo(string.format("%0.1f", gmcp.Char.player.dpr) .. " dpr", "#c50f1f", "l")
             end
         end)
         -- Armor
@@ -324,7 +340,15 @@ local function statsTab()
         }, speedHBox)
         apr:setColor(0, 0, 0, 0)
         apr:setFontSize(9)
-        apr:echo("- apr", "#f9f1a5", "l")
+        apr:echo(string.format("%0.2f", gmcp.Char.player.apr) .. " apr", "#f9f1a5", "l")
+        if PRSstats.events.aprChange_id then
+            killAnonymousEventHandler(PRSstats.events.aprChange_id)
+        end
+        PRSstats.events.aprChange_id = registerAnonymousEventHandler("gmcp.Char.player.apr", function()
+            if gmcp.Char.player.apr then
+                apr:echo(stringfortmat("%0.2f", gmcp.Char.player.apr) .. " apr", "#f9f1a5", "l")
+            end
+        end)
         -- Critical
         local criticalHBox = Geyser.HBox:new({
             name = "criticalHBox",
