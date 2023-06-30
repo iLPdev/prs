@@ -340,7 +340,15 @@ local function statsTab()
         }, speedHBox)
         apr:setColor(0, 0, 0, 0)
         apr:setFontSize(9)
-        apr:echo("- apr", "#f9f1a5", "l")
+        apr:echo(gmcp.Char.player.apr .. " apr", "#f9f1a5", "l")
+        if PRSstats.events.aprChange_id then
+            killAnonymousEventHandler(PRSstats.events.aprChange_id)
+        end
+        PRSstats.events.aprChange_id = registerAnonymousEventHandler("gmcp.Char.player.apr", function()
+            if gmcp.Char.player.apr then
+                apr:echo(gmcp.Char.player.apr .. " apr", "#f9f1a5", "l")
+            end
+        end)
         -- Critical
         local criticalHBox = Geyser.HBox:new({
             name = "criticalHBox",
