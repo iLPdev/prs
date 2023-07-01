@@ -346,7 +346,7 @@ local function statsTab()
         end
         PRSstats.events.aprChange_id = registerAnonymousEventHandler("gmcp.Char.player.apr", function()
             if gmcp.Char.player.apr then
-                apr:echo(stringformat("%0.2f", gmcp.Char.player.apr) .. " apr", "#f9f1a5", "l")
+                apr:echo(string.format("%0.2f", gmcp.Char.player.apr) .. " apr", "#f9f1a5", "l")
             end
         end)
         -- Critical
