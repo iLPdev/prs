@@ -340,13 +340,52 @@ local function statsTab()
         }, speedHBox)
         apr:setColor(0, 0, 0, 0)
         apr:setFontSize(9)
-        apr:echo(string.format("%0.2f", gmcp.Char.player.apr) .. " apr", "#f9f1a5", "l")
+        apr:echo(string.format("%0.2f", gmcp.Char.player.apr) .. " apr", "#16c60c", "l")
         if PRSstats.events.aprChange_id then
             killAnonymousEventHandler(PRSstats.events.aprChange_id)
         end
         PRSstats.events.aprChange_id = registerAnonymousEventHandler("gmcp.Char.player.apr", function()
             if gmcp.Char.player.apr then
-                apr:echo(string.format("%0.2f", gmcp.Char.player.apr) .. " apr", "#f9f1a5", "l")
+                apr:echo(string.format("%0.2f", gmcp.Char.player.apr) .. " apr", "#16c60c", "l")
+            end
+        end)
+        -- Recovery
+        local recoveryHBox = Geyser.HBox:new({
+            name = "recoveryHBox",
+            width = "93%"
+        }, statsVBox)
+        local recoveryTitle = Geyser.Label:new({
+            name = "recoveryTitle"
+        }, recoveryHBox)
+        recoveryTitle:setColor(0, 0, 0, 0)
+        recoveryTitle:setFontSize(9)
+        recoveryTitle:echo("Recovery:", "#aaaaaa", "r")
+        local recovery = Geyser.Label:new({
+            name = "recoveryTime"
+        }, recoveryHBox)
+        recovery:setColor(0, 0, 0, 0)
+        recovery:setFontSize(9)
+        recovery:echo(gmcp.Char.player.recoveryTime, "#16c60c", "c")
+        if PRSstats.events.recoveryTimeChange_id then
+            killAnonymousEventHandler(PRSstats.events.recoveryTimeChange_id)
+        end
+        PRSstats.events.recoveryTimeChange_id = registerAnonymousEventHandler("gmcp.Char.player.recoveryTime", function()
+            if gmcp.Char.player.recoveryTime then
+                speed:echo(gmcp.Char.player.recoveryTime, "#16c60c", "c")
+            end
+        end)
+        local XXX = Geyser.Label:new({
+            name = "XXX"
+        }, recoveryHBox)
+        XXX:setColor(0, 0, 0, 0)
+        XXX:setFontSize(9)
+        XXX:echo(string.format("%0.2f", gmcp.Char.player.apr) .. "s", "#f9f1a5", "l")
+        if PRSstats.events.XXXChange_id then
+            killAnonymousEventHandler(PRSstats.events.XXXChange_id)
+        end
+        PRSstats.events.XXXChange_id = registerAnonymousEventHandler("gmcp.Char.player.XXX", function()
+            if gmcp.Char.player.XXX then
+                XXX:echo(string.format("%0.2f", gmcp.Char.player.XXX) .. "s", "#f9f1a5", "l")
             end
         end)
         -- Critical
