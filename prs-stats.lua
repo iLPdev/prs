@@ -692,51 +692,6 @@ local function statsTab()
                 resistIce:echo(gmcp.Char.player.resistIce, "#3b78ff", "l")
             end
         end)
-        -- Pierce & Fire
-        local resist3HBox = Geyser.HBox:new({
-            name = "resist3HBox",
-            width = "93%"
-        }, statsVBox)
-        local resistPiercingTitle = Geyser.Label:new({
-            name = "resistPiercingTitle"
-        }, resist3HBox)
-        resistPiercingTitle:setColor(0, 0, 0, 0)
-        resistPiercingTitle:setFontSize(9)
-        resistPiercingTitle:echo("Pierce: ", "#aaaaaa", "r")
-        local resistPiercing = Geyser.Label:new({
-            name = "resistPiercing"
-        }, resist3HBox)
-        resistPiercing:setColor(0, 0, 0, 0)
-        resistPiercing:setFontSize(9)
-        resistPiercing:echo(gmcp.Char.player.resistPiercing, "#c50f1f", "l")
-        if PRSstats.events.resistPiercingChange_id then
-            killAnonymousEventHandler(PRSstats.events.resistPiercingChange_id)
-        end
-        PRSstats.events.resistPiercingChange_id = registerAnonymousEventHandler("gmcp.Char.player.resistPiercing", function()
-            if gmcp.Char.player.resistPiercing then
-                focus:echo(gmcp.Char.player.resistPiercing, "#c50f1f", "l")
-            end
-        end)
-        local resistFireTitle = Geyser.Label:new({
-            name = "resistFireTitle"
-        }, resist3HBox)
-        resistFireTitle:setColor(0, 0, 0, 0)
-        resistFireTitle:setFontSize(9)
-        resistFireTitle:echo("Fire: ", "#aaaaaa", "r")
-        local resistFire = Geyser.Label:new({
-            name = "Fire"
-        }, resist3HBox)
-        resistFire:setColor(0, 0, 0, 0)
-        resistFire:setFontSize(9)
-        resistFire:echo(gmcp.Char.player.resistFire, "#e74856", "l")
-        if PRSstats.events.resistFireChange_id then
-            killAnonymousEventHandler(PRSstats.events.resistFireChange_id)
-        end
-        PRSstats.events.resistFireChange_id = registerAnonymousEventHandler("gmcp.Char.player.resistFire", function()
-            if gmcp.Char.player.resistFire then
-                resistFire:echo(gmcp.Char.player.resistFire, "#e74856", "l")
-            end
-        end)
         -- Acid & Holy
         local resist5HBox = Geyser.HBox:new({
             name = "resist5HBox",
