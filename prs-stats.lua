@@ -534,7 +534,7 @@ local function statsTab()
         end
         PRSstats.events.resistBludgeoningChange_id = registerAnonymousEventHandler("gmcp.Char.player.resistBludgeoning", function()
             if gmcp.Char.player.resistBludgeoning then
-                focus:echo(gmcp.Char.player.resistBludgeoning, "#c19c00", "l")
+                resistBludgeoning:echo(gmcp.Char.player.resistBludgeoning, "#c19c00", "l")
             end
         end)
         local arcaneTitle = Geyser.Label:new({
@@ -579,7 +579,7 @@ local function statsTab()
         end
         PRSstats.events.resistSlashingChange_id = registerAnonymousEventHandler("gmcp.Char.player.resistSlashing", function()
             if gmcp.Char.player.resistSlashing then
-                focus:echo(gmcp.Char.player.resistSlashing, "#e74856", "l")
+                resistSlashing:echo(gmcp.Char.player.resistSlashing, "#e74856", "l")
             end
         end)
         local resistElectricTitle = Geyser.Label:new({
@@ -624,7 +624,7 @@ local function statsTab()
         end
         PRSstats.events.resistPiercingChange_id = registerAnonymousEventHandler("gmcp.Char.player.resistPiercing", function()
             if gmcp.Char.player.resistPiercing then
-                focus:echo(gmcp.Char.player.resistPiercing, "#c50f1f", "l")
+                resistPiercing:echo(gmcp.Char.player.resistPiercing, "#c50f1f", "l")
             end
         end)
         local resistFireTitle = Geyser.Label:new({
@@ -669,7 +669,7 @@ local function statsTab()
         end
         PRSstats.events.resistPoisonChange_id = registerAnonymousEventHandler("gmcp.Char.player.resistPoison", function()
             if gmcp.Char.player.resistPoison then
-                focus:echo(gmcp.Char.player.resistPoison, "#13a10e", "l")
+                resistPoison:echo(gmcp.Char.player.resistPoison, "#13a10e", "l")
             end
         end)
         local resistIceTitle = Geyser.Label:new({
@@ -714,7 +714,7 @@ local function statsTab()
         end
         PRSstats.events.resistAcidChange_id = registerAnonymousEventHandler("gmcp.Char.player.resistAcid", function()
             if gmcp.Char.player.resistAcid then
-                focus:echo(gmcp.Char.player.resistAcid, "#16c60c", "l")
+                resistAcid:echo(gmcp.Char.player.resistAcid, "#16c60c", "l")
             end
         end)
         local resistHolyTitle = Geyser.Label:new({
