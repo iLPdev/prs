@@ -371,7 +371,7 @@ local function statsTab()
         end
         PRSstats.events.recoveryTimeChange_id = registerAnonymousEventHandler("gmcp.Char.player.recoveryTime", function()
             if gmcp.Char.player.recoveryTime then
-                speed:echo(gmcp.Char.player.recoveryTime, "#16c60c", "c")
+                recovery:echo(gmcp.Char.player.recoveryTime, "#16c60c", "c")
             end
         end)
         local apr = Geyser.Label:new({
