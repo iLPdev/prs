@@ -39,7 +39,6 @@ local colorTable = {
     end
     
     for n=#gmcp.Char.quests+1, #questContainerTable, 1 do
-      echo("Hiding entry: " .. n)
       questContainerTable[n]:hide()
       questBox:remove(questContainerTable[n])
     end
@@ -67,14 +66,9 @@ local colorTable = {
     questContainerTable[questNum]:show()
     questBox:add(questContainerTable[questNum])
     
-    -- if questContainerTable[questNum].progressBox == nil then
-      -- addGaugeToQuestLabel(questNum)
-    -- end
-    
     if quest.amount > 0 then
       addGaugeToQuestLabel(questNum)
       questContainerTable[questNum].progressBox:show()
-      echo("Showing progress box\n")
     else
       questContainerTable[questNum].progressBox:hide()
     end
@@ -84,7 +78,6 @@ local colorTable = {
   end  
   
   function createNewQuestLabel(questNum)
-    echo("inserting into table\n")
     table.insert(questContainerTable, Geyser.Label:new({
         name = "questName" .. questNum,
         x = 0,
