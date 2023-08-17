@@ -157,7 +157,7 @@ function addGaugeToSkillLabel(skillNum, skills, labels, color)
     height = 15,
     width = "90%", -- everything up to here is standard Geyser.Gauge
     updateTime = 0,
-    updateEvent = "gmcp.Char.skills[".. skill.gmcpIndex .."]",
+    updateEvent = "gmcp.Char.skills",
     textTemplate = "|p%",
     currentVariable = "gmcp.Char.skills[".. skill.gmcpIndex .."].tnl", -- if it is nil or unreachable, it will use the defaultCurrent of 50
     maxVariable = 100
