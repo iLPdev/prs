@@ -335,9 +335,48 @@ local function statsTab()
                 speed:echo(gmcp.Char.player.speed, "#f9f1a5", "c")
             end
         end)
+        local recoveryTime = Geyser.Label:new({
+            name = "recoveryTime"
+        }, speedHBox)
+        recoveryTime:setColor(0, 0, 0, 0)
+        recoveryTime:setFontSize(9)
+        recoveryTime:echo("-" .. gmcp.Char.player.recoveryTime .. "s", "#16c60c", "l")
+        if PRSstats.events.recoveryTimeChange_id then
+            killAnonymousEventHandler(PRSstats.events.recoveryTimeChange_id)
+        end
+        PRSstats.events.recoveryTimeChange_id = registerAnonymousEventHandler("gmcp.Char.player.recoveryTime", function()
+            if gmcp.Char.player.recoveryTime then
+                recoveryTime:echo(gmcp.Char.player.recoveryTime, "#16c60c", "l")
+            end
+        end)
+        -- Recovery
+        local recoveryHBox = Geyser.HBox:new({
+            name = "recoveryHBox",
+            width = "93%"
+        }, statsVBox)
+        local recoveryTitle = Geyser.Label:new({
+            name = "recoveryTitle"
+        }, recoveryHBox)
+        recoveryTitle:setColor(0, 0, 0, 0)
+        recoveryTitle:setFontSize(9)
+        recoveryTitle:echo("Recovery:", "#aaaaaa", "r")
+        local XXX = Geyser.Label:new({
+            name = "XXX"
+        }, recoveryHBox)
+        XXX:setColor(0, 0, 0, 0)
+        XXX:setFontSize(9)
+        -- XXX:echo(gmcp.Char.player.XXX, "#16c60c", "c")
+        -- if PRSstats.events.XXXChange_id then
+        --     killAnonymousEventHandler(PRSstats.events.XXXChange_id)
+        -- end
+        -- PRSstats.events.XXXChange_id = registerAnonymousEventHandler("gmcp.Char.player.XXX", function()
+        --     if gmcp.Char.player.XXX then
+        --         recovery:echo(gmcp.Char.player.XXX, "#16c60c", "c")
+        --     end
+        -- end)
         local apr = Geyser.Label:new({
             name = "apr"
-        }, speedHBox)
+        }, recoveryHBox)
         apr:setColor(0, 0, 0, 0)
         apr:setFontSize(9)
         apr:echo(string.format("%0.2f", gmcp.Char.player.apr) .. " apr", "#f9f1a5", "l")
@@ -345,8 +384,8 @@ local function statsTab()
             killAnonymousEventHandler(PRSstats.events.aprChange_id)
         end
         PRSstats.events.aprChange_id = registerAnonymousEventHandler("gmcp.Char.player.apr", function()
-            if gmcp.Char.player.apr then
-                apr:echo(stringfortmat("%0.2f", gmcp.Char.player.apr) .. " apr", "#f9f1a5", "l")
+            if gmcp.Char.player.spr then
+                apr:echo(string.format("%0.2f", gmcp.Char.player.apr) .. " apr", "#f9f1a5", "l")
             end
         end)
         -- Critical
@@ -495,7 +534,7 @@ local function statsTab()
         end
         PRSstats.events.resistBludgeoningChange_id = registerAnonymousEventHandler("gmcp.Char.player.resistBludgeoning", function()
             if gmcp.Char.player.resistBludgeoning then
-                focus:echo(gmcp.Char.player.resistBludgeoning, "#c19c00", "l")
+                resistBludgeoning:echo(gmcp.Char.player.resistBludgeoning, "#c19c00", "l")
             end
         end)
         local arcaneTitle = Geyser.Label:new({
@@ -540,7 +579,7 @@ local function statsTab()
         end
         PRSstats.events.resistSlashingChange_id = registerAnonymousEventHandler("gmcp.Char.player.resistSlashing", function()
             if gmcp.Char.player.resistSlashing then
-                focus:echo(gmcp.Char.player.resistSlashing, "#e74856", "l")
+                resistSlashing:echo(gmcp.Char.player.resistSlashing, "#e74856", "l")
             end
         end)
         local resistElectricTitle = Geyser.Label:new({
@@ -585,7 +624,7 @@ local function statsTab()
         end
         PRSstats.events.resistPiercingChange_id = registerAnonymousEventHandler("gmcp.Char.player.resistPiercing", function()
             if gmcp.Char.player.resistPiercing then
-                focus:echo(gmcp.Char.player.resistPiercing, "#c50f1f", "l")
+                resistPiercing:echo(gmcp.Char.player.resistPiercing, "#c50f1f", "l")
             end
         end)
         local resistFireTitle = Geyser.Label:new({
@@ -630,7 +669,7 @@ local function statsTab()
         end
         PRSstats.events.resistPoisonChange_id = registerAnonymousEventHandler("gmcp.Char.player.resistPoison", function()
             if gmcp.Char.player.resistPoison then
-                focus:echo(gmcp.Char.player.resistPoison, "#13a10e", "l")
+                resistPoison:echo(gmcp.Char.player.resistPoison, "#13a10e", "l")
             end
         end)
         local resistIceTitle = Geyser.Label:new({
@@ -651,51 +690,6 @@ local function statsTab()
         PRSstats.events.resistIceChange_id = registerAnonymousEventHandler("gmcp.Char.player.resistIce", function()
             if gmcp.Char.player.resistIce then
                 resistIce:echo(gmcp.Char.player.resistIce, "#3b78ff", "l")
-            end
-        end)
-        -- Pierce & Fire
-        local resist3HBox = Geyser.HBox:new({
-            name = "resist3HBox",
-            width = "93%"
-        }, statsVBox)
-        local resistPiercingTitle = Geyser.Label:new({
-            name = "resistPiercingTitle"
-        }, resist3HBox)
-        resistPiercingTitle:setColor(0, 0, 0, 0)
-        resistPiercingTitle:setFontSize(9)
-        resistPiercingTitle:echo("Pierce: ", "#aaaaaa", "r")
-        local resistPiercing = Geyser.Label:new({
-            name = "resistPiercing"
-        }, resist3HBox)
-        resistPiercing:setColor(0, 0, 0, 0)
-        resistPiercing:setFontSize(9)
-        resistPiercing:echo(gmcp.Char.player.resistPiercing, "#c50f1f", "l")
-        if PRSstats.events.resistPiercingChange_id then
-            killAnonymousEventHandler(PRSstats.events.resistPiercingChange_id)
-        end
-        PRSstats.events.resistPiercingChange_id = registerAnonymousEventHandler("gmcp.Char.player.resistPiercing", function()
-            if gmcp.Char.player.resistPiercing then
-                focus:echo(gmcp.Char.player.resistPiercing, "#c50f1f", "l")
-            end
-        end)
-        local resistFireTitle = Geyser.Label:new({
-            name = "resistFireTitle"
-        }, resist3HBox)
-        resistFireTitle:setColor(0, 0, 0, 0)
-        resistFireTitle:setFontSize(9)
-        resistFireTitle:echo("Fire: ", "#aaaaaa", "r")
-        local resistFire = Geyser.Label:new({
-            name = "Fire"
-        }, resist3HBox)
-        resistFire:setColor(0, 0, 0, 0)
-        resistFire:setFontSize(9)
-        resistFire:echo(gmcp.Char.player.resistFire, "#e74856", "l")
-        if PRSstats.events.resistFireChange_id then
-            killAnonymousEventHandler(PRSstats.events.resistFireChange_id)
-        end
-        PRSstats.events.resistFireChange_id = registerAnonymousEventHandler("gmcp.Char.player.resistFire", function()
-            if gmcp.Char.player.resistFire then
-                resistFire:echo(gmcp.Char.player.resistFire, "#e74856", "l")
             end
         end)
         -- Acid & Holy
@@ -720,7 +714,7 @@ local function statsTab()
         end
         PRSstats.events.resistAcidChange_id = registerAnonymousEventHandler("gmcp.Char.player.resistAcid", function()
             if gmcp.Char.player.resistAcid then
-                focus:echo(gmcp.Char.player.resistAcid, "#16c60c", "l")
+                resistAcid:echo(gmcp.Char.player.resistAcid, "#16c60c", "l")
             end
         end)
         local resistHolyTitle = Geyser.Label:new({
