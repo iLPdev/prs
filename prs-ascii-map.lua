@@ -4,8 +4,68 @@ asciiMap.mapContainer = asciiMap.mapContainer or Geyser.ScrollBox:new({
   x = 0,
   y = 0,
   width = "100%",
-  height = "100%",
+  height = "100%-30px",
 }, GUI.tabwindow3.AsciiMapcenter)
+
+asciiMap.buttonContainer = asciiMap.buttonContainer or Geyser.Label:new({
+  name = "mapButtonContainer",
+  x = 0,
+  y = "100%-30px",
+  width = "100%",
+  height = "30px",
+}, GUI.tabwindow3.AsciiMapcenter)
+asciiMap.buttonContainer:setStyleSheet([[
+  background-color: #111;
+]])
+
+asciiMap.zoomInButton = asciiMap.zoomInButton or Geyser.Label:new({
+  name = "zoomInButton",
+  width = 30,
+  height = 30,
+  x = 0,
+  y = 0,
+}, asciiMap.buttonContainer)
+asciiMap.zoomInButton:setStyleSheet([[
+  background-color: #333;
+  qproperty-alignment: AlignCenter;
+]])
+asciiMap.zoomInButton:echo("+")
+asciiMap.zoomInButton:setClickCallback("onZoomIn")
+
+asciiMap.zoomOutButton = asciiMap.zoomOutButton or Geyser.Label:new({
+  name = "zoomOutButton",
+  width = 30,
+  height = 30,
+  x = 50,
+  y = 0,
+}, asciiMap.buttonContainer)
+asciiMap.zoomOutButton:setStyleSheet([[
+  background-color: #333;
+  qproperty-alignment: AlignCenter;
+]])
+asciiMap.zoomOutButton:echo("-")
+asciiMap.zoomOutButton:setClickCallback("onZoomOut")
+
+asciiMap.currentZoom = 10
+
+function setMapLabelStyleSheet()
+  asciiMap.mapLabel:setStyleSheet(string.format([[
+    font-family: Bitstream Vera Sans Mono;
+    background-color: #111;
+    font-size: %spx;
+  ]], asciiMap.currentZoom))
+  asciiMap.mapLabel:enableAutoAdjustSize(true, true)
+end
+
+function onZoomIn()
+  asciiMap.currentZoom = asciiMap.currentZoom + 1
+  setMapLabelStyleSheet()
+end
+
+function onZoomOut()
+  asciiMap.currentZoom = asciiMap.currentZoom - 1  
+  setMapLabelStyleSheet()
+end
 
 asciiMap.mapLabel = asciiMap.mapLabel or Geyser.Label:new({
   x = 0,
@@ -32,12 +92,7 @@ function mapEventHandler(event, args)
   end
   
   asciiMap.mapLabel:decho("<pre>" .. ansi2decho(gmcp.Char.Output.output) .. "</pre>")
-  asciiMap.mapLabel:setStyleSheet([[
-    font-family: Bitstream Vera Sans Mono;
-    background-color: #111;
-    font-size: 10px;
-  ]])
-  asciiMap.mapLabel:enableAutoAdjustSize(true, true)
+  setMapLabelStyleSheet()
 end
 
 if map_handler_id then
