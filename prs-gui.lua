@@ -113,7 +113,7 @@ GUI.tabwindow1 = GUI.tabwindow1 or Adjustable.TabWindow:new({
     inactiveTabFGColor = "#555555",
     color1 = "rgb(24,24,28)",
     color2 = "rgb(16,16,20)",
-    tabs = {"Vitals", "Stats"}
+    tabs = {"Vitals", "Stats", "Skills"}
 }, GUI.left_top)
 
 GUI.tabwindow2 = GUI.tabwindow2 or Adjustable.TabWindow:new({
