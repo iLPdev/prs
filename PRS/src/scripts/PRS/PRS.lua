@@ -1,7 +1,7 @@
 -- Procedural Realms Script (PRS) for Mudlet
 -- by Stack (https://ilpdev.com/prs) & Dalem
 
-local version = "1.7.1"
+local version = "@VERSION@"
 
 -- check if the generic_mapper package is installed and, if so, uninstall it
 if table.contains(getPackages(), "generic_mapper") then
