@@ -98,5 +98,10 @@
         "name": "southwest",
         "command": "southwest",
         "keys": "keypad+End"
+    },
+    {
+        "name": "enter",
+        "command": "enter",
+        "keys": "keypad+clear"
     }
 ]
