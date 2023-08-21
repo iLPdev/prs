@@ -1,21 +1,3 @@
-local colorTable = {
-    ['{{r'] = '<ansi_red>',
-    ['{{R'] = '<ansi_light_red>',
-    ['{{g'] = '<ansi_green>',
-    ['{{G'] = '<ansi_light_green>',
-    ['{{y'] = '<ansi_yellow>',
-    ['{{Y'] = '<ansi_light_yellow>',
-    ['{{b'] = '<ansi_blue>',
-    ['{{B'] = '<ansi_light_blue>',
-    ['{{m'] = '<ansi_magenta>',
-    ['{{M'] = '<ansi_light_magenta>',
-    ['{{c'] = '<ansi_cyan>',
-    ['{{C'] = '<ansi_light_cyan>',
-    ['{{w'] = '<ansi_white>',
-    ['{{W'] = '<ansi_light_white>',
-    ['{{K'] = '<ansi_light_black>',
-  }
-  
   questContainerTable = questContainerTable or {}
   
   function clearContainers()
@@ -23,15 +5,7 @@ local colorTable = {
   end
   
   local QUEST_LABEL_HEIGHT = 80
-  local QUEST_GAP = 0 
-  
-  function getCechoColor(string)
-    local formatted = string
-    for placeholder, colorCode in pairs(colorTable) do
-      formatted = formatted:gsub(placeholder, colorCode)
-    end
-    return formatted
-  end
+  local QUEST_GAP = 0
   
   function displayAllQuests()
     for i, quest in ipairs(gmcp.Char.quests) do
@@ -164,7 +138,7 @@ local colorTable = {
   end
   
   function getQuestString(quest)
-    local questString = "<ansi_light_white>L" .. quest.level .. " " .. getCechoColor(quest.name) 
+    local questString = "<ansi_light_white>L" .. quest.level .. " " .. PRSutil.getCechoColor(quest.name) 
       .. "<br> Given by: <ansi_light_yellow>" .. quest.giver.name .. "<ansi_white><br>"
     
     if (quest.location ~= nil) then

@@ -24,6 +24,15 @@
     "name": "prs-ascii-map"
   },
   {
+    "name": "prs-util"
+  },
+  {
+    "name": "prs-combat"
+  },
+  {
+    "name": "prs-battle"
+  },
+  {
     "name": "prs-stats"
   }
 ]
