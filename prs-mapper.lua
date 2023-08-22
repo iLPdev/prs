@@ -149,7 +149,12 @@ local terrain_types = {
         g = 128,
         b = 0
     },
-    --  ["Farmland"] = {id = 37, r = 128, g = 128, b = 0}, -- duplicate key id reserved for later use
+    ["Outlands Portal"] = {
+        id = 37,
+        r = 255,
+        g = 0,
+        b = 255
+    },
     ["Abandoned Mine"] = {
         id = 38,
         r = 255,
