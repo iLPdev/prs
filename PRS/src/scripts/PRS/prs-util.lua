@@ -44,3 +44,13 @@ PRSutil.tableConcat = function (t1,t2)
   end
   return t3
 end
+
+PRSutil.tableCopy = function (obj, seen)
+  if type(obj) ~= 'table' then return obj end
+  if seen and seen[obj] then return seen[obj] end
+  local s = seen or {}
+  local res = setmetatable({}, getmetatable(obj))
+  s[obj] = res
+  for k, v in pairs(obj) do res[PRSutil.tableCopy(k, s)] = PRSutil.tableCopy(v, s) end
+  return res
+end
