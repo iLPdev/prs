@@ -2,7 +2,7 @@
   "package": "PRS",
   "title": "Procedural Realms Script",
   "description": "Mudlet Script for Procedural Realms MUD",
-  "version": "1.7.1",
+  "version": "1.8.0-ptb",
   "author": "Stack",
   "icon": "prs-logo.png",
   "outputFile": true
