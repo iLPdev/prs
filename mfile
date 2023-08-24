@@ -1,8 +1,8 @@
 {
   "package": "PRS",
+  "title": "Procedural Realms Script",
   "version": "1.7.1",
   "author": "Stack",
   "icon": "prs-logo.png",
-  "title": "Procedural Realms Script",
   "outputFile": true
 }
