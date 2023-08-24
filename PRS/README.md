@@ -1,3 +1,0 @@
-# PRS
-
-## Procedural Realms Script
