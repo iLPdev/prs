@@ -127,7 +127,7 @@ GUI.tabwindow2 = GUI.tabwindow2 or Adjustable.TabWindow:new({
     inactiveTabFGColor = "#555555",
     color1 = "rgb(24,24,28)",
     color2 = "rgb(16,16,20)",
-    tabs = {"Combat", "Quests"}
+    tabs = {"Combat", "Quests", "Inventory"}
 }, GUI.left_bottom)
 
 GUI.tabwindow3 = GUI.tabwindow3 or Adjustable.TabWindow:new({
@@ -141,7 +141,7 @@ GUI.tabwindow3 = GUI.tabwindow3 or Adjustable.TabWindow:new({
     inactiveTabFGColor = "#555555",
     color1 = "rgb(24,24,28)",
     color2 = "rgb(16,16,20)",
-    tabs = {"Map", "AsciiMap"}
+    tabs = {"Map", "AsciiMap", "Battle"}
 }, GUI.right_top)
 
 GUI.tabwindow4 = GUI.tabwindow4 or Adjustable.TabWindow:new({

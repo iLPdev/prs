@@ -34,13 +34,6 @@ function isInArray(array, target)
   return false
 end
 
-function tableConcat(t1,t2)
-    for i=1,#t2 do
-        t1[#t1+1] = t2[i]
-    end
-    return t1
-end
-
 function sortSkills(skills)
   local sorted = {
     weapon = {},
@@ -55,7 +48,7 @@ function sortSkills(skills)
     table.insert(sorted[category], skill)
   end
   
-  return tableConcat(sorted.weapon, tableConcat(sorted.crafting, tableConcat(sorted.artisan, sorted.learned)))
+  return PRSutil.tableConcat(sorted.weapon, PRSutil.tableConcat(sorted.crafting, PRSutil.tableConcat(sorted.artisan, sorted.learned)))
 end
 
 function getSkillCategory(skill)
@@ -109,9 +102,9 @@ function showSkill(skills, container, labels, skillNum, showBar, y, color)
   
   if showBar then
     addGaugeToSkillLabel(skillNum, skills, labels, color)
-    labels[skillNum].progressBox:show()
+    labels[skillNum].progressBar:show()
   else
-    labels[skillNum].progressBox:hide()
+    labels[skillNum].progressBar:hide()
   end
     
   labels[skillNum]:cecho(getSkillString(skill))
@@ -142,7 +135,7 @@ function createNewSkillLabel(skillNum, skills, container, labels, y, color, show
     padding: 15px;
     padding-top: 0px;
     padding-bottom: 0px;
-    font-size: 12px;
+    font-size: 18px;
   ]])
   
   addGaugeToSkillLabel(skillNum, skills, labels, color)
@@ -150,25 +143,18 @@ end
 
 function addGaugeToSkillLabel(skillNum, skills, labels, color)
   local skill = skills[skillNum]
-  labels[skillNum].progressBox = labels[skillNum].progressBox or Geyser.HBox:new({
-    name = "skillProgressBox" .. skillNum,
-    x = 15,
-    y = "60%",
-    height = 15,
-    width = "100%-30px"
-  }, labels[skillNum])
-  
   labels[skillNum].progressBar = labels[skillNum].progressBar or SUG:new({
     name = "skillGauge" .. skillNum,
-    x = 0,
-    height = 15, -- everything up to here is standard Geyser.Gauge
+    x = 15,
+    y = "65%",
+    height = 15,
+    width = "90%", -- everything up to here is standard Geyser.Gauge
     updateTime = 0,
     updateEvent = "gmcp.Char.skills",
-    textTemplate = "",
+    textTemplate = "|p%",
     currentVariable = "gmcp.Char.skills[".. skill.gmcpIndex .."].tnl", -- if it is nil or unreachable, it will use the defaultCurrent of 50
-    maxVariable = 100,
-    h_stretch_factor = 3.0
-  }, labels[skillNum].progressBox)
+    maxVariable = 100
+  }, labels[skillNum])
   labels[skillNum].progressBar.front:setStyleSheet(string.format([[background-color: %s;
     border-top: 1px black solid;
     border-left: 1px black solid;
@@ -183,18 +169,9 @@ function addGaugeToSkillLabel(skillNum, skills, labels, color)
     border-radius: 7;
     padding: 15px;
   ]])
-  
-  labels[skillNum].progressBarLabel = labels[skillNum].progressBarLabel or Geyser.Label:new({
-    name = "skillProgressBarLabel" .. skillNum,
-    h_stretch_factor = 1.0,
-  }, labels[skillNum].progressBox)
-  labels[skillNum].progressBarLabel:setStyleSheet([[
-      background-color: rgba(0,0,0,0%);
-      margin-left: 5px;
+  labels[skillNum].progressBar.text:setStyleSheet([[
+    margin-left: 10px;
   ]])
-  if (gmcp.Char.skills[skill.gmcpIndex].tnl) then
-    labels[skillNum].progressBarLabel:echo(gmcp.Char.skills[skill.gmcpIndex].tnl .. "%")
-  end
 end
 
 function getSkillString(skill)
