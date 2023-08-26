@@ -1,3 +1,5 @@
+-- Procedural Realms Script (PRS) Skills Tab for Mudlet
+-- by Grrtt and Stack (https://ilpdev.com/prs) & Dalem
 PRSskills = PRSskills or {}
 
 local SUG = require("PRS.sug")
