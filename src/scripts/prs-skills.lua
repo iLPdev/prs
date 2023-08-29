@@ -8,13 +8,14 @@ PRSskills.previousSkillCount = PRSskills.previousSkillCount or 0
 
 PRSskills.scrollContainer = PRSskills.scrollContainer or Geyser.Container:new({
     name = "skillsScrollContainer",
-    width = "100%",
-    height = "100%",
-    x = 0,
-    y = 0
+    width = "95%",
+    height = "95%",
+    x = 10,
+    y = 10
 }, GUI.tabwindow1.Skillscenter)
 
 PRSskills.scrollBox = PRSskills.scrollBox or Geyser.ScrollBox:new({
+    parent = "skillsScrollContainer",
     name = "skillsScrollBox",
     height = "100%",
     width = "100%",
@@ -24,8 +25,8 @@ PRSskills.scrollBox = PRSskills.scrollBox or Geyser.ScrollBox:new({
 
 PRSskills.labels = PRSskills.labels or {}
 
-local SKILL_LABEL_HEIGHT = 60
-local SKILL_LABEL_NO_BAR_HEIGHT = 30
+local SKILL_LABEL_HEIGHT = 40
+local SKILL_LABEL_NO_BAR_HEIGHT = 20
 
 function isInArray(array, target)
     for _, value in ipairs(array) do
@@ -85,13 +86,13 @@ end
 function getSkillAnsiColor(skill)
     local category = getSkillCategory(skill)
     if category == "weapon" then
-        return "<ansi_light_red>"
+        return "#e74856"
     elseif category == "crafting" then
-        return "#<ansi_light_magenta>"
+        return "#b4009e"
     elseif category == "artisan" then
-        return "<ansi_light_yellow>"
+        return "#f9f1a5"
     elseif category == "learned" then
-        return "<ansi_light_red>"
+        return "#e74856"
     end
 end
 
@@ -110,7 +111,7 @@ function showSkill(skills, container, labels, skillNum, showBar, y, color)
         labels[skillNum].progressBar:hide()
     end
 
-    labels[skillNum]:cecho(getSkillString(skill))
+    labels[skillNum]:hecho(getSkillString(skill))
 end
 
 function createNewSkillLabel(skillNum, skills, container, labels, y, color, showBar)
@@ -129,16 +130,7 @@ function createNewSkillLabel(skillNum, skills, container, labels, y, color, show
     labels[skillNum]:resize("100%-20px", height)
     labels[skillNum]:move(0, y)
     labels[skillNum]:setStyleSheet([[
-    border-width: 1px;
-    border-color: black;
-    border-style: solid;
-    border-right: none;
-    border-left: none;
-    background-color: #222;
-    padding: 15px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    font-size: 18px;
+    background-color: rgb(16,16,20);
   ]])
 
     addGaugeToSkillLabel(skillNum, skills, labels, color)
@@ -148,10 +140,10 @@ function addGaugeToSkillLabel(skillNum, skills, labels, color)
     local skill = skills[skillNum]
     labels[skillNum].progressBar = labels[skillNum].progressBar or SUG:new({
         name = "skillGauge" .. skillNum,
-        x = 15,
-        y = "65%",
+        x = 0,
+        y = "55%",
         height = 15,
-        width = "90%", -- everything up to here is standard Geyser.Gauge
+        width = "100%", -- everything up to here is standard Geyser.Gauge
         updateTime = 0,
         updateEvent = "gmcp.Char.skills",
         textTemplate = "|p%",
@@ -159,21 +151,13 @@ function addGaugeToSkillLabel(skillNum, skills, labels, color)
         maxVariable = 100
     }, labels[skillNum])
     labels[skillNum].progressBar.front:setStyleSheet(string.format([[background-color: %s;
-    border-top: 1px black solid;
-    border-left: 1px black solid;
-    border-bottom: 1px black solid;
     border-radius: 7;
-    padding: 15px;
   ]], color))
     labels[skillNum].progressBar.back:setStyleSheet([[background-color: #303030;
-    border-width: 0px;
-    border-color: black;
-    border-style: solid;
     border-radius: 7;
-    padding: 15px;
   ]])
     labels[skillNum].progressBar.text:setStyleSheet([[
-    margin-left: 10px;
+    padding-left: 5px;
   ]])
 end
 
@@ -181,9 +165,9 @@ function getSkillString(skill)
     local skillString = ""
     local color = getSkillAnsiColor(skill)
     if (skill.level) then
-        skillString = "<ansi_light_white>L" .. skill.level .. " <ansi_white>" .. skill.name .. "<br>"
+        skillString = "#f2f2f2" .. skill.name .. "#aaaaaa Level " .. skill.level .. "<br>"
     elseif (skill.rank) then
-        skillString = color .. "R" .. skill.rank .. " <ansi_white>" .. skill.name
+        skillString = "#f2f2f2" .. skill.name .. color .. " Rank" .. skill.rank
     end
     return skillString
 end
