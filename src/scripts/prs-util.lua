@@ -1,21 +1,21 @@
 PRSutil = {}
 
 PRSutil.colorTable = {
-  ["{{r"] = "<ansi_red>",
-  ["{{R"] = "<ansi_light_red>",
-  ["{{g"] = "<ansi_green>",
-  ["{{G"] = "<ansi_light_green>",
-  ["{{y"] = "<ansi_yellow>",
-  ["{{Y"] = "<ansi_light_yellow>",
-  ["{{b"] = "<ansi_blue>",
-  ["{{B"] = "<ansi_light_blue>",
-  ["{{m"] = "<ansi_magenta>",
-  ["{{M"] = "<ansi_light_magenta>",
-  ["{{c"] = "<ansi_cyan>",
-  ["{{C"] = "<ansi_light_cyan>",
-  ["{{w"] = "<ansi_white>",
-  ["{{W"] = "<ansi_light_white>",
-  ["{{K"] = "<ansi_light_black>"
+  ["{{r"] = "#c50f1f",
+  ["{{R"] = "#e74856",
+  ["{{g"] = "#13a10e",
+  ["{{G"] = "#16c60c",
+  ["{{y"] = "#c19c00",
+  ["{{Y"] = "#f9f1a5",
+  ["{{b"] = "#0037da",
+  ["{{B"] = "#3b78ff",
+  ["{{m"] = "#3b78ff",
+  ["{{M"] = "#b4009e",
+  ["{{c"] = "#3a96dd",
+  ["{{C"] = "#61d6d6",
+  ["{{w"] = "#f2f2f2",
+  ["{{W"] = "#f2f2f2",
+  ["{{K"] = "#767676>"
 }
 
 PRSutil.getHechoColor = function (string)
