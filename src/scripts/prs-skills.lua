@@ -131,6 +131,7 @@ function createNewSkillLabel(skillNum, skills, container, labels, y, color, show
     labels[skillNum]:move(0, y)
     labels[skillNum]:setStyleSheet([[
     background-color: rgb(16,16,20);
+    font-size: 12px;
   ]])
 
     addGaugeToSkillLabel(skillNum, skills, labels, color)

@@ -72,8 +72,8 @@ PRSinv.displayItem = function(i, iid)
     local label = PRSinv.labels[i]
     label:setStyleSheet([[
     background-color: rgb(16,16,20);
+    font-size: 12px;
   ]])
-    label:setFontSize(9)
     -- label:createRightClickMenu({
     -- MenuItems = {
     -- "Drop"
