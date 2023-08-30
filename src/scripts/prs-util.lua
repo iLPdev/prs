@@ -18,7 +18,7 @@ PRSutil.colorTable = {
   ["{{K"] = "<ansi_light_black>"
 }
 
-PRSutil.getCechoColor = function (string)
+PRSutil.getHechoColor = function (string)
   local formatted = string
   for placeholder, colorCode in pairs(PRSutil.colorTable) do
     formatted = formatted:gsub(placeholder, colorCode)
