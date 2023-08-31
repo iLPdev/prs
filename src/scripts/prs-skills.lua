@@ -73,13 +73,13 @@ end
 function getSkillColor(skill)
     local category = getSkillCategory(skill)
     if category == "weapon" then
-        return "#ff0000"
+        return "#e74856"
     elseif category == "crafting" then
-        return "#ff00ff"
+        return "#b4009e"
     elseif category == "artisan" then
-        return "#ffff00"
+        return "#f9f1a5"
     elseif category == "learned" then
-        return "#ff0000"
+        return "#e74856"
     end
 end
 
@@ -102,6 +102,7 @@ function showSkill(skills, container, labels, skillNum, showBar, y, color)
     createNewSkillLabel(skillNum, skills, container, labels, y, color, showBar)
 
     labels[skillNum]:show()
+    container:setFontSize(12)
     container:add(labels[skillNum])
 
     if showBar then
