@@ -1,27 +1,29 @@
 PRSbattle = PRSbattle or {}
 PRSbattle.scrollBox = PRSbattle.scrollBox or Geyser.ScrollBox:new({
-    x = 0,
-    y = 0,
-    width = "100%",
-    height = "100%"
+    x = 10,
+    y = 10,
+    width = "95%",
+    height = "95%"
 }, GUI.tabwindow3.Battlecenter)
 
 PRSbattle.container = PRSbattle.container or Geyser.HBox:new({
     x = 0,
     y = 0,
     width = "100%-20px",
-    height = "100%",
+    height = "100%"
 }, PRSbattle.scrollBox)
 
 PRSbattle.rightSideContainer = PRSbattle.rightSideContainer or Geyser.Container:new({
     x = 0,
     y = 0,
+    width = "95%",
     height = "100%"
 }, PRSbattle.container)
 
 PRSbattle.leftSideContainer = PRSbattle.leftSideContainer or Geyser.Container:new({
     x = 0,
     y = 0,
+    width = "95%",
     height = "100%"
 }, PRSbattle.container)
 
