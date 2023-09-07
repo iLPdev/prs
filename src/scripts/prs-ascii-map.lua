@@ -1,44 +1,29 @@
 asciiMap = asciiMap or {}
-asciiMap.mapContainer =
-    asciiMap.mapContainer or
-    Geyser.ScrollBox:new(
-        {
-            x = 10,
-            y = 10,
-            width = "95%",
-            height = "95%-30px"
-        },
-        GUI.tabwindow3.AsciiMapcenter
-    )
+asciiMap.mapContainer = asciiMap.mapContainer or Geyser.ScrollBox:new({
+    x = 10,
+    y = 10,
+    width = "95%",
+    height = "95%-30px"
+}, GUI.tabwindow3.AsciiMapcenter)
 
-asciiMap.buttonContainer =
-    asciiMap.buttonContainer or
-    Geyser.Label:new(
-        {
-            name = "mapButtonContainer",
-            x = 10,
-            y = "95%-20px",
-            width = "95%",
-            height = "30px"
-        },
-        GUI.tabwindow3.AsciiMapcenter
-    )
+asciiMap.buttonContainer = asciiMap.buttonContainer or Geyser.Label:new({
+    name = "mapButtonContainer",
+    x = 10,
+    y = "95%-20px",
+    width = "95%",
+    height = "30px"
+}, GUI.tabwindow3.AsciiMapcenter)
 asciiMap.buttonContainer:setStyleSheet([[
   background-color: rgb(16,16,20);
 ]])
 
-asciiMap.zoomInButton =
-    asciiMap.zoomInButton or
-    Geyser.Label:new(
-        {
-            name = "zoomInButton",
-            width = 30,
-            height = 30,
-            x = 0,
-            y = 0
-        },
-        asciiMap.buttonContainer
-    )
+asciiMap.zoomInButton = asciiMap.zoomInButton or Geyser.Label:new({
+    name = "zoomInButton",
+    width = 30,
+    height = 30,
+    x = 0,
+    y = 0
+}, asciiMap.buttonContainer)
 asciiMap.zoomInButton:setStyleSheet([[
   background-color: #333;
   qproperty-alignment: AlignCenter;
@@ -46,18 +31,13 @@ asciiMap.zoomInButton:setStyleSheet([[
 asciiMap.zoomInButton:echo("+")
 asciiMap.zoomInButton:setClickCallback("onZoomIn")
 
-asciiMap.zoomOutButton =
-    asciiMap.zoomOutButton or
-    Geyser.Label:new(
-        {
-            name = "zoomOutButton",
-            width = 30,
-            height = 30,
-            x = 50,
-            y = 0
-        },
-        asciiMap.buttonContainer
-    )
+asciiMap.zoomOutButton = asciiMap.zoomOutButton or Geyser.Label:new({
+    name = "zoomOutButton",
+    width = 30,
+    height = 30,
+    x = 50,
+    y = 0
+}, asciiMap.buttonContainer)
 asciiMap.zoomOutButton:setStyleSheet([[
   background-color: #333;
   qproperty-alignment: AlignCenter;
@@ -68,16 +48,11 @@ asciiMap.zoomOutButton:setClickCallback("onZoomOut")
 asciiMap.currentZoom = 10
 
 function setMapLabelStyleSheet()
-    asciiMap.mapLabel:setStyleSheet(
-        string.format(
-            [[
+    asciiMap.mapLabel:setStyleSheet(string.format([[
     font-family: Bitstream Vera Sans Mono;
     background-color: #111;
     font-size: %spx;
-  ]],
-            asciiMap.currentZoom
-        )
-    )
+  ]], asciiMap.currentZoom))
     asciiMap.mapLabel:enableAutoAdjustSize(true, true)
 end
 
@@ -91,17 +66,12 @@ function onZoomOut()
     setMapLabelStyleSheet()
 end
 
-asciiMap.mapLabel =
-    asciiMap.mapLabel or
-    Geyser.Label:new(
-        {
-            x = 0,
-            y = 0,
-            width = "100%",
-            height = "100%"
-        },
-        asciiMap.mapContainer
-    )
+asciiMap.mapLabel = asciiMap.mapLabel or Geyser.Label:new({
+    x = 0,
+    y = 0,
+    width = "100%",
+    height = "100%"
+}, asciiMap.mapContainer)
 
 MAP_CMD_ID = 1
 GETTING_TOO_BIG_NUMBER = 1000000
