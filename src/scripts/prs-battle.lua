@@ -116,7 +116,7 @@ function updateBattleEntities(participants, container, labels, bars, side)
         end
 
         labels[i].main:setStyleSheet(string.format([[
-      background-color: #444;
+      background-color: #101014;
       padding: 5px;
       border-radius: 9;
       border-width: %spx;
@@ -261,7 +261,7 @@ function createBattleGauge(currentAmount, containerLabel, i, current, side, name
     padding: 3px;
   ]], progressColor))
     ret.progressBar.back:setStyleSheet([[
-    background-color: #444;
+    background-color: #303030;
     border-width: 0px;
     border-color: black;
     border-style: solid;
