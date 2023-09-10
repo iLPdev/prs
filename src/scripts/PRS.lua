@@ -1,15 +1,15 @@
 -- Procedural Realms Script (PRS) for Mudlet
 -- by Stack (https://ilpdev.com/prs) & Dalem
-
 local version = "@VERSION@"
 
 -- check if the generic_mapper package is installed and, if so, uninstall it
 if table.contains(getPackages(), "generic_mapper") then
-  uninstallPackage("generic_mapper")
+    uninstallPackage("generic_mapper")
 end
 
 registerAnonymousEventHandler("gmcp.Char.player", function()
     PRSstats.stats()
+    PRSstats.vitals()
 end, true)
 
 -- set Discord button to PR invite
