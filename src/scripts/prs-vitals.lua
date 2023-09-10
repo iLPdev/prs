@@ -1,4 +1,4 @@
--- Procedural Realms Script (PRS) Stats Gauges for Mudlet
+-- Procedural Realms Script (PRS) Vitals Gauges for Mudlet
 -- by Stack (https://ilpdev.com/prs) & Dalem
 PRSstats = PRSstats or {}
 PRSstats.events = PRSstats.events or {}
