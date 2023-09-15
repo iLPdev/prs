@@ -75,7 +75,7 @@ local function statsTab()
     end
     PRSstats.events.strengthChange_id = registerAnonymousEventHandler("gmcp.Char.player.strength", function()
         if gmcp.Char.player.strength then
-            strengthLeft:echo(gmcp.Char.player.strength, "#e74856", "r")
+            strength:echo(gmcp.Char.player.strength, "#e74856", "r")
         end
     end)
     local strengthDiv = Geyser.Label:new({
