@@ -48,15 +48,32 @@ local function vitalsHeader()
 end
 
 local function statsTab()
+    PRSstats.scrollContainer = PRSstats.scrollContainer or Geyser.Container:new({
+        name = "statsScrollContainer",
+        width = "95%",
+        height = "95%",
+        x = 10,
+        y = 10
+    }, GUI.tabwindow1.Statscenter)
+
+    PRSstats.scrollBox = PRSstats.scrollBox or Geyser.ScrollBox:new({
+        parent = "statsScrollContainer",
+        name = "statsScrollBox",
+        height = "100%",
+        width = "100%",
+        x = 0,
+        y = 0
+    }, PRSstats.scrollContainer)
+
     local statsVBox = Geyser.VBox:new({
         name = "statsVBox",
-        height = "97%",
-        width = "93%"
-    }, GUI.tabwindow1.Statscenter)
+        height = "100%",
+        width = "100%"
+    }, PRSstats.scrollBox)
     local abilitiesTitle = Geyser.Label:new({
         name = "abilitiesTitle"
     }, statsVBox)
-    abilitiesTitle:setColor(0, 0, 0, 0)
+    abilitiesTitle:setColor(16, 16, 20)
     abilitiesTitle:setFontSize(8)
     abilitiesTitle:echo("Abilities", "#f2f2f2", "c")
     local row1 = Geyser.HBox:new({
