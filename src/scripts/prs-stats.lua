@@ -482,14 +482,14 @@ local function statsTab()
     }, row11)
     skillCooldown:setColor(0, 0, 0, 0)
     skillCooldown:setFontSize(8)
-    skillCooldown:echo(gmcp.Char.player.agilitySkillCooldownBonus .. " ", "#c19c00", "r")
+    skillCooldown:echo(string.format("%0.2f", gmcp.Char.player.agilitySkillCooldownBonus) .. " ", "#c19c00", "r")
     if PRSstats.events.agilitySkillCooldownBonusChange_id then
         killAnonymousEventHandler(PRSstats.events.agilitySkillCooldownBonusChange_id)
     end
     PRSstats.events.agilitySkillCooldownBonusChange_id = registerAnonymousEventHandler(
         "gmcp.Char.player.agilityskillCooldownBonus", function()
             if gmcp.Char.player.agilitySkillCooldownBonus then
-                skillCooldown:echo(gmcp.Char.player.agilityCooldownBonus .. " ", "#c19c00", "r")
+                skillCooldown:echo(string.format("%0.2f", gmcp.Char.player.agilityCooldownBonus) .. " ", "#c19c00", "r")
             end
         end)
     local skillCooldownTitle = Geyser.Label:new({
@@ -528,14 +528,15 @@ local function statsTab()
     }, row12)
     agilityCritical:setColor(0, 0, 0, 0)
     agilityCritical:setFontSize(8)
-    agilityCritical:echo(gmcp.Char.player.agilityCriticalBonus .. " ", "#e74856", "r")
+    agilityCritical:echo(string.format("%0.2f", gmcp.Char.player.agilityCriticalBonus) .. " ", "#e74856", "r")
     if PRSstats.events.agilityCriticalBonusChange_id then
         killAnonymousEventHandler(PRSstats.events.agilityCriticalBonusChange_id)
     end
     PRSstats.events.agilityCriticalBonusChange_id = registerAnonymousEventHandler(
         "gmcp.Char.player.agilityCriticalBonus", function()
             if gmcp.Char.player.agilityCriticalBonus then
-                agilityCritical:echo(gmcp.Char.player.agilityCriticalBonus .. " ", "#e74856", "r")
+                agilityCritical:echo(string.format("%0.2f", gmcp.Char.player.agilityCriticalBonus) .. " ", "#e74856",
+                    "r")
             end
         end)
     local agilityCriticalTitle = Geyser.Label:new({
@@ -738,20 +739,20 @@ local function statsTab()
             speed:echo(gmcp.Char.player.speed, "#f9f1a5", "c")
         end
     end)
-    local recoveryTime = Geyser.Label:new({
-        name = "recoveryTime"
+    local xxxTime = Geyser.Label:new({
+        name = "xxxTime"
     }, speedHBox)
-    recoveryTime:setColor(0, 0, 0, 0)
-    recoveryTime:setFontSize(8)
-    recoveryTime:echo("-" .. gmcp.Char.player.recoveryTime .. "s", "#16c60c", "l")
-    if PRSstats.events.recoveryTimeChange_id then
-        killAnonymousEventHandler(PRSstats.events.recoveryTimeChange_id)
-    end
-    PRSstats.events.recoveryTimeChange_id = registerAnonymousEventHandler("gmcp.Char.player.recoveryTime", function()
-        if gmcp.Char.player.recoveryTime then
-            recoveryTime:echo(gmcp.Char.player.recoveryTime, "#16c60c", "l")
-        end
-    end)
+    xxxTime:setColor(0, 0, 0, 0)
+    xxxTime:setFontSize(8)
+    xxxTime:echo("-", "#16c60c", "l")
+    -- if PRSstats.events.recoveryTimeChange_id then
+    --     killAnonymousEventHandler(PRSstats.events.recoveryTimeChange_id)
+    -- end
+    -- PRSstats.events.recoveryTimeChange_id = registerAnonymousEventHandler("gmcp.Char.player.recoveryTime", function()
+    --     if gmcp.Char.player.recoveryTime then
+    --         xxxTime:echo(gmcp.Char.player.recoveryTime, "#16c60c", "l")
+    --     end
+    -- end)
     -- Recovery
     local recoveryHBox = Geyser.HBox:new({
         name = "recoveryHBox",
@@ -763,20 +764,20 @@ local function statsTab()
     recoveryTitle:setColor(0, 0, 0, 0)
     recoveryTitle:setFontSize(8)
     recoveryTitle:echo("Recovery:", "#aaaaaa", "r")
-    local XXX = Geyser.Label:new({
-        name = "XXX"
+    local recoveryTime = Geyser.Label:new({
+        name = "recoveryTime"
     }, recoveryHBox)
-    XXX:setColor(0, 0, 0, 0)
-    XXX:setFontSize(8)
-    -- XXX:echo(gmcp.Char.player.XXX, "#16c60c", "c")
-    -- if PRSstats.events.XXXChange_id then
-    --     killAnonymousEventHandler(PRSstats.events.XXXChange_id)
-    -- end
-    -- PRSstats.events.XXXChange_id = registerAnonymousEventHandler("gmcp.Char.player.XXX", function()
-    --     if gmcp.Char.player.XXX then
-    --         recovery:echo(gmcp.Char.player.XXX, "#16c60c", "c")
-    --     end
-    -- end)
+    recoveryTime:setColor(0, 0, 0, 0)
+    recoveryTime:setFontSize(8)
+    recoveryTime:echo(string.format("%0.2f", gmcp.Char.player.recoveryTime) .. "s", "#f9f1a5", "c")
+    if PRSstats.events.recoveryTimeChange_id then
+        killAnonymousEventHandler(PRSstats.events.recoveryTimeChange_id)
+    end
+    PRSstats.events.recoveryTimeChange_id = registerAnonymousEventHandler("gmcp.Char.player.recoveryTime", function()
+        if gmcp.Char.player.recoveryTime then
+            recoveryTime:echo(string.format("%0.2f", gmcp.Char.player.recoveryTime) .. "s", "#f9f1a5", "c")
+        end
+    end)
     local apr = Geyser.Label:new({
         name = "apr"
     }, recoveryHBox)
