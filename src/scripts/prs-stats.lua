@@ -920,7 +920,7 @@ local function statsTab()
     resistancesTitle:setColor(0, 0, 0, 0)
     resistancesTitle:setFontSize(8)
     resistancesTitle:echo("Resistances", "#f2f2f2", "c")
-    -- Bludgeon & Arcane
+    -- Bludgeon, Arcane, & Acid
     local resist1HBox = Geyser.HBox:new({
         name = "resist1HBox",
         width = "93%"
@@ -966,30 +966,50 @@ local function statsTab()
             resistArcane:echo(gmcp.Char.player.resistArcane, "#61d6d6", "l")
         end
     end)
-    -- Slash & Electric
+    local resistAcidTitle = Geyser.Label:new({
+        name = "resistAcidTitle"
+    }, resist1HBox)
+    resistAcidTitle:setColor(0, 0, 0, 0)
+    resistAcidTitle:setFontSize(8)
+    resistAcidTitle:echo("Acid: ", "#aaaaaa", "r")
+    local resistAcid = Geyser.Label:new({
+        name = "resistAcid"
+    }, resist1HBox)
+    resistAcid:setColor(0, 0, 0, 0)
+    resistAcid:setFontSize(8)
+    resistAcid:echo(gmcp.Char.player.resistAcid, "#f9f1a5", "l")
+    if PRSstats.events.resistAcidChange_id then
+        killAnonymousEventHandler(PRSstats.events.resistAcidChange_id)
+    end
+    PRSstats.events.resistAcidChange_id = registerAnonymousEventHandler("gmcp.Char.player.resistAcid", function()
+        if gmcp.Char.player.resistAcid then
+            resistAcid:echo(gmcp.Char.player.resistAcid, "#f9f1a5", "l")
+        end
+    end)
+    -- Resistance Row 2: Pierce, Electric, & Holy
     local resist2HBox = Geyser.HBox:new({
         name = "resist2HBox",
         width = "93%"
     }, statsVBox)
-    local resistSlashingTitle = Geyser.Label:new({
-        name = "resistSlashingTitle"
+    local resistPiercingTitle = Geyser.Label:new({
+        name = "resistPiercingTitle"
     }, resist2HBox)
-    resistSlashingTitle:setColor(0, 0, 0, 0)
-    resistSlashingTitle:setFontSize(8)
-    resistSlashingTitle:echo("Slash: ", "#aaaaaa", "r")
-    local resistSlashing = Geyser.Label:new({
-        name = "resistSlashing"
+    resistPiercingTitle:setColor(0, 0, 0, 0)
+    resistPiercingTitle:setFontSize(8)
+    resistPiercingTitle:echo("Pierce: ", "#aaaaaa", "r")
+    local resistPiercing = Geyser.Label:new({
+        name = "resistPiercing"
     }, resist2HBox)
-    resistSlashing:setColor(0, 0, 0, 0)
-    resistSlashing:setFontSize(8)
-    resistSlashing:echo(gmcp.Char.player.resistSlashing, "#e74856", "l")
-    if PRSstats.events.resistSlashingChange_id then
-        killAnonymousEventHandler(PRSstats.events.resistSlashingChange_id)
+    resistPiercing:setColor(0, 0, 0, 0)
+    resistPiercing:setFontSize(8)
+    resistPiercing:echo(gmcp.Char.player.resistPiercing, "#f9f1a5", "l")
+    if PRSstats.events.resistPiercingChange_id then
+        killAnonymousEventHandler(PRSstats.events.resistPiercingChange_id)
     end
-    PRSstats.events.resistSlashingChange_id = registerAnonymousEventHandler("gmcp.Char.player.resistSlashing",
+    PRSstats.events.resistPiercingChange_id = registerAnonymousEventHandler("gmcp.Char.player.resistPiercing",
         function()
-            if gmcp.Char.player.resistSlashing then
-                resistSlashing:echo(gmcp.Char.player.resistSlashing, "#e74856", "l")
+            if gmcp.Char.player.resistPiercing then
+                resistPiercing:echo(gmcp.Char.player.resistPiercing, "#f9f1a5", "l")
             end
         end)
     local resistElectricTitle = Geyser.Label:new({
@@ -1013,30 +1033,50 @@ local function statsTab()
                 resistElectric:echo(gmcp.Char.player.resistElectric, "#f9f1a5", "l")
             end
         end)
-    -- Pierce & Fire
+    local resistHolyTitle = Geyser.Label:new({
+        name = "resistHolyTitle"
+    }, resist2HBox)
+    resistHolyTitle:setColor(0, 0, 0, 0)
+    resistHolyTitle:setFontSize(8)
+    resistHolyTitle:echo("Holy: ", "#aaaaaa", "r")
+    local resistHoly = Geyser.Label:new({
+        name = "Holy"
+    }, resist2HBox)
+    resistHoly:setColor(0, 0, 0, 0)
+    resistHoly:setFontSize(8)
+    resistHoly:echo(gmcp.Char.player.resistHoly, "#f2f2f2", "l")
+    if PRSstats.events.resistHolyChange_id then
+        killAnonymousEventHandler(PRSstats.events.resistHolyChange_id)
+    end
+    PRSstats.events.resistHolyChange_id = registerAnonymousEventHandler("gmcp.Char.player.resistHoly", function()
+        if gmcp.Char.player.resistHoly then
+            resistHoly:echo(gmcp.Char.player.resistHoly, "#f2f2f2", "l")
+        end
+    end)
+    -- Row 3: Slash, Fire, & Poison
     local resist3HBox = Geyser.HBox:new({
         name = "resist3HBox",
         width = "93%"
     }, statsVBox)
-    local resistPiercingTitle = Geyser.Label:new({
-        name = "resistPiercingTitle"
+    local resistSlashingTitle = Geyser.Label:new({
+        name = "resistSlashingTitle"
     }, resist3HBox)
-    resistPiercingTitle:setColor(0, 0, 0, 0)
-    resistPiercingTitle:setFontSize(8)
-    resistPiercingTitle:echo("Pierce: ", "#aaaaaa", "r")
-    local resistPiercing = Geyser.Label:new({
-        name = "resistPiercing"
+    resistSlashingTitle:setColor(0, 0, 0, 0)
+    resistSlashingTitle:setFontSize(8)
+    resistSlashingTitle:echo("Slash: ", "#aaaaaa", "r")
+    local resistSlashing = Geyser.Label:new({
+        name = "resistSlashing"
     }, resist3HBox)
-    resistPiercing:setColor(0, 0, 0, 0)
-    resistPiercing:setFontSize(8)
-    resistPiercing:echo(gmcp.Char.player.resistPiercing, "#c50f1f", "l")
-    if PRSstats.events.resistPiercingChange_id then
-        killAnonymousEventHandler(PRSstats.events.resistPiercingChange_id)
+    resistSlashing:setColor(0, 0, 0, 0)
+    resistSlashing:setFontSize(8)
+    resistSlashing:echo(gmcp.Char.player.resistSlashing, "#c50f1f", "l")
+    if PRSstats.events.resistSlashingChange_id then
+        killAnonymousEventHandler(PRSstats.events.resistSlashingChange_id)
     end
-    PRSstats.events.resistPiercingChange_id = registerAnonymousEventHandler("gmcp.Char.player.resistPiercing",
+    PRSstats.events.resistSlashingChange_id = registerAnonymousEventHandler("gmcp.Char.player.resistSlashing",
         function()
-            if gmcp.Char.player.resistPiercing then
-                resistPiercing:echo(gmcp.Char.player.resistPiercing, "#c50f1f", "l")
+            if gmcp.Char.player.resistSlashing then
+                resistSlashing:echo(gmcp.Char.player.resistSlashing, "#c50f1f", "l")
             end
         end)
     local resistFireTitle = Geyser.Label:new({
@@ -1059,20 +1099,15 @@ local function statsTab()
             resistFire:echo(gmcp.Char.player.resistFire, "#e74856", "l")
         end
     end)
-    -- Poison & Ice
-    local resist4HBox = Geyser.HBox:new({
-        name = "resist4HBox",
-        width = "93%"
-    }, statsVBox)
     local resistPoisonTitle = Geyser.Label:new({
         name = "resistPoisonTitle"
-    }, resist4HBox)
+    }, resist3HBox)
     resistPoisonTitle:setColor(0, 0, 0, 0)
     resistPoisonTitle:setFontSize(8)
     resistPoisonTitle:echo("Poison: ", "#aaaaaa", "r")
     local resistPoison = Geyser.Label:new({
         name = "resistPoison"
-    }, resist4HBox)
+    }, resist3HBox)
     resistPoison:setColor(0, 0, 0, 0)
     resistPoison:setFontSize(8)
     resistPoison:echo(gmcp.Char.player.resistPoison, "#13a10e", "l")
@@ -1084,6 +1119,12 @@ local function statsTab()
             resistPoison:echo(gmcp.Char.player.resistPoison, "#13a10e", "l")
         end
     end)
+    -- Ice
+    local resist4HBox = Geyser.HBox:new({
+        name = "resist4HBox",
+        width = "93%"
+    }, statsVBox)
+
     local resistIceTitle = Geyser.Label:new({
         name = "resistIceTitle"
     }, resist4HBox)
@@ -1102,51 +1143,6 @@ local function statsTab()
     PRSstats.events.resistIceChange_id = registerAnonymousEventHandler("gmcp.Char.player.resistIce", function()
         if gmcp.Char.player.resistIce then
             resistIce:echo(gmcp.Char.player.resistIce, "#3b78ff", "l")
-        end
-    end)
-    -- Acid & Holy
-    local resist5HBox = Geyser.HBox:new({
-        name = "resist5HBox",
-        width = "93%"
-    }, statsVBox)
-    local resistAcidTitle = Geyser.Label:new({
-        name = "resistAcidTitle"
-    }, resist5HBox)
-    resistAcidTitle:setColor(0, 0, 0, 0)
-    resistAcidTitle:setFontSize(8)
-    resistAcidTitle:echo("Acid: ", "#aaaaaa", "r")
-    local resistAcid = Geyser.Label:new({
-        name = "resistAcid"
-    }, resist5HBox)
-    resistAcid:setColor(0, 0, 0, 0)
-    resistAcid:setFontSize(8)
-    resistAcid:echo(gmcp.Char.player.resistAcid, "#16c60c", "l")
-    if PRSstats.events.resistAcidChange_id then
-        killAnonymousEventHandler(PRSstats.events.resistAcidChange_id)
-    end
-    PRSstats.events.resistAcidChange_id = registerAnonymousEventHandler("gmcp.Char.player.resistAcid", function()
-        if gmcp.Char.player.resistAcid then
-            resistAcid:echo(gmcp.Char.player.resistAcid, "#16c60c", "l")
-        end
-    end)
-    local resistHolyTitle = Geyser.Label:new({
-        name = "resistHolyTitle"
-    }, resist5HBox)
-    resistHolyTitle:setColor(0, 0, 0, 0)
-    resistHolyTitle:setFontSize(8)
-    resistHolyTitle:echo("Holy: ", "#aaaaaa", "r")
-    local resistHoly = Geyser.Label:new({
-        name = "Holy"
-    }, resist5HBox)
-    resistHoly:setColor(0, 0, 0, 0)
-    resistHoly:setFontSize(8)
-    resistHoly:echo(gmcp.Char.player.resistHoly, "#f2f2f2", "l")
-    if PRSstats.events.resistHolyChange_id then
-        killAnonymousEventHandler(PRSstats.events.resistHolyChange_id)
-    end
-    PRSstats.events.resistHolyChange_id = registerAnonymousEventHandler("gmcp.Char.player.resistHoly", function()
-        if gmcp.Char.player.resistHoly then
-            resistHoly:echo(gmcp.Char.player.resistHoly, "#f2f2f2", "l")
         end
     end)
 end
