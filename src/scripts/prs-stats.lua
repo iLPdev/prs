@@ -68,7 +68,7 @@ local function statsTab()
         name = "strength"
     }, row1)
     strength:setColor(0, 0, 0, 0)
-    strength:setFontSize(16)
+    -- strength:setFontSize(16)
     strength:echo(gmcp.Char.player.strength, "#e74856", "r")
     if PRSstats.events.strengthChange_id then
         killAnonymousEventHandler(PRSstats.events.strengthChange_id)
@@ -82,13 +82,13 @@ local function statsTab()
         name = "strengthDiv"
     }, row1)
     strengthDiv:setColor(0, 0, 0, 0)
-    strengthDiv:setFontSize(16)
+    -- strengthDiv:setFontSize(16)
     strengthDiv:echo("+", "#767676", "c")
     local _strength = Geyser.Label:new({
         name = "_strength"
     }, row1)
     _strength:setColor(0, 0, 0, 0)
-    _strength:setFontSize(16)
+    -- _strength:setFontSize(16)
     _strength:echo(gmcp.Char.player._strength, "#c50f1f", "l")
     if PRSstats.events._strengthChange_id then
         killAnonymousEventHandler(PRSstats.events._strengthChange_id)
@@ -103,7 +103,7 @@ local function statsTab()
         name = "magic"
     }, row1)
     magic:setColor(0, 0, 0, 0)
-    magic:setFontSize(16)
+    -- magic:setFontSize(16)
     magic:echo(gmcp.Char.player.magic, "#61d6d6", "r")
     if PRSstats.events.magicChange_id then
         killAnonymousEventHandler(PRSstats.events.magicChange_id)
@@ -117,13 +117,13 @@ local function statsTab()
         name = "magicDiv"
     }, row1)
     magicDiv:setColor(0, 0, 0, 0)
-    magicDiv:setFontSize(16)
+    -- magicDiv:setFontSize(16)
     magicDiv:echo("+", "#767676", "c")
     local _magic = Geyser.Label:new({
         name = "_magic"
     }, row1)
     _magic:setColor(0, 0, 0, 0)
-    _magic:setFontSize(16)
+    -- _magic:setFontSize(16)
     _magic:echo(gmcp.Char.player._magic, "#3a96dd", "l")
     if PRSstats.events._magicChange_id then
         killAnonymousEventHandler(PRSstats.events._magicChange_id)
@@ -141,13 +141,13 @@ local function statsTab()
         name = "strengthTitle"
     }, row2)
     strengthTitle:setColor(0, 0, 0, 0)
-    strengthTitle:setFontSize(12)
+    -- strengthTitle:setFontSize(12)
     strengthTitle:echo("Strength", "#ffffff", "c")
     local magicTitle = Geyser.Label:new({
         name = "magicTitle"
     }, row2)
     magicTitle:setColor(0, 0, 0, 0)
-    magicTitle:setFontSize(12)
+    -- magicTitle:setFontSize(12)
     magicTitle:echo("Magic", "#ffffff", "c")
     local row3 = Geyser.HBox:new({
         name = "row3",
@@ -346,7 +346,7 @@ local function statsTab()
         name = "agility"
     }, row8)
     agility:setColor(0, 0, 0, 0)
-    agility:setFontSize(14)
+    -- agility:setFontSize(14)
     agility:echo(gmcp.Char.player.agility, "#f9f1a5", "r")
     if PRSstats.events.agilityChange_id then
         killAnonymousEventHandler(PRSstats.events.agilityChange_id)
@@ -360,13 +360,13 @@ local function statsTab()
         name = "agilityDiv"
     }, row8)
     agilityDiv:setColor(0, 0, 0, 0)
-    agilityDiv:setFontSize(14)
+    -- agilityDiv:setFontSize(14)
     agilityDiv:echo("+", "#767676", "c")
     local _agility = Geyser.Label:new({
         name = "_agility"
     }, row8)
     _agility:setColor(0, 0, 0, 0)
-    _agility:setFontSize(14)
+    -- _agility:setFontSize(14)
     _agility:echo(gmcp.Char.player._agility, "#c19c00", "l")
     if PRSstats.events._agilityChange_id then
         killAnonymousEventHandler(PRSstats.events._agilityChange_id)
@@ -381,7 +381,7 @@ local function statsTab()
         name = "spirit"
     }, row8)
     spirit:setColor(0, 0, 0, 0)
-    spirit:setFontSize(14)
+    -- spirit:setFontSize(14)
     spirit:echo(gmcp.Char.player.spirit, "#16c60c", "r")
     if PRSstats.events.spiritChange_id then
         killAnonymousEventHandler(PRSstats.events.spiritChange_id)
@@ -395,13 +395,13 @@ local function statsTab()
         name = "spiritDiv"
     }, row8)
     spiritDiv:setColor(0, 0, 0, 0)
-    spiritDiv:setFontSize(16)
+    -- spiritDiv:setFontSize(16)
     spiritDiv:echo("+", "#767676", "c")
     local _spirit = Geyser.Label:new({
         name = "_spirit"
     }, row8)
     _spirit:setColor(0, 0, 0, 0)
-    _spirit:setFontSize(16)
+    -- _spirit:setFontSize(16)
     _spirit:echo(gmcp.Char.player._spirit, "#13a10e", "l")
     if PRSstats.events._spiritChange_id then
         killAnonymousEventHandler(PRSstats.events._spiritChange_id)
@@ -419,13 +419,13 @@ local function statsTab()
         name = "agilityTitle"
     }, row9)
     agilityTitle:setColor(0, 0, 0, 0)
-    agilityTitle:setFontSize(12)
+    -- agilityTitle:setFontSize(12)
     agilityTitle:echo("Agility", "#ffffff", "c")
     local spiritTitle = Geyser.Label:new({
         name = "spiritTitle"
     }, row9)
     spiritTitle:setColor(0, 0, 0, 0)
-    spiritTitle:setFontSize(12)
+    -- spiritTitle:setFontSize(12)
     spiritTitle:echo("Spirit", "#ffffff", "c")
     local row10 = Geyser.HBox:new({
         name = "row10",
