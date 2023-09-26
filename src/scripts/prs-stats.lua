@@ -739,20 +739,20 @@ local function statsTab()
             speed:echo(gmcp.Char.player.speed, "#f9f1a5", "c")
         end
     end)
-    local xxxTime = Geyser.Label:new({
+    local regeneration = Geyser.Label:new({
         name = "xxxTime"
     }, speedHBox)
-    xxxTime:setColor(0, 0, 0, 0)
-    xxxTime:setFontSize(8)
-    xxxTime:echo("-", "#16c60c", "l")
-    -- if PRSstats.events.recoveryTimeChange_id then
-    --     killAnonymousEventHandler(PRSstats.events.recoveryTimeChange_id)
-    -- end
-    -- PRSstats.events.recoveryTimeChange_id = registerAnonymousEventHandler("gmcp.Char.player.recoveryTime", function()
-    --     if gmcp.Char.player.recoveryTime then
-    --         xxxTime:echo(gmcp.Char.player.recoveryTime, "#16c60c", "l")
-    --     end
-    -- end)
+    regeneration:setColor(0, 0, 0, 0)
+    regeneration:setFontSize(8)
+    regeneration:echo(gmcp.Char.player.regeneration .. " regen", "#16c60c", "l")
+    if PRSstats.events.regenerationChange_id then
+        killAnonymousEventHandler(PRSstats.events.regenerationChange_id)
+    end
+    PRSstats.events.regenerationChange_id = registerAnonymousEventHandler("gmcp.Char.player.regeneration", function()
+        if gmcp.Char.player.regeneration then
+            regeneration:echo(gmcp.Char.player.regeneration, "#16c60c", "l")
+        end
+    end)
     -- Recovery
     local recoveryHBox = Geyser.HBox:new({
         name = "recoveryHBox",
