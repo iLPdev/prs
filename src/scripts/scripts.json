@@ -1,0 +1,41 @@
+[
+  {
+    "name": "PRS"
+  },
+  {
+    "name": "prs-chat"
+  },
+  {
+    "name": "prs-core"
+  },
+  {
+    "name": "prs-gui"
+  },
+  {
+    "name": "prs-mapper"
+  },
+  {
+    "name": "prs-quests"
+  },
+  {
+    "name": "prs-skills"
+  },
+  {
+    "name": "prs-ascii-map"
+  },
+  {
+    "name": "prs-util"
+  },
+  {
+    "name": "prs-combat"
+  },
+  {
+    "name": "prs-battle"
+  },
+  {
+    "name": "prs-inventory"
+  },
+  {
+    "name": "prs-stats"
+  }
+]
