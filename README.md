@@ -25,7 +25,7 @@
 
 <!-- LONG DESCRIPTION -->
 
-The Procedural Realms Script [PRS] project gives [Procedural Realms MUD](http://textdimension.com/) players improved access to the advanced features of the [Mudlet](https://www.mudlet.org) MUD client. By leveraging the specific "out of band" packets sent by Procedural Realms' server, PRS uses Mudlet's mapper to identify rooms/exits, prevent creation of duplicate rooms/areas, manage instanced areas, and accurately track your character's location on the map as you move about the realm. Additional convenience features include speedwalking/pathfinding, autosetting map terrain colors, self-updating gauges for vitals and combat, communication containers, quick slot buttons/keybindings, and a user-adjustable UI layout.
+The Procedural Realms Script [PRS] project gives [Procedural Realms MUD](http://textdimension.com/) players improved access to the advanced features of the [Mudlet](https://www.mudlet.org) MUD client. By leveraging the specific "out of band" packets sent by Procedural Realms' server, PRS uses Mudlet's mapper to identify rooms/exits, prevent creation of duplicate rooms/areas, manage instanced areas, and accurately track your character's location on the map as you move about the realm. Additional convenience features include speedwalking/pathfinding, self-updating gauges (vitals, combat, and skills), combat buttons and targetting, communication containers, quick slot buttons/keybindings, and a user-adjustable UI layout.
 
 **Project Link**: [https://github.com/iLPdev/prs]<br />
 **Mudlet Forum Topic**: [https://forums.mudlet.org/viewtopic.php?f=6&t=23126]
@@ -57,6 +57,7 @@ The Procedural Realms Script [PRS] project gives [Procedural Realms MUD](http://
 
 #### Milestones
 
+- v1.8.0 - Battle, Inventory, Quest, Skills, and ASCII Map tabs + Combat Buttons
 - v1.7.0 - GUI (Adjustable Containers & Tabbed Windows) and Stats Tab
 - v1.6.0 - Clickable URLs, EMCO Timestamps, and Revisionator Patching
 - v1.5.0 - Auto-Install, Auto-Update, and Discord Rich Presence Integration
@@ -69,10 +70,12 @@ The Procedural Realms Script [PRS] project gives [Procedural Realms MUD](http://
 ### Features
 
 - GUI with adjustable, dockable, and resizable tabbed windows. 
-- Automatic GMCP mapping of Procedural Realms MUD, including instanced areas/zones.
-- Automatic GMCP room styling based on terrain to matches colors in PR's 'map' and 'look' quickmap.
+- Automatic GMCP mapping of Procedural Realms MUD, including instanced areas/zones and terrain-based room styling.
+- ASCII Map tab displays dynamic in-game 'map' command output in a tab!
 - Tabbed Communications Channels with CLI -- No conversations lost in scroll!
-- Self-Updating Gauges for character vitals, including Hit Points, Energy, Stamina, Rage, Combo, and eXperience Points.
+- Battle and combat tabbed windows with dynamic skill/spell buttons and targeting!
+- Character inventory parsing.
+- Self-Updating Gauges for character vitals (HP, Energy, Spirit), Skills (Combat, Crafting, Artisan), and Combat (Target HP, Rage, Combo, etc).
 - Speedwalking and pathfinding - Efficiently get where you're going - and fast!
 - Slot Command Buttons & Keys - Carry out custom actions with the click of a button!
 - Discord Rich Presence Integration
@@ -83,6 +86,7 @@ The Procedural Realms Script [PRS] project gives [Procedural Realms MUD](http://
 - [Lua](https://www.lua.org) is the programming language
 - [Edbee Library](https://github.com/edbee/edbee-lib) provides the text editor component for Mudlet
 - [Mudlet](https://github.com/Mudlet/Mudlet) is a cross-platform, open source, and super fast MUD client
+- [Muddler](https://github.com/demonnic/muddler) is the tool that builds the package.
 - [MDK](https://github.com/demonnic/MDK) is a collection of Lua 'classes' and modules by @demonnic
 - [AdjustableTabWindow](https://github.com/Edru2/AdjustableTabWindow) by @edru2 provides drag and drop tab support.
 - [Git](https://git-scm.com) is the version-control system for tracking changes and project management
@@ -100,7 +104,7 @@ Version numbering approximates the [Semantic Versioning](http://semver.org) appr
 
 - **Project State**: Procedural Realms Script is under active development. The application can be used, but may be unstable. We are in need of continued testing prior to moving forward with each new release.
 
-- **Current Release**: v1.7.0
+- **Current Release**: v1.8.0
 
 **[^Top](#table-of-contents)**
 
@@ -203,7 +207,7 @@ See also the [open issues](https://github.com/iLPdev/prs/issues) for a list of p
 
 <!-- State anyone or anything that significantly helped with the development of your project.
      State public contact hyper-links if applicable. -->
-
+- [@Grrtt49](https://github.com/grrtt49) (Grrtt) for massive code contributions including ASCII Map, Battle Tab, Inventory Tab, Quest Tab, and Combat buttons. 
 - [@eterchun](https://github.com/eterchun) (Dalem) for re-energizing the project and evolving the codebase, especially after the major multiprocessor game server updates made doing so feel insurmountable.
 - [@dinchak](https://github.com/dinchak) (PR Adminstrator) for mapper logic and server-side assistance, as well as developing, managing, and freely offering Procedural Realms to the world.
 - [@demonnic](https://github.com/demonnic) for his seemingly indefatigable patience and help over the years.
