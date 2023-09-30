@@ -57,7 +57,7 @@ The Procedural Realms Script [PRS] project gives [Procedural Realms MUD](http://
 
 #### Milestones
 
-- v1.8.0 - Battle, Inventory, Quest, and ASCII Map tabs
+- v1.8.0 - Battle, Inventory, Quest, Skills, and ASCII Map tabs + Combat Buttons
 - v1.7.0 - GUI (Adjustable Containers & Tabbed Windows) and Stats Tab
 - v1.6.0 - Clickable URLs, EMCO Timestamps, and Revisionator Patching
 - v1.5.0 - Auto-Install, Auto-Update, and Discord Rich Presence Integration
@@ -70,10 +70,11 @@ The Procedural Realms Script [PRS] project gives [Procedural Realms MUD](http://
 ### Features
 
 - GUI with adjustable, dockable, and resizable tabbed windows. 
-- Automatic GMCP mapping of Procedural Realms MUD, including instanced areas/zones.
-- Automatic GMCP room styling based on terrain to matches colors in PR's 'map' and 'look' quickmap.
+- Automatic GMCP mapping of Procedural Realms MUD, including instanced areas/zones and terrain-based room styling.
 - ASCII Map tab displays dynamic in-game 'map' command output in a tab!
 - Tabbed Communications Channels with CLI -- No conversations lost in scroll!
+- Battle and combat tabbed windows with dynamic skill/spell buttons and targeting!
+- Character inventory parsing.
 - Self-Updating Gauges for character vitals (HP, Energy, Spirit), Skills (Combat, Crafting, Artisan), and Combat (Target HP, Rage, Combo, etc).
 - Speedwalking and pathfinding - Efficiently get where you're going - and fast!
 - Slot Command Buttons & Keys - Carry out custom actions with the click of a button!
